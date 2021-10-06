@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.RegisterView">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #0C39FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="32.0" layoutY="269.0" prefHeight="58.0" prefWidth="317.0" text="Condominium" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="48.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="46.0" layoutY="315.0" prefHeight="23.0" prefWidth="290.0" text="Manage your condominiums easily" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="488.0" layoutY="-10.0" prefHeight="448.0" prefWidth="275.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <TextField fx:id="tfName" prefHeight="40.0" promptText="name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tfSurname" prefHeight="40.0" promptText="surname">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tfEmail" prefHeight="40.0" promptText="email">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="tfPassword" prefHeight="40.0" promptText="password">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <PasswordField fx:id="tfOkPwd" prefHeight="40.0" promptText="confirm password">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <MenuButton mnemonicParsing="false" prefWidth="450.0" stylesheets="@fullpackstyling.css" text="Role in your condominium?">
+              <items>
+                <MenuItem fx:id="mnuResident" mnemonicParsing="false" onAction="#onMnuResidentClick" text="Resident" />
+                  <MenuItem fx:id="mnuOwner" mnemonicParsing="false" onAction="#onMnuOwnerClick" text="Owner" />
+              </items>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </MenuButton>
+            <Label fx:id="lbRole" text="No Role Selected" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="120.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="tfCondominiumCode" prefHeight="40.0" promptText="Condominiuim-Code">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSignup" mnemonicParsing="false" onAction="#onSignupClick" prefHeight="40.0" prefWidth="400.0" stylesheets="@fullpackstyling.css" text="Sign up">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="31.0" prefWidth="275.0">
+               <children>
+                  <Separator accessibleText="Or" layoutX="3.0" layoutY="13.0" prefHeight="5.0" prefWidth="370.0" />
+                  <Label alignment="CENTER" layoutX="170.0" layoutY="4.0" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #fff;" text="Or" textAlignment="CENTER" textFill="#5b5a5a">
+                     <font>
+                        <Font name="Segoe UI" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Button fx:id="btnSignin" mnemonicParsing="false" onAction="#onSigninClick" prefHeight="40.0" prefWidth="420.0" stylesheets="@fullpackstyling.css" text="Sign in">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label alignment="CENTER" layoutX="394.0" layoutY="466.0" prefHeight="23.0" prefWidth="93.0" text="Design by me" textFill="#5b5a5a" AnchorPane.bottomAnchor="14.0">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="747.0" layoutY="466.0" prefHeight="23.0" prefWidth="93.0" text="DOWNLOAD APP" textFill="#a6b1cc" AnchorPane.bottomAnchor="14.0">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

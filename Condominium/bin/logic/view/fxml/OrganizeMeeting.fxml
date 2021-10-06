@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.MeetingView">
+   <children>
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of Meeting Requests">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <HBox layoutY="32.0" prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="usr" />
+         </children>
+      </HBox>
+      <ScrollPane layoutY="50.0" prefHeight="352.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <content>
+            <VBox fx:id="scrollBox" spacing="20.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
