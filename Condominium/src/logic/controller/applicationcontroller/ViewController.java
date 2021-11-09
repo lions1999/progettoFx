@@ -15,20 +15,33 @@ public class ViewController{
 	private final String url1 = "/logic/view/";
 	private final String url2 = "View.fxml";
 
-	public void loadPage(String page ,Stage primaryStage){				
-		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));		
-		Parent root;		
-		try {			
-			root  = loader.load();	
-			Scene scene = new Scene(root);			
-			primaryStage.setScene(scene);
-			primaryStage.setTitle("Condominium/"+page);
-			primaryStage.show();			
+//	public void loadPage(String page ,Stage primaryStage){
+//		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
+//		Parent root;
+//		try {
+//			root  = loader.load();
+//			Scene scene = new Scene(root);
+//			primaryStage.setScene(scene);
+//			primaryStage.setTitle("Condominium/"+page);
+//			primaryStage.show();
+//		}catch(IOException e){
+//			e.printStackTrace();
+//		}
+//	}
+
+	public void loadPage(String page){
+		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
+		Parent root;
+		try {
+			root  =  loader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.showAndWait();
 		}catch(IOException e){
 			e.printStackTrace();
-		}	
-	}	
-	
+		}
+	}
+
 	public Pane getPage(String fileName) {
 		try {
 			URL fileUrl = Condominium.class.getResource(url1+fileName+url2);

@@ -40,17 +40,32 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="last.edited.regexp" value="dasdsa" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/DataBase" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/logic/view" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
-  <component name="RunManager" selected="Application.LoginGUI">
-    <configuration name="LoginGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="logic.controller.guicontroller.LoginGUI" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="logic.controller.applicationcontroller." />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\view" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\model" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\controller\applicationcontroller" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\controller\guicontroller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\RandomTries" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainGUI">
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="logic.controller.guicontroller.MainGUI" />
       <module name="Condominium" />
       <extension name="coverage">
         <pattern>
@@ -58,27 +73,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="logic.controller.guicontroller.RegisterGUI" />
-      <module name="Condominium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="logic.controller.guicontroller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in Condominium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Condominium" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,12 +91,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainGUI" />
+      <item itemvalue="JUnit.test in Condominium" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginGUI" />
+        <item itemvalue="Application.MainGUI" />
         <item itemvalue="JUnit.test in Condominium" />
-        <item itemvalue="Application.RegisterGUI" />
-        <item itemvalue="JUnit.All in Condominium" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +125,17 @@
       <workItem from="1635499045813" duration="5265000" />
       <workItem from="1635504659528" duration="4000" />
       <workItem from="1635866649237" duration="982000" />
+      <workItem from="1635867904135" duration="1049000" />
+      <workItem from="1635930726917" duration="5286000" />
+      <workItem from="1635936208891" duration="2280000" />
+      <workItem from="1635938527173" duration="2748000" />
+      <workItem from="1635944597870" duration="1287000" />
+      <workItem from="1635945924200" duration="4299000" />
+      <workItem from="1635950487882" duration="1105000" />
+      <workItem from="1636017590502" duration="9815000" />
+      <workItem from="1636104196116" duration="8009000" />
+      <workItem from="1636367497281" duration="6022000" />
+      <workItem from="1636449914225" duration="286000" />
     </task>
     <servers />
   </component>
@@ -145,6 +152,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

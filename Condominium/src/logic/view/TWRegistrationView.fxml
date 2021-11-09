@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
 <SplitPane dividerPositions="0.65" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.TWRegistrationGUI">
    <TableView fx:id="tableView" onMouseClicked="#getSelected" prefHeight="400.0" prefWidth="400.0" stylesheets="@style.css">
       <columns>
-         <TableColumn fx:id="twID" text="ID" />
-         <TableColumn fx:id="twName" text="Name" />
-         <TableColumn fx:id="twEmail" text="Email" />
-         <TableColumn fx:id="twPwd" text="Password" />
-         <TableColumn fx:id="twRole" text="Role" />
-         <TableColumn fx:id="twAddress" text="Address" />
+         <TableColumn fx:id="tcID" text="ID" />
+         <TableColumn fx:id="tcName" text="Name" />
+         <TableColumn fx:id="tcEmail" text="Email" />
+         <TableColumn fx:id="tcPwd" text="Password" />
+         <TableColumn fx:id="tcRole" text="Role" />
+         <TableColumn fx:id="tcAddress" text="Address" />
       </columns>
    </TableView>
-   <VBox fx:id="invBox" alignment="CENTER" spacing="10.0">
-      <TextField fx:id="tfName" editable="false" promptText="Name" />
-      <TextField fx:id="tfEmail" editable="false" promptText="Email" />
-      <TextField fx:id="tfPassword" editable="false" promptText="Password" />
-      <TextField fx:id="tfRole" editable="false" promptText="Role" />
-      <TextField fx:id="tfAddress" editable="false" promptText="Address" />
-      <Button maxWidth="1.7976931348623157E308" minWidth="200.0" mnemonicParsing="false" onAction="#btnAddClick" text="Add" />
-      <Button maxWidth="1.7976931348623157E308" minWidth="200.0" mnemonicParsing="false" onAction="#btnRemoveClick" text="Remove" />
-   </VBox>
 </SplitPane>

@@ -1,88 +1,73 @@
 package logic.controller.guicontroller;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
 import logic.engineeringclasses.bean.UserBean;
 import logic.controller.applicationcontroller.RegisterController;
-import logic.controller.applicationcontroller.ViewController;
-import logic.engineeringclasses.exception.PatternException;
 
-public class RegisterGUI extends Application implements Initializable{
+public class RegisterGUI extends MainGUI implements Initializable{
 	 
-	private RegisterController controller = new RegisterController();
-	private ViewController view = new ViewController();	
-	private AlertGUI alert = new AlertGUI();
-	private String noRole = "No Role Selected";
-	private String title = "Condominium/Register/Error";
-	private String pls = "\nPlease Retry";
+	private final RegisterController controller = new RegisterController();
 	private int typError;
-	
-    @FXML
-    private TextField tfName;
-    @FXML
-    private TextField tfSurname;
-    @FXML
-    private TextField tfEmail;
-    @FXML
-    private PasswordField tfPassword;
-    @FXML
-    private PasswordField tfOkPwd;
-    @FXML
-    private Button btnSign;
-    @FXML
-    private ComboBox<String> roleBox;
-    @FXML
-    private ComboBox<String> addressBox;
-    @FXML
-    void onSignClick() {
-    	LoginGUI reg = new LoginGUI();
-    	reg.start((Stage) btnSign.getScene().getWindow());
+
+	@FXML private TextField tfName;
+	@FXML private TextField tfSurname;
+	@FXML private TextField tfEmail;
+	@FXML private PasswordField tfPassword;
+	@FXML private PasswordField tfOkPwd;
+	@FXML private ComboBox<String> roleBox;
+    @FXML private ComboBox<String> addressBox;
+
+	@FXML private void onSignClick() {
+		Pane pane = view.getPage("Login");
+		border.setCenter(pane);
     }
+
     @FXML
-    void onSignupClick()throws SQLException,PatternException{
+    void onSignupClick(){
     	UserBean bean = registerBean(tfName.getText(),tfSurname.getText(),tfEmail.getText(),tfPassword.getText(),tfOkPwd.getText(),roleBox.getValue(),addressBox.getValue());
     	System.out.println("ROLE = "+roleBox.getValue());
     	System.out.println("ADDRESS = "+addressBox.getValue());
     	try {
     		this.typError = controller.registration(bean);  		
     	}finally{
-    		switch(this.typError) {
+			String noRole = "No Role Selected";
+			String title = "Condominium/Register/Error";
+			String pls = "\nPlease Retry";
+			switch(this.typError) {
     		case 1:
-    			alert.alertError(title, "Incorrect Name : "+bean.getName()+pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
+    			alert.alertError(title, "Incorrect Name : "+bean.getName()+ pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfName);
     			break;
     		case 2:		
-    			alert.alertError(title,"Incorrect Surname : "+bean.getSurname()+pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
+    			alert.alertError(title,"Incorrect Surname : "+bean.getSurname()+ pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfSurname);					
     			break;
     		case 3:		
-    			alert.alertError( title,"Incorrect Email : "+bean.getEmail()+pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
+    			alert.alertError(title,"Incorrect Email : "+bean.getEmail()+ pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
     			errorTf(tfEmail);					
     			break;		
     		case 4:
-    			alert.alertError( title,"Incorrect Password"+pls,"ERROR TYPES:\n-Empty Field\n-Minimum 4 charters\n-At least one letter and one number\n-Maximum 15 charters\n-With spaces");
+    			alert.alertError(title,"Incorrect Password"+ pls,"ERROR TYPES:\n-Empty Field\n-Minimum 4 charters\n-At least one letter and one number\n-Maximum 15 charters\n-With spaces");
     			errorTf(tfPassword);
 				break;				
     		case 5:
-    			alert.alertError(title,"Password Mismatch"+pls,"ERROR TYPES:\n-Empty Field\n-Different from Password field");
+    			alert.alertError(title,"Password Mismatch"+ pls,"ERROR TYPES:\n-Empty Field\n-Different from Password field");
 				errorTf(tfOkPwd);
 				break;	
     		case 6:
-    			alert.alertError(title,noRole+pls,"ERROR TYPES:\n-Empty Field");
+    			alert.alertError(title, noRole + pls,"ERROR TYPES:\n-Empty Field");
     			errorBox(roleBox);
     			break;
     		case 7:
-    			alert.alertError(title,"Incorrect Address "+pls,"ERROR TYPES:\n-Empty Field");
+    			alert.alertError(title,"Incorrect Address "+ pls,"ERROR TYPES:\n-Empty Field");
     			errorBox(addressBox);
     			break;
     		case 8:
@@ -136,23 +121,17 @@ public class RegisterGUI extends Application implements Initializable{
     	box.setStyle("-fx-border-color: red;");
     	box.setOnMouseEntered(event -> box.setStyle("-fx-border-color: transparent;"));
     }
-       
-/*    private void comboText(ComboBox<String> box) {
-    	box.setStyle(" -fx-font: 16px ");
-    }*/
     
     private void setUp() {
-    	/*comboText(roleBox);
-    	comboText(addressBox);*/
     	roleBox.getItems().addAll("Resident","Owner");
     }
       
     private void test() {
-    	tfName.setText("prova");
-    	tfSurname.setText("prova");  	
-    	tfEmail.setText("prova@prova.prova");
-    	tfPassword.setText("prova");
-    	tfOkPwd.setText("prova");
+    	tfName.setText("try");
+    	tfSurname.setText("try");
+    	tfEmail.setText("try@try.try");
+    	tfPassword.setText("try");
+    	tfOkPwd.setText("try");
     }
     
     @Override
@@ -165,15 +144,7 @@ public class RegisterGUI extends Application implements Initializable{
 			 alert.alertError("DATA BASE ERROR","DATA BASE not connected ","Please Restart the Application");
 			 Platform.exit();
 		 }
-    }	
-    
-    public void start(Stage primaryStage){
-		view.loadPage("Register", primaryStage);
-	}
-
-	public static void main(String[] args) {
-		launch(args);
-	}
+    }
 }
 
 

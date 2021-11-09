@@ -7,35 +7,31 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import logic.controller.applicationcontroller.PostController;
 import logic.engineeringclasses.bean.PostBean;
-import logic.engineeringclasses.dao.PostDAO;
 import logic.model.UserSingleton;
 
-public class PostGUI{
+public class PostGUI {
 
-	UserSingleton sg = UserSingleton.getInstance(); 
+	private static final MenuGUI menu = new MenuGUI();
 	private final AlertGUI alert = new AlertGUI();
-	private final PostDAO post = new PostDAO();
+	private final PostController controller = new PostController();
+	UserSingleton sg = UserSingleton.getInstance();
 
-	@FXML
-    private Label usrName;
-    @FXML
-    private ImageView usrImg; //TODO
-    @FXML
-    private TextField posTxt;
-    @FXML
-    private ImageView postImg;
-    @FXML
-    private Button btnDelete;
+	@FXML private Label usrName;
+    @FXML private ImageView usrImg; //TODO
+    @FXML private TextField posTxt;
+    @FXML private ImageView postImg;
+    @FXML private Button btnDelete;
     
-    @FXML
-    void onDeletePress() {
+    @FXML private void onDeletePress() {
 		String title = "Condominium/Home/";
 		switch (sg.getRole()) {
 		case ADMINISTRATOR:						
 			try {
 				if(alert.alertConfirm(title +"Confirmation", "Are you sure you want to delete this post?", "Press OK to delete")) {
-					post.deletePost(btnDelete.getAccessibleText());
+					controller.deletePost(btnDelete.getAccessibleText());
+					menu.btnHomeClick();
 				}
 			}catch(Exception e) {
 				e.printStackTrace();
@@ -48,7 +44,7 @@ public class PostGUI{
 		}
     }
     
-    public void setUpPost(PostBean bean) {
+    protected void setUpPost(PostBean bean) {
     	btnDelete.setAccessibleText(bean.getId());
     	usrName.setText(bean.getUser());
     	posTxt.setText(bean.getText());
