@@ -46,22 +46,22 @@ public class RegisterGUI extends MainGUI implements Initializable{
     			alert.alertError(title, "Incorrect Name : "+bean.getName()+ pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfName);
     			break;
-    		case 2:		
+    		case 2:
     			alert.alertError(title,"Incorrect Surname : "+bean.getSurname()+ pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
-    			errorTf(tfSurname);					
+    			errorTf(tfSurname);
     			break;
-    		case 3:		
+    		case 3:
     			alert.alertError(title,"Incorrect Email : "+bean.getEmail()+ pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
-    			errorTf(tfEmail);					
-    			break;		
+    			errorTf(tfEmail);
+    			break;
     		case 4:
     			alert.alertError(title,"Incorrect Password"+ pls,"ERROR TYPES:\n-Empty Field\n-Minimum 4 charters\n-At least one letter and one number\n-Maximum 15 charters\n-With spaces");
     			errorTf(tfPassword);
-				break;				
+				break;
     		case 5:
     			alert.alertError(title,"Password Mismatch"+ pls,"ERROR TYPES:\n-Empty Field\n-Different from Password field");
 				errorTf(tfOkPwd);
-				break;	
+				break;
     		case 6:
     			alert.alertError(title, noRole + pls,"ERROR TYPES:\n-Empty Field");
     			errorBox(roleBox);
@@ -79,7 +79,7 @@ public class RegisterGUI extends MainGUI implements Initializable{
     			errorTf(tfEmail);
     			errorBox(addressBox);
     			break;
-    		default:   
+    		default:
     			alert.alertInfo("Condominium/Register/OK","Successful Registration" ,
     					"Your request has successfully sent to the administrator of the condominium.\nPlease check your in box messages.");
     			clearState();
@@ -139,11 +139,11 @@ public class RegisterGUI extends MainGUI implements Initializable{
        	setUp();
        	test();
        	try {
-			 addressBox.setItems(controller.loadAddresses());
-		 }catch(Exception e) {
-			 alert.alertError("DATA BASE ERROR","DATA BASE not connected ","Please Restart the Application");
-			 Platform.exit();
-		 }
+			addressBox.setItems(controller.loadAddresses());
+		}catch(Exception e) {
+			alert.alertError("DATA BASE ERROR","DATA BASE not connected ","Please Restart the Application");
+			Platform.exit();
+		}
     }
 }
 

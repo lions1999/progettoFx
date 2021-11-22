@@ -70,8 +70,9 @@ public class LoginGUI extends MainGUI implements Initializable{
 	}
 	
 	private void setUp() {
-		 tfEmail.setText("admin");
-		 tfPwd.setText("admin");
+		 tfEmail.setText("resident");
+		 tfPwd.setText("resident");
+		 comboBox.setValue("Via del Corso 22");
 		 try {
 			 comboBox.setItems(controller.loadAddresses());
 		 }catch(Exception e) {

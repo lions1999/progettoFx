@@ -15,6 +15,8 @@ import logic.controller.applicationcontroller.PostController;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -55,15 +57,31 @@ public class MenuGUI extends MainGUI implements Initializable {
                 break;
             case OWNER:
             case RESIDENT:
-                //TODO
+                scrollBox.getChildren().clear();
+                Pane Meeting = view.getPage("Meeting");
+                scrollBox.getChildren().add(Meeting);
+                border.setRight(null);
+                border.setCenter(new ScrollPane(scrollBox));
                 break;
         }}catch(Exception e){
             e.printStackTrace();
         }
     }
 
-    @FXML private void btnInfoClick() {
-
+    @FXML private void btnInfoClick() throws IOException {
+        scrollBox.getChildren().clear();
+        switch (sg.getRole()){
+            case ADMINISTRATOR:
+                Pane condInfo = view.getPage("CondInfo");
+                scrollBox.getChildren().add(condInfo);
+                break;
+            case RESIDENT:
+                Pane aptInfo = view.getPage("AptInfo");
+                scrollBox.getChildren().add(aptInfo);
+                break;
+        }
+        border.setRight(null);
+        border.setCenter(new ScrollPane(scrollBox));
     }
 
     @FXML private void btnSignOutClick() {
