@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="427.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.CondInfoGUI">
+   <children>
+      <TableView fx:id="condominiumTable" editable="true" layoutX="14.0" layoutY="14.0" onMouseClicked="#submitUser">
+        <columns>
+          <TableColumn fx:id="OwnerCol" prefWidth="125.0" resizable="false" text="Owner" />
+          <TableColumn fx:id="ResidentCol" prefWidth="125.0" resizable="false" text="Resident" />
+          <TableColumn fx:id="IdCol" prefWidth="125.0" resizable="false" text="Apartament ID" />
+          <TableColumn fx:id="TaxCol" editable="true" prefWidth="125.0" resizable="false" text="Taxes" />
+        </columns>
+      </TableView>
+      <Pane fx:id="InvPane" layoutX="516.0" layoutY="14.0" prefHeight="400.0" prefWidth="241.0" visible="false">
+         <children>
+            <Text fx:id="OwnerText" layoutX="7.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner:" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="OwnerFullName" editable="false" layoutX="64.0" layoutY="119.0" prefHeight="25.0" prefWidth="166.0" />
+            <Text fx:id="ResidentText" layoutX="7.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resident:" />
+            <TextField fx:id="ResidentFullName" editable="false" layoutX="64.0" layoutY="150.0" prefHeight="25.0" prefWidth="166.0" />
+            <TextArea fx:id="mailText" layoutX="65.0" wrapText="true" layoutY="190.0" onKeyReleased="#enableButton" prefHeight="70.0" prefWidth="166.0" />
+            <Text layoutX="6.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail Text:" />
+            <Button fx:id="sendMailBtn" layoutX="65.0" layoutY="267.0" mnemonicParsing="false" onAction="#sendMail" text="Send Mail" />
+            <ParallelCamera />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
