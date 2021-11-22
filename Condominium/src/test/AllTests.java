@@ -1,6 +1,5 @@
 package test;
 
-import com.mysql.jdbc.ResultSet;
 import org.junit.Test;
 
 //
@@ -18,16 +17,11 @@ public class AllTests {
 //	
 	@Test
 	public void TestLoginDAO() throws Exception{
-		//RegisterDAO dao = new RegisterDAO();
+		RegisterDAO dao = new RegisterDAO();
 		//System.out.println(log.checkLogin("2","67890").equals("ciao"));
 		//System.out.println(log.checkListPostId("67890"));
 		//System.out.println(log.checkListPost("Via del Corso 22"));
-		//ApartmentDAO dao = new ApartmentDAO();
-//		FeeDAO dao =new FeeDAO();
-//		System.out.println(dao.loadAvailableFees("Via del Corso 22"));
-		SqlDAO dao = new SqlDAO();
-		ResultSet rs;
-		System.out.println(dao.loadLatestId("users","user_id"));
+		System.out.println(dao.loadRegisteredUserList("Via del Corso 22").get(3).getId());
 	}
 //	
 //	@Test

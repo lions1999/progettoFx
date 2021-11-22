@@ -3,8 +3,10 @@ package logic.controller.applicationcontroller;
 import java.io.IOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.DialogPane;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import logic.model.Condominium;
 
 public class ViewController{
@@ -12,7 +14,6 @@ public class ViewController{
 	private Pane view;
 	private final String url1 = "/logic/view/";
 	private final String url2 = "View.fxml";
-	private final String url3 = "Dialog.fxml";
 
 //	public void loadPage(String page ,Stage primaryStage){
 //		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
@@ -28,37 +29,18 @@ public class ViewController{
 //		}
 //	}
 
-//	public void waitPage(Parent parent){
-//		Stage stage = new Stage();
-//		stage.initOwner(MenuGUI.border.getScene().getWindow());
-//		stage.initModality(Modality.WINDOW_MODAL);
-//		Scene scene = new Scene(parent);
-//		stage.setScene(scene);
-//		stage.showAndWait();
-//	}
-	public DialogPane dialog(String fileName) throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(url1+fileName+url3));
-		return loader.load();
-
-
+	public void loadPage(String page){
+		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
+		Parent root;
+		try {
+			root  =  loader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.showAndWait();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 	}
-
-//	public Stage loadPage(String page){
-//		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
-//		Parent root;
-//		try {
-//			root  =  loader.load();
-//			Stage stage = new Stage();
-//			stage.setScene(new Scene(root));
-//			//stage.showAndWait();
-//			return stage;
-//		}catch(IOException e){
-//			e.printStackTrace();
-//			return null;
-//
-//		}
-//	}
 
 	public Pane getPage(String fileName) {
 		try {

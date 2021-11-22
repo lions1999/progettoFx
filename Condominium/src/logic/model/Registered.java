@@ -2,27 +2,25 @@ package logic.model;
 
 public class Registered {
 
-    private String id;
+    private int Id;
     private String name;
 	private String email;
 	private String password;
 	private String role;
 	private String address;
-    private String apartment;
 	
-	public Registered(String id , String name, String email, String password, String role, String address, String apartment){
-		this.setId(id);
+	public Registered(int Id , String name, String email, String password, String role, String address){
+		this.setId(Id);
         this.setName(name);
 		this.setEmail(email);
 		this.setPassword(password);
 		this.setRole(role);
 		this.setAddress(address);
-        this.setApartment(apartment);
 	}
 
-    public String getId(){return id;}
+    public int getId(){return Id;}
 
-    public void setId(String id){this.id = id;}
+    public void setId(int Id){this.Id = Id;}
 
     public String getName() {
         return name;
@@ -62,13 +60,5 @@ public class Registered {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    private void setApartment(String apartment) {
-        this.apartment = apartment;
-    }
-
-    public String getApartment(){
-        return apartment;
     }
 }

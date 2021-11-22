@@ -26,15 +26,6 @@
     </orderEntry>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
-      <library name="mysql-connector.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Università/ISPW/Progetto/Util/mysql-connector.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
@@ -48,6 +39,15 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/javax.mail.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/mysql-connector.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

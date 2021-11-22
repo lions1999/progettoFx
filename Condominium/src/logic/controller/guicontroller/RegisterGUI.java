@@ -1,20 +1,16 @@
 package logic.controller.guicontroller;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import logic.controller.applicationcontroller.ApartmentController;
 import logic.engineeringclasses.bean.UserBean;
 import logic.controller.applicationcontroller.RegisterController;
-import logic.model.Role;
 
 public class RegisterGUI extends MainGUI implements Initializable{
 	 
@@ -35,7 +31,7 @@ public class RegisterGUI extends MainGUI implements Initializable{
     }
 
     @FXML
-    void onSignupClick() throws SQLException, IOException {
+    void onSignupClick(){
     	UserBean bean = registerBean(tfName.getText(),tfSurname.getText(),tfEmail.getText(),tfPassword.getText(),tfOkPwd.getText(),roleBox.getValue(),addressBox.getValue());
     	System.out.println("ROLE = "+roleBox.getValue());
     	System.out.println("ADDRESS = "+addressBox.getValue());
@@ -50,22 +46,22 @@ public class RegisterGUI extends MainGUI implements Initializable{
     			alert.alertError(title, "Incorrect Name : "+bean.getName()+ pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfName);
     			break;
-    		case 2:		
+    		case 2:
     			alert.alertError(title,"Incorrect Surname : "+bean.getSurname()+ pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
-    			errorTf(tfSurname);					
+    			errorTf(tfSurname);
     			break;
-    		case 3:		
+    		case 3:
     			alert.alertError(title,"Incorrect Email : "+bean.getEmail()+ pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
-    			errorTf(tfEmail);					
-    			break;		
+    			errorTf(tfEmail);
+    			break;
     		case 4:
     			alert.alertError(title,"Incorrect Password"+ pls,"ERROR TYPES:\n-Empty Field\n-Minimum 4 charters\n-At least one letter and one number\n-Maximum 15 charters\n-With spaces");
     			errorTf(tfPassword);
-				break;				
+				break;
     		case 5:
     			alert.alertError(title,"Password Mismatch"+ pls,"ERROR TYPES:\n-Empty Field\n-Different from Password field");
 				errorTf(tfOkPwd);
-				break;	
+				break;
     		case 6:
     			alert.alertError(title, noRole + pls,"ERROR TYPES:\n-Empty Field");
     			errorBox(roleBox);
@@ -83,9 +79,6 @@ public class RegisterGUI extends MainGUI implements Initializable{
     			errorTf(tfEmail);
     			errorBox(addressBox);
     			break;
-			case 10:
-				alert.alertError(title, "Apartment not Selected", "Please Retry");
-				break;
     		default:
     			alert.alertInfo("Condominium/Register/OK","Successful Registration" ,
     					"Your request has successfully sent to the administrator of the condominium.\nPlease check your in box messages.");
@@ -121,14 +114,12 @@ public class RegisterGUI extends MainGUI implements Initializable{
     	tf.setText("");
     	tf.setStyle("-fx-border-color: red;");
     	tf.setOnMouseEntered(event -> tf.setStyle("-fx-border-color: transparent;"));
-		//TODO ADD TO CSS
     }
     
     private void errorBox(ComboBox<String> box) {
     	box.setValue(null);
     	box.setStyle("-fx-border-color: red;");
     	box.setOnMouseEntered(event -> box.setStyle("-fx-border-color: transparent;"));
-		//TODO ADD TO CSS
     }
     
     private void setUp() {
@@ -138,10 +129,9 @@ public class RegisterGUI extends MainGUI implements Initializable{
     private void test() {
     	tfName.setText("try");
     	tfSurname.setText("try");
-    	tfEmail.setText("try2try@try.try");
-    	tfPassword.setText("try4");
-    	tfOkPwd.setText("try4");
-		//TODO DELETE FINAL RELEASE
+    	tfEmail.setText("try@try.try");
+    	tfPassword.setText("try");
+    	tfOkPwd.setText("try");
     }
     
     @Override
@@ -149,11 +139,11 @@ public class RegisterGUI extends MainGUI implements Initializable{
        	setUp();
        	test();
        	try {
-			 addressBox.setItems(controller.loadAddresses());
-		 }catch(Exception e) {
-			 alert.alertError("DATA BASE ERROR","DATA BASE not connected ","Please Restart the Application");
-			 Platform.exit();
-		 }
+			addressBox.setItems(controller.loadAddresses());
+		}catch(Exception e) {
+			alert.alertError("DATA BASE ERROR","DATA BASE not connected ","Please Restart the Application");
+			Platform.exit();
+		}
     }
 }
 

@@ -1,7 +1,10 @@
 package logic.engineeringclasses.dao;
 
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class SqlDAO {
 
@@ -37,27 +40,6 @@ public class SqlDAO {
             stmt.close();
         if (conn != null)
             conn.close();
-	}
-
-	public String loadLatestId(String table,String column) throws SQLException{
-		String lastId = "";
-		ResultSet rs = null;
-		try{
-			connect();
-			rs = selectLastId(stmt,table,column);
-			if(rs.next()) {
-				lastId = rs.getString(column);
-			}
-		} finally {
-			disconnect();
-		}
-		return lastId;
-	}
-
-	public static ResultSet selectLastId(Statement stmt, String table, String column) throws SQLException{
-		String sql="SELECT "+column+" FROM "+table+" ORDER BY "+column+" DESC LIMIT 1";
-		System.out.println(sql);
-		return stmt.executeQuery(sql);
 	}
 }
 	
