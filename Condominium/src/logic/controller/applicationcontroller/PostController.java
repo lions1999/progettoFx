@@ -3,11 +3,10 @@ package logic.controller.applicationcontroller;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
+import javafx.stage.*;
+import logic.controller.guicontroller.MenuGUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
@@ -18,14 +17,14 @@ public class PostController {
 	private final PostDAO post = new PostDAO();
 
 	public File selectFile() {
-		Stage stage = new Stage();
-		File file;
-		FileChooser fc = new FileChooser();
-		FileChooser.ExtensionFilter fileExtensions = new FileChooser.ExtensionFilter("JPEG/JPG/PNG/GIF file", "*.jpg", "*.jpeg","*.png","*.gif");
-		fc.getExtensionFilters().add(fileExtensions);
-		fc.setTitle("Condominium/Home/AddImageToPost");
-		file = fc.showOpenDialog(stage);
-		return file;
+			Stage stage = new Stage();
+			stage.initOwner(MenuGUI.border.getScene().getWindow());
+			stage.initModality(Modality.WINDOW_MODAL);
+			FileChooser fc = new FileChooser();
+			FileChooser.ExtensionFilter fileExtensions = new FileChooser.ExtensionFilter("JPEG/JPG/PNG/GIF file", "*.jpg", "*.jpeg", "*.png", "*.gif");
+			fc.getExtensionFilters().add(fileExtensions);
+			fc.setTitle("Condominium/Home/AddImageToPost");
+		return fc.showOpenDialog(stage);
 	}
 
 	public ObservableList<Post> loadPost() {

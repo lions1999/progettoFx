@@ -1,11 +1,16 @@
 package test;
 
+import com.mysql.jdbc.ResultSet;
+import javafx.scene.control.TextField;
+import logic.model.User;
 import org.junit.Test;
 
 //
 //import logic.model.*;
 //import logic.controller.HomeController;
 import logic.engineeringclasses.dao.*;
+
+import java.text.DecimalFormat;
 
 public class AllTests {
 
@@ -16,12 +21,17 @@ public class AllTests {
 //	}
 //	
 	@Test
-	public void TestLoginDAO() throws Exception{
-		RegisterDAO dao = new RegisterDAO();
-		//System.out.println(log.checkLogin("2","67890").equals("ciao"));
-		//System.out.println(log.checkListPostId("67890"));
-		//System.out.println(log.checkListPost("Via del Corso 22"));
-		System.out.println(dao.loadRegisteredUserList("Via del Corso 22").get(3).getId());
+	public void generalTest() throws Exception{
+//		TextField tf = new TextField("43.43");
+//		Double d = Double.parseDouble(tf.getText());
+//		System.out.println(new DecimalFormat("####.##").format(d));
+//		TextField tf = new TextField();
+//		tf.setText("34567.345678");
+//		double d = Double.parseDouble("234567.3456");
+//		DecimalFormat df = new DecimalFormat("#.##");
+//		String formatted = df.format(d);
+//		System.out.println(formatted); //prints 2.4
+
 	}
 //	
 //	@Test

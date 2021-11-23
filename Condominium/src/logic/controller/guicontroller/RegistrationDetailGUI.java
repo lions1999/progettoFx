@@ -7,7 +7,6 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import logic.controller.applicationcontroller.RegisterController;
-import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegisteredBean;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,17 +35,16 @@ public class RegistrationDetailGUI {
         loader.setLocation(getClass().getResource("/logic/view/FeeDialog.fxml"));
         DialogPane pane = loader.load();
         FeeDialogGUI fee = loader.getController();
-        fee.setUp();
+        fee.setUp(tfName.getText(),tfApartment.getText());
         Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.setDialogPane( pane);
+        dialog.setDialogPane(pane);
         Optional<ButtonType> btn = dialog.showAndWait();
         if(btn.isPresent() && fee.check()){
-            System.out.println("OK");
-            System.out.println(fee.getFees().getElect());
             controller.addRegistered(getRegistered(), fee.getFees());
+            alert.alertInfo("Registration/Info","User Successfully Registered",null);
             remove();
         } else{
-            alert.alertError("Registration/Error","Incorrect/Empty Credential","Please Retry");
+            alert.alertError("Registration/Error","Incorrect/Empty Credential","\n-Empty Field\n-More than 4 digits fee");
         }
     }
 

@@ -33,7 +33,7 @@ public class FeeDAO extends SqlDAO{
             String sql = "INSERT INTO fee (fee_apt,fee_water,fee_gas,fee_elect,fee_admin,fee_park,fee_elevator,fee_pet,fee_wifi) VALUES (?,?,?,?,?,?,?,?,?)";
             preset = prepConnect(sql);
             System.out.println(fee);
-            preset.setString(1,fee.getApt());
+            preset.setInt(1,fee.getApt());
             preset.setDouble(2,fee.getWater());
             preset.setDouble(3,fee.getGas());
             preset.setDouble(4,fee.getElect());
