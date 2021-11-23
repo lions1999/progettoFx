@@ -15,33 +15,41 @@ import logic.controller.applicationcontroller.ViewController;
 import logic.engineeringclasses.dao.ApartmentDAO;
 import logic.model.UserSingleton;
 
-public class MeetingGUI implements Initializable{
+public class ContactGUI implements Initializable{
 
 	private ViewController view = new ViewController();
 	UserSingleton sg = UserSingleton.getInstance();
 	private ApartmentDAO ourDb = new ApartmentDAO();
 	private final PatternController pattern = new PatternController();
 	private final AlertGUI alert = new AlertGUI();
-	private int typError;
 
 
 	@FXML private TextArea ReasonText;
 	@FXML private ChoiceBox<String> comboBox;
-	@FXML private Button btnClear;
 	@FXML private Button btnSend;
 
-	@FXML void ClearReason(ActionEvent event) {
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources){
+		btnSend.setDisable(true);
+		comboBox.getItems().addAll("Administrator","Owner");
+		comboBox.setValue("Administrator");
+		ReasonText.setPromptText("What you want to communicate to "+comboBox.getValue()+"?");
+	}
+
+
+	@FXML void ClearReason() {
 		ReasonText.setText("");
 		btnSend.setDisable(true);
 	}
 
-	@FXML void SendMeeting(ActionEvent event)  throws SQLException {
+	@FXML void SendMail(ActionEvent event)  throws SQLException {
 		String mail;
 		if (comboBox.getValue().equals("Administrator")){
 			mail = "condominium.ispw@gmail.com";
 		}
 		else {
-			mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber(ourDb.checkApartments(sg.getUserID()).get(0).getNumber(),"apt_own"));
+			mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber(ourDb.checkApartments(sg.getUserID(),"apt_res").get(0).getNumber(),"apt_own"));
 		}
 		System.out.println(mail);
 
@@ -54,21 +62,14 @@ public class MeetingGUI implements Initializable{
 		else{
 			String[] recipients = new String[]{mail};
 
-			if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to the " + comboBox.getValue() + " with text '" + ReasonText.getText() + "' to request a meeting?")) {
+			if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to the " + comboBox.getValue() + " with text '" + ReasonText.getText() + "'?")) {
 				new SendEmail().send(recipients, recipients, subject, message);
 				alert.alertInfo("Information", "Mail sent to "+comboBox.getValue()+"!","");
+				ClearReason();
 			} else {
 				alert.alertInfo("Information", "Mail not sent!","");
 			}
 		}
-	}
-
-    @Override
-	public void initialize(URL location, ResourceBundle resources){
-		btnSend.setDisable(true);
-		comboBox.getItems().addAll("Administrator","Owner");
-		comboBox.setValue("Administrator");
-		ReasonText.setPromptText("What you want to communicate to "+comboBox.getValue()+"?");
 	}
 
 	public void disableSend(KeyEvent keyEvent) {
@@ -79,7 +80,7 @@ public class MeetingGUI implements Initializable{
 		}
 	}
 
-	public void changeReason(ActionEvent actionEvent) {
+	public void changeReason() {
 		ReasonText.setPromptText("What you want to communicate to "+comboBox.getValue()+"?");
 	}
 }

@@ -5,7 +5,7 @@ import javafx.scene.chart.*;
 
 import java.util.List;
 
-public class ChartGui {
+public class ChartGUI {
     public BarChart BarChart(String xAxis, String yAxis, String Title){
         final CategoryAxis categoryAxis = new CategoryAxis();
         final NumberAxis numberAxis = new NumberAxis();
@@ -38,7 +38,6 @@ public class ChartGui {
         series.setName(name);
         for (int i = 0;i < DataList.size(); i++){
             series.getData().add(new XYChart.Data<String, Number>(seriesName.get(i),Integer.parseInt(DataList.get(i))));
-            System.out.println(seriesName.get(i) + Integer.parseInt(DataList.get(i)));
         }
         return series;
     }

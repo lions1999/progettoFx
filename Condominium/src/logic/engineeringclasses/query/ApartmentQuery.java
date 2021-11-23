@@ -17,8 +17,8 @@ public class ApartmentQuery {
         return stmt.executeQuery(sql);
     }
 
-    public static ResultSet selectAptInfo(Statement stmt, String  userId) throws SQLException {
-        String sql = "SELECT * from apartment where apt_res='"+userId+"'";
+    public static ResultSet selectAptInfo(Statement stmt, String  userId,String type_usr) throws SQLException {
+        String sql = "SELECT * from apartment where "+type_usr+"='"+userId+"'";
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }

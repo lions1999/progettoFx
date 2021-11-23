@@ -50,22 +50,23 @@ public class ApartmentDAO extends SqlDAO{
         return apartments;
     }
 
-    public ObservableList<Apartment> checkApartments(String userId) throws SQLException{
+    public ObservableList<Apartment> checkApartments(String userId,String type_usr) throws SQLException{
         ObservableList<Apartment> apartments = FXCollections.observableArrayList();
         Apartment apartment;
         ResultSet rs;
         try {
             connect();
-            rs = ApartmentQuery.selectAptInfo(stmt,userId);
+            rs = ApartmentQuery.selectAptInfo(stmt,userId,type_usr);
             while(rs.next()) {
                 String aptID = rs.getString("apt_name");
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
+                String aptRes = rs.getString("apt_res");
                 String aptGas = rs.getString("apt_gas");
                 String aptWtr = rs.getString("apt_water");
                 String aptEne = rs.getString("apt_energy");
                 String aptPrk = rs.getString("apt_parking");
-                apartment = new Apartment(aptID,aptAdd,checkNameByID(aptOwn),checkNameByID(userId),aptGas,aptWtr,aptEne,aptPrk);
+                apartment = new Apartment(aptID,aptAdd,checkNameByID(aptOwn),checkNameByID(aptRes),aptGas,aptWtr,aptEne,aptPrk);
                 apartments.add(apartment);
             }
         } finally {

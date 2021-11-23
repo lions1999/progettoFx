@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="373.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.RatingUserGUI">
+   <children>
+      <VBox prefHeight="373.0" prefWidth="464.0" style="-fx-alignment: center;">
+         <children>
+            <Text fx:id="residentName" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-alignment: center;">
+               <children>
+                  <Slider fx:id="sliderRating" blockIncrement="1.0" majorTickUnit="4.0" max="5.0" min="1.0" onMouseClicked="#submitRate" prefHeight="38.0" prefWidth="340.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+               </children>
+            </HBox>
+            <Text fx:id="RateValue" strokeType="OUTSIDE" strokeWidth="0.0" text="RateValue" visible="false" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

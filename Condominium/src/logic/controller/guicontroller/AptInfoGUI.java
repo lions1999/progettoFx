@@ -21,10 +21,10 @@ import logic.model.UserSingleton;
 
 public class AptInfoGUI extends MainGUI implements Initializable{
     private static final UserSingleton sg = UserSingleton.getInstance();
-    private final ChartGui chart = new ChartGui();
+    private final ChartGUI chart = new ChartGUI();
     private final ApartmentDAO ourDb = new ApartmentDAO();
     private final List<String> seriesName = Arrays.asList("Gas","Water","Energy","Parking");
-    final ObservableList<Apartment> apartment = ourDb.checkApartments(sg.getUserID());
+    final ObservableList<Apartment> apartment = ourDb.checkApartments(sg.getUserID(),"apt_res");
 
     @FXML private ComboBox<String> chartCombo;
     @FXML private Text tfEnergy;
@@ -76,9 +76,9 @@ public class AptInfoGUI extends MainGUI implements Initializable{
             VBox vBox = (VBox) oldPieChart.getChildren().get(0);
             if (LastYearBtn.isSelected()){
                 ObservableList<PieChart.Data> valueList = FXCollections.observableArrayList(
-                        new PieChart.Data("Gas",Integer.parseInt("700")),
-                        new PieChart.Data("Water",Integer.parseInt("800")),
-                        new PieChart.Data("Energy",Integer.parseInt("359")),
+                        new PieChart.Data("Gas",700),
+                        new PieChart.Data("Water",800),
+                        new PieChart.Data("Energy",359),
                         new PieChart.Data("Parking",400)
                 );
                 PieChart pc = chart.NewPieChart(valueList,"Outgoing Last Year");

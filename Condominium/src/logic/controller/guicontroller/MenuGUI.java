@@ -56,10 +56,16 @@ public class MenuGUI extends MainGUI implements Initializable {
                 border.setCenter(root);
                 break;
             case OWNER:
+                scrollBox.getChildren().clear();
+                Pane Meeting = view.getPage("RequestMeeting");
+                scrollBox.getChildren().add(Meeting);
+                border.setRight(null);
+                border.setCenter(new ScrollPane(scrollBox));
+                break;
             case RESIDENT:
                 scrollBox.getChildren().clear();
-                Pane Meeting = view.getPage("Meeting");
-                scrollBox.getChildren().add(Meeting);
+                Pane Contact = view.getPage("Contact");
+                scrollBox.getChildren().add(Contact);
                 border.setRight(null);
                 border.setCenter(new ScrollPane(scrollBox));
                 break;
@@ -68,12 +74,19 @@ public class MenuGUI extends MainGUI implements Initializable {
         }
     }
 
-    @FXML private void btnInfoClick() throws IOException {
+    @FXML private void btnInfoClick() {
         scrollBox.getChildren().clear();
         switch (sg.getRole()){
             case ADMINISTRATOR:
                 Pane condInfo = view.getPage("CondInfo");
                 scrollBox.getChildren().add(condInfo);
+                break;
+            case OWNER:
+                scrollBox.getChildren().clear();
+                Pane Rate = view.getPage("RateResident");
+                scrollBox.getChildren().add(Rate);
+                border.setRight(null);
+                border.setCenter(new ScrollPane(scrollBox));
                 break;
             case RESIDENT:
                 Pane aptInfo = view.getPage("AptInfo");
@@ -143,6 +156,8 @@ public class MenuGUI extends MainGUI implements Initializable {
                 break;
             case RESIDENT:
                 lbName.setText(sg.getResident().getName());
+                btnMeeting.setText("Contact");
+                btnApartment.setText("Apartment Info");
                 break;
         }
     }
