@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1zzfXtFT8IbQZQnA8Ynacc6WRXa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
+    <property name="last.edited.regexp" value="dasdsa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/logic/view" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="logic.controller.guicontroller" />
+      <recent name="logic.controller.applicationcontroller." />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\view" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\model" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\controller\applicationcontroller" />
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\controller\guicontroller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\RandomTries" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainGUI">
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="logic.controller.guicontroller.MainGUI" />
+      <module name="Condominium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="logic.controller.guicontroller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AllTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Condominium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.AllTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test in Condominium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Condominium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainGUI" />
+      <item itemvalue="JUnit.test in Condominium" />
+      <item itemvalue="JUnit.AllTests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainGUI" />
+        <item itemvalue="JUnit.AllTests" />
+        <item itemvalue="JUnit.test in Condominium" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="" />
+      <created>1635155885038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635155885038</updated>
+      <workItem from="1635155886551" duration="176000" />
+      <workItem from="1635156089050" duration="11000" />
+      <workItem from="1635156329547" duration="1761000" />
+      <workItem from="1635158143418" duration="813000" />
+      <workItem from="1635164812000" duration="924000" />
+      <workItem from="1635165775917" duration="330000" />
+      <workItem from="1635166138879" duration="7428000" />
+      <workItem from="1635236253416" duration="8295000" />
+      <workItem from="1635251463747" duration="5116000" />
+      <workItem from="1635344556536" duration="5714000" />
+      <workItem from="1635409913924" duration="6535000" />
+      <workItem from="1635495148647" duration="3263000" />
+      <workItem from="1635499045813" duration="5265000" />
+      <workItem from="1635504659528" duration="4000" />
+      <workItem from="1635866649237" duration="982000" />
+      <workItem from="1635867904135" duration="1049000" />
+      <workItem from="1635930726917" duration="5286000" />
+      <workItem from="1635936208891" duration="2280000" />
+      <workItem from="1635938527173" duration="2748000" />
+      <workItem from="1635944597870" duration="1287000" />
+      <workItem from="1635945924200" duration="4299000" />
+      <workItem from="1635950487882" duration="1105000" />
+      <workItem from="1636017590502" duration="9815000" />
+      <workItem from="1636104196116" duration="8009000" />
+      <workItem from="1636367497281" duration="6022000" />
+      <workItem from="1636449914225" duration="9130000" />
+      <workItem from="1636465245540" duration="3626000" />
+      <workItem from="1636536299749" duration="7626000" />
+      <workItem from="1636969816049" duration="5168000" />
+      <workItem from="1636983537850" duration="8704000" />
+      <workItem from="1637054847853" duration="4587000" />
+      <workItem from="1637059749368" duration="2062000" />
+      <workItem from="1637062025314" duration="1995000" />
+      <workItem from="1637069233601" duration="8991000" />
+      <workItem from="1637140448108" duration="7310000" />
+      <workItem from="1637156471884" duration="5683000" />
+      <workItem from="1637229139609" duration="6075000" />
+      <workItem from="1637243750575" duration="2186000" />
+      <workItem from="1637314755798" duration="5478000" />
+      <workItem from="1637329351529" duration="5998000" />
+      <workItem from="1637575040390" duration="6472000" />
+      <workItem from="1637588794715" duration="5086000" />
+      <workItem from="1637597406704" duration="240000" />
+      <workItem from="1637659811424" duration="8293000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
