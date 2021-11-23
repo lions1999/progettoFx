@@ -8,15 +8,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import logic.controller.applicationcontroller.PostController;
-import logic.controller.applicationcontroller.ViewController;
 import logic.model.UserSingleton;
 
 public class AddPostGUI implements Initializable{
 
 	private static final MenuGUI menu = new MenuGUI();
-	private ViewController view = new ViewController();
 	private final AlertGUI alert = new AlertGUI();
 	private final PostController controller = new PostController();
 	private File file;
@@ -28,11 +25,19 @@ public class AddPostGUI implements Initializable{
 	@FXML private ImageView imgUserPost; //TODO
     
     @FXML private void addFileClick() {
-    	this.file = controller.selectFile();
-    	if (this.file != null) {
-    		btnAddPost.setText(this.file.getName());
-    	}  
-    }
+		btnAddPost.setDisable(true);
+		this.file = controller.selectFile();
+		if (this.file != null) {
+			btnAddPost.setText(this.file.getName());
+		}
+		btnAddPost.setDisable(false);
+	}
+
+
+
+
+
+
    
     @FXML private void onPublishClick() {
 		if(btnAddPost.getText().equals("Add File")) {
@@ -66,4 +71,5 @@ public class AddPostGUI implements Initializable{
     	btn.setOnMouseExited(event -> btn.setStyle("-fx-background-color : #0C39FF"));
 		//TODO ADD TO CSS
     }
+
 }

@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -15,8 +17,6 @@ import logic.controller.applicationcontroller.PostController;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,43 +45,26 @@ public class MenuGUI extends MainGUI implements Initializable {
         border.setCenter(new ScrollPane(scrollBox));
     }
 
-    @FXML private void btnMeetingClick() {
+    @FXML protected void btnMeetingClick() {
         try{
         switch (sg.getRole()) {
             case ADMINISTRATOR:
-                FXMLLoader loader = view.loader("TWRegistration");
+                FXMLLoader loader = view.loader("RegistrationTable");
                 Parent root = loader.load();
-                TWRegistrationGUI reg = loader.getController();
+                RegistrationGUI reg = loader.getController();
                 reg.setUpRegistration(sg.getAddress());
                 border.setCenter(root);
                 break;
             case OWNER:
             case RESIDENT:
-                scrollBox.getChildren().clear();
-                Pane Meeting = view.getPage("Meeting");
-                scrollBox.getChildren().add(Meeting);
-                border.setRight(null);
-                border.setCenter(new ScrollPane(scrollBox));
+                //TODO
                 break;
         }}catch(Exception e){
             e.printStackTrace();
         }
     }
 
-    @FXML private void btnInfoClick() throws IOException {
-        scrollBox.getChildren().clear();
-        switch (sg.getRole()){
-            case ADMINISTRATOR:
-                Pane condInfo = view.getPage("CondInfo");
-                scrollBox.getChildren().add(condInfo);
-                break;
-            case RESIDENT:
-                Pane aptInfo = view.getPage("AptInfo");
-                scrollBox.getChildren().add(aptInfo);
-                break;
-        }
-        border.setRight(null);
-        border.setCenter(new ScrollPane(scrollBox));
+    @FXML private void btnInfoClick() {
     }
 
     @FXML private void btnSignOutClick() {

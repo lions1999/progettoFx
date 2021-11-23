@@ -45,6 +45,7 @@ public class UserSingleton {
 	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
+
 	public void setAdministrator(Administrator user) {
 		this.administrator = user;
 	}

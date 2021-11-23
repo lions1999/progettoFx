@@ -2,7 +2,7 @@ package logic.engineeringclasses.bean;
 
 public class FeeBean {
 
-    private String apartment;
+    private int apartment;
     private Double water;
     private Double gas;
     private Double elect;
@@ -13,13 +13,14 @@ public class FeeBean {
     private Double wifi;
 
 
-    public String getApt() {
+    public int getApt() {
         return apartment;
     }
 
-    public void setApt(String apartment) {
+    public void setApt(int apartment) {
         this.apartment = apartment;
     }
+
     public Double getWater() {
         return water;
     }

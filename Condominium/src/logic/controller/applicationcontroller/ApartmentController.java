@@ -13,16 +13,19 @@ public class ApartmentController {
         return dao.loadApartmentResident(address);
     }
 
-
     public ObservableList<String> loadApartmentOwner(String address) throws SQLException {
         return dao.loadApartmentOwner(address);
     }
 
-    public void addResident(String apartment) {
+    public int loadApartmentId(String apartment,String address) throws SQLException{
+        return dao.loadApartmentId(apartment,address);
+    }
+
+    public void addResident(String apartment,String address) {
         try{
-            dao.addResident(apartment);
+            dao.addResident(apartment,address);
         }catch(SQLException e){
-            System.out.println("SQLException");
+            e.printStackTrace();
         }
     }
 

@@ -2,19 +2,24 @@ package logic.controller.guicontroller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import logic.controller.applicationcontroller.FeeController;
 import logic.controller.applicationcontroller.PatternController;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.model.Fee;
 import logic.model.UserSingleton;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 public class FeeDialogGUI {
 
     private final FeeController controller = new FeeController();
     private final PatternController pattern = new PatternController();
+
     UserSingleton sg = UserSingleton.getInstance();
 
+    @FXML private Text apt_txt;
+    @FXML private Text res_txt;
     @FXML private TextField tfWater;
     @FXML private TextField tfGas;
     @FXML private TextField tfElectricity;
@@ -29,29 +34,39 @@ public class FeeDialogGUI {
         tf.setEditable(false);
     }
 
-    private String getTf(TextField tf){
-        if(tf.editableProperty().get()) return tf.getText();
-        return "0.0";
+    private boolean checkErrorTf(TextField tf){
+        if(!tf.editableProperty().get()) return false;
+        if(tf.editableProperty().get() && tf.getText().equals("0.0")) return true;
+        double d = Double.parseDouble(tf.getText());
+        int length = String.valueOf((int)d).length();
+        return length > 3;
+    }
+
+    private String format(TextField tf){
+        if(!tf.editableProperty().get()) return "0.0";
+        double d = Double.parseDouble(tf.getText());
+        DecimalFormat df = new DecimalFormat("#.##");
+        return df.format(d);
     }
 
     public boolean check(){
-        if(tfWater.getText().equals("0.0")) return false;
-        if(tfGas.getText().equals("0.0")) return false;
-        if(tfElectricity.getText().equals("0.0")) return false;
-        if(tfAdministrative.getText().equals("0.0")) return false;
-        if(tfPark.editableProperty().get() && tfPark.getText().equals("0.0")) return false;
-        if(tfElevator.editableProperty().get() && tfElevator.getText().equals("0.0")) return false;
-        if(tfPet.editableProperty().get() && tfPet.getText().equals("0.0")) return false;
-        if(tfWifi.editableProperty().get() && tfWifi.getText().equals("0.0")) return false;
-        return true;
+        if(checkErrorTf(tfWater)) return false;
+        if(checkErrorTf(tfGas)) return false;
+        if(checkErrorTf(tfElectricity)) return false;
+        if(checkErrorTf(tfAdministrative)) return false;
+        if(checkErrorTf(tfElevator)) return false;
+        if(checkErrorTf(tfPet)) return false;
+        return !checkErrorTf(tfWifi);
     }
 
     public FeeBean getFees(){
-        return feeBean(tfWater.getText(),tfGas.getText(),tfElectricity.getText(),tfAdministrative.getText()
-                ,getTf(tfPark),getTf(tfElevator),getTf(tfPet),getTf(tfWifi));
+    return feeBean(format(tfWater),format(tfGas),format(tfElectricity),format(tfAdministrative),
+            format(tfPark),format(tfElevator),format(tfPet),format(tfWifi));
     }
 
-    public void setUp() throws SQLException {
+    public void setUp(String name,String apartment) throws SQLException {
+        apt_txt.setText(apartment);
+        res_txt.setText(name);
         pattern.textFilter(tfWater);
         pattern.textFilter(tfGas);
         pattern.textFilter(tfElectricity);

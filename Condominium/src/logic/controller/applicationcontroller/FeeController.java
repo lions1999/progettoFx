@@ -15,7 +15,7 @@ public class FeeController {
         return fee.loadAvailableFees(address);
     }
 
-    public void addFees(FeeBean bean) throws SQLException {
+    public void addFees(FeeBean bean) {
         try{
             fee.addFees(bean);
         }catch(SQLException e){
