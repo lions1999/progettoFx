@@ -41,7 +41,7 @@ public class RateResidentGUI extends MainGUI implements Initializable {
         setUp();
         final ObservableList<Apartment> apartment;
         try {
-            apartment = ourDb.checkApartments(sg.getUserID(),"apt_own");
+            apartment = ourDb.checkApartments(sg.getUserID(),sg.getAddress(),"apt_own");
             System.out.println(apartment);
             Table.setItems(apartment);
         } catch (SQLException e) {

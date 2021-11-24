@@ -24,7 +24,7 @@ public class AptInfoGUI extends MainGUI implements Initializable{
     private final ChartGUI chart = new ChartGUI();
     private final ApartmentDAO ourDb = new ApartmentDAO();
     private final List<String> seriesName = Arrays.asList("Gas","Water","Energy","Parking");
-    final ObservableList<Apartment> apartment = ourDb.checkApartments(sg.getUserID(),"apt_res");
+    final ObservableList<Apartment> apartment = ourDb.checkApartments(sg.getUserID(),sg.getAddress(),"apt_res");
 
     @FXML private ComboBox<String> chartCombo;
     @FXML private Text tfEnergy;

@@ -49,7 +49,7 @@ public class ContactGUI implements Initializable{
 			mail = "condominium.ispw@gmail.com";
 		}
 		else {
-			mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber(ourDb.checkApartments(sg.getUserID(),"apt_res").get(0).getNumber(),"apt_own"));
+			mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber(ourDb.checkApartments(sg.getUserID(),sg.getAddress(),"apt_res").get(0).getNumber(),sg.getAddress(),"apt_own"));
 		}
 		System.out.println(mail);
 

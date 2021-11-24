@@ -50,13 +50,13 @@ public class ApartmentDAO extends SqlDAO{
         return apartments;
     }
 
-    public ObservableList<Apartment> checkApartments(String userId,String type_usr) throws SQLException{
+    public ObservableList<Apartment> checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
         ObservableList<Apartment> apartments = FXCollections.observableArrayList();
         Apartment apartment;
         ResultSet rs;
         try {
             connect();
-            rs = ApartmentQuery.selectAptInfo(stmt,userId,type_usr);
+            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
             while(rs.next()) {
                 String aptID = rs.getString("apt_name");
                 String aptAdd = rs.getString("apt_addr");
@@ -88,10 +88,10 @@ public class ApartmentDAO extends SqlDAO{
         return this.usrName;
     }
 
-    public String checkUserAptFromNumber(String aptNumber, String userRequired) throws SQLException{
+    public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
         try {
             connect();
-            ResultSet rs = ApartmentQuery.checkApartmentFromNumber(stmt,aptNumber,userRequired);
+            ResultSet rs = ApartmentQuery.checkApartmentFromNumber(stmt,aptNumber,condAddr,userRequired);
             if(rs.next()) {
                 this.usrId = rs.getString(userRequired);
             }

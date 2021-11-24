@@ -69,7 +69,7 @@ public class CondInfoGUI implements Initializable{
         }
 
         public void sendMail(ActionEvent actionEvent) throws SQLException {
-            String mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),"apt_own"));
+            String mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),sg.getAddress(),"apt_own"));
             System.out.println(mail);
 
             String subject = "Hi from Condominium!";
