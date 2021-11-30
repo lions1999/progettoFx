@@ -4,12 +4,18 @@ package logic.engineeringclasses.dao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.query.ApartmentQuery;
+import logic.model.Apartment;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ApartmentDAO extends SqlDAO{
 
-    public int loadApartmentId(String apartment,String address) throws SQLException {
+    private String usrName;
+    private String usrId;
+    private String userEmail;
+
+    public int loadApartmentId(String apartment, String address) throws SQLException {
         int id = 0;
         ResultSet rs;
         try{
@@ -54,6 +60,26 @@ public class ApartmentDAO extends SqlDAO{
         }
         return list;
     }
+
+    public ObservableList<Apartment> loadApartments(String address) throws SQLException {
+        ObservableList<Apartment> apartments = FXCollections.observableArrayList();
+        ResultSet rs;
+        try {
+            connect();
+            rs = ApartmentQuery.loadApt(stmt,address);
+            while(rs.next()) {
+                String aptID = rs.getString("apt_name");
+                String aptAdd = rs.getString("apt_addr");
+                String aptOwn = rs.getString("apt_own");
+                String aptRes = rs.getString("apt_res");
+                Apartment apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes), "0");
+                apartments.add(apartment);
+            }
+        } finally {
+            disconnect();
+        }
+        return apartments;
+    }
 		
 
     public ObservableList<Apartment> checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
@@ -67,17 +93,26 @@ public class ApartmentDAO extends SqlDAO{
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
-                String aptGas = rs.getString("apt_gas");
-                String aptWtr = rs.getString("apt_water");
-                String aptEne = rs.getString("apt_energy");
-                String aptPrk = rs.getString("apt_parking");
-                apartment = new Apartment(aptID,aptAdd,checkNameByID(aptOwn),checkNameByID(aptRes),aptGas,aptWtr,aptEne,aptPrk);
+                Apartment apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes),"0");
                 apartments.add(apartment);
             }
         }finally{
             disconnect();
         }
-        return list;
+        return apartments;
+    }
+
+    public String checkNameByID(String id)throws SQLException {
+        try {
+            connect();
+            ResultSet rs = ApartmentQuery.selectNameByID(stmt, id);
+            if(rs.next()) {
+                this.usrName = rs.getString("user_name");
+            }
+        } finally {
+            disconnect();
+        }
+        return this.usrName;
     }
 
     public void addResident(String apartment,String address) throws SQLException{
@@ -89,15 +124,9 @@ public class ApartmentDAO extends SqlDAO{
             preset.setString(2,apartment);
             preset.setString(3,address);
             preset.executeUpdate();
-        }finally{
-            ResultSet rs = ApartmentQuery.selectNameByID(stmt, id);
-            if(rs.next()) {
-                this.usrName = rs.getString("user_name");
-            }
         } finally {
             disconnect();
         }
-        return this.usrName;
     }
 
     public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
@@ -110,5 +139,19 @@ public class ApartmentDAO extends SqlDAO{
         } finally {
             disconnect();
         }
+        return this.usrId;
+    }
+
+    public String checkMailById(String userId) throws SQLException {
+        try {
+            connect();
+            ResultSet rs = ApartmentQuery.selectEmail(stmt, userId);
+            if(rs.next()) {
+                this.userEmail = rs.getString("user_email");
+            }
+        } finally {
+            disconnect();
+        }
+        return this.userEmail;
     }
 }

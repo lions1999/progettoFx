@@ -9,7 +9,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PatternController {
-	
+
+	public static  final Pattern VALID_TEXT_REGEX =
+			Pattern.compile("^[A-z\\s]", Pattern.CASE_INSENSITIVE);
+
 	public static final Pattern VALID_NAME_REGEX = 
 		    Pattern.compile("^[A-Z][a-z\\s]{2,15}$", Pattern.CASE_INSENSITIVE);
 	
@@ -18,6 +21,12 @@ public class PatternController {
 	
 	public static final Pattern VALID_PASSWORD_REGEX = 
 		    Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{4,15}$", Pattern.CASE_INSENSITIVE);
+
+	public  boolean isText(String text){
+		Matcher matcher = VALID_TEXT_REGEX.matcher(text);
+		return !matcher.find();
+	}
+
 
 	public boolean isName(String name) {
 		Matcher matcher = VALID_NAME_REGEX.matcher(name);
@@ -62,4 +71,5 @@ public class PatternController {
 		TextFormatter<Double> textFormatter = new TextFormatter<>(converter, 0.0, filter);
 		tf.setTextFormatter(textFormatter);
 	}
+
 }

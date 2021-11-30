@@ -50,10 +50,12 @@ public class CondInfoGUI implements Initializable{
             OwnerCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("owner"));
             ResidentCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("resident"));
             IdCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("number"));
+            TaxCol.setCellValueFactory(new PropertyValueFactory<Apartment,String>("fee"));
 
             final ObservableList<Apartment> apartment;
             try {
-                apartment = ourDb.checkApartmentsByVia(sg.getAddress());
+                apartment = ourDb.loadApartments(sg.getAddress());
+                System.out.println("ciao");
                 condominiumTable.setItems(apartment);
             } catch (SQLException e) {
                 e.printStackTrace();

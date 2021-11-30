@@ -39,6 +39,7 @@ public class AptInfoGUI extends MainGUI implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
+        System.out.println(sg.getUserID());
         setUp();
     }
 
@@ -103,7 +104,7 @@ public class AptInfoGUI extends MainGUI implements Initializable{
             case "Bar Chart":
                 System.out.println("case 1");
                 BarChart bc = chart.BarChart("Fees","","Outgoings");
-                List BcDataList = Arrays.asList(apartment.get(0).getGas(), apartment.get(0).getWater(), apartment.get(0).getEnergy(),apartment.get(0).getParking());
+                List BcDataList = Arrays.asList();
                 XYChart.Series BcSeries = chart.NewSeries(BcDataList,seriesName,"Outgoing Current Year");
                 bc.getData().add(BcSeries);
                 System.out.println("case 1");
@@ -112,10 +113,10 @@ public class AptInfoGUI extends MainGUI implements Initializable{
             case "Pie Chart":
                 System.out.println("case 2");
                 ObservableList<PieChart.Data> valueList = FXCollections.observableArrayList(
-                    new PieChart.Data("Gas",Integer.parseInt(apartment.get(0).getGas())),
-                    new PieChart.Data("Water",Integer.parseInt(apartment.get(0).getWater())),
-                    new PieChart.Data("Energy",Integer.parseInt(apartment.get(0).getEnergy())),
-                    new PieChart.Data("Parking",Integer.parseInt(apartment.get(0).getParking()))
+                    new PieChart.Data("Gas",Integer.parseInt("300")),
+                    new PieChart.Data("Water",Integer.parseInt("300")),
+                    new PieChart.Data("Energy",Integer.parseInt("300")),
+                    new PieChart.Data("Parking",Integer.parseInt("300"))
                 );
                 PieChart pc = chart.NewPieChart(valueList,"Outgoing Current Year");
                 VBox vbox = new VBox(pc);
@@ -125,7 +126,7 @@ public class AptInfoGUI extends MainGUI implements Initializable{
             case "Line Chart":
                 System.out.println("case 3");
                 LineChart lc = chart.NewLineChart("Fees","","Outgoings");
-                List AcDataList = Arrays.asList(apartment.get(0).getGas(), apartment.get(0).getWater(), apartment.get(0).getEnergy(),apartment.get(0).getParking());
+                List AcDataList = Arrays.asList();
                 XYChart.Series LcSeries = chart.NewSeries(AcDataList,seriesName,"Outgoing Current Year");
                 lc.getData().add(LcSeries);
                 border.setRight(lc);
@@ -140,9 +141,9 @@ public class AptInfoGUI extends MainGUI implements Initializable{
 
         tfOwner.setText(apartment.get(0).getOwner());
         tfNumber.setText(apartment.get(0).getNumber());
-        tfWater.setText(apartment.get(0).getWater()+"€");
-        tfEnergy.setText(apartment.get(0).getEnergy()+"€");
-        tfGas.setText(apartment.get(0).getGas()+"€");
+        tfWater.setText("€");
+        tfEnergy.setText("€");
+        tfGas.setText("€");
         submitTypeChart();
 
     }

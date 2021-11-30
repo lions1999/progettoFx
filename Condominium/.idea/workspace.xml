@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="modifiche davide">
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ApartmentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/PatternController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/CondInfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/CondInfoGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/FeeDialogGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MeetingGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MeetingGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegistrationDetailGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +49,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -70,7 +80,6 @@
       <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\logic\controller\guicontroller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\david\OneDrive\Desktop\progettoFx\Condominium\src\logic\view" />
       <recent name="C:\Users\Moret\eclipse-workspace\Condominium\src\RandomTries" />
     </key>
   </component>
@@ -157,32 +166,7 @@
       <workItem from="1637226125943" duration="7625000" />
       <workItem from="1637233855103" duration="9921000" />
       <workItem from="1637311881456" duration="16102000" />
-      <workItem from="1637654191254" duration="2597000" />
-      <workItem from="1637660656433" duration="10857000" />
-      <workItem from="1637743479690" duration="1895000" />
     </task>
-    <task id="LOCAL-00001" summary="modifiche">
-      <created>1637678165238</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1637678165238</updated>
-    </task>
-    <task id="LOCAL-00002" summary="modifiche davide">
-      <created>1637743598989</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1637743598989</updated>
-    </task>
-    <task id="LOCAL-00003" summary="modifiche davide">
-      <created>1637744628237</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1637744628237</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,12 +183,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="modifiche" />
-    <MESSAGE value="modifiche davide" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche davide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
