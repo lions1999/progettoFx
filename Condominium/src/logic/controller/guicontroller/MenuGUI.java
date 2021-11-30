@@ -57,7 +57,11 @@ public class MenuGUI extends MainGUI implements Initializable {
                 break;
             case OWNER:
             case RESIDENT:
-                //TODO
+                scrollBox.getChildren().clear();
+                Pane Contact = view.getPage("Contact");
+                scrollBox.getChildren().add(Contact);
+                border.setRight(null);
+                border.setCenter(new ScrollPane(scrollBox));
                 break;
         }}catch(Exception e){
             e.printStackTrace();
@@ -65,6 +69,26 @@ public class MenuGUI extends MainGUI implements Initializable {
     }
 
     @FXML private void btnInfoClick() {
+        scrollBox.getChildren().clear();
+        switch (sg.getRole()){
+            case ADMINISTRATOR:
+                Pane condInfo = view.getPage("CondInfo");
+                scrollBox.getChildren().add(condInfo);
+                break;
+            case OWNER:
+                scrollBox.getChildren().clear();
+                Pane Rate = view.getPage("RateResident");
+                scrollBox.getChildren().add(Rate);
+                border.setRight(null);
+                border.setCenter(new ScrollPane(scrollBox));
+                break;
+            case RESIDENT:
+                Pane aptInfo = view.getPage("AptInfo");
+                scrollBox.getChildren().add(aptInfo);
+                break;
+        }
+        border.setRight(null);
+        border.setCenter(new ScrollPane(scrollBox));
     }
 
     @FXML private void btnSignOutClick() {
@@ -126,6 +150,8 @@ public class MenuGUI extends MainGUI implements Initializable {
                 break;
             case RESIDENT:
                 lbName.setText(sg.getResident().getName());
+                btnMeeting.setText("Contact");
+                btnApartment.setText("Apartment Info");
                 break;
         }
     }

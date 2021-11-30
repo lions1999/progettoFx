@@ -1,6 +1,5 @@
 package logic.controller.guicontroller;
 
-import javafx.application.Application;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +11,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import logic.controller.applicationcontroller.SendEmail;
 import logic.controller.applicationcontroller.ViewController;
 import logic.model.Apartment;
@@ -23,7 +21,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class CondInfoGUI extends Application implements Initializable{
+public class CondInfoGUI implements Initializable{
 
         private ViewController view = new ViewController();
         private static UserSingleton sg = UserSingleton.getInstance();
@@ -62,13 +60,6 @@ public class CondInfoGUI extends Application implements Initializable{
             }
         }
 
-
-        @Override
-        public void start(Stage primaryStage) throws Exception {
-            view.loadPage("CondInfo");
-        }
-
-
         public void submitUser(MouseEvent mouseEvent) throws SQLException {
             mailText.setText("");
             sendMailBtn.setDisable(true);
@@ -78,7 +69,7 @@ public class CondInfoGUI extends Application implements Initializable{
         }
 
         public void sendMail(ActionEvent actionEvent) throws SQLException {
-            String mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),"apt_own"));
+            String mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),sg.getAddress(),"apt_own"));
             System.out.println(mail);
 
             String subject = "Hi from Condominium!";
