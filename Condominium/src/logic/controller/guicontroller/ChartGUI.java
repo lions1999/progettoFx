@@ -33,11 +33,11 @@ public class ChartGUI {
         return lineChart;
     }
 
-    public XYChart.Series NewSeries(List<String> DataList,List<String> seriesName, String name){
+    public XYChart.Series NewSeries(List<Number> DataList,List<String> seriesName, String name){
         XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
         series.setName(name);
         for (int i = 0;i < DataList.size(); i++){
-            series.getData().add(new XYChart.Data<String, Number>(seriesName.get(i),Integer.parseInt(DataList.get(i))));
+            series.getData().add(new XYChart.Data<String, Number>(seriesName.get(i),DataList.get(i)));
         }
         return series;
     }

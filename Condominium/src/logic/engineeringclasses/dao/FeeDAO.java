@@ -27,6 +27,26 @@ public class FeeDAO extends SqlDAO{
         return fee;
     }
 
+    public Fee loadFees(String aptName) throws SQLException{
+        Fee fee = null;
+        try{
+            connect();
+            ResultSet rs = FeeQuery.loadFees(stmt,aptName);
+            while (rs.next()) {
+                Double water = rs.getDouble("fee_water");
+                Double gas = rs.getDouble("fee_gas");
+                Double elect = rs.getDouble("fee_elect");
+                Double admin = rs.getDouble("fee_admin");
+                Double park = rs.getDouble("fee_park");
+                Double elevator = rs.getDouble("fee_elevator");
+                Double pet = rs.getDouble("fee_pet");
+                Double wifi = rs.getDouble("fee_wifi");
+                fee = new Fee(Integer.parseInt(aptName), water, gas, elect, admin, park, elevator, pet, wifi);
+            }
+        } finally {disconnect();}
+        return fee;
+    }
+
     public void addFees(FeeBean fee) throws SQLException{
         try{
             connect();
