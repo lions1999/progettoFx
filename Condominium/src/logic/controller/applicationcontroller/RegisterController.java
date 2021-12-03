@@ -73,7 +73,7 @@ public class RegisterController{
 						Dialog<ButtonType> dialog = new Dialog<>();
 						dialog.setDialogPane(pane);
 						Optional<ButtonType> btn = dialog.showAndWait();
-						if(btn.isPresent() && !apt.getApt().equals("Available Apartments")){
+						if(btn.isPresent() && !apt.getApt().equals("Available Apartments") && !apt.getApt().equals("NO Available Apartments left")){
 							String name = bean.getName() +" "+ bean.getSurname();
 							User user = new User(null,name,bean.getEmail(),bean.getPassword(),bean.getAddress());
 							register.addRegistrationUser(user,bean.getRole().toUpperCase(),apt.getApt());

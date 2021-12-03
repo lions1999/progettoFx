@@ -13,7 +13,11 @@ public class ApartmentDialogGUI {
 
     public void setUp(ObservableList<String> list,String role,String address){
         apartmentBox.setValue("Available Apartments");
-        apartmentBox.setItems(list);
+        if(list.isEmpty()) {
+            apartmentBox.setValue("NO Available Apartments left");
+        }else {
+            apartmentBox.setItems(list);
+        }
         txtAddress.setText(address);
         txtRole.setText(role);
     }

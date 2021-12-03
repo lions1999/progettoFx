@@ -2,21 +2,21 @@ package logic.controller.guicontroller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
-import javafx.scene.control.TextField;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import logic.controller.applicationcontroller.RegisterController;
+import logic.controller.applicationcontroller.ViewController;
 import logic.engineeringclasses.bean.RegisteredBean;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
 
 public class RegistrationDetailGUI {
 
-    private static final MenuGUI menu = new MenuGUI();
     private final AlertGUI alert = new AlertGUI();
     private final RegisterController controller = new RegisterController();
+    private final ViewController view = new ViewController();
 
     @FXML private TextField tfID;
     @FXML private TextField tfName;
@@ -48,7 +48,7 @@ public class RegistrationDetailGUI {
         }
     }
 
-    @FXML private void btnDeleteClick() {
+    @FXML private void btnDeleteClick() throws IOException {
         if(alert.alertConfirm("Title","Are you sure?","")){
             remove();
         }
@@ -69,10 +69,14 @@ public class RegistrationDetailGUI {
         return bean;
     }
 
-    private void remove(){
+    private void remove() throws IOException {
         controller.removeRegistered(Integer.parseInt(tfID.getText()));
         btnX();
-        menu.btnMeetingClick();
+        FXMLLoader loader = view.loader("TabOrganize");
+        Parent root = loader.load();
+        TabOrganizeGUI org = loader.getController();
+        org.regTabClick();
+        MenuGUI.border.setCenter(root);
     }
 
     protected void setUp(RegisteredBean bean){

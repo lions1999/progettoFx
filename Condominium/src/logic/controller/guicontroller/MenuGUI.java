@@ -5,11 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -17,6 +13,8 @@ import logic.controller.applicationcontroller.PostController;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,10 +47,10 @@ public class MenuGUI extends MainGUI implements Initializable {
         try{
         switch (sg.getRole()) {
             case ADMINISTRATOR:
-                FXMLLoader loader = view.loader("RegistrationTable");
+                FXMLLoader loader = view.loader("TabOrganize");
                 Parent root = loader.load();
-                RegistrationGUI reg = loader.getController();
-                reg.setUpRegistration(sg.getAddress());
+                TabOrganizeGUI org = loader.getController();
+                org.regTabClick();
                 border.setCenter(root);
                 break;
             case OWNER:
@@ -130,7 +128,7 @@ public class MenuGUI extends MainGUI implements Initializable {
         //TODO ADD TO CSS
     }
 
-    public void setUp() {
+    public void setUp() throws IOException {
         btnHomeClick();
         btnColor(btnHome);
         btnColor(btnMeeting);
@@ -141,7 +139,7 @@ public class MenuGUI extends MainGUI implements Initializable {
             case ADMINISTRATOR:
                 lbName.setText(sg.getAdministrator().getName());
                 btnApartment.setText("Condominium Info");
-                btnMeeting.setText("Organize Meeting");
+                btnMeeting.setText("Requests");
                 break;
             case OWNER:
                 lbName.setText(sg.getOwner().getName());
@@ -158,6 +156,10 @@ public class MenuGUI extends MainGUI implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setUp();
+        try {
+            setUp();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

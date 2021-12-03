@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import logic.engineeringclasses.bean.RegisteredBean;
 import logic.controller.applicationcontroller.RegisterController;
 import logic.model.Registered;
+
 import java.io.IOException;
 
 public class RegistrationGUI extends MainGUI{

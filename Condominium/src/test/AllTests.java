@@ -1,6 +1,6 @@
 package test;
 
-import com.mysql.jdbc.ResultSet;
+
 import javafx.scene.control.TextField;
 import logic.model.User;
 import org.junit.Test;

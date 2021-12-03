@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://$USER_HOME$/Desktop/Università/ISPW/Progetto/Util/mysql-connector.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../Università/ISPW/Progetto/Util/mysql-connector.jar!/" />
     <conelement value="org.eclipse.jst.j2ee.internal.module.container" />
     <conelement value="org.eclipse.jst.j2ee.internal.web.container" />
     <src_description expected_position="0">
@@ -47,7 +47,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/mysql-connector.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../Università/ISPW/Progetto/Util/mysql-connector.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
