@@ -174,18 +174,14 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             tfEnergy.setText(fee1.getElect()+" €");
             tfGas.setText(fee1.getGas()+" €");
             tfAdmin.setText(fee1.getAdmin()+" €");
+            chartCombo.getItems().addAll("Choose Chart","Bar Chart","Pie Chart","Line Chart");
+            chartCombo.setValue("Choose Chart");
+            tfOwner.setText(apartment.getOwner());
+            tfNumber.setText(apartment.getNumber());
+            submitTypeChart();
         } catch (SQLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println("AO");
         }
-
-        chartCombo.getItems().addAll("Choose Chart","Bar Chart","Pie Chart","Line Chart");
-        chartCombo.setValue("Choose Chart");
-
-        tfOwner.setText(apartment.getOwner());
-        tfNumber.setText(apartment.getNumber());
-
-        submitTypeChart();
-
     }
-
 }

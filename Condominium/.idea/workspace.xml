@@ -8,12 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ChartGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ChartGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/AptInfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/AptInfoGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/Chooser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="last.edited.regexp" value="dasdsa" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Università/ISPW/Progetto/Util/mysql-connector.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -199,6 +198,7 @@
       <workItem from="1638439009147" duration="610000" />
       <workItem from="1638525029471" duration="6370000" />
       <workItem from="1638538143547" duration="5489000" />
+      <workItem from="1638797578383" duration="312000" />
     </task>
     <servers />
   </component>

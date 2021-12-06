@@ -67,14 +67,12 @@ public class MenuGUI extends MainGUI implements Initializable {
     }
 
     @FXML private void btnInfoClick() {
-        scrollBox.getChildren().clear();
         switch (sg.getRole()){
             case ADMINISTRATOR:
                 Pane condInfo = view.getPage("CondInfo");
                 scrollBox.getChildren().add(condInfo);
                 break;
             case OWNER:
-                scrollBox.getChildren().clear();
                 Pane Rate = view.getPage("RateResident");
                 scrollBox.getChildren().add(Rate);
                 border.setRight(null);
@@ -82,11 +80,9 @@ public class MenuGUI extends MainGUI implements Initializable {
                 break;
             case RESIDENT:
                 Pane aptInfo = view.getPage("AptInfo");
-                scrollBox.getChildren().add(aptInfo);
+                border.setCenter(aptInfo);
                 break;
         }
-        border.setRight(null);
-        border.setCenter(new ScrollPane(scrollBox));
     }
 
     @FXML private void btnSignOutClick() {
