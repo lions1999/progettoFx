@@ -27,7 +27,7 @@ public class FeeDAO extends SqlDAO{
         return fee;
     }
 
-    public Fee loadFees(String aptName) throws SQLException{
+    public Fee loadFees(int aptName) throws SQLException{
         Fee fee = null;
         try{
             connect();
@@ -41,7 +41,7 @@ public class FeeDAO extends SqlDAO{
                 Double elevator = rs.getDouble("fee_elevator");
                 Double pet = rs.getDouble("fee_pet");
                 Double wifi = rs.getDouble("fee_wifi");
-                fee = new Fee(Integer.parseInt(aptName), water, gas, elect, admin, park, elevator, pet, wifi);
+                fee = new Fee(aptName, water, gas, elect, admin, park, elevator, pet, wifi);
             }
         } finally {disconnect();}
         return fee;
