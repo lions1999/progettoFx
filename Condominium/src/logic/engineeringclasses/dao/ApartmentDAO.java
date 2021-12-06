@@ -80,10 +80,24 @@ public class ApartmentDAO extends SqlDAO{
         }
         return apartments;
     }
-		
 
-    public ObservableList<Apartment> checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
-        ObservableList<Apartment> apartments = FXCollections.observableArrayList();
+    public String loadAptIdFromName(String aptName) throws SQLException{
+        String id = null;
+        ResultSet rs;
+        try {
+            connect();
+            rs = ApartmentQuery.selectIdFromName(stmt,aptName);
+            while(rs.next()) {
+                id = rs.getString("apt_id");
+            }
+        }finally {
+            disconnect();
+        }
+        return id;
+    }
+
+    public Apartment checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
+        Apartment apartment = null;
         ResultSet rs;
         try{
             connect();
@@ -93,13 +107,12 @@ public class ApartmentDAO extends SqlDAO{
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
-                Apartment apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes),"0");
-                apartments.add(apartment);
+                apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes),"0");
             }
         }finally{
             disconnect();
         }
-        return apartments;
+        return apartment;
     }
 
     public String checkNameByID(String id)throws SQLException {

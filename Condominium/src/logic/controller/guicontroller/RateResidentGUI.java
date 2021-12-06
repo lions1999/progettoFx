@@ -1,5 +1,6 @@
 package logic.controller.guicontroller;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -39,11 +40,14 @@ public class RateResidentGUI extends MainGUI implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setUp();
-        final ObservableList<Apartment> apartment;
+        Apartment apartment;
+
         try {
             apartment = ourDb.checkApartments(sg.getUserID(),sg.getAddress(),"apt_own");
+            final ObservableList<Apartment> list = FXCollections.observableArrayList();
+            list.add(apartment);
             System.out.println(apartment);
-            Table.setItems(apartment);
+            Table.setItems(list);
         } catch (SQLException e) {
             e.printStackTrace();
         }
