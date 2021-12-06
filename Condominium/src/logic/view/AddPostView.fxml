@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="205.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: #0C39FF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.AddPostGUI">
+<AnchorPane prefHeight="205.0" prefWidth="574.0" style="-fx-background-color: white; -fx-border-color: #0C39FF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.home.AddPostGUI">
    <children>
       <TextField fx:id="txtMsg" layoutX="118.0" layoutY="26.0" prefHeight="53.0" prefWidth="405.0" promptText="Write something.." style="-fx-border-color: #0C39FF; -fx-border-radius: 2em; -fx-background-color: transparent;" />
       <Separator layoutX="11.0" layoutY="104.0" prefHeight="7.0" prefWidth="530.0" />

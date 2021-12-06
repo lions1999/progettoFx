@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.MenuGUI">
+<AnchorPane prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.MenuGUI">
    <VBox alignment="TOP_CENTER" style="-fx-background-color: #0C39FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Label fx:id="lbTitle" prefHeight="78.0" prefWidth="316.0" text="CONDOMINIUM" textFill="#e7e5e5">
          <font>
@@ -47,7 +47,7 @@
                <effect>
                   <ColorAdjust brightness="1.0"/>
                </effect>
-               <Image url="@Icon/2x/outline_home_white_24dp.png"/>
+               <Image url="@Icon/outline_home_white_24dp.png"/>
             </ImageView>
          </graphic>
          <opaqueInsets>
@@ -69,7 +69,7 @@
                <effect>
                   <ColorAdjust brightness="1.0" />
                </effect>
-               <Image url="@Icon/2x/outline_groups_white_24dp.png" />
+               <Image url="@Icon/outline_groups_white_24dp.png" />
             </ImageView>
          </graphic>
          <padding>
@@ -85,7 +85,7 @@
                <effect>
                   <ColorAdjust brightness="1.0" />
                </effect>
-               <Image url="@Icon/2x/outline_apartment_white_24dp.png" />
+               <Image url="@Icon/outline_apartment_white_24dp.png" />
             </ImageView>
          </graphic>
          <padding>
@@ -101,7 +101,7 @@
                <effect>
                   <ColorAdjust brightness="1.0" />
                </effect>
-               <Image url="@Icon/2x/outline_logout_white_24dp.png" />
+               <Image url="@Icon/outline_logout_white_24dp.png" />
             </ImageView>
          </graphic>
          <padding>

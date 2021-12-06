@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
-import logic.controller.guicontroller.ApartmentDialogGUI;
+import logic.controller.guicontroller.general.ApartmentDialogGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegisteredBean;
 import logic.engineeringclasses.bean.UserBean;

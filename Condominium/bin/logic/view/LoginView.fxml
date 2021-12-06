@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #fff;"
             xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="logic.controller.guicontroller.LoginGUI">
+            fx:controller="logic.controller.guicontroller.general.LoginGUI">
     <AnchorPane prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #0C39FF;"
                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label alignment="CENTER" layoutX="32.0" layoutY="269.0" prefHeight="58.0" prefWidth="317.0"
@@ -27,7 +27,7 @@
         <ImageView fitHeight="113.0" fitWidth="116.0" layoutX="144.0" layoutY="108.0" pickOnBounds="true"
                    preserveRatio="true" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="143.0"
                    AnchorPane.topAnchor="108.0">
-            <Image url="@Icon/2x/outline_apartment_white_48dp.png"/>
+            <Image url="@Icon/outline_apartment_white_48dp.png"/>
         </ImageView>
     </AnchorPane>
     <VBox layoutX="488.0" layoutY="50.0" prefHeight="400.0" prefWidth="350.0" AnchorPane.bottomAnchor="150.0"

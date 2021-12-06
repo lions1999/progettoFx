@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.stage.*;
-import logic.controller.guicontroller.MenuGUI;
+import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
