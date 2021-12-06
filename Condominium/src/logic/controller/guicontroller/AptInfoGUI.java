@@ -31,7 +31,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
     private final FeeDAO feeDAO = new FeeDAO();
     private final List<String> seriesName = Arrays.asList("Gas","Water","Energy","Admin","Parking","Elevator","Pet","WiFi");
     final Apartment apartment = apartmentDAO.checkApartments(sg.getUserID(),sg.getAddress(),"apt_res");
-    final Fee fee1 = feeDAO.loadFees(apartmentDAO.loadAptIdFromName(apartment.getNumber()));
+    final Fee fee1 = feeDAO.loadFees(apartmentDAO.loadApartmentId(apartment.getNumber(),sg.getAddress()));
 
     @FXML private ComboBox<String> chartCombo;
     @FXML private Text tfEnergy;

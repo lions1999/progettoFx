@@ -5,60 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/TabOrganizeGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/view/TabOrganizeView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ApartmentDialogGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ApartmentDialogGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ChartGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/Chooser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/CondInfoGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/FeeDialogGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/LoginGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/PostGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/PostGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/Prova.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegisterGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegistrationDetailGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegistrationGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/TWDetailGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/TWRegistrationGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/ApartmentBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/ItemBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/MessageBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/UserBeanSingleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/LoginQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/PostQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RegisterQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Apartment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Condominium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/AddPostView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/AddPostView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/PostView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/PostView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RegisterView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RegistrationTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RegistrationTableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/TWDetailView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/TWRegistrationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/AllTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/ApartmentDialogGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/ApartmentDialogGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationDetailGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/TWDetailGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/TWRegistrationGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/TWDetailView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/TWRegistrationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/AptInfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/AptInfoGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -86,7 +46,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1zzfXtFT8IbQZQnA8Ynacc6WRXa" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -105,7 +65,7 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="last.edited.regexp" value="dasdsa" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Università/ISPW/Progetto/Util/mysql-connector.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
