@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 
-<SplitPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.admin.requests.registration.TableGUI">
-   <TableView fx:id="tableView" minHeight="400.0" minWidth="400.0" onMouseClicked="#getSelected" stylesheets="@style.css">
-      <columns>
-         <TableColumn fx:id="tcID" minWidth="100.0" prefWidth="-1.0" text="ID" />
-         <TableColumn fx:id="tcName" minWidth="100.0" prefWidth="-1.0" text="Name" />
-         <TableColumn fx:id="tcEmail" minWidth="100.0" prefWidth="-1.0" text="Email" />
-         <TableColumn fx:id="tcPwd" minWidth="100.0" prefWidth="-1.0" text="Password" />
-         <TableColumn fx:id="tcRole" minWidth="100.0" prefWidth="-1.0" text="Role" />
-         <TableColumn fx:id="tcAddress" minWidth="100.0" prefWidth="-1.0" text="Address" />
-         <TableColumn fx:id="tcApartment" editable="false" minWidth="100.0" prefWidth="-1.0" text="Apartment" />
-      </columns>
-   </TableView>
-</SplitPane>
+<TableView fx:id="tableView" minHeight="400.0" minWidth="400.0" onMouseClicked="#getSelected" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.admin.requests.registration.TableGUI">
+   <columns>
+      <TableColumn fx:id="tcID" minWidth="100.0" prefWidth="-1.0" text="ID" />
+      <TableColumn fx:id="tcName" minWidth="100.0" prefWidth="-1.0" text="Name" />
+      <TableColumn fx:id="tcEmail" minWidth="100.0" prefWidth="-1.0" text="Email" />
+      <TableColumn fx:id="tcPwd" minWidth="100.0" prefWidth="-1.0" text="Password" />
+      <TableColumn fx:id="tcRole" minWidth="100.0" prefWidth="-1.0" text="Role" />
+      <TableColumn fx:id="tcAddress" minWidth="100.0" prefWidth="-1.0" text="Address" />
+      <TableColumn fx:id="tcApartment" editable="false" minWidth="100.0" prefWidth="-1.0" text="Apartment" />
+   </columns>
+</TableView>
