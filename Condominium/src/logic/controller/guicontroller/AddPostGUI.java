@@ -33,12 +33,6 @@ public class AddPostGUI implements Initializable{
 		btnAddPost.setDisable(false);
 	}
 
-
-
-
-
-
-   
     @FXML private void onPublishClick() {
 		if(btnAddPost.getText().equals("Add File")) {
 			alert.alertWarn("Condominium/Home/Warning", "Ops... Missing File", "Please select one File");

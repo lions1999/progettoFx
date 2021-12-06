@@ -1,6 +1,7 @@
 package logic.controller.guicontroller;
 
 import javafx.event.Event;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.SingleSelectionModel;
@@ -13,11 +14,11 @@ import java.io.IOException;
 
 public class TabOrganizeGUI{
 
-    public Tab tabRegistration;
-    public Tab tabMeeting;
-    public Tab tabEmail;
-    UserSingleton sg = UserSingleton.getInstance();
     private ViewController view = new ViewController();
+    @FXML private Tab tabRegistration;
+    @FXML private Tab tabMeeting;
+    @FXML private Tab tabEmail;
+    UserSingleton sg = UserSingleton.getInstance();
 
     public void regTabClick() {
         try {
@@ -42,5 +43,12 @@ public class TabOrganizeGUI{
     }
 
     public void emailTabClick() {
+        try {
+            FXMLLoader loader = view.loader("AddPost");
+            Parent root = loader.load();
+            tabEmail.setContent(root);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

@@ -4,61 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/TabOrganizeGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/view/TabOrganizeView.fxml" afterDir="false" />
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="-added/removed duplicates&#10;-add Tab View to Admin Request btn&#10;TODO:&#10;-add Meet Request Tab&#10;-add Email Request Tab">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ApartmentDialogGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ApartmentDialogGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AptInfoGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/ChartGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/Chooser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/CondInfoGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/FeeDialogGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/LoginGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/MenuGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/PostGUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/PostGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/Prova.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegisterGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegistrationDetailGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/RegistrationGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/TWDetailGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/TWRegistrationGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/ApartmentBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/ItemBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/MessageBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/UserBeanSingleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/LoginQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/PostQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RegisterQuery.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Apartment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Condominium.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/AddPostView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/AddPostView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/LoginView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/LoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/PostView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/PostView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RegisterView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RegistrationTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RegistrationTableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/TWDetailView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/TWRegistrationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/AllTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/ApartmentDialogGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/ApartmentDialogGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/MenuGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationDetailGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/RegistrationGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/TWDetailGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/TWRegistrationGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/TWDetailView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/TWRegistrationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AllTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AddPostGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/AddPostGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/AddPostGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/AddPostGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/TabOrganizeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/TabOrganizeGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,8 +188,18 @@
       <workItem from="1637676029962" duration="1496000" />
       <workItem from="1638439009147" duration="610000" />
       <workItem from="1638525029471" duration="6370000" />
-      <workItem from="1638538143547" duration="5489000" />
+      <workItem from="1638538143547" duration="6649000" />
+      <workItem from="1638544863552" duration="119000" />
+      <workItem from="1638783087671" duration="2815000" />
     </task>
+    <task id="LOCAL-00001" summary="-added/removed duplicates&#10;-add Tab View to Admin Request btn&#10;TODO:&#10;-add Meet Request Tab&#10;-add Email Request Tab">
+      <created>1638544015039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638544015039</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +216,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-added/removed duplicates&#10;-add Tab View to Admin Request btn&#10;TODO:&#10;-add Meet Request Tab&#10;-add Email Request Tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added/removed duplicates&#10;-add Tab View to Admin Request btn&#10;TODO:&#10;-add Meet Request Tab&#10;-add Email Request Tab" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
