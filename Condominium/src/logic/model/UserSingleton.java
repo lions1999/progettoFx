@@ -111,11 +111,7 @@ public class UserSingleton {
 		this.fee = fee;
 	}
 
-	public Fee getPastfee() {
-		return pastfee;
-	}
+	public Fee getPastfee() {return pastfee;}
 
-	public void setPastfee(Fee pastfee) {
-		this.pastfee = pastfee;
-	}
+	public void setPastfee(Fee pastfee) {this.pastfee = pastfee;}
 }

@@ -158,26 +158,16 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             sg.setFee(currentFee);
             Fee pastFee = feeController.loadFees(aptController.loadApartmentId(apartment.getNumber(),sg.getAddress()),"pastfee" );
             sg.setPastfee(pastFee);
-            if (boolFee.getAvailablePark()) {
-                tfPark.setText(currentFee.getPark() + " €");
-                tfPastPark.setText(pastFee.getPark() + " €");
-            }
+
+            if (boolFee.getAvailablePark()) { tfPark.setText(currentFee.getPark() + " €"); tfPastPark.setText(pastFee.getPark() + " €");}
             else {noFee(tfPark); noFee(tfPastPark);}
-            if (boolFee.getAvailableElevator()) {
-                tfElevator.setText(currentFee.getElevator() + " €");
-                tfPastElevator.setText(pastFee.getElevator()+" €");
-            }
+            if (boolFee.getAvailableElevator()) { tfElevator.setText(currentFee.getElevator() + " €"); tfPastElevator.setText(pastFee.getElevator()+" €"); }
             else {noFee(tfElevator); noFee(tfPastElevator);}
-            if (boolFee.getAvailablePet()) {
-                tfPet.setText(currentFee.getPet() + " €");
-                tfPastPet.setText(pastFee.getPet()+" €");
-            }
+            if (boolFee.getAvailablePet()) { tfPet.setText(currentFee.getPet() + " €"); tfPastPet.setText(pastFee.getPet()+" €"); }
             else {noFee(tfPet); noFee(tfPastPet);}
-            if (boolFee.getAvailableWifi()) {
-                tfWifi.setText(currentFee.getWifi()+" €");
-                tfPastWifi.setText(pastFee.getWifi()+" €");
-            }
+            if (boolFee.getAvailableWifi()) { tfWifi.setText(currentFee.getWifi()+" €"); tfPastWifi.setText(pastFee.getWifi()+" €"); }
             else {noFee(tfWifi); noFee(tfPastWifi);}
+
             tfWater.setText(currentFee.getWater()+" €");
             tfPastWater.setText(pastFee.getWater()+" €");
             tfEnergy.setText(currentFee.getElect()+" €");
