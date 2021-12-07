@@ -13,9 +13,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import logic.controller.applicationcontroller.SendEmail;
 import logic.controller.applicationcontroller.ViewController;
+import logic.engineeringclasses.dao.ApartmentDAO;
 import logic.model.Apartment;
 import logic.model.UserSingleton;
-import logic.engineeringclasses.dao.ApartmentDAO;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;

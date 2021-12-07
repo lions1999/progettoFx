@@ -1,14 +1,17 @@
 package logic.controller.guicontroller.general;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import logic.engineeringclasses.bean.UserBean;
 import logic.controller.applicationcontroller.RegisterController;
+import logic.engineeringclasses.bean.UserBean;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class RegisterGUI extends MainGUI implements Initializable{
 	 

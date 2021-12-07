@@ -2,6 +2,7 @@ package logic.controller.applicationcontroller;
 
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.dao.ApartmentDAO;
+import logic.model.Apartment;
 
 import java.sql.SQLException;
 
@@ -30,4 +31,7 @@ public class ApartmentController {
     }
 
 
+    public Apartment checkApartments(String userID, String address, String apt_res) throws SQLException {
+        return dao.checkApartments(userID, address, apt_res);
+    }
 }

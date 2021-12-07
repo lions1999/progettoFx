@@ -1,11 +1,12 @@
 package logic.controller.applicationcontroller;
 
-import java.io.IOException;
-import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.DialogPane;
 import javafx.scene.layout.Pane;
 import logic.model.Condominium;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class ViewController{
 	

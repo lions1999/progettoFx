@@ -2,11 +2,8 @@ package logic.engineeringclasses.dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegisteredBean;
-import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.query.RegisterQuery;
-import logic.model.Fee;
 import logic.model.Registered;
 import logic.model.User;
 

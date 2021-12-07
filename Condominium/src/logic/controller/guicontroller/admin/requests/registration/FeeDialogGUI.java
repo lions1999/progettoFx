@@ -8,6 +8,7 @@ import logic.controller.applicationcontroller.PatternController;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.model.Fee;
 import logic.model.UserSingleton;
+
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 

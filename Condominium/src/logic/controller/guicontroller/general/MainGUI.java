@@ -7,7 +7,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import logic.controller.applicationcontroller.ViewController;
-import logic.controller.guicontroller.general.AlertGUI;
 
 public class MainGUI extends Application{
 

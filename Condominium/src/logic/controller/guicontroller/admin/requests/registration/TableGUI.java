@@ -7,9 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import logic.controller.applicationcontroller.RegisterController;
 import logic.controller.guicontroller.general.MainGUI;
 import logic.engineeringclasses.bean.RegisteredBean;
-import logic.controller.applicationcontroller.RegisterController;
 import logic.model.Registered;
 
 import java.io.IOException;

@@ -1,9 +1,5 @@
 package logic.controller.applicationcontroller;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Optional;
-
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
@@ -19,6 +15,10 @@ import logic.engineeringclasses.exception.PatternException;
 import logic.model.Registered;
 import logic.model.Role;
 import logic.model.User;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Optional;
 
 public class RegisterController{
 

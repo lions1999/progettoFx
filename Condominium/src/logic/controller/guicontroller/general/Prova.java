@@ -1,11 +1,5 @@
 package logic.controller.guicontroller.general;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
-
 import java.io.IOException;
 
 public class Prova {

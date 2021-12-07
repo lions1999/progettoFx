@@ -1,16 +1,7 @@
 package test;
 
 
-import javafx.scene.control.TextField;
-import logic.model.User;
 import org.junit.Test;
-
-//
-//import logic.model.*;
-//import logic.controller.HomeController;
-import logic.engineeringclasses.dao.*;
-
-import java.text.DecimalFormat;
 
 public class AllTests {
 

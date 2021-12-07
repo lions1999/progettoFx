@@ -3,6 +3,7 @@ package logic.engineeringclasses.dao;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.query.FeeQuery;
 import logic.model.Fee;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -27,11 +28,11 @@ public class FeeDAO extends SqlDAO{
         return fee;
     }
 
-    public Fee loadFees(int aptName) throws SQLException{
+    public Fee loadFees(int aptName,String typeFee) throws SQLException{
         Fee fee = null;
         try{
             connect();
-            ResultSet rs = FeeQuery.loadFees(stmt,aptName);
+            ResultSet rs = FeeQuery.loadFees(stmt,aptName,typeFee);
             while (rs.next()) {
                 Double water = rs.getDouble("fee_water");
                 Double gas = rs.getDouble("fee_gas");

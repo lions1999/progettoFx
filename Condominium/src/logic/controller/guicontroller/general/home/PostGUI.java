@@ -1,6 +1,5 @@
 package logic.controller.guicontroller.general.home;
 
-import java.io.InputStream;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,6 +11,8 @@ import logic.controller.guicontroller.general.AlertGUI;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.UserSingleton;
+
+import java.io.InputStream;
 
 public class PostGUI {
 

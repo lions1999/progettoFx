@@ -1,15 +1,18 @@
 package logic.controller.applicationcontroller;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.stage.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class PostController {
 

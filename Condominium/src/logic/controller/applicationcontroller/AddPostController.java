@@ -1,8 +1,9 @@
 package logic.controller.applicationcontroller;
 
-import java.io.File;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class AddPostController {
 	

@@ -1,14 +1,15 @@
 package logic.controller.applicationcontroller;
 
-import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.dao.LoginDAO;
 import logic.engineeringclasses.exception.PatternException;
-import logic.model.UserSingleton;
 import logic.model.Administrator;
 import logic.model.Owner;
 import logic.model.Resident;
+import logic.model.UserSingleton;
+
+import java.sql.SQLException;
 
 public class LoginController {
 
