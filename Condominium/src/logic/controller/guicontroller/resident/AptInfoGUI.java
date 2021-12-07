@@ -31,10 +31,10 @@ public class AptInfoGUI extends MainGUI implements Initializable {
     private final ChartGUI chart = new ChartGUI();
     private final ApartmentController aptController = new ApartmentController();
     private final FeeController feeController = new FeeController();
-    private final List<String> seriesName = Arrays.asList("Gas","Water","Energy","Admin","Parking","Elevator","Pet","WiFi");
+    private final List<String> seriesName = Arrays.asList("Water","Gas","Energy","Admin","Parking","Elevator","Pet","WiFi");
 
     @FXML private ComboBox<String> chartCombo;
-    @FXML private CheckBox LastYearBtn;
+    @FXML private CheckBox LastMonthBtn;
     @FXML private Text tfNumber;
     @FXML private Text tfWater;
     @FXML private Text tfGas;
@@ -62,32 +62,31 @@ public class AptInfoGUI extends MainGUI implements Initializable {
 
 
     public void submitLastMonth() {
-        List ChartDataList = getList(sg.getPastfee());
-        if (LastYearBtn.isSelected()) pastGrid.setVisible(true);
-        else pastGrid.setVisible(false);
+        List<Double> ChartDataList = getList(sg.getPastfee());
+        pastGrid.setVisible(LastMonthBtn.isSelected());
         if (chartCombo.getValue().equals("Bar Chart")) {
-            BarChart<String,Number> oldBarChart = (BarChart) border.getRight();
-            if (LastYearBtn.isSelected()) {
+            BarChart oldBarChart = (BarChart) border.getRight();
+            if (LastMonthBtn.isSelected()) {
                 XYChart.Series<String,Number> series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldBarChart.getData().add(series2);
             } else {
                 try {
                     oldBarChart.getData().remove(1);
                 } catch (Exception e){
-
+                    e.printStackTrace();
                 }
             }
         }
         else if (chartCombo.getValue().equals("Line Chart")){
             LineChart oldLineChart = (LineChart) border.getRight();
-            if (LastYearBtn.isSelected()){
+            if (LastMonthBtn.isSelected()){
                 XYChart.Series series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldLineChart.getData().add(series2);
             } else {
                 try {
                     oldLineChart.getData().remove(1);
                 } catch (Exception e){
-
+                    e.printStackTrace();
                 }
             }
 
@@ -95,7 +94,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
         else if (chartCombo.getValue().equals("Pie Chart")){
             Pane oldPieChart = (Pane) border.getRight();
             VBox vBox = (VBox) oldPieChart.getChildren().get(0);
-            if (LastYearBtn.isSelected()){
+            if (LastMonthBtn.isSelected()){
                 ObservableList<PieChart.Data> valueList = chart.value(ChartDataList,seriesName);
                 PieChart pc = chart.NewPieChart(valueList,"Outgoing Last Month");
                 vBox.getChildren().add(pc);
@@ -103,7 +102,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
                 try {
                     vBox.getChildren().remove(1);
                 } catch (Exception e){
-
+                    e.printStackTrace();
                 }
             }
             border.setRight(oldPieChart);
@@ -112,15 +111,15 @@ public class AptInfoGUI extends MainGUI implements Initializable {
 
     public void submitTypeChart() {
         System.out.println(chartCombo.getValue());
-        List ChartDataList = getList(sg.getFee());
+        List<Double> ChartDataList = getList(sg.getFee());
         switch (chartCombo.getValue()){
             case "Choose Chart":
                 border.setRight(null);
                 break;
             case "Bar Chart":
                 System.out.println("case 1");
-                BarChart bc = chart.BarChart("Fees","","Outgoings");
-                XYChart.Series BcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
+                BarChart<String, Number> bc = chart.BarChart("Fees","","Outgoings");
+                XYChart.Series<String, Number> BcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
                 bc.getData().add(BcSeries);
                 System.out.println("case 1");
                 border.setRight(bc);
@@ -136,7 +135,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             case "Line Chart":
                 System.out.println("case 3");
                 LineChart lc = chart.NewLineChart("Fees","","Outgoings");
-                XYChart.Series LcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
+                XYChart.Series<String, Number> LcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
                 lc.getData().add(LcSeries);
                 border.setRight(lc);
                 break;
@@ -182,13 +181,11 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             tfNumber.setText(apartment.getNumber());
             submitTypeChart();
         } catch (SQLException e) {
-            //e.printStackTrace();
-            System.out.println("AO");
+            e.printStackTrace();
         }
     }
 
-    public List getList(Fee fee){
-        List list = Arrays.asList(fee.getWater(),fee.getGas(),fee.getElect(),fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
-        return list;
+    public List<Double> getList(Fee fee){
+        return Arrays.asList(fee.getWater(),fee.getGas(),fee.getElect(),fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
     }
 }
