@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import logic.controller.applicationcontroller.ApartmentController;
 import logic.controller.applicationcontroller.SendEmail;
 import logic.controller.applicationcontroller.ViewController;
 import logic.engineeringclasses.dao.ApartmentDAO;
@@ -26,7 +27,8 @@ public class CondInfoGUI implements Initializable{
 
         private ViewController view = new ViewController();
         private static UserSingleton sg = UserSingleton.getInstance();
-        private ApartmentDAO ourDb = new ApartmentDAO();
+        private ApartmentController aptController = new ApartmentController();
+
 
 
         @FXML private TextField OwnerFullName;
@@ -48,14 +50,14 @@ public class CondInfoGUI implements Initializable{
         public void initialize(URL location, ResourceBundle resources){
             sendMailBtn.setDisable(true);
 
-            OwnerCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("owner"));
-            ResidentCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("resident"));
-            IdCol.setCellValueFactory(new PropertyValueFactory<Apartment, String>("number"));
-            TaxCol.setCellValueFactory(new PropertyValueFactory<Apartment,String>("fee"));
+            OwnerCol.setCellValueFactory(new PropertyValueFactory<>("owner"));
+            ResidentCol.setCellValueFactory(new PropertyValueFactory<>("resident"));
+            IdCol.setCellValueFactory(new PropertyValueFactory<>("number"));
+            TaxCol.setCellValueFactory(new PropertyValueFactory<>("fee"));
 
             final ObservableList<Apartment> apartment;
             try {
-                apartment = ourDb.loadApartments(sg.getAddress());
+                apartment = aptController.loadApartments(sg.getAddress());
                 System.out.println("ciao");
                 condominiumTable.setItems(apartment);
             } catch (SQLException e) {
@@ -72,7 +74,7 @@ public class CondInfoGUI implements Initializable{
         }
 
         public void sendMail(ActionEvent actionEvent) throws SQLException {
-            String mail = ourDb.checkMailById(ourDb.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),sg.getAddress(),"apt_own"));
+            String mail = aptController.checkMailById(aptController.checkUserAptFromNumber((condominiumTable.getSelectionModel().getSelectedItem().getNumber()),sg.getAddress(),"apt_own"));
             System.out.println(mail);
 
             String subject = "Hi from Condominium!";

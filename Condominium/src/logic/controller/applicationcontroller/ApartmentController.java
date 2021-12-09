@@ -31,7 +31,19 @@ public class ApartmentController {
     }
 
 
+    public ObservableList<Apartment> loadApartments(String addr) throws SQLException{
+        return dao.loadApartments(addr);
+    }
+
     public Apartment checkApartments(String userID, String address, String apt_res) throws SQLException {
         return dao.checkApartments(userID, address, apt_res);
+    }
+
+    public String checkMailById(String userId) throws SQLException{
+        return dao.checkMailById(userId);
+    }
+
+    public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
+        return dao.checkUserAptFromNumber(aptNumber,condAddr,userRequired);
     }
 }

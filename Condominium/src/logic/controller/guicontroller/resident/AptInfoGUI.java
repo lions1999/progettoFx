@@ -31,7 +31,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
     private final ChartGUI chart = new ChartGUI();
     private final ApartmentController aptController = new ApartmentController();
     private final FeeController feeController = new FeeController();
-    private final List<String> seriesName = Arrays.asList("Water","Gas","Energy","Admin","Parking","Elevator","Pet","WiFi");
+    private final List<String> seriesName = Arrays.asList("Water","Gas","Electricity","Admin","Parking","Elevator","Pet","WiFi");
 
     @FXML private ComboBox<String> chartCombo;
     @FXML private CheckBox LastMonthBtn;
