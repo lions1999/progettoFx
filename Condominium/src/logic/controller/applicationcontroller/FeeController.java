@@ -1,6 +1,5 @@
 package logic.controller.applicationcontroller;
 
-import javafx.collections.ObservableList;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.dao.FeeDAO;
 import logic.model.Fee;
@@ -21,5 +20,9 @@ public class FeeController {
         }catch(SQLException e){
             System.out.println("SQLException");
         }
+    }
+
+    public Fee loadFees(int loadApartmentId,String typeFee) throws SQLException {
+        return fee.loadFees(loadApartmentId,typeFee);
     }
 }

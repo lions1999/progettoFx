@@ -1,15 +1,16 @@
 package logic.controller.guicontroller.general;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import logic.engineeringclasses.bean.UserBean;
 import logic.controller.applicationcontroller.LoginController;
+import logic.engineeringclasses.bean.UserBean;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class LoginGUI extends MainGUI implements Initializable{
 	

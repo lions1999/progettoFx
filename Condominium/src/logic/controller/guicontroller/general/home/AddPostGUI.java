@@ -1,8 +1,5 @@
 package logic.controller.guicontroller.general.home;
 
-import java.io.File;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,6 +9,10 @@ import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.general.AlertGUI;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.model.UserSingleton;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class AddPostGUI implements Initializable{
 

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="427.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.admin.organize.CondInfoGUI">
    <children>
       <TableView fx:id="condominiumTable" editable="true" layoutX="14.0" layoutY="14.0" onMouseClicked="#submitUser">
@@ -20,7 +21,7 @@
             <Text fx:id="OwnerText" layoutX="7.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner:" />
             <ImageView fx:id="userImg" fitWidth="80.0" layoutX="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/2x/outline_person_black_24dp.png" />
+                   <Image url="@../../../../../../../../Downloads/2x/outline_person_black_24dp.png" />
                </image>
             </ImageView>
             <TextField fx:id="OwnerFullName" editable="false" layoutX="64.0" layoutY="119.0" prefHeight="25.0" prefWidth="166.0" />

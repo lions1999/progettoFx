@@ -1,8 +1,8 @@
 package logic.model;
 
-import java.util.List;
-
 import logic.engineeringclasses.exception.PatternException;
+
+import java.util.List;
 
 public class Administrator extends User {
 

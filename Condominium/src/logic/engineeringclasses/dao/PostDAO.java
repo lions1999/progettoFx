@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.query.PostQuery;
 import logic.model.Post;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
