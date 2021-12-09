@@ -11,12 +11,12 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import logic.controller.guicontroller.general.ApartmentDialogGUI;
 import logic.engineeringclasses.bean.FeeBean;
-import logic.engineeringclasses.bean.RegisteredBean;
+import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.dao.LoginDAO;
 import logic.engineeringclasses.dao.RegisterDAO;
 import logic.engineeringclasses.exception.PatternException;
-import logic.model.Registered;
+import logic.model.Registration;
 import logic.model.Role;
 import logic.model.User;
 
@@ -107,11 +107,11 @@ public class RegisterController{
 		return login.checkAddressesList();
 	}
 
-	public ObservableList<Registered> loadRegistration(String address)throws SQLException{
+	public ObservableList<Registration> loadRegistration(String address)throws SQLException{
 		return register.loadRegistrationList(address);
 	}
 
-	public void addRegistered(RegisteredBean reg, FeeBean fee){
+	public void addRegistered(RegistrationBean reg, FeeBean fee){
 		try{
 			FeeController feeCtrl = new FeeController();
 			ApartmentController aptCtrl = new ApartmentController();

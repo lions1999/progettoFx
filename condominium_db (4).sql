@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 12:17 PM
+-- Generation Time: Dec 09, 2021 at 02:28 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -74,6 +74,19 @@ INSERT INTO `condominiums` (`con_addr`, `con_park`, `con_elevator`, `con_pet`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `email`
+--
+
+CREATE TABLE `email` (
+  `mail_id` int(11) NOT NULL,
+  `mail_from` int(11) NOT NULL,
+  `mail_to` int(11) NOT NULL,
+  `mail_obj` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `fee`
 --
 
@@ -96,6 +109,27 @@ CREATE TABLE `fee` (
 INSERT INTO `fee` (`fee_apt`, `fee_water`, `fee_gas`, `fee_elect`, `fee_admin`, `fee_park`, `fee_elevator`, `fee_pet`, `fee_wifi`) VALUES
 (1, '34.00', '3.00', '3.00', '4.00', NULL, NULL, '45.00', '543.00'),
 (2, '1.00', '1.00', '1.00', '21.00', NULL, NULL, '223.00', '23.35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meeting`
+--
+
+CREATE TABLE `meeting` (
+  `meet_id` int(11) NOT NULL,
+  `meet_from` int(11) NOT NULL,
+  `meet_addr` varchar(30) NOT NULL,
+  `meet_obj` varchar(30) NOT NULL,
+  `meet_txt` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `meeting`
+--
+
+INSERT INTO `meeting` (`meet_id`, `meet_from`, `meet_addr`, `meet_obj`, `meet_txt`) VALUES
+(1, 0, 'Via del Corso 22', 'Elevator Break', 'We need to talk about the elevator situation.\r\n');
 
 -- --------------------------------------------------------
 
@@ -141,8 +175,7 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`reg_id`, `reg_name`, `reg_email`, `reg_pwd`, `reg_role`, `reg_addr`, `reg_apt`) VALUES
-(1, 'ciao', 'ciao', 'ciao', 'RESIDENT', 'Via del Corso 22', '1A'),
-(11, '2', '2', '2', 'OWNER', 'Via del Corso 22', '5B');
+(54, 'prova', 'prova', 'prova', 'RESIDENT', 'Via del Corso 22', '');
 
 -- --------------------------------------------------------
 
@@ -212,11 +245,27 @@ ALTER TABLE `condominiums`
   ADD PRIMARY KEY (`con_addr`);
 
 --
+-- Indexes for table `email`
+--
+ALTER TABLE `email`
+  ADD PRIMARY KEY (`mail_id`),
+  ADD KEY `mail_from` (`mail_from`),
+  ADD KEY `mail_to` (`mail_to`);
+
+--
 -- Indexes for table `fee`
 --
 ALTER TABLE `fee`
   ADD PRIMARY KEY (`fee_apt`),
   ADD KEY `fee_apt` (`fee_apt`);
+
+--
+-- Indexes for table `meeting`
+--
+ALTER TABLE `meeting`
+  ADD PRIMARY KEY (`meet_id`),
+  ADD UNIQUE KEY `meet_addr` (`meet_addr`),
+  ADD KEY `meet_from` (`meet_from`);
 
 --
 -- Indexes for table `posts`
@@ -259,6 +308,18 @@ ALTER TABLE `apartment`
   MODIFY `apt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `email`
+--
+ALTER TABLE `email`
+  MODIFY `mail_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `meeting`
+--
+ALTER TABLE `meeting`
+  MODIFY `meet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
@@ -268,7 +329,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -289,10 +350,24 @@ ALTER TABLE `apartment`
   ADD CONSTRAINT `apt_res` FOREIGN KEY (`apt_res`) REFERENCES `users` (`user_id`);
 
 --
+-- Constraints for table `email`
+--
+ALTER TABLE `email`
+  ADD CONSTRAINT `mail_from` FOREIGN KEY (`mail_from`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `mail_to` FOREIGN KEY (`mail_to`) REFERENCES `users` (`user_id`);
+
+--
 -- Constraints for table `fee`
 --
 ALTER TABLE `fee`
   ADD CONSTRAINT `fee_apt` FOREIGN KEY (`fee_apt`) REFERENCES `apartment` (`apt_id`);
+
+--
+-- Constraints for table `meeting`
+--
+ALTER TABLE `meeting`
+  ADD CONSTRAINT `meet_addr` FOREIGN KEY (`meet_addr`) REFERENCES `condominiums` (`con_addr`),
+  ADD CONSTRAINT `meet_from` FOREIGN KEY (`meet_from`) REFERENCES `users` (`user_id`);
 
 --
 -- Constraints for table `posts`

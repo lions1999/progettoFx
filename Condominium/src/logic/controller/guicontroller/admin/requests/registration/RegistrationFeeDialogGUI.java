@@ -7,16 +7,14 @@ import logic.controller.applicationcontroller.FeeController;
 import logic.controller.applicationcontroller.PatternController;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.model.Fee;
-import logic.model.UserSingleton;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import static logic.controller.guicontroller.general.MenuGUI.sg;
 
-public class FeeDialogGUI {
+public class RegistrationFeeDialogGUI extends RegistrationTableGUI {
 
     private final FeeController controller = new FeeController();
     private final PatternController pattern = new PatternController();
-
-    UserSingleton sg = UserSingleton.getInstance();
 
     @FXML private Text apt_txt;
     @FXML private Text res_txt;

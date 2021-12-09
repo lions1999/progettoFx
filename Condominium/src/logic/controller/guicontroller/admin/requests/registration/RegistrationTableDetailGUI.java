@@ -4,24 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import logic.controller.applicationcontroller.RegisterController;
-import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
-import logic.controller.guicontroller.admin.requests.registration.FeeDialogGUI;
 import logic.controller.guicontroller.general.AlertGUI;
-import logic.controller.guicontroller.general.MainGUI;
 import logic.controller.guicontroller.general.MenuGUI;
-import logic.engineeringclasses.bean.RegisteredBean;
-
+import logic.engineeringclasses.bean.RegistrationBean;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class TableDetailGUI {
+public class RegistrationTableDetailGUI extends RegistrationTableGUI {
 
-    private final AlertGUI alert = new AlertGUI();
-    private final RegisterController controller = new RegisterController();
-    private final ViewController view = new ViewController();
+    private AlertGUI alert = new AlertGUI();
 
     @FXML private TextField tfID;
     @FXML private TextField tfName;
@@ -32,14 +25,14 @@ public class TableDetailGUI {
     @FXML private TextField tfApartment;
 
     @FXML private void btnX() {
-        MainGUI.border.setRight(null);
+        MenuGUI.border.setRight(null);
     }
 
     @FXML private void btnAddClick() throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/logic/view/FeeDialog.fxml"));
         DialogPane pane = loader.load();
-        FeeDialogGUI fee = loader.getController();
+        RegistrationFeeDialogGUI fee = loader.getController();
         fee.setUp(tfName.getText(),tfApartment.getText());
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(pane);
@@ -59,12 +52,12 @@ public class TableDetailGUI {
         }
     }
 
-    private RegisteredBean getRegistered(){
+    private RegistrationBean getRegistered(){
         return regBean(tfName.getText(),tfEmail.getText(),tfPwd.getText(),tfRole.getText(),tfAddr.getText(),tfApartment.getText());
     }
 
-    private RegisteredBean regBean(String name,String email,String pwd,String role,String addr,String apt){
-        RegisteredBean bean = new RegisteredBean();
+    private RegistrationBean regBean(String name, String email, String pwd, String role, String addr, String apt){
+        RegistrationBean bean = new RegistrationBean();
         bean.setName(name);
         bean.setEmail(email);
         bean.setPassword(pwd);
@@ -80,11 +73,11 @@ public class TableDetailGUI {
         FXMLLoader loader = view.loader("TabOrganize");
         Parent root = loader.load();
         TabOrganizeGUI org = loader.getController();
-        org.regTabClick();
+        //org.regTabClick();
         MenuGUI.border.setCenter(root);
     }
 
-    protected void setUp(RegisteredBean bean){
+    protected void setUp(RegistrationBean bean){
         tfID.setText(bean.getID());
         tfName.setText(bean.getName());
         tfEmail.setText(bean.getEmail());

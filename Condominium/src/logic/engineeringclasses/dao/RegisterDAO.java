@@ -2,12 +2,9 @@ package logic.engineeringclasses.dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import logic.engineeringclasses.bean.FeeBean;
-import logic.engineeringclasses.bean.RegisteredBean;
-import logic.engineeringclasses.bean.UserBean;
+import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.query.RegisterQuery;
-import logic.model.Fee;
-import logic.model.Registered;
+import logic.model.Registration;
 import logic.model.User;
 
 import java.sql.ResultSet;
@@ -60,14 +57,14 @@ public class RegisterDAO extends SqlDAO{
 //        return list;
 //    }
 
-    public ObservableList<Registered> loadRegistrationList(String address) throws SQLException{
-        ObservableList<Registered> list = FXCollections.observableArrayList();
+    public ObservableList<Registration> loadRegistrationList(String address) throws SQLException{
+        ObservableList<Registration> list = FXCollections.observableArrayList();
         ResultSet rs;
         try {
             connect();
-            rs = RegisterQuery.selectRegistratedUserList(stmt,address);
+            rs = RegisterQuery.selectRegisteredUserList(stmt,address);
             while(rs.next()) {
-                list.add(new Registered(rs.getString("reg_id"),rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
+                list.add(new Registration(rs.getString("reg_id"),rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
             }
         } finally {
             disconnect();
@@ -85,7 +82,7 @@ public class RegisterDAO extends SqlDAO{
         }
     }
 
-    public void addRegistered(RegisteredBean reg) throws SQLException{
+    public void addRegistered(RegistrationBean reg) throws SQLException{
         try{
             connect();
             String sql = "INSERT INTO users (user_name,user_email,user_pwd,user_role,user_addr) VALUES (?,?,?,?,?)";

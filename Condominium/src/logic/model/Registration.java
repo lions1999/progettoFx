@@ -1,6 +1,6 @@
 package logic.model;
 
-public class Registered {
+public class Registration {
 
     private String id;
     private String name;
@@ -10,7 +10,7 @@ public class Registered {
 	private String address;
     private String apartment;
 	
-	public Registered(String id , String name, String email, String password, String role, String address, String apartment){
+	public Registration(String id , String name, String email, String password, String role, String address, String apartment){
 		this.setId(id);
         this.setName(name);
 		this.setEmail(email);

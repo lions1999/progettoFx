@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
+import logic.controller.guicontroller.admin.requests.registration.RegistrationTableGUI;
 import logic.controller.guicontroller.general.home.PostGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
@@ -22,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class MenuGUI extends MainGUI implements Initializable {
 
-    UserSingleton sg = UserSingleton.getInstance();
+    public static final UserSingleton sg = UserSingleton.getInstance();
     private final PostController controller = new PostController();
     private final VBox scrollBox = new VBox();
 
@@ -52,8 +53,8 @@ public class MenuGUI extends MainGUI implements Initializable {
             case ADMINISTRATOR:
                 FXMLLoader loader = view.loader("TabOrganize");
                 Parent root = loader.load();
-                TabOrganizeGUI org = loader.getController();
-                org.regTabClick();
+               // TabOrganizeGUI tab = new TabOrganizeGUI();
+              //  tab.regTabClick();
                 border.setCenter(root);
                 break;
             case OWNER:
@@ -65,6 +66,7 @@ public class MenuGUI extends MainGUI implements Initializable {
                 border.setCenter(new ScrollPane(scrollBox));
                 break;
         }}catch(Exception e){
+            System.out.println("ERROR");
             e.printStackTrace();
         }
     }

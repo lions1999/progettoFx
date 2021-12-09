@@ -11,7 +11,7 @@ public class RegisterQuery {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
-    public static ResultSet selectRegistratedUserList(Statement stmt, String address) throws SQLException {
+    public static ResultSet selectRegisteredUserList(Statement stmt, String address) throws SQLException {
         String sql = "SELECT * from registration where reg_addr ='" + address + "'";
         System.out.println(sql);
         return stmt.executeQuery(sql);

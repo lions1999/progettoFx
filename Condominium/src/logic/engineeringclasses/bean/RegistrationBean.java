@@ -1,6 +1,7 @@
 package logic.engineeringclasses.bean;
 
-public class RegisteredBean {
+public class RegistrationBean {
+
     private String id;
     private String name;
     private String email;

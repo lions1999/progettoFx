@@ -1,7 +1,12 @@
 package test;
 
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import logic.controller.applicationcontroller.ViewController;
 import logic.model.User;
 import org.junit.Test;
 
@@ -13,7 +18,6 @@ import logic.engineeringclasses.dao.*;
 import java.text.DecimalFormat;
 
 public class AllTests {
-
 //	@Test
 //	public void TestCondominiumDAO() throws Exception{
 //		CondominiumDAO dao = new CondominiumDAO();	
@@ -22,6 +26,10 @@ public class AllTests {
 //	
 	@Test
 	public void generalTest() throws Exception{
+//		MeetDAO meet = new MeetDAO();
+//		System.out.println(meet.loadMeetList("Via del Corso 22"));
+
+
 //		TextField tf = new TextField("43.43");
 //		Double d = Double.parseDouble(tf.getText());
 //		System.out.println(new DecimalFormat("####.##").format(d));
@@ -33,6 +41,7 @@ public class AllTests {
 //		System.out.println(formatted); //prints 2.4
 
 	}
+
 //	
 //	@Test
 //	public void TestLoginRole() throws Exception{
