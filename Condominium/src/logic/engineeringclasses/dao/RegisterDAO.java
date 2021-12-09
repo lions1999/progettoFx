@@ -42,21 +42,6 @@ public class RegisterDAO extends SqlDAO{
         }
     }
 
-//    public ObservableList<Registered> loadRegisteredUserList(String address) throws SQLException{
-//        ObservableList<Registered> list = FXCollections.observableArrayList();
-//        ResultSet rs;
-//        try {
-//            connect();
-//            rs = RegisterQuery.selectRegistratedUserList(stmt,address);
-//            while(rs.next()) {
-//                list.add(new Registered(rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr")));
-//            }
-//        } finally {
-//            disconnect();
-//        }
-//        return list;
-//    }
-
     public ObservableList<Registration> loadRegistrationList(String address) throws SQLException{
         ObservableList<Registration> list = FXCollections.observableArrayList();
         ResultSet rs;

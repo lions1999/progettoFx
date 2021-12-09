@@ -13,7 +13,8 @@ import logic.controller.guicontroller.general.ApartmentDialogGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.bean.UserBean;
-import logic.engineeringclasses.dao.LoginDAO;
+import logic.engineeringclasses.dao.CondominiumDAO;
+import logic.engineeringclasses.dao.UserDAO;
 import logic.engineeringclasses.dao.RegisterDAO;
 import logic.engineeringclasses.exception.PatternException;
 import logic.model.Registration;
@@ -22,8 +23,8 @@ import logic.model.User;
 
 public class RegisterController{
 
+	private final CondominiumDAO cond = new CondominiumDAO();
 	private final RegisterDAO register = new RegisterDAO();
-	private final LoginDAO login = new LoginDAO();
 	private final ApartmentController aptController = new ApartmentController();
 	private final PatternController pattern = new PatternController();
 	private int typError;
@@ -104,7 +105,7 @@ public class RegisterController{
 	}
 
 	public ObservableList<String> loadAddresses() throws SQLException{
-		return login.checkAddressesList();
+		return cond.checkAddressesList();
 	}
 
 	public ObservableList<Registration> loadRegistration(String address)throws SQLException{

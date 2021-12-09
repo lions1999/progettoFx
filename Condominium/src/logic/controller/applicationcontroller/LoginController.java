@@ -3,7 +3,8 @@ package logic.controller.applicationcontroller;
 import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.bean.UserBean;
-import logic.engineeringclasses.dao.LoginDAO;
+import logic.engineeringclasses.dao.CondominiumDAO;
+import logic.engineeringclasses.dao.UserDAO;
 import logic.engineeringclasses.exception.PatternException;
 import logic.model.UserSingleton;
 import logic.model.Administrator;
@@ -12,7 +13,8 @@ import logic.model.Resident;
 
 public class LoginController {
 
-	private final LoginDAO login = new LoginDAO();
+	private final CondominiumDAO cond = new CondominiumDAO();
+	private final UserDAO login = new UserDAO();
 	private static final UserSingleton sg = UserSingleton.getInstance();
 	private int typError;
 	
@@ -67,7 +69,7 @@ public class LoginController {
 	}
 	
 	public ObservableList<String> loadAddresses() throws SQLException{
-		return login.checkAddressesList();
+		return cond.checkAddressesList();
 	}
 	
 }
