@@ -49,7 +49,7 @@ public class RegisterDAO extends SqlDAO{
             connect();
             rs = RegisterQuery.selectRegisteredUserList(stmt,address);
             while(rs.next()) {
-                list.add(new Registration(rs.getString("reg_id"),rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
+                list.add(new Registration(rs.getString("reg_id")+"\n",rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
             }
         } finally {
             disconnect();

@@ -11,9 +11,10 @@ import java.sql.SQLException;
 
 public class ApartmentDAO extends SqlDAO{
 
-    private String usrName;
+
     private String usrId;
     private String userEmail;
+    private UserDAO userDao = new UserDAO();
 
     public int loadApartmentId(String apartment, String address) throws SQLException {
         int id = 0;
@@ -72,7 +73,7 @@ public class ApartmentDAO extends SqlDAO{
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
-                Apartment apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes), "0");
+                Apartment apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes), "0");
                 apartments.add(apartment);
             }
         } finally {
@@ -107,25 +108,12 @@ public class ApartmentDAO extends SqlDAO{
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
-                apartment = new Apartment(aptID, aptAdd, checkNameByID(aptOwn), checkNameByID(aptRes),"0");
+                apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes),"0");
             }
         }finally{
             disconnect();
         }
         return apartment;
-    }
-
-    public String checkNameByID(String id)throws SQLException {
-        try {
-            connect();
-            ResultSet rs = ApartmentQuery.selectNameByID(stmt, id);
-            if(rs.next()) {
-                this.usrName = rs.getString("user_name");
-            }
-        } finally {
-            disconnect();
-        }
-        return this.usrName;
     }
 
     public void addResident(String apartment,String address) throws SQLException{

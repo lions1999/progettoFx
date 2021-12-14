@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.RegisterGUI">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.registration.RegisterGUI">
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #0C39FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -76,7 +76,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </ComboBox>
-            <Button mnemonicParsing="false" onAction="#onSignupClick" prefHeight="40.0" prefWidth="400.0" stylesheets="@fullpackstyling.css" text="Sign up">
+            <Button mnemonicParsing="false" onAction="#onSignupClick" prefHeight="40.0" prefWidth="400.0" stylesheets="@style.css" text="Sign up">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -97,7 +97,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Pane>
-            <Button fx:id="btnSign" mnemonicParsing="false" onAction="#onSignClick" prefHeight="40.0" prefWidth="420.0" stylesheets="@fullpackstyling.css" text="Sign in">
+            <Button fx:id="btnSign" mnemonicParsing="false" onAction="#onSignClick" prefHeight="40.0" prefWidth="420.0" stylesheets="@style.css" text="Sign in">
                <font>
                   <Font size="18.0" />
                </font>

@@ -10,13 +10,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logic.controller.applicationcontroller.PostController;
-import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
-import logic.controller.guicontroller.admin.requests.registration.RegistrationTableGUI;
 import logic.controller.guicontroller.general.home.PostGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -156,6 +153,7 @@ public class MenuGUI extends MainGUI implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         try {
             setUp();
         } catch (IOException e) {

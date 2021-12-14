@@ -9,6 +9,8 @@ import java.sql.SQLException;
 
 public class MeetDAO extends SqlDAO{
 
+    private UserDAO userDao = new UserDAO();
+
     public ObservableList<MeetRequest> loadMeetList(String address) throws SQLException{
         ObservableList<MeetRequest> list = FXCollections.observableArrayList();
         ResultSet rs;
@@ -16,7 +18,7 @@ public class MeetDAO extends SqlDAO{
             connect();
             rs = MeetQuery.selectMeetRequests(stmt,address);
             while(rs.next()) {
-                list.add(new MeetRequest(rs.getString("meet_id"),rs.getString("meet_from"),rs.getString("meet_addr"),rs.getString("meet_obj"), rs.getString("meet_txt")));
+                list.add(new MeetRequest(rs.getString("meet_id"),userDao.checkNameByID(rs.getString("meet_from")),rs.getString("meet_addr"),rs.getString("meet_obj"), rs.getString("meet_txt")));
             }
         } finally {
             disconnect();

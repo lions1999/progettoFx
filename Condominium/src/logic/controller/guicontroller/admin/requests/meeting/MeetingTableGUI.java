@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import logic.controller.applicationcontroller.MeetController;
 import logic.engineeringclasses.bean.MeetRequestBean;
 import logic.model.MeetRequest;
@@ -20,13 +21,13 @@ public class MeetingTableGUI  {
     @FXML private TableColumn<MeetRequest,String> tcObj;
     @FXML private TableColumn<MeetRequest,String> tcTxt;
 
-//    @FXML private void getSelected() {
-//        int index;
-//        index = tableView.getSelectionModel().getSelectedIndex();
-//        if(index<=-1)return;
-//        //TODO
-//        return;
-//    }
+    @FXML private void getSelected() {
+        int index;
+        index = tableMeeting.getSelectionModel().getSelectedIndex();
+        if(index<=-1)return;
+        //TODO
+        return;
+    }
 
     public void setUpMeeting(String address) {
         tcId.setCellValueFactory(new PropertyValueFactory<>("id"));

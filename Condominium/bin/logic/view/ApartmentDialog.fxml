@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<DialogPane minHeight="150.0" minWidth="300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.ApartmentDialogGUI">
+<DialogPane minHeight="150.0" minWidth="300.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.registration.resident.ApartmentDialogGUI">
    <header>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="One Last Step..." />
    </header>

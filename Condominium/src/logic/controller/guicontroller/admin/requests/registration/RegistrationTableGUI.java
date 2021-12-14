@@ -20,7 +20,7 @@ public class RegistrationTableGUI {
 	protected final RegisterController controller = new RegisterController();
     protected final ViewController view = new ViewController();
 
-    @FXML private TableView<Registration> tableView;
+    @FXML private TableView<Registration> registrationTable;
     @FXML private TableColumn<Registration, String> tcID;
     @FXML private TableColumn<Registration, String> tcName;
     @FXML private TableColumn<Registration, String> tcEmail;
@@ -31,14 +31,21 @@ public class RegistrationTableGUI {
 
     @FXML private void getSelected() throws IOException {
         int index;
-        index = tableView.getSelectionModel().getSelectedIndex();
+        index = registrationTable.getSelectionModel().getSelectedIndex();
         if(index<=-1)return;
         RegistrationBean bean = registrationBean(tcID.getCellData(index),tcName.getCellData(index),tcEmail.getCellData(index),tcPwd.getCellData(index),tcRole.getCellData(index),tcAddress.getCellData(index),tcApartment.getCellData(index));
         FXMLLoader loader = view.loader("RegistrationDetailTable");
         Parent root = loader.load();
         RegistrationTableDetailGUI detail = loader.getController();
         detail.setUp(bean);
+        style();
         border.setRight(root);
+    }
+
+    private void style() {
+        registrationTable.getStylesheets().clear();
+        registrationTable.setId("detail-table");
+        registrationTable.getStylesheets().add(getClass().getResource("/logic/view/style.css").toExternalForm());
     }
 
     public void setUpRegistration(String address) {
@@ -51,7 +58,7 @@ public class RegistrationTableGUI {
         tcApartment.setCellValueFactory(new PropertyValueFactory<>("apartment"));
         try {
 	    	ObservableList<Registration> list = controller.loadRegistration(address);
-            tableView.setItems(list);
+            registrationTable.setItems(list);
     	}catch(Exception e) {
     		System.out.println("No");
     	}

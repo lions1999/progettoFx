@@ -3,6 +3,7 @@ package logic.engineeringclasses.dao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.exception.PatternException;
+import logic.engineeringclasses.query.ApartmentQuery;
 import logic.engineeringclasses.query.CondominiumQuery;
 import logic.engineeringclasses.query.UserQuery;
 import logic.model.Administrator;
@@ -13,6 +14,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAO extends SqlDAO{
+
+    private String usrName;
+
+    public String checkNameByID(String id)throws SQLException {
+        try {
+            connect();
+            ResultSet rs = ApartmentQuery.selectNameByID(stmt, id);
+            if(rs.next()) {
+                this.usrName = rs.getString("user_name");
+            }
+        } finally {
+            disconnect();
+        }
+        return this.usrName;
+    }
 
     public String checkUserID(String email,String address) throws SQLException{
         String getID = "";

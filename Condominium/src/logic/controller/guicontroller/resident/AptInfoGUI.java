@@ -120,6 +120,8 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             case "Bar Chart":
                 System.out.println("case 1");
                 BarChart bc = chart.BarChart("Fees","","Outgoings");
+
+                bc.getStylesheets().add(getClass().getResource("/logic/view/style.css").toExternalForm());
                 XYChart.Series BcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
                 bc.getData().add(BcSeries);
                 System.out.println("case 1");
