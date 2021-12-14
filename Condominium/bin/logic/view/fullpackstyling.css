@@ -1,3 +1,5 @@
+
+
 .button
 {
 -fx-background-color : #FFF;
@@ -9,7 +11,6 @@
 -fx-border-color: #355ECE;
 -fx-text-fill:  #0C3988;	
 }
-
 
 
 .button:hover
@@ -50,13 +51,13 @@
 
    -fx-text-fill: white;
    -fx-font-weight: bold;
-   -fx-alignment: CENTER_LEFT;
+   -fx-alignment: CENTER;
 }
 .table-view .cell{
    -fx-cell-size: 30;
-  -fx-alignment: center-left;
+  -fx-alignment: center;
   -fx-text-fill: #000000;
-  -fx-alignment: CENTER_LEFT;
+  -fx-alignment: CENTER;
 }
 
 .table-row-cell:selected {
@@ -107,4 +108,11 @@
 .chart-pie {
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
+}
+
+/*added*/
+
+.combo-box:hover{
+    -fx-background-color : #2D75E8 ;
+    -fx-text-fill:   #FFF;
 }

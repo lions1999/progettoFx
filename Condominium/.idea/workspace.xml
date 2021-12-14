@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="modifiche davide">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/AptInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/AptInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RateResidentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RateResidentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RatingUserView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RatingUserView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/AptInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/AptInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/MenuView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/MenuView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/RateResidentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/RateResidentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/RatingUserView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/RatingUserView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/fullpackstyling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/fullpackstyling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/fullpackstyling.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +201,7 @@
       <workItem from="1638882399761" duration="9903000" />
       <workItem from="1639043709263" duration="6369000" />
       <workItem from="1639056181157" duration="1653000" />
-      <workItem from="1639477187645" duration="9653000" />
+      <workItem from="1639477187645" duration="10516000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -254,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639491811827</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modifiche davide">
+      <created>1639493176920</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639493176920</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
