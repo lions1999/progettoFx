@@ -67,10 +67,11 @@ public class ContactGUI implements Initializable{
 
 			if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to the " + comboBox.getValue() + " with text '" + ReasonText.getText() + "'?")) {
 				new SendEmail().send(recipients, recipients, subject, message);
-				alert.alertInfo("Information", "Mail sent to "+comboBox.getValue()+"!","");
+				//alert.alertInfo("Information", "Mail sent to "+comboBox.getValue()+"!","");
 				ClearReason();
 			} else {
-				alert.alertInfo("Information", "Mail not sent!","");
+				//alert.alertInfo("Information", "Mail not sent!","");
+				System.out.println("not sent!");
 			}
 		}
 	}

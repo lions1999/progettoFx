@@ -4,15 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="reorganized project">
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/CondominiumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/CondominiumDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/RegisterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/RegisterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/LoginQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/CondominiumQuery.java" afterDir="false" />
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="modifiche davide">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021_11_58_[Changes]/ChartGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021_11_58_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021_11_58__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/SendEmail$SocialAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/SendEmail$SocialAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/SendEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/SendEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/resident/AptInfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/resident/AptInfoGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/resident/ContactGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/resident/ContactGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/LoginDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/LoginQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/CondInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/CondInfoView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/resident/AptInfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/resident/AptInfoGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/resident/ContactGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/resident/ContactGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/MeetDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/MeetDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/CondInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/CondInfoView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +56,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1zzfXtFT8IbQZQnA8Ynacc6WRXa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -205,6 +221,7 @@
       <workItem from="1638882399761" duration="9903000" />
       <workItem from="1639043709263" duration="6369000" />
       <workItem from="1639056181157" duration="1653000" />
+      <workItem from="1639477187645" duration="4302000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -238,18 +255,35 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="davide" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="prova pack" />
     <MESSAGE value="reorganized project" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganized project" />
+    <MESSAGE value="modifiche davide" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche davide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

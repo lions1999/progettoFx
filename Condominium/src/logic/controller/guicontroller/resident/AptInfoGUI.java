@@ -70,26 +70,30 @@ public class AptInfoGUI extends MainGUI implements Initializable {
                 XYChart.Series<String,Number> series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldBarChart.getData().add(series2);
             } else {
-                try {
-                    oldBarChart.getData().remove(1);
-                } catch (Exception e){
-                    e.printStackTrace();
+                if (oldBarChart.getData().size() == 2) {
+                    try {
+                        oldBarChart.getData().remove(1);
+                    } catch(Exception e){
+                        e.printStackTrace();
+                    }
                 }
             }
         }
+
         else if (chartCombo.getValue().equals("Line Chart")){
             LineChart oldLineChart = (LineChart) border.getRight();
             if (LastMonthBtn.isSelected()){
                 XYChart.Series series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldLineChart.getData().add(series2);
             } else {
-                try {
-                    oldLineChart.getData().remove(1);
-                } catch (Exception e){
-                    e.printStackTrace();
+                if (oldLineChart.getData().size() == 2) {
+                    try {
+                        oldLineChart.getData().remove(1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-
         }
         else if (chartCombo.getValue().equals("Pie Chart")){
             Pane oldPieChart = (Pane) border.getRight();
@@ -99,13 +103,14 @@ public class AptInfoGUI extends MainGUI implements Initializable {
                 PieChart pc = chart.NewPieChart(valueList,"Outgoing Last Month");
                 vBox.getChildren().add(pc);
             } else {
-                try {
-                    vBox.getChildren().remove(1);
-                } catch (Exception e){
-                    e.printStackTrace();
+                if (vBox.getChildren().size() == 2) {
+                    try {
+                        vBox.getChildren().remove(1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-            border.setRight(oldPieChart);
         }
     }
 

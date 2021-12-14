@@ -1,5 +1,7 @@
 package logic.controller.applicationcontroller;
 
+import logic.controller.guicontroller.general.AlertGUI;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -14,6 +16,7 @@ public class SendEmail {
     private static final String FROM_ADDRESS = "condominium.ispw@gmail.com";
     private static final String PASSWORD = "ispw2021";
     private static final String FROM_NAME = "noreply.condominium";
+    private final AlertGUI alert = new AlertGUI();
 
     public void send(String[] recipients, String[] bccRecipients, String subject, String message) {
         try {
@@ -41,6 +44,7 @@ public class SendEmail {
             Transport.send(msg);
         } catch (UnsupportedEncodingException | MessagingException ex) {
             Logger.getLogger(SendEmail.class.getName()).log(Level.SEVERE, null, ex);
+            alert.alertError(ex.getMessage(), ex.getLocalizedMessage(), "");
         }
     }
 

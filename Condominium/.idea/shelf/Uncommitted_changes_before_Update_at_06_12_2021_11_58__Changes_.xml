@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_06_12_2021_11_58_[Changes]" date="1638788363560" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021_11_58_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/12/2021 11:58 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="bin/logic/controller/guicontroller/ChartGUI.class" />
-    <option name="AFTER_PATH" value="bin/logic/controller/guicontroller/ChartGUI.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2021_11_58_[Changes]/ChartGUI.class" />
-  </binary>
-</changelist>
