@@ -47,7 +47,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../Università/ISPW/Progetto/Util/mysql-connector.jar!/" />
+          <root url="jar://$USER_HOME$/Downloads/mysql-connector.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -1,15 +1,17 @@
-package logic.controller.guicontroller.general.registration;
+package logic.controller.guicontroller.general;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import logic.controller.guicontroller.general.MainGUI;
-import logic.engineeringclasses.bean.UserBean;
 import logic.controller.applicationcontroller.RegisterController;
+import logic.engineeringclasses.bean.UserBean;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class RegisterGUI extends MainGUI implements Initializable{
 	 
@@ -77,9 +79,6 @@ public class RegisterGUI extends MainGUI implements Initializable{
     			errorBox(addressBox);
     			break;
 			case 10:
-				alert.alertError(title, "NO Apartment Available", "Please Retry");
-				break;
-			case 11:
 				alert.alertError(title, "Apartment not Selected", "Please Retry");
 				break;
     		default:

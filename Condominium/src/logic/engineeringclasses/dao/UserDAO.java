@@ -10,6 +10,7 @@ import logic.model.Administrator;
 import logic.model.Owner;
 import logic.model.Resident;
 import logic.model.Role;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

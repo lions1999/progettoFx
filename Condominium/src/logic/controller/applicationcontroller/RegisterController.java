@@ -1,25 +1,25 @@
 package logic.controller.applicationcontroller;
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Optional;
-
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
-import logic.controller.guicontroller.general.registration.SelectApartmentDialogGUI;
+import logic.controller.guicontroller.general.ApartmentDialogGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.dao.CondominiumDAO;
+import logic.engineeringclasses.dao.UserDAO;
 import logic.engineeringclasses.dao.RegisterDAO;
 import logic.engineeringclasses.exception.PatternException;
 import logic.model.Registration;
 import logic.model.Role;
 import logic.model.User;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Optional;
 
 public class RegisterController{
 
@@ -62,42 +62,27 @@ public class RegisterController{
 			}
 			if(checkRegistration(bean.getEmail(),bean.getAddress())){
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(getClass().getResource("/logic/view/SelectApartmentDialog.fxml"));
+				loader.setLocation(getClass().getResource("/logic/view/ApartmentDialog.fxml"));
 				DialogPane pane = loader.load();
-				SelectApartmentDialogGUI apt = loader.getController();
-				ObservableList<String> list = FXCollections.observableArrayList();
+				ApartmentDialogGUI apt = loader.getController();
 				switch(Role.valueOf(bean.getRole().toUpperCase())){
 					case OWNER:
-						list = aptController.loadApartmentOwner(bean.getAddress());
-						break;
+						apt.setUp(aptController.loadApartmentOwner(bean.getAddress()),bean.getRole(),bean.getAddress());
 					case RESIDENT:
-						list = aptController.loadApartmentResident(bean.getAddress());
-						break;
-				}
-				if(list.isEmpty()){
-					this.typError = 10;
-					throw new PatternException("No Apartment Available");
-				}else{
-					apt.setUp(list,bean.getRole(),bean.getAddress());
-				}
-				Dialog<ButtonType> dialog = new Dialog<>();
-				dialog.setDialogPane(pane);
-				Optional<ButtonType> btn = dialog.showAndWait();
-				if(btn.isPresent() && btn.get() == ButtonType.OK){
-					list = apt.getApt();
-					if(list.isEmpty()){
-						this.typError = 11;
-						throw new PatternException("No Apartment Selected");
-					} else{
-						for (String aptName: list){
+						apt.setUp(aptController.loadApartmentResident(bean.getAddress()),bean.getRole(),bean.getAddress());
+					default:
+						Dialog<ButtonType> dialog = new Dialog<>();
+						dialog.setDialogPane(pane);
+						Optional<ButtonType> btn = dialog.showAndWait();
+						if(btn.isPresent() && !apt.getApt().equals("Available Apartments") && !apt.getApt().equals("NO Available Apartments left")){
 							String name = bean.getName() +" "+ bean.getSurname();
 							User user = new User(null,name,bean.getEmail(),bean.getPassword(),bean.getAddress());
-							register.addRegistrationUser(user,bean.getRole().toUpperCase(),aptName);
+							register.addRegistrationUser(user,bean.getRole().toUpperCase(),apt.getApt());
+						}else{
+							this.typError = 10;
+							throw new PatternException("No Apartment Selected");
 						}
-					}
-				}else{
-					this.typError = 11;
-					throw new PatternException("No Apartment Selected");
+						break;
 				}
 			}
 			return this.typError;

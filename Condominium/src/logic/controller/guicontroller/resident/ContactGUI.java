@@ -1,13 +1,11 @@
 package logic.controller.guicontroller.resident;
 
-import java.net.URL;
-import java.sql.SQLException;
-
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import logic.controller.applicationcontroller.PatternController;
 import logic.controller.applicationcontroller.SendEmail;
@@ -15,6 +13,10 @@ import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.general.AlertGUI;
 import logic.engineeringclasses.dao.ApartmentDAO;
 import logic.model.UserSingleton;
+
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class ContactGUI implements Initializable{
 
