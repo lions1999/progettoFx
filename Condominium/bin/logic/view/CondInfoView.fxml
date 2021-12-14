@@ -20,9 +20,9 @@
          <children>
             <Text fx:id="OwnerText" layoutX="7.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner:" />
             <ImageView fx:id="userImg" fitWidth="80.0" layoutX="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                   <Image url="@../../../../../../../../Downloads/2x/outline_person_black_24dp.png" />
-               </image>
+<!--               <image>-->
+<!--                   <Image url="@../../../../../../../../Downloads/2x/outline_person_black_24dp.png" />-->
+<!--               </image>-->
             </ImageView>
             <TextField fx:id="OwnerFullName" editable="false" layoutX="64.0" layoutY="119.0" prefHeight="25.0" prefWidth="166.0" />
             <Text fx:id="ResidentText" layoutX="7.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resident:" />

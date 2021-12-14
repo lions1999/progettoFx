@@ -67,6 +67,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
         if (chartCombo.getValue().equals("Bar Chart")) {
             BarChart oldBarChart = (BarChart) border.getRight();
             if (LastMonthBtn.isSelected()) {
+                System.out.println("Bar chart last month");
                 XYChart.Series<String,Number> series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldBarChart.getData().add(series2);
             } else {
@@ -83,6 +84,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
         else if (chartCombo.getValue().equals("Line Chart")){
             LineChart oldLineChart = (LineChart) border.getRight();
             if (LastMonthBtn.isSelected()){
+                System.out.println("Line chart last month");
                 XYChart.Series series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldLineChart.getData().add(series2);
             } else {
@@ -99,6 +101,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
             Pane oldPieChart = (Pane) border.getRight();
             VBox vBox = (VBox) oldPieChart.getChildren().get(0);
             if (LastMonthBtn.isSelected()){
+                System.out.println("Pie chart last month");
                 ObservableList<PieChart.Data> valueList = chart.value(ChartDataList,seriesName);
                 PieChart pc = chart.NewPieChart(valueList,"Outgoing Last Month");
                 vBox.getChildren().add(pc);
