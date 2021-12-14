@@ -1,4 +1,4 @@
-package logic.controller.guicontroller.general;
+package logic.controller.guicontroller.general.login;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -7,6 +7,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import logic.controller.applicationcontroller.LoginController;
+import logic.controller.guicontroller.general.MainGUI;
 import logic.engineeringclasses.bean.UserBean;
 
 import java.net.URL;

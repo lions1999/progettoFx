@@ -8,21 +8,15 @@
 <?import javafx.scene.text.*?>
 <AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: #fff;"
             xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="logic.controller.guicontroller.general.LoginGUI">
+            fx:controller="logic.controller.guicontroller.general.login.LoginGUI">
     <AnchorPane prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #0C39FF;"
                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Label alignment="CENTER" layoutX="32.0" layoutY="269.0" prefHeight="58.0" prefWidth="317.0"
                text="Condominium" textFill="WHITE" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
-            <font>
-                <Font name="Segoe UI" size="48.0"/>
-            </font>
         </Label>
         <Label alignment="CENTER" layoutX="46.0" layoutY="315.0" prefHeight="23.0" prefWidth="290.0"
                text="Manage your condominiums easily" textFill="WHITE" AnchorPane.leftAnchor="32.0"
                AnchorPane.rightAnchor="32.0">
-            <font>
-                <Font name="Segoe UI" size="18.0"/>
-            </font>
         </Label>
         <ImageView fitHeight="113.0" fitWidth="116.0" layoutX="144.0" layoutY="108.0" pickOnBounds="true"
                    preserveRatio="true" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="143.0"
@@ -50,8 +44,8 @@
                 <Insets top="25.0"/>
             </VBox.margin>
         </ComboBox>
-        <Button fx:id="btnSignin" mnemonicParsing="false" onAction="#onSignClick" prefHeight="40.0"
-                prefWidth="420.0" stylesheets="@fullpackstyling.css" text="Sign in">
+        <Button mnemonicParsing="false" onAction="#onSignClick" prefHeight="40.0"
+                prefWidth="420.0" stylesheets="@style.css" text="Sign in">
             <font>
                 <Font size="18.0"/>
             </font>
@@ -60,21 +54,16 @@
             </VBox.margin>
         </Button>
         <Pane prefHeight="31.0" prefWidth="275.0">
-            <children>
-                <Separator accessibleText="Or" layoutX="3.0" layoutY="13.0" prefHeight="5.0" prefWidth="390.0"/>
-                <Label alignment="CENTER" layoutX="180.0" layoutY="4.0" prefHeight="23.0" prefWidth="31.0"
-                       style="-fx-background-color: #fff;" text="Or" textAlignment="CENTER" textFill="#5b5a5a">
-                    <font>
-                        <Font name="Segoe UI" size="18.0"/>
-                    </font>
-                </Label>
-            </children>
             <VBox.margin>
                 <Insets top="10.0"/>
             </VBox.margin>
+            <Separator accessibleText="Or" layoutX="3.0" layoutY="13.0" prefHeight="5.0" prefWidth="390.0"/>
+            <Label alignment="CENTER" layoutX="180.0" layoutY="4.0" prefHeight="23.0" prefWidth="31.0"
+                   style="-fx-background-color: #fff;" text="Or" textAlignment="CENTER" textFill="#5b5a5a">
+            </Label>
         </Pane>
-        <Button fx:id="btnSignup" mnemonicParsing="false" onAction="#onSignupClick" prefHeight="40.0"
-                prefWidth="420.0" stylesheets="@fullpackstyling.css" text="Sign up">
+        <Button mnemonicParsing="false" onAction="#onSignupClick" prefHeight="40.0"
+                prefWidth="420.0" stylesheets="@style.css" text="Sign up">
             <font>
                 <Font size="18.0"/>
             </font>
@@ -85,14 +74,8 @@
     </VBox>
     <Label alignment="CENTER" layoutX="394.0" layoutY="466.0" prefHeight="23.0" prefWidth="93.0" text="Design by me"
            textFill="#5b5a5a" AnchorPane.bottomAnchor="14.0">
-        <font>
-            <Font name="Segoe UI" size="12.0"/>
-        </font>
     </Label>
     <Label alignment="CENTER" layoutX="842.0" layoutY="612.0" prefHeight="23.0" prefWidth="93.0" text="DOWNLOAD APP"
            textFill="#a6b1cc" AnchorPane.bottomAnchor="14.799999999999955">
-        <font>
-            <Font name="Segoe UI" size="12.0"/>
-        </font>
     </Label>
 </AnchorPane>

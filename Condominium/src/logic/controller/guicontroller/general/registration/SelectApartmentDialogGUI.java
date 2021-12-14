@@ -14,14 +14,14 @@ public class SelectApartmentDialogGUI {
     @FXML private ListView<String> listView;
 
     public void setUp(ObservableList<String> list, String role, String address){
-            listView.setItems(list);
-            switch (Role.valueOf(role.toUpperCase())){
-                case RESIDENT:
-                    listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-                    break;
-                case OWNER:
-                    listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-                    break;
+        listView.setItems(list);
+        switch (Role.valueOf(role.toUpperCase())){
+            case RESIDENT:
+                listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+                break;
+            case OWNER:
+                listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+                break;
         }
         txtAddress.setText(address);
         txtRole.setText(role);
