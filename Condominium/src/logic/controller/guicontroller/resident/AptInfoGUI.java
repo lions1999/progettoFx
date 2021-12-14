@@ -65,35 +65,27 @@ public class AptInfoGUI extends MainGUI implements Initializable {
         List<Double> ChartDataList = getList(sg.getPastfee());
         pastGrid.setVisible(LastMonthBtn.isSelected());
         if (chartCombo.getValue().equals("Bar Chart")) {
-            BarChart oldBarChart = (BarChart) border.getRight();
+            BarChart<String, Number> oldBarChart = (BarChart) border.getRight();
             if (LastMonthBtn.isSelected()) {
                 System.out.println("Bar chart last month");
                 XYChart.Series<String,Number> series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldBarChart.getData().add(series2);
             } else {
                 if (oldBarChart.getData().size() == 2) {
-                    try {
-                        oldBarChart.getData().remove(1);
-                    } catch(Exception e){
-                        e.printStackTrace();
-                    }
+                    oldBarChart.getData().remove(1);
                 }
             }
         }
 
         else if (chartCombo.getValue().equals("Line Chart")){
-            LineChart oldLineChart = (LineChart) border.getRight();
+            LineChart<String, Number> oldLineChart = (LineChart) border.getRight();
             if (LastMonthBtn.isSelected()){
                 System.out.println("Line chart last month");
-                XYChart.Series series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
+                XYChart.Series<String, Number> series2 = chart.NewSeries(ChartDataList, seriesName, "Outgoings Last Month");
                 oldLineChart.getData().add(series2);
             } else {
                 if (oldLineChart.getData().size() == 2) {
-                    try {
-                        oldLineChart.getData().remove(1);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                oldLineChart.getData().remove(1);
                 }
             }
         }
@@ -107,11 +99,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
                 vBox.getChildren().add(pc);
             } else {
                 if (vBox.getChildren().size() == 2) {
-                    try {
-                        vBox.getChildren().remove(1);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    vBox.getChildren().remove(1);
                 }
             }
         }
@@ -142,7 +130,7 @@ public class AptInfoGUI extends MainGUI implements Initializable {
                 break;
             case "Line Chart":
                 System.out.println("case 3");
-                LineChart lc = chart.NewLineChart("Fees","","Outgoings");
+                LineChart<String ,Number> lc = chart.NewLineChart("Fees","","Outgoings");
                 XYChart.Series<String, Number> LcSeries = chart.NewSeries(ChartDataList,seriesName,"Outgoing Current Year");
                 lc.getData().add(LcSeries);
                 border.setRight(lc);

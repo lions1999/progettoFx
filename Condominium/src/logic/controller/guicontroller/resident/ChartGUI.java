@@ -24,10 +24,10 @@ public class ChartGUI {
         return pieChart;
     }
 
-    public LineChart NewLineChart(String xAxis, String yAxis, String Title){
+    public LineChart<String, Number> NewLineChart(String xAxis, String yAxis, String Title){
         final CategoryAxis categoryAxis = new CategoryAxis();
         final NumberAxis numberAxis = new NumberAxis();
-        LineChart lineChart = new LineChart(categoryAxis,numberAxis);
+        LineChart<String, Number> lineChart = new LineChart<>(categoryAxis,numberAxis);
         categoryAxis.setLabel(xAxis);
         numberAxis.setLabel(yAxis);
         lineChart.setTitle(Title);
@@ -35,10 +35,10 @@ public class ChartGUI {
     }
 
     public XYChart.Series<String,Number> NewSeries(List<Double> DataList, List<String> seriesName, String name){
-        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName(name);
         for (int i = 0;i < DataList.size(); i++){
-            series.getData().add(new XYChart.Data<String, Number>(seriesName.get(i),DataList.get(i)));
+            series.getData().add(new XYChart.Data<>(seriesName.get(i),DataList.get(i)));
         }
         return series;
     }
