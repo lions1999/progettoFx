@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.admin.requests.meeting.MeetingTableGUI;
 import logic.controller.guicontroller.admin.requests.registration.RegistrationTableGUI;
@@ -19,10 +20,20 @@ import java.util.ResourceBundle;
 
 public class TabOrganizeGUI implements Initializable {
 
+    @FXML private TabPane tabOrganize;
     @FXML private Tab tabRegistration;
     @FXML private Tab tabMeeting;
     protected ViewController view = new ViewController();
     UserSingleton sg = UserSingleton.getInstance();
+
+
+    public void selectRegistration(){
+        tabOrganize.getSelectionModel().select(tabRegistration);
+    }
+
+    public void selectMeeting(){
+        tabOrganize.getSelectionModel().select(tabMeeting);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

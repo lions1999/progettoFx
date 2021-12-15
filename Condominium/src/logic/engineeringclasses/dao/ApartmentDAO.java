@@ -130,6 +130,20 @@ public class ApartmentDAO extends SqlDAO{
         }
     }
 
+    public void addOwner(String apartment, String address) throws SQLException{
+        try{
+            connect();
+            String sql = "UPDATE apartment SET apt_own=? where apt_name=? and apt_addr=?";
+            preset = prepConnect(sql);
+            preset.setString(1, loadLatestId("users","user_id"));
+            preset.setString(2,apartment);
+            preset.setString(3,address);
+            preset.executeUpdate();
+        } finally {
+            disconnect();
+        }
+    }
+
     public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
         try {
             connect();

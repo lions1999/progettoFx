@@ -126,16 +126,29 @@ public class RegisterController{
 	}
 
 	public void addRegistered(RegistrationBean reg, FeeBean fee){
-		try{
-			FeeController feeCtrl = new FeeController();
-			ApartmentController aptCtrl = new ApartmentController();
-			register.addRegistered(reg);
-			fee.setApt(aptCtrl.loadApartmentId(reg.getApartment(),reg.getAddress()));
-			feeCtrl.addFees(fee);
-			aptCtrl.addResident(reg.getApartment(),reg.getAddress());
-		}catch(Exception e) {
-			System.out.println("SQLException");
+		ApartmentController aptCtrl = new ApartmentController();
+		switch (Role.valueOf(reg.getRole())){
+			case OWNER:
+				try {
+					register.addRegistered(reg);
+					aptCtrl.addOwner(reg.getApartment(), reg.getAddress());
+				}catch (SQLException e){
+					e.printStackTrace();
+				}
+				break;
+			case RESIDENT:
+				try{
+					FeeController feeCtrl = new FeeController();
+					register.addRegistered(reg);
+					fee.setApt(aptCtrl.loadApartmentId(reg.getApartment(),reg.getAddress()));
+					feeCtrl.addFees(fee);
+					aptCtrl.addResident(reg.getApartment(),reg.getAddress());
+				}catch(SQLException e) {
+					System.out.println("SQLException");
+				}
+				break;
 		}
+
 	}
 
 	public void removeRegistered(int id) {

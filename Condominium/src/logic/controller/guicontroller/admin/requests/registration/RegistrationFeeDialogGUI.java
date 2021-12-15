@@ -36,6 +36,7 @@ public class RegistrationFeeDialogGUI extends RegistrationTableGUI {
         if(!tf.editableProperty().get()) return false;
         if(tf.editableProperty().get() && tf.getText().equals("0.0")) return true;
         double d = Double.parseDouble(tf.getText());
+        if(d < 0) return true;
         int length = String.valueOf((int)d).length();
         return length > 3;
     }

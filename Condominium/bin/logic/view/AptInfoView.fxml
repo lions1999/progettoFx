@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="aptPane" stylesheets="@fullpackstyling.css" style="-fx-font-size: 15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.resident.AptInfoGUI">
+<AnchorPane fx:id="aptPane" stylesheets="@style.css" style="-fx-font-size: 15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.resident.AptInfoGUI">
    <children>
       <VBox>
          <children>

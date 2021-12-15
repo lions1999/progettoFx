@@ -30,6 +30,14 @@ public class ApartmentController {
         }
     }
 
+    public void addOwner(String apartment,String address){
+        try{
+            dao.addOwner(apartment,address);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 
     public ObservableList<Apartment> loadApartments(String addr) throws SQLException{
         return dao.loadApartments(addr);

@@ -8,13 +8,15 @@ import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.general.AlertGUI;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.bean.RegistrationBean;
+import logic.model.Role;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
 
 public class RegistrationTableDetailGUI extends RegistrationTableGUI {
 
-    private AlertGUI alert = new AlertGUI();
+    private final AlertGUI alert = new AlertGUI();
 
     @FXML private TextField tfID;
     @FXML private TextField tfName;
@@ -29,6 +31,23 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
     }
 
     @FXML private void btnAddClick() throws IOException, SQLException {
+        switch(Role.valueOf(tfRole.getText())){
+            case RESIDENT:
+                addResident();
+                break;
+            case OWNER:
+                addOwner();
+                break;
+        }
+    }
+
+    @FXML private void btnDeleteClick() throws IOException {
+        if(alert.alertConfirm("Title","Are you sure?","")){
+            remove();
+        }
+    }
+
+    private void addResident() throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/logic/view/FeeDialog.fxml"));
         DialogPane pane = loader.load();
@@ -42,12 +61,14 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
             alert.alertInfo("Registration/Info","User Successfully Registered",null);
             remove();
         } else{
-            alert.alertError("Registration/Error","Incorrect/Empty Credential","\n-Empty Field\n-More than 4 digits fee");
+            alert.alertError("Registration/Error","Incorrect/Empty Credential","\n-Empty Field\n-More than 4 digits fee\n-Negative Value");
         }
     }
 
-    @FXML private void btnDeleteClick() throws IOException {
-        if(alert.alertConfirm("Title","Are you sure?","")){
+    private void addOwner() throws IOException {
+        if(alert.alertConfirm("Registration/Confirm","Are you sure?",null)){
+            controller.addRegistered(getRegistered(), null);
+            alert.alertInfo("Registration/Info","User Successfully Registered",null);
             remove();
         }
     }
@@ -73,7 +94,7 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
         FXMLLoader loader = view.loader("TabOrganize");
         Parent root = loader.load();
         TabOrganizeGUI org = loader.getController();
-        //org.regTabClick();
+        org.selectRegistration();
         MenuGUI.border.setCenter(root);
     }
 
