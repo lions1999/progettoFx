@@ -4,11 +4,11 @@
 
 <TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#getSelected" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.admin.condominium.InfoGUI">
   <columns>
-    <TableColumn fx:id="tcId" prefWidth="75.0" text="ID" />
+    <TableColumn fx:id="tcID" prefWidth="75.0" text="ID" />
     <TableColumn fx:id="tcName" prefWidth="75.0" text="Name" />
-      <TableColumn fx:id="tcEmail" prefWidth="75.0" text="Email" />
-      <TableColumn fx:id="tcPassword" prefWidth="75.0" text="Password" />
-      <TableColumn fx:id="tcRole" prefWidth="75.0" text="Role" />
-      <TableColumn fx:id="tcAddress" prefWidth="75.0" text="Address" />
+    <TableColumn fx:id="tcEmail" prefWidth="75.0" text="Email" />
+    <TableColumn fx:id="tcPwd" prefWidth="75.0" text="Password" />
+    <TableColumn fx:id="tcRole" prefWidth="75.0" text="Role" />
+    <TableColumn fx:id="tcAddress" prefWidth="75.0" text="Address" />
   </columns>
 </TableView>

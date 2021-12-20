@@ -2,73 +2,73 @@ package logic.model;
 
 public class Registration {
 
-    private String id;
-    private String name;
-	private String email;
-	private String password;
-	private String role;
-	private String address;
-    private String apartment;
+    private String regID;
+    private String regName;
+	private String regEmail;
+	private String regPwd;
+	private String regRole;
+	private String regAddr;
+    private String regApt;
 	
-	public Registration(String id , String name, String email, String password, String role, String address, String apartment){
-		this.setId(id);
-        this.setName(name);
-		this.setEmail(email);
-		this.setPassword(password);
-		this.setRole(role);
-		this.setAddress(address);
-        this.setApartment(apartment);
+	public Registration(String regID, String regName, String regEmail, String regPwd, String regRole, String regAddr, String regApt){
+		this.setRegID(regID);
+        this.setRegName(regName);
+		this.setRegEmail(regEmail);
+		this.setRegPwd(regPwd);
+		this.setRegRole(regRole);
+		this.setRegAddr(regAddr);
+        this.setRegApt(regApt);
 	}
 
-    public String getId(){return id;}
+    public String getRegID(){return regID;}
 
-    public void setId(String id){this.id = id;}
+    public void setRegID(String regID){this.regID = regID;}
 
-    public String getName() {
-        return name;
+    public String getRegName() {
+        return regName;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setRegName(String regName){
+        this.regName = regName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getRegEmail() {
+        return regEmail;
     }
 
-    public void setEmail(String email){
-        this.email = email;
+    public void setRegEmail(String regEmail){
+        this.regEmail = regEmail;
     }
     
-    public String getPassword() {
-        return password;
+    public String getRegPwd() {
+        return regPwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setRegPwd(String regPwd) {
+        this.regPwd = regPwd;
     }
     
-    public String getRole() {
-        return role;
+    public String getRegRole() {
+        return regRole;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRegRole(String regRole) {
+        this.regRole = regRole;
     }
     
-    public String getAddress() {
-        return address;
+    public String getRegAddr() {
+        return regAddr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRegAddr(String regAddr) {
+        this.regAddr = regAddr;
     }
 
-    private void setApartment(String apartment) {
-        this.apartment = apartment;
+    private void setRegApt(String regApt) {
+        this.regApt = regApt;
     }
 
-    public String getApartment(){
-        return apartment;
+    public String getRegApt(){
+        return regApt;
     }
 }

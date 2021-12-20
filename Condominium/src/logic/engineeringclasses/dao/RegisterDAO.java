@@ -30,11 +30,11 @@ public class RegisterDAO extends SqlDAO{
             String sql= "INSERT INTO registration (reg_name, reg_email, reg_pwd, reg_role, reg_addr,reg_apt) VALUES (?,?,?,?,?,?)";
             System.out.println(sql);
             preset = prepConnect(sql);
-            preset.setString(1, user.getName());
-            preset.setString(2, user.getEmail());
-            preset.setString(3, user.getPassword());
+            preset.setString(1, user.getUsrName());
+            preset.setString(2, user.getUsrEmail());
+            preset.setString(3, user.getUsrPwd());
             preset.setString(4, role);
-            preset.setString(5, user.getAddress());
+            preset.setString(5, user.getUsrAddr());
             preset.setString(6,apt);
             preset.execute();
         } finally {
@@ -49,7 +49,7 @@ public class RegisterDAO extends SqlDAO{
             connect();
             rs = RegisterQuery.selectRegisteredUserList(stmt,address);
             while(rs.next()) {
-                list.add(new Registration(rs.getString("reg_id")+"\n",rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
+                list.add(new Registration(rs.getString("reg_id"),rs.getString("reg_name"),rs.getString("reg_email"),rs.getString("reg_pwd"),rs.getString("reg_role"),rs.getString("reg_addr"), rs.getString("reg_apt")));
             }
         } finally {
             disconnect();

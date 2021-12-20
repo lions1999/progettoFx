@@ -30,4 +30,9 @@ public class UserQuery {
         return stmt.executeQuery(sql);
     }
 
+    public static ResultSet selectUserList(Statement stmt, String address) throws SQLException{
+        String sql = "SELECT * FROM users WHERE user_addr='" + address + "' AND user_role !='ADMINISTRATOR'";
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
 }

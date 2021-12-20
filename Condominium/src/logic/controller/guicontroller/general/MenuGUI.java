@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logic.controller.applicationcontroller.PostController;
+import logic.controller.guicontroller.admin.condominium.InfoGUI;
 import logic.controller.guicontroller.general.home.PostGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
@@ -72,19 +73,27 @@ public class MenuGUI extends MainGUI implements Initializable {
 
     @FXML public void btnInfoClick() {
         border.setRight(null);
-        switch (sg.getRole()){
-            case ADMINISTRATOR:
-                Pane condInfo = view.getPage("CondInfo");
-                border.setCenter(condInfo);
-                break;
-            case OWNER:
-                Pane Rate = view.getPage("RateResident");
-                border.setCenter(Rate);
-                break;
-            case RESIDENT:
-                Pane aptInfo = view.getPage("AptInfo");
-                border.setCenter(aptInfo);
-                break;
+        try{
+            switch (sg.getRole()){
+                case ADMINISTRATOR:
+                    FXMLLoader loader = view.loader("Info");
+                    Parent root = loader.load();
+                    InfoGUI info = loader.getController();
+                    info.setUp(sg.getAddress());
+                    border.setCenter(root);
+                    break;
+                case OWNER:
+                    Pane Rate = view.getPage("RateResident");
+                    border.setCenter(Rate);
+                    break;
+                case RESIDENT:
+                    Pane aptInfo = view.getPage("AptInfo");
+                    border.setCenter(aptInfo);
+                    break;
+
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -136,17 +145,17 @@ public class MenuGUI extends MainGUI implements Initializable {
         tfCondominiumCode.setText(sg.getAddress());
         switch (sg.getRole()) {
             case ADMINISTRATOR:
-                lbName.setText(sg.getAdministrator().getName());
+                lbName.setText(sg.getAdministrator().getUsrName());
                 btnApartment.setText("Condominium Info");
                 btnMeeting.setText("Requests");
                 break;
             case OWNER:
-                lbName.setText(sg.getOwner().getName());
+                lbName.setText(sg.getOwner().getUsrName());
                 btnMeeting.setText("Request Meeting");
                 btnApartment.setText("Rate Resident");
                 break;
             case RESIDENT:
-                lbName.setText(sg.getResident().getName());
+                lbName.setText(sg.getResident().getUsrName());
                 btnMeeting.setText("Contact");
                 btnApartment.setText("Apartment Info");
                 break;

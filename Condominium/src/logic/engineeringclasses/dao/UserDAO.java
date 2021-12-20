@@ -1,12 +1,12 @@
 package logic.engineeringclasses.dao;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import logic.engineeringclasses.exception.InputException;
 import logic.engineeringclasses.query.ApartmentQuery;
+import logic.engineeringclasses.query.RegisterQuery;
 import logic.engineeringclasses.query.UserQuery;
-import logic.model.Administrator;
-import logic.model.Owner;
-import logic.model.Resident;
-import logic.model.Role;
+import logic.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -123,5 +123,20 @@ public class UserDAO extends SqlDAO{
             disconnect();
         }
         return resident;
+    }
+
+    public ObservableList<User> loadUserList(String address) throws SQLException{
+        ObservableList<User> list = FXCollections.observableArrayList();
+        ResultSet rs;
+        try {
+            connect();
+            rs = UserQuery.selectUserList(stmt,address);
+            while(rs.next()) {
+                list.add(new User(rs.getString("user_id"),rs.getString("user_name"),rs.getString("user_email"),rs.getString("user_pwd"),rs.getString("user_role"),rs.getString("user_addr")));
+            }
+        } finally {
+            disconnect();
+        }
+        return list;
     }
 }

@@ -2,57 +2,76 @@ package logic.model;
 
 public class User {
 
-	private String userID;
-    private String name;
-	private String email;
-	private String password;
-	private String address;
+	private String usrID;
+    private String usrName;
+	private String usrEmail;
+	private String usrPwd;
+    private String usrRole;
+	private String usrAddr;
 	
-	public User(String userID,String name,String email,String password, String address){
-		this.setUserID(userID);
-		this.setName(name);
-		this.setEmail(email);
-		this.setPassword(password);
-		this.setAddress(address);
+	public User(String usrID, String usrName, String usrEmail, String usrPwd, String usrAddr){
+		this.setUsrID(usrID);
+		this.setUsrName(usrName);
+		this.setUsrEmail(usrEmail);
+		this.setUsrPwd(usrPwd);
+		this.setUsrAddr(usrAddr);
 	}
-	
-	public String getUserID() {
-        return userID;
+
+    public User(String usrID, String usrName, String usrEmail, String usrPwd,String usrRole, String usrAddr){
+        this.setUsrID(usrID);
+        this.setUsrName(usrName);
+        this.setUsrEmail(usrEmail);
+        this.setUsrPwd(usrPwd);
+        this.setUsrRole(usrRole);
+        this.setUsrAddr(usrAddr);
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+
+	public String getUsrID() {
+        return usrID;
+    }
+
+    public void setUsrID(String usrID) {
+        this.usrID = usrID;
     }
     
-    public String getName() {
-        return name;
+    public String getUsrName() {
+        return usrName;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setUsrName(String usrName){
+        this.usrName = usrName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsrEmail() {
+        return usrEmail;
     }
 
-    public void setEmail(String email){
-        this.email = email;
+    public void setUsrEmail(String usrEmail){
+        this.usrEmail = usrEmail;
     }
     
-    public String getPassword() {
-        return password;
+    public String getUsrPwd() {
+        return usrPwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUsrPwd(String usrPwd) {
+        this.usrPwd = usrPwd;
+    }
+
+    public String getUsrRole() {
+        return usrRole;
+    }
+
+    public void setUsrRole(String usrRole) {
+        this.usrRole = usrRole;
     }
     
-    public String getAddress() {
-        return address;
+    public String getUsrAddr() {
+        return usrAddr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUsrAddr(String usrAddr) {
+        this.usrAddr = usrAddr;
     }
 }

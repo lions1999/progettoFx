@@ -43,19 +43,20 @@ public class RegistrationTableGUI {
     }
 
     private void style() {
+        //TODO ADD CSS
         registrationTable.getStylesheets().clear();
         registrationTable.setId("detail-table");
         registrationTable.getStylesheets().add(getClass().getResource("/logic/view/style.css").toExternalForm());
     }
 
     public void setUpRegistration(String address) {
-        tcID.setCellValueFactory(new PropertyValueFactory<>("id"));
-        tcName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-        tcPwd.setCellValueFactory(new PropertyValueFactory<>("password"));
-        tcRole.setCellValueFactory(new PropertyValueFactory<>("role"));
-        tcAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        tcApartment.setCellValueFactory(new PropertyValueFactory<>("apartment"));
+        tcID.setCellValueFactory(new PropertyValueFactory<>("regID"));
+        tcName.setCellValueFactory(new PropertyValueFactory<>("regName"));
+        tcEmail.setCellValueFactory(new PropertyValueFactory<>("regEmail"));
+        tcPwd.setCellValueFactory(new PropertyValueFactory<>("regPwd"));
+        tcRole.setCellValueFactory(new PropertyValueFactory<>("regRole"));
+        tcAddress.setCellValueFactory(new PropertyValueFactory<>("regAddr"));
+        tcApartment.setCellValueFactory(new PropertyValueFactory<>("regApt"));
         try {
 	    	ObservableList<Registration> list = controller.loadRegistration(address);
             registrationTable.setItems(list);
