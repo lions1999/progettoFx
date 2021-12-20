@@ -58,4 +58,5 @@ public class ApartmentQuery {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+
 }

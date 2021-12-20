@@ -10,7 +10,8 @@ public class UserBean {
 	private String role;
 	private String okPwd;
 	private String address;
-	
+    private int Id;
+
 //	public String getID() {
 //        return userID;
 //    }
@@ -75,4 +76,7 @@ public class UserBean {
         this.address = address;
     }
 
+    public void setID(int id) {this.Id = id;}
+
+    public int getID() {return this.Id;}
 }
