@@ -2,7 +2,7 @@ package logic.engineeringclasses.bean;
 
 public class UserBean {
 
-	private int userID;
+	//private String userID;
     private String name;
     private String surname;
 	private String email;
@@ -11,13 +11,13 @@ public class UserBean {
 	private String okPwd;
 	private String address;
 	
-	public int getID() {
-        return userID;
-    }
-
-    public void setID(int userID) {
-        this.userID = userID;
-    }
+//	public String getID() {
+//        return userID;
+//    }
+//
+//    public void setID(String userID) {
+//        this.userID = userID;
+//    }
     
     public String getName() {
         return name;

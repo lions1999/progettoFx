@@ -1,12 +1,12 @@
 package logic.engineeringclasses.exception;
 
-public class PatternException extends Exception {
+public class InputException extends Exception {
 		  /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public PatternException(String errorMessage) {
+	public InputException(String errorMessage) {
 		super(errorMessage);
 	}
 }

@@ -1,10 +1,7 @@
 package logic.engineeringclasses.dao;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import logic.engineeringclasses.exception.PatternException;
+import logic.engineeringclasses.exception.InputException;
 import logic.engineeringclasses.query.ApartmentQuery;
-import logic.engineeringclasses.query.CondominiumQuery;
 import logic.engineeringclasses.query.UserQuery;
 import logic.model.Administrator;
 import logic.model.Owner;
@@ -74,7 +71,7 @@ public class UserDAO extends SqlDAO{
     }
 
     //USER INITIALIZATION
-    public Administrator loadAdminID(String id) throws SQLException, PatternException {
+    public Administrator loadAdminID(String id) throws SQLException, InputException {
         Administrator admin = null;
         try {
             connect();
@@ -92,7 +89,7 @@ public class UserDAO extends SqlDAO{
         return admin;
     }
 
-    public Owner loadOwnerID(String id) throws SQLException,PatternException {
+    public Owner loadOwnerID(String id) throws SQLException, InputException {
         Owner owner = null;
         try {
             connect();
@@ -110,7 +107,7 @@ public class UserDAO extends SqlDAO{
         return owner;
     }
 
-    public Resident loadResidentID(String id) throws SQLException,PatternException{
+    public Resident loadResidentID(String id) throws SQLException, InputException {
         Resident resident = null;
         try {
             connect();

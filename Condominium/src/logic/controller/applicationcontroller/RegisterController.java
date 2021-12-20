@@ -13,7 +13,7 @@ import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.dao.CondominiumDAO;
 import logic.engineeringclasses.dao.RegisterDAO;
-import logic.engineeringclasses.exception.PatternException;
+import logic.engineeringclasses.exception.InputException;
 import logic.model.Registration;
 import logic.model.Role;
 import logic.model.User;
@@ -35,31 +35,31 @@ public class RegisterController{
 		try {
 			if(pattern.isName(bean.getName())) {
 				this.typError = 1;
-				throw new PatternException("Incorrect Name : "+bean.getName());
+				throw new InputException("Incorrect Name : "+bean.getName());
 			}
 			if(pattern.isName(bean.getSurname())) {
 				this.typError = 2;
-				throw new PatternException("Incorrect Surname : "+bean.getSurname());
+				throw new InputException("Incorrect Surname : "+bean.getSurname());
 			}
 			if(!pattern.isEmail(bean.getEmail())) {
 				this.typError = 3;
-				throw new PatternException("Incorrect Email : "+bean.getEmail());
+				throw new InputException("Incorrect Email : "+bean.getEmail());
 			}
 			if(!pattern.isPassword(bean.getPassword())){
 				this.typError = 4;
-				throw new PatternException("Incorrect Password");
+				throw new InputException("Incorrect Password");
 			}
 			if(!bean.getPassword().equals(bean.getOkPassword())) {
 				this.typError = 5;
-				throw new PatternException("Password Mismatch");
+				throw new InputException("Password Mismatch");
 			}
 			if(bean.getRole() == null) {
 				this.typError = 6;
-				throw new PatternException("No Role Selected");
+				throw new InputException("No Role Selected");
 			}
 			if(bean.getAddress() == null) {
 				this.typError = 7;
-				throw new PatternException("No Address Selected");
+				throw new InputException("No Address Selected");
 			}
 			if(checkRegistration(bean.getEmail(),bean.getAddress())){
 				FXMLLoader loader = new FXMLLoader();
@@ -77,7 +77,7 @@ public class RegisterController{
 				}
 				if(list.isEmpty()){
 					this.typError = 10;
-					throw new PatternException("No Apartment Available");
+					throw new InputException("No Apartment Available");
 				}else{
 					apt.setUp(list,bean.getRole(), bean.getAddress());
 				}
@@ -88,7 +88,7 @@ public class RegisterController{
 					list = apt.getApt();
 					if(list.isEmpty()){
 						this.typError = 11;
-						throw new PatternException("No Apartment Selected");
+						throw new InputException("No Apartment Selected");
 					}else{
 						for(String aptName : list){
 							String name = bean.getName() +" "+ bean.getSurname();
@@ -99,7 +99,7 @@ public class RegisterController{
 				}
 			}
 			return this.typError;
-		}catch(PatternException | SQLException | IOException e){
+		}catch(InputException | SQLException | IOException e){
 			return this.typError;
 		}
 	}
