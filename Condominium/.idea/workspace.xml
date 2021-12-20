@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="modifiche davide">
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/owner/PastRateGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/RateDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RateQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/model/Rate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ApartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ApartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/Prova.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/owner/RateResidentGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/owner/RateResidentGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/owner/RatingUserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/owner/RatingUserGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/AptInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/AptInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/CondInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/CondInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RateResidentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RateResidentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RatingUserView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RatingUserView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/RegistrationDetailTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/RegistrationDetailTableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ApartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/owner/RateResidentGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/owner/RateResidentGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/owner/RatingUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/owner/RatingUserGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/AptInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/AptInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/CondInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/CondInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/RateResidentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/RateResidentView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/RatingUserView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/RatingUserView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/RegistrationDetailTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/RegistrationDetailTableView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logic/view/InfoDetailView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +67,7 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="last.edited.regexp" value="dasdsa" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/logic/view" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -244,7 +215,7 @@
       <workItem from="1639488889888" duration="4075000" />
       <workItem from="1639564077024" duration="8835000" />
       <workItem from="1639736000105" duration="4088000" />
-      <workItem from="1639988756406" duration="9982000" />
+      <workItem from="1639988756406" duration="10387000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -288,7 +259,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639482467641</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modifiche davide">
+      <created>1639998915744</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639998915744</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modifiche davide">
+      <created>1639998956716</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639998956716</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +308,8 @@
     <MESSAGE value="reorganized project" />
     <MESSAGE value="reorganized" />
     <MESSAGE value="Add registration to Owner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add registration to Owner" />
+    <MESSAGE value="modifiche davide" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche davide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
