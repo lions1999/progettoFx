@@ -46,4 +46,8 @@ public class ApartmentController {
     public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
         return dao.checkUserAptFromNumber(aptNumber,condAddr,userRequired);
     }
+
+    public ObservableList<Apartment> checkApartmentsList(String userID, String address, String apt_res) throws SQLException {
+        return dao.checkApartmentsList(userID, address, apt_res);
+    }
 }

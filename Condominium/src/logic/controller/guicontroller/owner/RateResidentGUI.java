@@ -9,9 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
+import logic.controller.applicationcontroller.ApartmentController;
 import logic.controller.guicontroller.general.MainGUI;
-import logic.engineeringclasses.dao.ApartmentDAO;
 import logic.model.Apartment;
 import logic.model.UserSingleton;
 
@@ -22,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class RateResidentGUI extends MainGUI implements Initializable {
 
-    private final ApartmentDAO ourDb = new ApartmentDAO();
+    private final ApartmentController aptController = new ApartmentController();
     private final UserSingleton sg = UserSingleton.getInstance();
 
     @FXML private TableView<Apartment> Table;
@@ -33,14 +32,11 @@ public class RateResidentGUI extends MainGUI implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setUp();
-        Apartment apartment;
-
         try {
-            apartment = ourDb.checkApartments(sg.getUserID(),sg.getAddress(),"apt_own");
-            final ObservableList<Apartment> list = FXCollections.observableArrayList();
-            list.add(apartment);
-            System.out.println(apartment);
-            Table.setItems(list);
+            final ObservableList<Apartment> ownerApt = FXCollections.observableArrayList(aptController.checkApartmentsList(sg.getUserID(),sg.getAddress(),"apt_own"));
+            //final ObservableList<Apartment> list = FXCollections.observableArrayList();
+            //list.add(apartment);
+            Table.setItems(ownerApt);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -53,14 +49,17 @@ public class RateResidentGUI extends MainGUI implements Initializable {
         Table.setColumnResizePolicy(Table.CONSTRAINED_RESIZE_POLICY);
     }
 
-    public void submitUser() throws IOException {
-        Pane pane = new Pane();
+    public void submitUser() throws IOException, SQLException {
         FXMLLoader loader = view.loader("RatingUser");
         Parent root = loader.load();
         RatingUserGUI rating = loader.getController();
-        String name = Table.getSelectionModel().getSelectedItem().getResident();
-        rating.setUp(name);
+        Apartment apt = Table.getSelectionModel().getSelectedItem();
+        String name = apt.getResident();
+        String id = aptController.checkUserAptFromNumber(apt.getAddress(),apt.getNumber(),"apt_res");
+        rating.setUp(name,id);
         border.setRight(root);
     }
+
+
 
 }

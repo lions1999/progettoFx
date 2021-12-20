@@ -11,10 +11,7 @@ import java.sql.SQLException;
 
 public class ApartmentDAO extends SqlDAO{
 
-
-    private String usrId;
-    private String userEmail;
-    private UserDAO userDao = new UserDAO();
+    private final UserDAO userDao = new UserDAO();
 
     public int loadApartmentId(String apartment, String address) throws SQLException {
         int id = 0;
@@ -82,21 +79,6 @@ public class ApartmentDAO extends SqlDAO{
         return apartments;
     }
 
-    public String loadAptIdFromName(String aptName) throws SQLException{
-        String id = null;
-        ResultSet rs;
-        try {
-            connect();
-            rs = ApartmentQuery.selectIdFromName(stmt,aptName);
-            while(rs.next()) {
-                id = rs.getString("apt_id");
-            }
-        }finally {
-            disconnect();
-        }
-        return id;
-    }
-
     public Apartment checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
         Apartment apartment = null;
         ResultSet rs;
@@ -116,6 +98,26 @@ public class ApartmentDAO extends SqlDAO{
         return apartment;
     }
 
+    public ObservableList<Apartment> checkApartmentsList(String userId,String condAddress, String type_usr) throws SQLException{
+        ObservableList<Apartment> list = FXCollections.observableArrayList();
+        ResultSet rs;
+        try{
+            connect();
+            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
+            while(rs.next()) {
+                String aptID = rs.getString("apt_name");
+                String aptAdd = rs.getString("apt_addr");
+                String aptOwn = rs.getString("apt_own");
+                String aptRes = rs.getString("apt_res");
+                Apartment apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes),"0");
+                list.add(apartment);
+            }
+        }finally{
+            disconnect();
+        }
+        return list;
+    }
+
     public void addResident(String apartment,String address) throws SQLException{
         try{
             connect();
@@ -131,28 +133,31 @@ public class ApartmentDAO extends SqlDAO{
     }
 
     public String checkUserAptFromNumber(String aptNumber,String condAddr, String userRequired) throws SQLException{
+        String usrId = null;
         try {
             connect();
             ResultSet rs = ApartmentQuery.checkApartmentFromNumber(stmt,aptNumber,condAddr,userRequired);
             if(rs.next()) {
-                this.usrId = rs.getString(userRequired);
+                usrId = rs.getString(userRequired);
             }
         } finally {
             disconnect();
         }
-        return this.usrId;
+        return usrId;
     }
 
     public String checkMailById(String userId) throws SQLException {
+        String userEmail = null;
         try {
             connect();
             ResultSet rs = ApartmentQuery.selectEmail(stmt, userId);
             if(rs.next()) {
-                this.userEmail = rs.getString("user_email");
+                userEmail = rs.getString("user_email");
             }
         } finally {
             disconnect();
         }
-        return this.userEmail;
+        return userEmail;
     }
+
 }
