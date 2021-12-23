@@ -1,6 +1,5 @@
 package logic.controller.guicontroller.admin.requests;
 
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -10,10 +9,8 @@ import javafx.scene.control.TabPane;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.admin.requests.meeting.MeetingTableGUI;
 import logic.controller.guicontroller.admin.requests.registration.RegistrationTableGUI;
-import logic.controller.guicontroller.general.MainGUI;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.model.UserSingleton;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,18 +23,20 @@ public class TabOrganizeGUI implements Initializable {
     protected ViewController view = new ViewController();
     UserSingleton sg = UserSingleton.getInstance();
 
-
-    public void selectRegistration(){
-        tabOrganize.getSelectionModel().select(tabRegistration);
+    public void selectTab(int ind){
+        if(ind == 0 || ind == 1) tabOrganize.getSelectionModel().select(ind);
     }
 
-    public void selectMeeting(){
-        tabOrganize.getSelectionModel().select(tabMeeting);
+    @FXML private void onMeetSelect() {
+        MenuGUI.border.setRight(null);
+    }
+
+    @FXML private void onRegSelect() {
+        MenuGUI.border.setRight(null);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         try {
             FXMLLoader loader = view.loader("RegistrationTable");
             Parent root = loader.load();
@@ -54,9 +53,8 @@ public class TabOrganizeGUI implements Initializable {
             meet.setUpMeeting(sg.getAddress());
             tabMeeting.setContent(root);
         } catch (Exception e) {
-            System.out.println("ERRORE");
+            System.out.println("ERROR");
             e.printStackTrace();
         }
-
     }
 }

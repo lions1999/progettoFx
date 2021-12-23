@@ -4,23 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<DialogPane minHeight="150.0" minWidth="300.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/11.0.2"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="logic.controller.guicontroller.general.registration.SelectApartmentDialogGUI">
-    <header>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="One Last Step..."/>
-    </header>
+<DialogPane minHeight="150.0" minWidth="300.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.general.registration.SelectApartmentDialogGUI">
     <content>
         <VBox alignment="CENTER" spacing="10.0">
-            <HBox>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please select an apartment as "/>
-                <Text fx:id="txtRole" strokeType="OUTSIDE" strokeWidth="0.0" text="ROLE"/>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" in"/>
-            </HBox>
-            <Text fx:id="txtAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="ADDRESS"/>
-            <ListView fx:id="listView" prefHeight="200.0" prefWidth="300.0"/>
+            <Text fx:id="txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <ListView fx:id="listView" prefHeight="200.0" prefWidth="300.0" />
         </VBox>
     </content>
-    <ButtonType fx:constant="OK"/>
-    <ButtonType fx:constant="CANCEL"/>
+    <ButtonType fx:constant="OK" />
+    <ButtonType fx:constant="CANCEL" />
 </DialogPane>

@@ -65,9 +65,9 @@ public class LoginGUI extends MainGUI implements Initializable{
 
 	public UserBean loginBean(String email, String password, String address) {
 		UserBean user = new UserBean();
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setAddress(address);
+		user.setUsrEmail(email);
+		user.setUsrPwd(password);
+		user.setUsrAddr(address);
 		return user;
 	}
 	

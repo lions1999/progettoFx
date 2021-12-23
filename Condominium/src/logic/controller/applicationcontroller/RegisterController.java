@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
-
 import logic.controller.guicontroller.general.registration.SelectApartmentDialogGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.RegistrationBean;
@@ -17,7 +16,6 @@ import logic.engineeringclasses.exception.InputException;
 import logic.model.Registration;
 import logic.model.Role;
 import logic.model.User;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -33,53 +31,53 @@ public class RegisterController{
 	public int registration(UserBean bean){
 		this.typError = 0;
 		try {
-			if(pattern.isName(bean.getName())) {
+			if(pattern.isName(bean.getUsrName())) {
 				this.typError = 1;
-				throw new InputException("Incorrect Name : "+bean.getName());
+				throw new InputException("Incorrect Name : "+bean.getUsrName());
 			}
-			if(pattern.isName(bean.getSurname())) {
+			if(pattern.isName(bean.getUsrSurname())) {
 				this.typError = 2;
-				throw new InputException("Incorrect Surname : "+bean.getSurname());
+				throw new InputException("Incorrect Surname : "+bean.getUsrSurname());
 			}
-			if(!pattern.isEmail(bean.getEmail())) {
+			if(!pattern.isEmail(bean.getUsrEmail())) {
 				this.typError = 3;
-				throw new InputException("Incorrect Email : "+bean.getEmail());
+				throw new InputException("Incorrect Email : "+bean.getUsrEmail());
 			}
-			if(!pattern.isPassword(bean.getPassword())){
+			if(!pattern.isPassword(bean.getUsrPwd())){
 				this.typError = 4;
 				throw new InputException("Incorrect Password");
 			}
-			if(!bean.getPassword().equals(bean.getOkPassword())) {
+			if(!bean.getUsrPwd().equals(bean.getOkPassword())) {
 				this.typError = 5;
 				throw new InputException("Password Mismatch");
 			}
-			if(bean.getRole() == null) {
+			if(bean.getUsrRole() == null) {
 				this.typError = 6;
 				throw new InputException("No Role Selected");
 			}
-			if(bean.getAddress() == null) {
+			if(bean.getUsrAddr() == null) {
 				this.typError = 7;
 				throw new InputException("No Address Selected");
 			}
-			if(checkRegistration(bean.getEmail(),bean.getAddress())){
+			if(checkRegistration(bean.getUsrEmail(),bean.getUsrAddr())){
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(getClass().getResource("/logic/view/SelectApartmentDialog.fxml"));
 				DialogPane pane = loader.load();
 				SelectApartmentDialogGUI apt = loader.getController();
 				ObservableList<String> list = FXCollections.observableArrayList();
-				switch(Role.valueOf(bean.getRole().toUpperCase())) {
+				switch(Role.valueOf(bean.getUsrRole().toUpperCase())) {
 					case OWNER:
-						list = aptController.loadApartmentOwner(bean.getAddress());
+						list = aptController.loadApartmentOwner(bean.getUsrAddr());
 						break;
 					case RESIDENT:
-						list = aptController.loadApartmentResident(bean.getAddress());
+						list = aptController.loadApartmentResident(bean.getUsrAddr());
 						break;
 				}
 				if(list.isEmpty()){
 					this.typError = 10;
 					throw new InputException("No Apartment Available");
 				}else{
-					apt.setUp(list,bean.getRole(), bean.getAddress());
+					apt.setUp(list,bean);
 				}
 				Dialog<ButtonType> dialog = new Dialog<>();
 				dialog.setDialogPane(pane);
@@ -91,11 +89,14 @@ public class RegisterController{
 						throw new InputException("No Apartment Selected");
 					}else{
 						for(String aptName : list){
-							String name = bean.getName() +" "+ bean.getSurname();
-							User user = new User(null,name,bean.getEmail(),bean.getPassword(),bean.getAddress());
-							register.addRegistrationUser(user,bean.getRole().toUpperCase(),aptName);
+							String name = bean.getUsrName() +" "+ bean.getUsrSurname();
+							User user = new User(null,name,bean.getUsrEmail(),bean.getUsrPwd(),bean.getUsrAddr());
+							register.addRegistrationUser(user,bean.getUsrRole().toUpperCase(),aptName);
 						}
 					}
+				}else{
+					this.typError = 11;
+					throw new InputException("No Apartment Selected");
 				}
 			}
 			return this.typError;
@@ -154,6 +155,14 @@ public class RegisterController{
 	public void removeRegistered(int id) {
 		try{
 			register.deleteRegistered(id);
+		}catch(SQLException e){
+			System.out.println("SQLException");
+		}
+	}
+
+	public void removeAllRegistered(String apartment) {
+		try{
+			register.deleteAllRegistered(apartment);
 		}catch(SQLException e){
 			System.out.println("SQLException");
 		}

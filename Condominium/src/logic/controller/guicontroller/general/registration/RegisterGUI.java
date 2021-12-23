@@ -42,15 +42,15 @@ public class RegisterGUI extends MainGUI implements Initializable{
 			String pls = "\nPlease Retry";
 			switch(this.typError) {
     		case 1:
-    			alert.alertError(title, "Incorrect Name : "+bean.getName()+ pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
+    			alert.alertError(title, "Incorrect Name : "+bean.getUsrName()+ pls,"ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfName);
     			break;
     		case 2:		
-    			alert.alertError(title,"Incorrect Surname : "+bean.getSurname()+ pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
+    			alert.alertError(title,"Incorrect Surname : "+bean.getUsrSurname()+ pls, "ERROR TYPES:\n-Empty Field\n-Contains Numbers\n-Over 15 characters");
     			errorTf(tfSurname);					
     			break;
     		case 3:		
-    			alert.alertError(title,"Incorrect Email : "+bean.getEmail()+ pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
+    			alert.alertError(title,"Incorrect Email : "+bean.getUsrEmail()+ pls,"ERROR TYPES:\n-Empty Field\n-Not Email Pattern");
     			errorTf(tfEmail);					
     			break;		
     		case 4:
@@ -95,13 +95,13 @@ public class RegisterGUI extends MainGUI implements Initializable{
     
     public UserBean registerBean(String name,String surname,String email, String password,String okPassword,String role,String condominiumCode){
 		UserBean user = new UserBean();
-		user.setName(name);
-		user.setSurname(surname);
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setRole(role);
+		user.setUsrName(name);
+		user.setUsrSurname(surname);
+		user.setUsrEmail(email);
+		user.setUsrPwd(password);
+		user.setUsrRole(role);
 		user.setOkPassword(okPassword);
-		user.setAddress(condominiumCode);
+		user.setUsrAddr(condominiumCode);
 		return user;
 	}
         

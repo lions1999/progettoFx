@@ -16,6 +16,7 @@ public class RatingUserGUI {
     private final RateController rateController = new RateController();
     private final UserBean bean = new UserBean();
 
+
     @FXML public TextArea rate_comment;
     @FXML public Button Rate;
     @FXML private Text residentName;
@@ -26,14 +27,14 @@ public class RatingUserGUI {
         residentName.setText(name);
         Rate.setDisable(true);
         sliderRating.setStyle("-fx-font-size: 20");
-        setBean(Integer.parseInt(id));
+        //setBean(Integer.parseInt(id));
     }
 
     public void submitRating() throws SQLException {
         int rate = (int) sliderRating.getValue();
         String commentRate = rate_comment.getText();
-        String id = String.valueOf(bean.getID());
-        rateController.rateUser(id,rate,commentRate);
+      //  String id = String.valueOf(bean.getID());
+     //   rateController.rateUser(id,rate,commentRate);
     }
 
     public void enableButton(KeyEvent keyEvent) {
@@ -46,8 +47,8 @@ public class RatingUserGUI {
 
 
 
-    public UserBean setBean(int id){
-        bean.setID(id);
-        return bean;
-    }
+//    public UserBean setBean(int id){
+//        bean.setID(id);
+//        return bean;
+//    }
 }

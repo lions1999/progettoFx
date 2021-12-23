@@ -22,7 +22,8 @@ public class FeeController {
         }
     }
 
-    public Fee loadFees(int loadApartmentId,String typeFee) throws SQLException {
+    public Fee loadFees(String loadApartmentId,String typeFee) throws SQLException {
         return fee.loadFees(loadApartmentId,typeFee);
     }
+
 }

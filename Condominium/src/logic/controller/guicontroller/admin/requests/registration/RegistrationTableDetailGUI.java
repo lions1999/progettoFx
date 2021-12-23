@@ -3,13 +3,16 @@ package logic.controller.guicontroller.admin.requests.registration;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.*;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.TextField;
 import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.general.AlertGUI;
+import logic.controller.guicontroller.general.FeeInfoGUI;
 import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.bean.RegistrationBean;
 import logic.model.Role;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -49,15 +52,18 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
 
     private void addResident() throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/logic/view/FeeDialog.fxml"));
+        loader.setLocation(getClass().getResource("/logic/view/Dialog.fxml"));
         DialogPane pane = loader.load();
-        RegistrationFeeDialogGUI fee = loader.getController();
-        fee.setUp(tfName.getText(),tfApartment.getText());
+        FXMLLoader fee = view.loader("FeeInfo");
+        Parent feeInfo = fee.load();
+        FeeInfoGUI ctrlFee = fee.getController();
+        ctrlFee.setUp(tfAddr.getText());
+        pane.setContent(feeInfo);
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(pane);
         Optional<ButtonType> btn = dialog.showAndWait();
-        if(btn.isPresent() && fee.check()){
-            controller.addRegistered(getRegistered(), fee.getFees());
+        if(btn.isPresent() && btn.get() == ButtonType.OK && ctrlFee.check()){
+            controller.addRegistered(getRegistered(), ctrlFee.getFees());
             alert.alertInfo("Registration/Info","User Successfully Registered",null);
             remove();
         } else{
@@ -66,10 +72,10 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
     }
 
     private void addOwner() throws IOException {
-        if(alert.alertConfirm("Registration/Confirm","Are you sure?",null)){
+        if(alert.alertConfirm("Registration/Confirm","Are you sure to add "+tfName.getText() +" to apartment "+tfApartment.getText()+"?","WARNING:\nAll other requests to apartment "+tfApartment.getText()+" will be deleted")){
             controller.addRegistered(getRegistered(), null);
-            alert.alertInfo("Registration/Info","User Successfully Registered",null);
-            remove();
+            alert.alertInfo("Registration/Info","User Successfully Registered","Removed all requests to apartment "+tfApartment.getText());
+            removeAll();
         }
     }
 
@@ -88,14 +94,24 @@ public class RegistrationTableDetailGUI extends RegistrationTableGUI {
         return bean;
     }
 
+    private void removeAll() throws IOException {
+        controller.removeAllRegistered(tfApartment.getText());
+        btnX();
+        reloadPage();
+    }
+
     private void remove() throws IOException {
         controller.removeRegistered(Integer.parseInt(tfID.getText()));
         btnX();
+        reloadPage();
+    }
+
+    private void reloadPage() throws IOException {
         FXMLLoader loader = view.loader("TabOrganize");
         Parent root = loader.load();
-        TabOrganizeGUI org = loader.getController();
-        org.selectRegistration();
         MenuGUI.border.setCenter(root);
+        TabOrganizeGUI tab = loader.getController();
+        tab.selectTab(0);
     }
 
     protected void setUp(RegistrationBean bean){

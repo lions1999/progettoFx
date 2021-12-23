@@ -2,81 +2,77 @@ package logic.engineeringclasses.bean;
 
 public class UserBean {
 
-	//private String userID;
-    private String name;
-    private String surname;
-	private String email;
-	private String password;
-	private String role;
-	private String okPwd;
-	private String address;
-    private int Id;
+	private String usrID;
+    private String usrName;
+    private String usrSurname;
+	private String usrEmail;
+	private String usrPwd;
+	private String usrRole;
+	private String usrOkPwd;
+	private String usrAddr;
 
-//	public String getID() {
-//        return userID;
-//    }
-//
-//    public void setID(String userID) {
-//        this.userID = userID;
-//    }
-    
-    public String getName() {
-        return name;
+	public String getUsrID() {
+        return usrID;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setUsrID(String userID) {
+        this.usrID = userID;
     }
     
-    public String getEmail() {
-        return email;
+    public String getUsrName() {
+        return usrName;
     }
 
-    public void setEmail(String email)	{
-        this.email = email;
+    public void setUsrName(String usrName) {
+        this.usrName = usrName;
+    }
+
+    public String getUsrSurname() {
+        return usrSurname;
+    }
+
+    public void setUsrSurname(String usrSurname) {
+        this.usrSurname = usrSurname;
     }
     
-    public String getPassword() {
-        return password;
+    public String getUsrEmail() {
+        return usrEmail;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUsrEmail(String usrEmail)	{
+        this.usrEmail = usrEmail;
+    }
+    
+    public String getUsrPwd() {
+        return usrPwd;
+    }
+
+    public void setUsrPwd(String usrPwd) {
+        this.usrPwd = usrPwd;
     }
     
     public String getOkPassword() {
-        return okPwd;
+        return usrOkPwd;
     }
 
     public void setOkPassword(String okPwd) {
-        this.okPwd = okPwd;
+        this.usrOkPwd = okPwd;
     }
        
-    public String getRole() {
-        return role;
+    public String getUsrRole() {
+        return usrRole;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUsrRole(String usrRole) {
+        this.usrRole = usrRole;
     }
     
-    public String getAddress() {
-        return address;
+    public String getUsrAddr() {
+        return usrAddr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUsrAddr(String usrAddr) {
+        this.usrAddr = usrAddr;
     }
 
-    public void setID(int id) {this.Id = id;}
-
-    public int getID() {return this.Id;}
 }

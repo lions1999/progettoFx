@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.admin.condominium.InfoGUI;
+import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.general.home.PostGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
@@ -49,23 +50,24 @@ public class MenuGUI extends MainGUI implements Initializable {
     @FXML public void btnMeetingClick() {
         border.setRight(null);
         try{
-        switch (sg.getRole()) {
-            case ADMINISTRATOR:
-                FXMLLoader loader = view.loader("TabOrganize");
-                Parent root = loader.load();
-               // TabOrganizeGUI tab = new TabOrganizeGUI();
-              //  tab.regTabClick();
-                border.setCenter(root);
-                break;
-            case OWNER:
+            switch (sg.getRole()) {
+                case ADMINISTRATOR:
+                    FXMLLoader loader = view.loader("TabOrganize");
+                    Parent root = loader.load();
+                    border.setCenter(root);
+                    TabOrganizeGUI tab = loader.getController();
+                    tab.selectTab(0);
+                    break;
+                case OWNER:
 
-            case RESIDENT:
-                scrollBox.getChildren().clear();
-                Pane Contact = view.getPage("Contact");
-                scrollBox.getChildren().add(Contact);
-                border.setCenter(new ScrollPane(scrollBox));
-                break;
-        }}catch(Exception e){
+                case RESIDENT:
+                    scrollBox.getChildren().clear();
+                    Pane Contact = view.getPage("Contact");
+                    scrollBox.getChildren().add(Contact);
+                    border.setCenter(new ScrollPane(scrollBox));
+                    break;
+            }
+        }catch(Exception e){
             System.out.println("ERROR");
             e.printStackTrace();
         }
@@ -90,7 +92,6 @@ public class MenuGUI extends MainGUI implements Initializable {
                     Pane aptInfo = view.getPage("AptInfo");
                     border.setCenter(aptInfo);
                     break;
-
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -146,7 +147,7 @@ public class MenuGUI extends MainGUI implements Initializable {
         switch (sg.getRole()) {
             case ADMINISTRATOR:
                 lbName.setText(sg.getAdministrator().getUsrName());
-                btnApartment.setText("Condominium Info");
+                btnApartment.setText("Info");
                 btnMeeting.setText("Requests");
                 break;
             case OWNER:
@@ -164,7 +165,6 @@ public class MenuGUI extends MainGUI implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         try {
             setUp();
         } catch (IOException e) {

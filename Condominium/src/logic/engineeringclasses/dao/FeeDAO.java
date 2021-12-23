@@ -28,7 +28,7 @@ public class FeeDAO extends SqlDAO{
         return fee;
     }
 
-    public Fee loadFees(int aptName,String typeFee) throws SQLException{
+    public Fee loadFees(String aptName,String typeFee) throws SQLException{
         Fee fee = null;
         try{
             connect();
@@ -54,7 +54,7 @@ public class FeeDAO extends SqlDAO{
             String sql = "INSERT INTO fee (fee_apt,fee_water,fee_gas,fee_elect,fee_admin,fee_park,fee_elevator,fee_pet,fee_wifi) VALUES (?,?,?,?,?,?,?,?,?)";
             preset = prepConnect(sql);
             System.out.println(fee);
-            preset.setInt(1,fee.getApt());
+            preset.setString(1,fee.getApt());
             preset.setDouble(2,fee.getWater());
             preset.setDouble(3,fee.getGas());
             preset.setDouble(4,fee.getElect());

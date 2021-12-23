@@ -1,11 +1,9 @@
 package logic.engineeringclasses.dao;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import logic.engineeringclasses.query.ApartmentQuery;
 import logic.model.Apartment;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -13,14 +11,14 @@ public class ApartmentDAO extends SqlDAO{
 
     private final UserDAO userDao = new UserDAO();
 
-    public int loadApartmentId(String apartment, String address) throws SQLException {
-        int id = 0;
+    public String loadApartmentId(String apartment, String address) throws SQLException {
+        String id = null;
         ResultSet rs;
         try{
             connect();
             rs = ApartmentQuery.selectApartmentId(stmt,apartment,address);
             if(rs.next()) {
-                id = rs.getInt("apt_id");
+                id = rs.getString("apt_id");
             }
         }finally{
             disconnect();
@@ -42,7 +40,6 @@ public class ApartmentDAO extends SqlDAO{
         }
         return list;
     }
-
 
     public ObservableList<String> loadApartmentOwner(String address) throws SQLException{
         ObservableList<String> list = FXCollections.observableArrayList();
@@ -174,4 +171,17 @@ public class ApartmentDAO extends SqlDAO{
         return userEmail;
     }
 
+    public String loadAptIdRes(String resID) throws SQLException {
+        String aptId = null;
+        try {
+            connect();
+            ResultSet rs = ApartmentQuery.selectAptIdByRes(stmt, resID);
+            if(rs.next()) {
+                aptId = rs.getString("apt_id");
+            }
+        } finally {
+            disconnect();
+        }
+        return aptId;
+    }
 }

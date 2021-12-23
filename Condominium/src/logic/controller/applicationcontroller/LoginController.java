@@ -22,8 +22,8 @@ public class LoginController {
 	public int login(UserBean bean){
 		try {
 			if (checkBean(bean)) {			
-				sg.setUserID(login.checkUserID(bean.getEmail(), bean.getAddress()));
-				sg.setAddress(bean.getAddress());
+				sg.setUserID(login.checkUserID(bean.getUsrEmail(), bean.getUsrAddr()));
+				sg.setAddress(bean.getUsrAddr());
 				sg.setRole(login.checkRole((sg.getUserID())));
 					switch (sg.getRole()) {
 						case ADMINISTRATOR:						
@@ -51,11 +51,11 @@ public class LoginController {
 	public boolean checkBean(UserBean bean) {
 		this.typError = 0;
 		try {
-			if(bean.getEmail().isEmpty() || bean.getPassword().isEmpty()||bean.getAddress().isEmpty()) {
+			if(bean.getUsrEmail().isEmpty() || bean.getUsrPwd().isEmpty()||bean.getUsrAddr().isEmpty()) {
 				this.typError = 1;
 				return false;
 			}
-			if(login.checkLogin( bean.getEmail(),bean.getAddress()).equals(bean.getPassword())) {
+			if(login.checkLogin( bean.getUsrEmail(),bean.getUsrAddr()).equals(bean.getUsrPwd())) {
 				return true;
 			}
 			this.typError = 1;

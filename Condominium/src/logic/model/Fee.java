@@ -2,7 +2,7 @@ package logic.model;
 
 public class Fee {
 
-    private int apartment;
+    private String aptId;
     private Double water;
     private Double gas;
     private Double elect;
@@ -17,8 +17,8 @@ public class Fee {
     private boolean availableWifi;
 
 
-    public Fee(int apartment, Double water, Double gas, Double elect, Double admin, Double park, Double elevator, Double pet, Double wifi) {
-        this.apartment = apartment;
+    public Fee(String aptId, Double water, Double gas, Double elect, Double admin, Double park, Double elevator, Double pet, Double wifi) {
+        this.aptId = aptId;
         this.water = water;
         this.gas = gas;
         this.elect = elect;
@@ -36,12 +36,12 @@ public class Fee {
         this.availableWifi = wifi;
     }
 
-    public int getApt() {
-        return apartment;
+    public String getApt() {
+        return aptId;
     }
 
-    public void setApt(int apartment) {
-        this.apartment = apartment;
+    public void setApt(String aptId) {
+        this.aptId = aptId;
     }
     public Double getWater() {
         return water;

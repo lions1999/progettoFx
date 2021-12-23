@@ -6,7 +6,6 @@ import logic.engineeringclasses.bean.RegistrationBean;
 import logic.engineeringclasses.query.RegisterQuery;
 import logic.model.Registration;
 import logic.model.User;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -67,6 +66,16 @@ public class RegisterDAO extends SqlDAO{
         }
     }
 
+    public void deleteAllRegistered(String apartment)throws SQLException {
+        try{
+            connect();
+            String sql= "DELETE FROM registration WHERE reg_apt='"+apartment+"'";
+            stmt.executeUpdate(sql);
+        } finally {
+            disconnect();
+        }
+    }
+
     public void addRegistered(RegistrationBean reg) throws SQLException{
         try{
             connect();
@@ -87,7 +96,4 @@ public class RegisterDAO extends SqlDAO{
             disconnect();
         }
     }
-
-
-
 }

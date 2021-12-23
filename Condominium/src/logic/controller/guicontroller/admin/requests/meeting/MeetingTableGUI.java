@@ -2,31 +2,65 @@ package logic.controller.guicontroller.admin.requests.meeting;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import logic.controller.applicationcontroller.MeetController;
+import logic.controller.applicationcontroller.ViewController;
+import logic.controller.guicontroller.admin.requests.registration.RegistrationTableDetailGUI;
+import logic.controller.guicontroller.general.FeeInfoGUI;
 import logic.engineeringclasses.bean.MeetRequestBean;
+import logic.engineeringclasses.bean.RegistrationBean;
 import logic.model.MeetRequest;
+
+import java.io.IOException;
+import java.util.Optional;
 
 public class MeetingTableGUI  {
 
     protected final MeetController controller = new MeetController();
+    protected final ViewController view = new ViewController();
 
     @FXML private TableView<MeetRequest> tableMeeting;
-    @FXML public TableColumn<MeetRequest,String> tcId;
+    @FXML private TableColumn<MeetRequest,String> tcId;
     @FXML private TableColumn<MeetRequest,String> tcName;
     @FXML private TableColumn<MeetRequest,String> tcAddr;
     @FXML private TableColumn<MeetRequest,String> tcObj;
     @FXML private TableColumn<MeetRequest,String> tcTxt;
 
-    @FXML private void getSelected() {
+    @FXML private void getSelected() throws IOException {
         int index;
         index = tableMeeting.getSelectionModel().getSelectedIndex();
         if(index<=-1)return;
-        //TODO
-        return;
+        OrganizeMeet(index);
+//        FXMLLoader loader = view.loader("RegistrationDetailTable");
+
+//        Parent root = loader.load();
+//        RegistrationTableDetailGUI detail = loader.getController();
+//        detail.setUp(bean);
+//        style();
+       // border.setRight();
+    }
+
+    private void OrganizeMeet(int index) throws IOException {
+        MeetRequestBean bean = meetRequestBean(tcId.getCellData(index),tcName.getCellData(index),tcAddr.getCellData(index),tcObj.getCellData(index),tcTxt.getCellData(index));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/logic/view/Dialog.fxml"));
+        DialogPane pane = loader.load();
+        FXMLLoader meet = view.loader("OrganizeMeet");
+        Parent meetInfo = meet.load();
+        OrganizeMeetGUI ctrlMeet = meet.getController();
+        ctrlMeet.setUp(bean);
+        pane.setContent(meetInfo);
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setDialogPane(pane);
+        Optional<ButtonType> btn = dialog.showAndWait();
+        if(btn.isPresent() && btn.get() == ButtonType.OK){
+            System.out.println("OK");
+            //TODO
+        }
     }
 
     public void setUpMeeting(String address) {

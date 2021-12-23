@@ -18,7 +18,7 @@ public class ApartmentController {
         return dao.loadApartmentOwner(address);
     }
 
-    public int loadApartmentId(String apartment,String address) throws SQLException{
+    public String loadApartmentId(String apartment, String address) throws SQLException{
         return dao.loadApartmentId(apartment,address);
     }
 
@@ -58,4 +58,9 @@ public class ApartmentController {
     public ObservableList<Apartment> checkApartmentsList(String userID, String address, String apt_res) throws SQLException {
         return dao.checkApartmentsList(userID, address, apt_res);
     }
+
+    public String loadAptId(String resID) throws SQLException {
+        return dao.loadAptIdRes(resID);
+    }
+
 }

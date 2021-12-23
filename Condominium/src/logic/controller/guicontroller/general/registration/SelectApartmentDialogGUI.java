@@ -5,17 +5,17 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.text.Text;
+import logic.engineeringclasses.bean.UserBean;
 import logic.model.Role;
 
 public class SelectApartmentDialogGUI {
 
-    @FXML private Text txtRole;
-    @FXML private Text txtAddress;
+    @FXML private Text txt;
     @FXML private ListView<String> listView;
 
-    public void setUp(ObservableList<String> list, String role, String address){
+    public void setUp(ObservableList<String> list, UserBean bean){
         listView.setItems(list);
-        switch (Role.valueOf(role.toUpperCase())){
+        switch (Role.valueOf(bean.getUsrRole().toUpperCase())){
             case RESIDENT:
                 listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
                 break;
@@ -23,8 +23,7 @@ public class SelectApartmentDialogGUI {
                 listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
                 break;
         }
-        txtAddress.setText(address);
-        txtRole.setText(role);
+        txt.setText("Please "+bean.getUsrName()+" select an apartment\nAs "+bean.getUsrRole()+" in "+bean.getUsrAddr());
     }
 
     public ObservableList<String> getApt() {return listView.getSelectionModel().getSelectedItems();}
