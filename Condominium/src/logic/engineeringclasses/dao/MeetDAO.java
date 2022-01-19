@@ -25,4 +25,14 @@ public class MeetDAO extends SqlDAO{
         }
         return list;
     }
+
+    public void deleteMeetRequest(int meetId) throws SQLException {
+        try{
+            connect();
+            String sql= "DELETE FROM meeting WHERE meet_id='"+meetId+"'";
+            stmt.executeUpdate(sql);
+        } finally {
+            disconnect();
+        }
+    }
 }

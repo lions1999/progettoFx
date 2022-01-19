@@ -8,22 +8,42 @@ import java.sql.SQLException;
 
 public class FeeController {
 
-    private FeeDAO fee = new FeeDAO();
+    private final FeeDAO dao = new FeeDAO();
 
     public Fee setUpFees(String address) throws SQLException {
-        return fee.loadAvailableFees(address);
+        return dao.loadAvailableFees(address);
     }
 
-    public void addFees(FeeBean bean) {
+    public void addFees(FeeBean bean,String table) {
         try{
-            fee.addFees(bean);
+            dao.addFees(bean,table);
         }catch(SQLException e){
-            System.out.println("SQLException");
+            e.printStackTrace();
         }
     }
 
     public Fee loadFees(String loadApartmentId,String typeFee) throws SQLException {
-        return fee.loadFees(loadApartmentId,typeFee);
+        return dao.loadFees(loadApartmentId,typeFee);
     }
 
+    public boolean checkPastId(String aptId) throws SQLException {
+        return dao.checkPastId(aptId);
+    }
+
+    public void updateFees(FeeBean pastBean,FeeBean newBean) throws SQLException {
+        if(checkPastId(pastBean.getApt())){
+            dao.updateFee(pastBean,"pastfee");
+        }else{
+            addFees(pastBean,"pastfee");
+        }
+        dao.updateFee(newBean,"fee");
+    }
+
+    public void removeFee(String aptId,String table) {
+        try {
+            dao.removeFee(aptId, table);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

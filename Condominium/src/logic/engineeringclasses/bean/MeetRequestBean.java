@@ -6,7 +6,7 @@ public class MeetRequestBean{
     private String name;
     private String address;
     private String object;
-    private String text;
+    private String textArea;
 
     public String getId() {
         return id;
@@ -40,11 +40,11 @@ public class MeetRequestBean{
         this.object = object;
     }
 
-    public String getText() {
-        return text;
+    public String getTextArea() {
+        return textArea;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setTextArea(String textArea) {
+        this.textArea = textArea;
     }
 }

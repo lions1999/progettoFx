@@ -28,12 +28,21 @@ public class FeeDAO extends SqlDAO{
         return fee;
     }
 
-    public Fee loadFees(String aptName,String typeFee) throws SQLException{
+    public Fee loadFees(String aptId,String typeFee) throws SQLException{
         Fee fee = null;
+       // String apartment = "";
         try{
             connect();
-            ResultSet rs = FeeQuery.loadFees(stmt,aptName,typeFee);
+            ResultSet rs = FeeQuery.loadFees(stmt,aptId,typeFee);
             while (rs.next()) {
+//                switch(type){
+//                    case "id":
+//                        apartment = rs.getString("fee_apt");
+//                        break;
+//                    case "name":
+//                        apartment = rs.getString("apt_name");
+//                        break;
+//                }
                 Double water = rs.getDouble("fee_water");
                 Double gas = rs.getDouble("fee_gas");
                 Double elect = rs.getDouble("fee_elect");
@@ -42,16 +51,15 @@ public class FeeDAO extends SqlDAO{
                 Double elevator = rs.getDouble("fee_elevator");
                 Double pet = rs.getDouble("fee_pet");
                 Double wifi = rs.getDouble("fee_wifi");
-                fee = new Fee(aptName, water, gas, elect, admin, park, elevator, pet, wifi);
+                fee = new Fee(aptId, water, gas, elect, admin, park, elevator, pet, wifi);
             }
         } finally {disconnect();}
         return fee;
     }
 
-    public void addFees(FeeBean fee) throws SQLException{
+    public void addFees(FeeBean fee,String table) throws SQLException{
         try{
-            connect();
-            String sql = "INSERT INTO fee (fee_apt,fee_water,fee_gas,fee_elect,fee_admin,fee_park,fee_elevator,fee_pet,fee_wifi) VALUES (?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO "+table+" (fee_apt,fee_water,fee_gas,fee_elect,fee_admin,fee_park,fee_elevator,fee_pet,fee_wifi) VALUES (?,?,?,?,?,?,?,?,?)";
             preset = prepConnect(sql);
             System.out.println(fee);
             preset.setString(1,fee.getApt());
@@ -69,6 +77,50 @@ public class FeeDAO extends SqlDAO{
             else preset.setDouble(9,fee.getWifi());
             preset.execute();
         } finally {
+            disconnect();
+        }
+    }
+
+    public void updateFee(FeeBean fee, String table) throws SQLException{
+        try{
+            connect();
+            String sql = "UPDATE "+table+" SET fee_water=?, fee_gas=?, fee_elect=?, fee_admin=?, fee_park=?, fee_elevator=?, fee_pet=?, fee_wifi=? WHERE fee_apt='"+fee.getApt()+"'";
+            preset = prepConnect(sql);
+            System.out.println(fee);
+            preset.setDouble(1,fee.getWater());
+            preset.setDouble(2,fee.getGas());
+            preset.setDouble(3,fee.getElect());
+            preset.setDouble(4,fee.getAdmin());
+            if(fee.getPark().equals(0.0)) preset.setNull(5, Types.NULL);
+            else preset.setDouble(5,fee.getPark());
+            if(fee.getElevator().equals(0.0)) preset.setNull(6, Types.NULL);
+            else preset.setDouble(6,fee.getElevator());
+            if(fee.getPet().equals(0.0)) preset.setNull(7, Types.NULL);
+            else preset.setDouble(7,fee.getPet());
+            if(fee.getWifi().equals(0.0)) preset.setNull(8, Types.NULL);
+            else preset.setDouble(8,fee.getWifi());
+            preset.execute();
+        } finally {
+            disconnect();
+        }
+    }
+
+    public boolean checkPastId(String aptId) throws SQLException {
+        try{
+            connect();
+            ResultSet rs = FeeQuery.checkApt(stmt,aptId);
+            return rs.next();
+        }finally {
+            disconnect();
+        }
+    }
+
+    public void removeFee(String aptId, String table) throws SQLException {
+        try{
+            connect();
+            String sql= "DELETE FROM "+table+" WHERE fee_apt='"+aptId+"'";
+            stmt.executeUpdate(sql);
+        }  finally {
             disconnect();
         }
     }

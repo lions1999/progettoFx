@@ -2,6 +2,7 @@ package logic.controller.guicontroller.general;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import logic.controller.applicationcontroller.ApartmentController;
 import logic.controller.applicationcontroller.FeeController;
 import logic.controller.applicationcontroller.PatternController;
@@ -16,6 +17,8 @@ public class FeeInfoGUI {
     private final PatternController pattern = new PatternController();
     private final ApartmentController aptCtrl = new ApartmentController();
 
+    @FXML private Text txtApt;
+    @FXML private TextField tfApartment;
     @FXML private TextField tfWater;
     @FXML private TextField tfGas;
     @FXML private TextField tfElectricity;
@@ -57,13 +60,17 @@ public class FeeInfoGUI {
     }
 
     public FeeBean getFees(){
-    return feeBean(format(tfWater),format(tfGas),format(tfElectricity),format(tfAdministrative),
+    return feeBean(tfApartment.getAccessibleText(),format(tfWater),format(tfGas),format(tfElectricity),format(tfAdministrative),
             format(tfPark),format(tfElevator),format(tfPet),format(tfWifi));
     }
 
     public void loadFeeInfo(String usrID) throws SQLException {
+        txtApt.setVisible(true);
+        tfApartment.setVisible(true);
         String aptId = aptCtrl.loadAptId(usrID);
         Fee fee = controller.loadFees(aptId,"fee");
+        tfApartment.setAccessibleText(aptId);
+        tfApartment.setText(aptCtrl.getAptName(aptId));
         tfWater.setText(fee.getWater().toString());
         tfGas.setText(fee.getGas().toString());
         tfElectricity.setText(fee.getElect().toString());
@@ -75,6 +82,8 @@ public class FeeInfoGUI {
     }
 
     public void setUp(String address) throws SQLException {
+        txtApt.setVisible(false);
+        tfApartment.setVisible(false);
         pattern.textFilter(tfWater);
         pattern.textFilter(tfGas);
         pattern.textFilter(tfElectricity);
@@ -90,8 +99,9 @@ public class FeeInfoGUI {
         else pattern.textFilter(tfWifi);
     }
 
-    private FeeBean feeBean(String water,String gas,String elect,String admin,String park,String elev,String pet,String wifi){
+    private FeeBean feeBean(String apt,String water,String gas,String elect,String admin,String park,String elev,String pet,String wifi){
         FeeBean bean = new FeeBean();
+        bean.setApt(apt);
         bean.setWater(Double.valueOf(water));
         bean.setGas(Double.valueOf(gas));
         bean.setElect(Double.valueOf(elect));

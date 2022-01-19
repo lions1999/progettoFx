@@ -7,6 +7,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
+import logic.controller.applicationcontroller.RegisterController;
+import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.general.AlertGUI;
 import logic.controller.guicontroller.general.FeeInfoGUI;
@@ -17,8 +19,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class RegistrationTableDetailGUI extends RegistrationTableGUI {
+public class RegistrationTableDetailGUI  {
 
+    protected final RegisterController controller = new RegisterController();
+    protected final ViewController view = new ViewController();
     private final AlertGUI alert = new AlertGUI();
 
     @FXML private TextField tfID;

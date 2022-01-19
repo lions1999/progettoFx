@@ -63,4 +63,11 @@ public class ApartmentController {
         return dao.loadAptIdRes(resID);
     }
 
+    public String getAptName(String aptId) throws SQLException {
+        return dao.loadApartmentName(aptId);
+    }
+
+    public void removeAptRes(String aptId) throws SQLException{
+        dao.removeAptRes(aptId);
+    }
 }

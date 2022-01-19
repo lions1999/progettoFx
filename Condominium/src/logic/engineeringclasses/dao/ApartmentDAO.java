@@ -184,4 +184,28 @@ public class ApartmentDAO extends SqlDAO{
         }
         return aptId;
     }
+
+    public String loadApartmentName(String aptId) throws SQLException {
+        try {
+            connect();
+            ResultSet rs = ApartmentQuery.selectAptName(stmt, aptId);
+            if(rs.next()) {
+                aptId = rs.getString("apt_name");
+            }
+        } finally {
+            disconnect();
+        }
+        return aptId;
+    }
+
+    public void removeAptRes(String aptId) throws SQLException{
+        try {
+            connect();
+            String sql ="UPDATE apartment SET apt_res = NULL WHERE apt_id='"+aptId+"'";
+            preset = prepConnect(sql);
+            preset.executeUpdate();
+        } finally {
+            disconnect();
+        }
+    }
 }

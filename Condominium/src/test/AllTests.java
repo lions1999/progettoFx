@@ -28,7 +28,8 @@ public class AllTests {
 	public void generalTest() throws Exception{
 //		MeetDAO meet = new MeetDAO();
 //		System.out.println(meet.loadMeetList("Via del Corso 22"));
-
+		FeeDAO dao = new FeeDAO();
+		System.out.println(dao.checkPastId("1"));
 
 //		TextField tf = new TextField("43.43");
 //		Double d = Double.parseDouble(tf.getText());

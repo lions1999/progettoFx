@@ -11,8 +11,14 @@ public class FeeQuery {
         return stmt.executeQuery(sql);
     }
 
-    public static ResultSet loadFees(Statement stmt, String aptName, String typeFee) throws SQLException {
-        String sql = "SELECT fee_water,fee_gas,fee_elect,fee_elevator,fee_pet,fee_wifi,fee_park,fee_admin FROM "+typeFee+" AS T1 LEFT JOIN apartment AS T2 ON T1.fee_apt = T2.apt_id WHERE apt_id = '"+aptName+"'";
+    public static ResultSet loadFees(Statement stmt, String aptId, String typeFee) throws SQLException {
+        String sql = "Select * from "+typeFee+"  WHERE fee_apt ='"+aptId+"'";
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
+
+    public static ResultSet checkApt(Statement stmt, String aptId) throws SQLException {
+        String sql = "SELECT fee_apt FROM pastfee where fee_apt='" + aptId +"'";
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }

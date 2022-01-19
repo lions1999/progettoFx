@@ -2,7 +2,7 @@ package logic.model;
 
 public class Fee {
 
-    private String aptId;
+    private String apt;
     private Double water;
     private Double gas;
     private Double elect;
@@ -17,8 +17,8 @@ public class Fee {
     private boolean availableWifi;
 
 
-    public Fee(String aptId, Double water, Double gas, Double elect, Double admin, Double park, Double elevator, Double pet, Double wifi) {
-        this.aptId = aptId;
+    public Fee(String apt, Double water, Double gas, Double elect, Double admin, Double park, Double elevator, Double pet, Double wifi) {
+        this.apt = apt;
         this.water = water;
         this.gas = gas;
         this.elect = elect;
@@ -37,11 +37,11 @@ public class Fee {
     }
 
     public String getApt() {
-        return aptId;
+        return apt;
     }
 
-    public void setApt(String aptId) {
-        this.aptId = aptId;
+    public void setApt(String apt) {
+        this.apt = apt;
     }
     public Double getWater() {
         return water;

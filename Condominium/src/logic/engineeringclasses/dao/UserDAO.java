@@ -2,14 +2,15 @@ package logic.engineeringclasses.dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import logic.engineeringclasses.bean.UserBean;
 import logic.engineeringclasses.exception.InputException;
 import logic.engineeringclasses.query.ApartmentQuery;
-import logic.engineeringclasses.query.RegisterQuery;
 import logic.engineeringclasses.query.UserQuery;
 import logic.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class UserDAO extends SqlDAO{
 
@@ -138,5 +139,47 @@ public class UserDAO extends SqlDAO{
             disconnect();
         }
         return list;
+    }
+
+    public ObservableList<String> loadMailList(String address) throws SQLException {
+        ObservableList<String> list = FXCollections.observableArrayList();
+        ResultSet rs;
+        try{
+            connect();
+            rs = UserQuery.selectMailList(stmt,address);
+            while(rs.next()) {
+                list.add(rs.getString("user_email"));
+            }
+        }finally{
+            disconnect();
+        }
+        return list;
+    }
+
+    public void updateInfo(UserBean bean) throws SQLException {
+        try{
+            connect();
+            String sql = "UPDATE users SET user_name=?,user_email=?,user_pwd=? WHERE user_id='"+bean.getUsrID()+"'";
+            preset = prepConnect(sql);
+            System.out.println(sql);
+            preset.setString(1,bean.getUsrName());
+            preset.setString(2,bean.getUsrEmail());
+            preset.setString(3,bean.getUsrPwd());
+            preset.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            disconnect();
+        }
+    }
+
+    public void removeUsr(String usrId) throws SQLException {
+        try{
+            connect();
+            String sql= "DELETE FROM users WHERE user_id='"+usrId+"'";
+            stmt.executeUpdate(sql);
+        }  finally {
+            disconnect();
+        }
     }
 }

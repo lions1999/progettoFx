@@ -7,16 +7,23 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import logic.controller.applicationcontroller.LoginController;
+import logic.controller.applicationcontroller.ViewController;
+import logic.controller.guicontroller.general.AlertGUI;
 import logic.controller.guicontroller.general.MainGUI;
+import logic.controller.guicontroller.general.MenuGUI;
 import logic.engineeringclasses.bean.UserBean;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginGUI extends MainGUI implements Initializable{
+import static logic.controller.guicontroller.general.MainGUI.border;
+
+public class LoginGUI implements Initializable{
 	
 	private final LoginController controller = new LoginController();
-	private int typError;
+	private final ViewController view = new ViewController();
+	private final AlertGUI alert = new AlertGUI();
+	private final MainGUI main = new MainGUI();
 
 	@FXML private TextField tfEmail;
 	@FXML private TextField tfPwd;
@@ -29,25 +36,13 @@ public class LoginGUI extends MainGUI implements Initializable{
 
 	@FXML private void onSignClick(){
     	UserBean bean = loginBean(tfEmail.getText(), tfPwd.getText(), comboBox.getValue());
-		try {
-			this.typError = controller.login(bean);							
-		} finally {
-			String title = "Login/Error";
-			switch(this.typError) {
-			case 1:			
-				alert.alertError(title,"Incorrect/Empty Credential","Please Retry");
-				error();
-				break;
-			case 2:
-				alert.alertError(title,"DATA BASE not connected ","Please Retry");
-				error();
-				break;
-			default:
-				Pane menu = view.getPage("Menu");
-				border.setLeft(menu);
-				fullScreen(true);
-				break;
-			}
+		if (controller.login(bean)) {
+			Pane menu = view.getPage("Menu");
+			border.setLeft(menu);
+			main.fullScreen(true);
+		} else {
+			alert.alertError("Login/Error", "Incorrect Email or Password", "Please Retry");
+			error();
 		}
 	}
     

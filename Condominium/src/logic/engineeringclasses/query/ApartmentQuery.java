@@ -64,4 +64,10 @@ public class ApartmentQuery {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+
+    public static ResultSet selectAptName(Statement stmt, String aptId) throws SQLException{
+        String sql = "SELECT apt_name FROM apartment WHERE apt_id ='"+aptId+"'";
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
 }

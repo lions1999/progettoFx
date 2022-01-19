@@ -19,7 +19,7 @@ public class LoginController {
 	private static final UserSingleton sg = UserSingleton.getInstance();
 	private int typError;
 	
-	public int login(UserBean bean){
+	public boolean login(UserBean bean){
 		try {
 			if (checkBean(bean)) {			
 				sg.setUserID(login.checkUserID(bean.getUsrEmail(), bean.getUsrAddr()));
@@ -41,30 +41,21 @@ public class LoginController {
 						default:
 							break;
 					}
+					return true;
 			}
-			return this.typError;
+			return false;
 		}catch(SQLException| InputException e){
-			return this.typError;
+			return false;
 		}
 	}
 	
 	public boolean checkBean(UserBean bean) {
-		this.typError = 0;
 		try {
 			if(bean.getUsrEmail().isEmpty() || bean.getUsrPwd().isEmpty()||bean.getUsrAddr().isEmpty()) {
-				this.typError = 1;
 				return false;
 			}
-			if(login.checkLogin( bean.getUsrEmail(),bean.getUsrAddr()).equals(bean.getUsrPwd())) {
-				return true;
-			}
-			this.typError = 1;
-			return false;
-		}catch(NullPointerException n) {
-			this.typError = 1;
-			return false;
-		}catch(SQLException s) {
-			this.typError = 2;
+			return login.checkLogin(bean.getUsrEmail(), bean.getUsrAddr()).equals(bean.getUsrPwd());
+		}catch(NullPointerException | SQLException e) {
 			return false;
 		}
 	}

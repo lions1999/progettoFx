@@ -35,4 +35,10 @@ public class UserQuery {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+
+    public static ResultSet selectMailList(Statement stmt, String address) throws SQLException {
+        String sql = "SELECT user_email FROM users WHERE user_addr='" + address + "' AND user_role ='OWNER'";
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
 }
