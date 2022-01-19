@@ -4,64 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="readjust project&#10;added OrganizeMeet">
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/UpdateInfoGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/meeting/OrganizeMeetDetailGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/view/OrganizeMeetDetailView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logic/view/UpdateInfoView.fxml" afterDir="false" />
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="readjust project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ApartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ApartmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/FeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/FeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/MeetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/MeetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/requests/meeting/MeetingTableGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/requests/meeting/MeetingTableGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/requests/registration/RegistrationTableDetailGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/requests/registration/RegistrationTableDetailGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/login/LoginGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/login/LoginGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/registration/RegisterGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/registration/RegisterGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/MeetRequestBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/MeetRequestBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/MeetDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/MeetDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/UserQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/UserQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Fee.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/model/Fee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/AllTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/AllTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ApartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/CondominiumController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/FeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/FeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/MeetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/MeetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/meeting/MeetingTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/meeting/MeetingTableGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/meeting/OrganizeMeetGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/meeting/OrganizeMeetGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/registration/RegistrationTableDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/requests/registration/RegistrationTableDetailGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/FeeInfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/FeeInfoGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/login/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/login/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/registration/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/registration/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/bean/ItemBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/bean/MeetRequestBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/bean/MeetRequestBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/bean/MessageBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/bean/UserBeanSingleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/MeetDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/MeetDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/model/Fee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/model/Fee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/FeeInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/FeeInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/InfoDetailView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/InfoDetailView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/OrganizeMeetView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/OrganizeMeetView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/AllTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/AllTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +236,7 @@
       <workItem from="1642496486371" duration="10275000" />
       <workItem from="1642513247173" duration="8518000" />
       <workItem from="1642582246895" duration="6678000" />
-      <workItem from="1642599729260" duration="572000" />
+      <workItem from="1642599729260" duration="1412000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -364,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640274241760</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="readjust project">
+      <created>1642600350835</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642600350835</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +342,8 @@
     <MESSAGE value="Add insert Owner" />
     <MESSAGE value="mod insert" />
     <MESSAGE value="readjust project&#10;added OrganizeMeet" />
-    <option name="LAST_COMMIT_MESSAGE" value="readjust project&#10;added OrganizeMeet" />
+    <MESSAGE value="readjust project" />
+    <option name="LAST_COMMIT_MESSAGE" value="readjust project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
