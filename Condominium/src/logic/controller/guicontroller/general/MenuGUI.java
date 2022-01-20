@@ -45,6 +45,7 @@ public class MenuGUI extends MainGUI implements Initializable {
         loadPosts(posts);
         border.setRight(null);
         border.setCenter(new ScrollPane(scrollBox));
+        //TODO CSS
     }
 
     @FXML public void btnMeetingClick() {

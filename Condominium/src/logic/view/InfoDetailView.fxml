@@ -51,7 +51,7 @@
          <Button fx:id="btnRole" minWidth="200.0" mnemonicParsing="false" onAction="#btnRoleClick" text="Role" />
       </HBox>
       <HBox alignment="CENTER">
-         <Button minWidth="200.0" mnemonicParsing="false" onAction="#btnRemoveClick" text="Remove" />
+         <Button fx:id="btnRemove" minWidth="200.0" mnemonicParsing="false" onAction="#btnRemoveClick" text="Remove" />
       </HBox>
    </VBox>
 </AnchorPane>

@@ -24,6 +24,7 @@ public class InfoDetailGUI {
     private final ViewController view = new ViewController();
     private final AlertGUI alert = new AlertGUI();
 
+    @FXML private Button btnRemove;
     @FXML private Button btnRole;
     @FXML private TextField tfID;
     @FXML private TextField tfName;
@@ -48,7 +49,8 @@ public class InfoDetailGUI {
                 btnRole.setText("Update Fee");
                 break;
             case OWNER:
-                btnRole.setText("Update Apartments");
+                btnRole.setText("Update Rating");
+                btnRemove.setVisible(false);
                 break;
         }
     }
@@ -77,13 +79,8 @@ public class InfoDetailGUI {
 
     public void btnRemoveClick() throws IOException {
         if(alert.alertConfirm("Condominium/Info","Are you sure you want to permanently delete user "+tfName.getText()+"?",null)){
-            switch (Role.valueOf(tfRole.getText())){
-                case RESIDENT:
-                    usrController.removeResident(tfID.getText());
-                    break;
-                case OWNER:
-                    usrController.removeOwner(tfID.getText());
-                    break;
+            if (Role.valueOf(tfRole.getText()) == Role.RESIDENT) {
+                usrController.removeResident(tfID.getText());
             }
             btnX();
             reloadPage();
@@ -99,10 +96,14 @@ public class InfoDetailGUI {
                 updateFee(pane);
                 break;
             case OWNER:
-                btnRole.setText("Update Apartments");
+                updateRating(pane);
                 break;
         }
         btnX();
+    }
+
+    private void updateRating(DialogPane pane) {
+        //TODO
     }
 
     private void updateFee(DialogPane pane) throws SQLException, IOException {

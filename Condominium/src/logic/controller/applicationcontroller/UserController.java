@@ -42,9 +42,6 @@ public class UserController {
         }
     }
 
-    public void removeOwner(String usrId) {
-    }
-
     public void removeUsr(String usrId){
         try{
             dao.removeUsr(usrId);

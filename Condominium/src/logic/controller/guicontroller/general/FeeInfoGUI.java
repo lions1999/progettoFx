@@ -110,6 +110,8 @@ public class FeeInfoGUI {
         bean.setElevator(Double.valueOf(elev));
         bean.setPet(Double.valueOf(pet));
         bean.setWifi(Double.valueOf(wifi));
+        System.out.println(bean.getWifi());
+        System.out.println(wifi);
         return bean;
     }
 }

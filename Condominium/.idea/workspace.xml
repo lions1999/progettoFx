@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="readjust project">
+      <change afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/UpdateRatingGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoDetailGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoDetailGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/general/MenuGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/ItemBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/MessageBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/bean/UserBeanSingleton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/InfoDetailView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/InfoDetailView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/admin/condominium/InfoDetailGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/FeeInfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/FeeInfoGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/MenuGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/general/MenuGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/InfoDetailView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/InfoDetailView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +251,10 @@
       <workItem from="1642496486371" duration="10275000" />
       <workItem from="1642513247173" duration="8518000" />
       <workItem from="1642582246895" duration="6678000" />
-      <workItem from="1642599729260" duration="1412000" />
+      <workItem from="1642599729260" duration="5158000" />
+      <workItem from="1642607156008" duration="764000" />
+      <workItem from="1642675699713" duration="4252000" />
+      <workItem from="1642689348166" duration="5761000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -315,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642600350835</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="readjust project">
+      <created>1642601303503</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642601303503</updated>
+    </task>
+    <task id="LOCAL-00013" summary="readjust project">
+      <created>1642601428467</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1642601428467</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
