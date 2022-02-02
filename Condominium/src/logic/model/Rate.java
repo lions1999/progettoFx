@@ -2,37 +2,54 @@ package logic.model;
 
 public class Rate {
 
-    private String userRated;
-    private String userRating;
-    private String massageRate;
+    private String rateId;
+    private String ownId;
+    private String resId;
+    private String rateVal;
+    private String rateTxt;
 
-    public Rate(String userRated, String userRating, String massageRate) {
-        this.userRated = userRated;
-        this.userRating = userRating;
-        this.massageRate = massageRate;
+    public Rate(String rateId,String resId,String ownId, String rateVal, String rateTxt) {
+        this.rateId = rateId;
+        this.resId = resId;
+        this.ownId = ownId;
+        this.rateVal = rateVal;
+        this.rateTxt = rateTxt;
     }
 
-    public String getUserRated() {
-        return userRated;
+    public String getRateId(){
+        return rateId;
     }
 
-    public void setUserRated(String userRated) {
-        this.userRated = userRated;
+    public void setRateId(String rateId){
+        this.rateId = rateId;
     }
 
-    public String getUserRating() {
-        return userRating;
+    public String getOwnId() {return ownId;}
+
+    public void setOwnId(String ownId) {
+        this.ownId = ownId;}
+
+    public String getResId() {
+        return resId;
     }
 
-    public void setUserRating(String userRating) {
-        this.userRating = userRating;
+    public void setResId(String resId) {
+        this.resId = resId;
     }
 
-    public String getMassageRate() {
-        return massageRate;
+    public String getRateVal() {
+        return rateVal;
     }
 
-    public void setMassageRate(String massageRate) {
-        this.massageRate = massageRate;
+    public void setRateVal(String rateVal) {
+        this.rateVal = rateVal;
+    }
+
+    public String getRateTxt() {
+        return rateTxt;
+    }
+
+    public void setRateTxt(String rateTxt) {
+        this.rateTxt = rateTxt;
     }
 }

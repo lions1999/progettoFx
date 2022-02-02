@@ -14,8 +14,8 @@ public class RateController {
         rateDAO.rateResident(userId,Rate,comment);
     }
 
-    public ObservableList<Rate> getRates(String userId) throws SQLException {
-        return rateDAO.getRates(userId);
+    public ObservableList<Rate> getRatesRes(String userId) throws SQLException {
+        return rateDAO.getRatesRes(userId);
     }
 
 }

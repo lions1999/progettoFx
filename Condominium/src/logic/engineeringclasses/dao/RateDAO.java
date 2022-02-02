@@ -24,16 +24,18 @@ public class RateDAO extends SqlDAO{
         }
     }
 
-    public ObservableList<Rate> getRates(String userId) throws SQLException {
+    public ObservableList<Rate> getRatesRes(String userId) throws SQLException {
         ObservableList<Rate> rates = FXCollections.observableArrayList();
         try {
             connect();
             ResultSet rs = RateQuery.getRates(stmt,userId);
             while(rs.next()) {
-                String ratedUser = rs.getString("rate_userId");
-                String rate = rs.getString("rate");
-                String rateComment = rs.getString("rate_comment");
-                Rate Rate = new Rate(ratedUser,rate,rateComment);
+                String rateId = rs.getString("rate_id");
+                String rateRes = rs.getString("rate_res");
+                String rateOwn = rs.getString("rate_own");
+                String rateVal = rs.getString("rate_val");
+                String rateTxt = rs.getString("rate_txt");
+                Rate Rate = new Rate(rateId,rateRes,rateOwn,rateVal,rateTxt);
                 rates.add(Rate);
             }
         }finally {

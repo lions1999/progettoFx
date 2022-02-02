@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import logic.controller.applicationcontroller.EmailController;
 import logic.controller.applicationcontroller.ViewController;
 import logic.model.User;
 import org.junit.Test;
@@ -28,9 +29,12 @@ public class AllTests {
 	public void generalTest() throws Exception{
 //		MeetDAO meet = new MeetDAO();
 //		System.out.println(meet.loadMeetList("Via del Corso 22"));
-		FeeDAO dao = new FeeDAO();
-		System.out.println(dao.checkPastId("1"));
-
+//		FeeDAO dao = new FeeDAO();
+//		System.out.println(dao.checkPastId("1"));
+		EmailController email = new EmailController();
+		//email.checkEmail("Pippo@prova.com");
+		String[] recipient = new String[]{"Paperino@jchbchzbcxh.com"};
+		System.out.println(email.send(recipient,recipient,"",""));
 //		TextField tf = new TextField("43.43");
 //		Double d = Double.parseDouble(tf.getText());
 //		System.out.println(new DecimalFormat("####.##").format(d));

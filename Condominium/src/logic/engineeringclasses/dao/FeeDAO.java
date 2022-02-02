@@ -3,7 +3,6 @@ package logic.engineeringclasses.dao;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.query.FeeQuery;
 import logic.model.Fee;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -30,19 +29,10 @@ public class FeeDAO extends SqlDAO{
 
     public Fee loadFees(String aptId,String typeFee) throws SQLException{
         Fee fee = null;
-       // String apartment = "";
         try{
             connect();
             ResultSet rs = FeeQuery.loadFees(stmt,aptId,typeFee);
             while (rs.next()) {
-//                switch(type){
-//                    case "id":
-//                        apartment = rs.getString("fee_apt");
-//                        break;
-//                    case "name":
-//                        apartment = rs.getString("apt_name");
-//                        break;
-//                }
                 Double water = rs.getDouble("fee_water");
                 Double gas = rs.getDouble("fee_gas");
                 Double elect = rs.getDouble("fee_elect");

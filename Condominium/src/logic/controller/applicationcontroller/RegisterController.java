@@ -41,7 +41,7 @@ public class RegisterController{
 			if(bean.getUsrRole() == null) {
 				throw new InputException("No Role Selected");
 			}
-			if(bean.getUsrAddr() == null) {
+			if(bean.getUsrAddr() == null || bean.getUsrAddr().isEmpty()) {
 				throw new InputException("No Address Selected");
 			}
 			return checkRegistration(bean.getUsrEmail(),bean.getUsrAddr());

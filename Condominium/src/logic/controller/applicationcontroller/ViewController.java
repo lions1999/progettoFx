@@ -1,7 +1,6 @@
 package logic.controller.applicationcontroller;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.DialogPane;
 import javafx.scene.layout.Pane;
 import logic.model.Condominium;
 
@@ -11,59 +10,21 @@ import java.net.URL;
 public class ViewController{
 	
 	private Pane view;
-	private final String url1 = "/logic/view/";
-	private final String url2 = "View.fxml";
-	private final String url3 = "Dialog.fxml";
+	private final String firstUrl = "/logic/view/first/";
+	private final String secondUrl = "/logic/view/second/";
+	private final String finalUrl = "View.fxml";
 
-//	public void loadPage(String page ,Stage primaryStage){
-//		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
-//		Parent root;
-//		try {
-//			root  = loader.load();
-//			Scene scene = new Scene(root);
-//			primaryStage.setScene(scene);
-//			primaryStage.setTitle("Condominium/"+page);
-//			primaryStage.show();
-//		}catch(IOException e){
-//			e.printStackTrace();
-//		}
-//	}
-
-//	public void waitPage(Parent parent){
-//		Stage stage = new Stage();
-//		stage.initOwner(MenuGUI.border.getScene().getWindow());
-//		stage.initModality(Modality.WINDOW_MODAL);
-//		Scene scene = new Scene(parent);
-//		stage.setScene(scene);
-//		stage.showAndWait();
-//	}
-	public DialogPane dialog(String fileName) throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(url1+fileName+url3));
-		return loader.load();
-
-
-	}
-
-//	public Stage loadPage(String page){
-//		FXMLLoader loader  = new FXMLLoader(getClass().getResource(url1+page+url2));
-//		Parent root;
-//		try {
-//			root  =  loader.load();
-//			Stage stage = new Stage();
-//			stage.setScene(new Scene(root));
-//			//stage.showAndWait();
-//			return stage;
-//		}catch(IOException e){
-//			e.printStackTrace();
-//			return null;
-//
-//		}
-//	}
-
-	public Pane getPage(String fileName) {
+	public Pane getPage(String fileName,int gui) {
+		URL fileUrl = null;
 		try {
-			URL fileUrl = Condominium.class.getResource(url1+fileName+url2);
+			switch (gui){
+				case 1:
+					fileUrl = Condominium.class.getResource(firstUrl +fileName+ finalUrl);
+					break;
+				case 2:
+					fileUrl = Condominium.class.getResource(secondUrl +fileName+ finalUrl);
+					break;
+			}
 			if(fileUrl == null) {
 				throw new java.io.FileNotFoundException("File Not Found");
 			}
@@ -75,7 +36,16 @@ public class ViewController{
 		return view;
 	}	
 	
-	public FXMLLoader loader(String name){
-		return new FXMLLoader(getClass().getResource(url1+name+url2)); 
+	public FXMLLoader loader(String fileName,int gui){
+		FXMLLoader loader = null;
+		switch (gui){
+			case 1:
+				loader = new FXMLLoader(getClass().getResource(firstUrl +fileName+ finalUrl));
+				break;
+			case 2:
+				loader = new FXMLLoader(getClass().getResource(secondUrl +fileName+ finalUrl));
+				break;
+		}
+		return loader;
 	}	
 }
