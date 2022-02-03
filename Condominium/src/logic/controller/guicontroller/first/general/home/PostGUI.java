@@ -4,15 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.UserSingleton;
-
-import java.io.InputStream;
 
 public class PostGUI {
 
@@ -52,14 +49,6 @@ public class PostGUI {
     	usrName.setText(bean.getUser());
     	posTxt.setText(bean.getText());
     	posTxt.setEditable(false);
-    	InputStream input = bean.getImage();
-    	try {
-    	if (input != null && input.available() > 1) {
-            Image image = new Image(input);
-            postImg.setImage(image);
-    	}
-    	}catch(Exception e){
-    		System.out.println("SET UP POST EXCEPTION");
-    	}
+		postImg.setImage(controller.setPostImage(bean.getImage()));
     }
 }

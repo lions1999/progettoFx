@@ -123,7 +123,7 @@ public class Menu1GUI extends Main1GUI implements Initializable {
         }
     }
 
-    private PostBean setUpPost(Post curr) {
+    public PostBean setUpPost(Post curr) {
         PostBean post = new PostBean();
         post.setId(curr.getId());
         post.setImage(curr.getImage());

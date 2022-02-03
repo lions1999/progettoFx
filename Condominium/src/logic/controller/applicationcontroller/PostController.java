@@ -2,6 +2,7 @@ package logic.controller.applicationcontroller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -9,9 +10,9 @@ import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
-
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 
 public class PostController {
@@ -53,6 +54,18 @@ public class PostController {
 			post.deletePost(postID);
 		}catch(SQLException e){
 			System.out.println("Ops...");
+		}
+	}
+
+	public Image setPostImage(InputStream input){
+		try {
+			if (input != null && input.available() > 1) {
+				return new Image(input);
+			}
+			return null;
+		}catch(Exception e){
+			System.out.println("SET UP POST EXCEPTION");
+			return null;
 		}
 	}
 }

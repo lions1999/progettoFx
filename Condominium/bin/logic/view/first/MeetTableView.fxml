@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<TableView fx:id="tableMeeting" onMouseClicked="#getSelected" stylesheets="@style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.first.admin.requests.meeting.MeetingTableGUI">
+  <columns>
+    <TableColumn fx:id="tcId" editable="false" text="ID"/>
+    <TableColumn fx:id="tcName" editable="false" text="Name"/>
+    <TableColumn fx:id="tcAddr" editable="false" text="Address"/>
+    <TableColumn fx:id="tcObj" editable="false" text="Object"/>
+    <TableColumn fx:id="tcTxt" editable="false" text="Text"/>
+  </columns>
+</TableView>

@@ -1,5 +1,6 @@
 package logic.controller.guicontroller.second.general.registration;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +11,13 @@ import javafx.scene.text.Text;
 import logic.controller.applicationcontroller.RegisterController;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.AlertGUI;
-import logic.controller.guicontroller.first.general.registration.SelectApartmentDialogGUI;
 import logic.controller.guicontroller.second.general.AddressesDialogGUI;
 import logic.engineeringclasses.bean.UserBean;
 import logic.model.Role;
-
+import logic.model.User;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -47,40 +48,96 @@ public class RegisterGUI implements Initializable {
         secondBorder.setCenter(pane);
     }
 
-    public void onSignupClick() throws IOException {
+    public void onSignupClick(){
         logic.controller.guicontroller.first.general.registration.RegisterGUI registerGUI = new logic.controller.guicontroller.first.general.registration.RegisterGUI();
         RadioButton selectedRadioButton = (RadioButton) radio.getSelectedToggle();
         String radioTxt = selectedRadioButton.getText();
         UserBean bean = registerGUI.getUsrBean(tfName.getText(),tfSurname.getText(),tfEmail.getText(),tfPassword.getText(),tfOkPwd.getText(),radioTxt,txtAddress.getText());
         if(controller.registration(bean)){
-            System.out.println("OK");
-            //todo change gui to get apartment
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/logic/view/first/SelectApartmentDialog.fxml"));
-            DialogPane pane = loader.load();
-            ObservableList<String> list = controller.loadAddress(bean);
-            ListView<String> listView = new ListView<>();
-            switch (Role.valueOf(bean.getUsrRole().toUpperCase())){
-                case RESIDENT:
-                    viewResident(listView,list);
-                    break;
-                case OWNER:
-                    viewOwner();
-                    break;
-            }
-            Dialog<ButtonType> dialog = new Dialog<>();
-            dialog.setDialogPane(pane);
-            Optional<ButtonType> btn = dialog.showAndWait();
+            loadApartments(bean);
         }else{
             alert.alertError("Condominium/Register/Error","Incorrect Data","ERROR TYPE:\nDATABASE NOT CONNECTED\nEmpty Fields\nPASSWORD:least one letter and one number maximum 15 charters\nPassword mismatch");
         }
     }
 
-    private void viewResident(ListView<String> listView, ObservableList<String> list) {
-        for()
+    private void loadApartments(UserBean bean) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/logic/view/first/SelectApartmentDialog.fxml"));
+            DialogPane pane = loader.load();
+            ObservableList<String> list = controller.loadAddress(bean);
+            ObservableList<String> apartments = FXCollections.observableArrayList();
+            switch (Role.valueOf(bean.getUsrRole().toUpperCase())) {
+                case RESIDENT:
+                    apartments = viewResident(list,pane);
+                    break;
+                case OWNER:
+                    apartments = viewOwner(list,pane);
+                    break;
+            }
+            if(!apartments.isEmpty()){
+                for(String aptName : apartments){
+                    String name = bean.getUsrName() +" "+ bean.getUsrSurname();
+                    User user = new User(null,name,bean.getUsrEmail(),bean.getUsrPwd(),bean.getUsrAddr());
+                    controller.addRegistrationUser(user,bean.getUsrRole().toUpperCase(),aptName);
+                }
+                alert.alertInfo("Condominium/Register/Info","Successful Registration" ,
+                        "Your request has successfully sent to the administrator of the condominium");
+                clearState();
+            }
+        }catch(SQLException | NullPointerException |IOException ignored){
+            alert.alertError("Condominium/Register/Error","No Apartments Available","ERROR TYPE:\nDATABASE NOT CONNECTED");
+        }
     }
 
-    private void viewOwner() {
+    private void clearState() {
+        tfName.setText("");
+        tfSurname.setText("");
+        tfEmail.setText("");
+        tfPassword.setText("");
+        tfOkPwd.setText("");
+        txtAddress.setText("");
+    }
+
+    private ObservableList<String> viewResident(ObservableList<String> list, DialogPane pane) {
+        final ToggleGroup group = new ToggleGroup();
+        ObservableList<String> apartments = FXCollections.observableArrayList();
+        ListView<RadioButton> listRadio = new ListView<>();
+        for(String apartment : list){
+            RadioButton btn = new RadioButton(apartment);
+            btn.setToggleGroup(group);
+            btn.setUserData(apartment);
+            listRadio.getItems().add(btn);
+        }
+        pane.setContent(listRadio);
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setDialogPane(pane);
+        Optional<ButtonType> btn = dialog.showAndWait();
+        if(btn.isPresent() && btn.get() == ButtonType.OK) {
+            apartments.add(group.getSelectedToggle().getUserData().toString());
+        }
+        return apartments;
+    }
+
+    private ObservableList<String> viewOwner(ObservableList<String> list,DialogPane pane) {
+        ListView<CheckBox> listCheck = new ListView<>();
+        ObservableList<String> apartments = FXCollections.observableArrayList();
+        for(String apartment : list){
+            CheckBox btn = new CheckBox(apartment);
+            listCheck.getItems().add(btn);
+        }
+        pane.setContent(listCheck);
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setDialogPane(pane);
+        Optional<ButtonType> btn = dialog.showAndWait();
+        if(btn.isPresent() && btn.get() == ButtonType.OK) {
+            for(CheckBox box: listCheck.getItems()){
+                if(box.isSelected()){
+                    apartments.add(box.getText());
+                }
+            }
+        }
+        return apartments;
     }
 
     private void test() {

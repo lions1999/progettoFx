@@ -1,0 +1,34 @@
+/*GLOBAL*/
+*{
+    -fx-background-color: #121212;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+}
+/*BUTTON*/
+.btnGeneral {
+    -fx-background-color: #1E1E1E;
+}
+.btnGeneral:hover{
+    -fx-background-color: #2E2E2E;
+}
+/*TEXT FIELD*/
+.fieldGeneral {
+    -fx-background-color: #1E1E1E;
+}
+/*RADIO BUTTON*/
+.btnRadio{
+    -fx-background-color: #1E1E1E;
+}
+.btnRadio:hover{
+    -fx-background-color: #2E2E2E;
+}
+.btnRadio .radio{
+    -fx-background-image: null;
+}
+.btnRadio  .dot{
+    -fx-background-color: #2E2E2E;
+}
+.btnRadio:selected .dot{
+    -fx-background-color: white;
+}
