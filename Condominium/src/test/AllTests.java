@@ -31,10 +31,10 @@ public class AllTests {
 //		System.out.println(meet.loadMeetList("Via del Corso 22"));
 //		FeeDAO dao = new FeeDAO();
 //		System.out.println(dao.checkPastId("1"));
-		EmailController email = new EmailController();
-		//email.checkEmail("Pippo@prova.com");
-		String[] recipient = new String[]{"Paperino@jchbchzbcxh.com"};
-		System.out.println(email.send(recipient,recipient,"",""));
+//		EmailController email = new EmailController();
+//		//email.checkEmail("Pippo@prova.com");
+//		String[] recipient = new String[]{"Paperino@jchbchzbcxh.com"};
+//		System.out.println(email.send(recipient,recipient,"",""));
 //		TextField tf = new TextField("43.43");
 //		Double d = Double.parseDouble(tf.getText());
 //		System.out.println(new DecimalFormat("####.##").format(d));
@@ -44,7 +44,8 @@ public class AllTests {
 //		DecimalFormat df = new DecimalFormat("#.##");
 //		String formatted = df.format(d);
 //		System.out.println(formatted); //prints 2.4
-
+		UserDAO dao= new UserDAO();
+		System.out.println(dao.checkRole("0"));
 	}
 
 //	

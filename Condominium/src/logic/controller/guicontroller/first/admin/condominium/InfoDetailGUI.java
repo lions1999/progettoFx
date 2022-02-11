@@ -130,7 +130,7 @@ public class InfoDetailGUI {
         return setUserBean(tfID.getText(),tfName.getText(),tfEmail.getText(),tfPwd.getText());
     }
 
-    private UserBean setUserBean(String id,String name, String email, String pwd) {
+    public UserBean setUserBean(String id,String name, String email, String pwd) {
         UserBean bean = new UserBean();
         bean.setUsrID(id);
         bean.setUsrName(name);

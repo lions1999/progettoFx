@@ -65,7 +65,7 @@ public class RegistrationTableGUI {
     	}
     }
 
-    private RegistrationBean registrationBean(String id, String name, String email, String password, String role, String address, String apartment) {
+    public RegistrationBean registrationBean(String id, String name, String email, String password, String role, String address, String apartment) {
         RegistrationBean registered = new RegistrationBean();
         registered.setID(id);
         registered.setName(name);

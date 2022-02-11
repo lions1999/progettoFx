@@ -87,7 +87,7 @@ public class RegistrationTableDetailGUI  {
         return regBean(tfName.getText(),tfEmail.getText(),tfPwd.getText(),tfRole.getText(),tfAddr.getText(),tfApartment.getText());
     }
 
-    private RegistrationBean regBean(String name, String email, String pwd, String role, String addr, String apt){
+    public RegistrationBean regBean(String name, String email, String pwd, String role, String addr, String apt){
         RegistrationBean bean = new RegistrationBean();
         bean.setName(name);
         bean.setEmail(email);

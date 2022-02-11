@@ -35,7 +35,7 @@ public class LoginGUI implements Initializable {
     public void onSignClick() {
         UserBean bean = loginBean(tfEmail.getText(), tfPwd.getText(), txtAddress.getText());
         if (controller.login(bean)) {
-            Pane menu = view.getPage("Menu",2);
+            Pane menu = view.getPage("Menu2",2);
             secondBorder.setTop(menu);
             main.fullScreen(true);
         } else {

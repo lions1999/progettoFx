@@ -6,12 +6,14 @@ public class Post {
 
 	private String id;
 	private String usr;
+	private Role role;
 	private InputStream img;
 	private String text;
 
-	public Post(String id,String usr,String text,InputStream img){
+	public Post(String id,String usr,Role role,String text,InputStream img){
 		this.setId(id);
 		this.setUser(usr);
+		this.setRole(role);
 		this.setText(text);
 		this.setImage(img);
 	}
@@ -30,6 +32,14 @@ public class Post {
 	
 	public String getUser() {
 		return this.usr;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public Role getRole() {
+		return this.role;
 	}
 	
 	public void setImage(InputStream img) {

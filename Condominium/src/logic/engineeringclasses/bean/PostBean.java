@@ -1,11 +1,14 @@
 package logic.engineeringclasses.bean;
 
+import logic.model.Role;
+
 import java.io.InputStream;
 
 public class PostBean {
 
 	private String id;
 	private String usr;
+	private Role role;
 	private InputStream img;
 	private String text;
 	
@@ -24,6 +27,10 @@ public class PostBean {
 	public String getUser() {
 		return this.usr;
 	}
+
+	public void setRole(Role role){this.role = role;}
+
+	public Role getRole(){return this.role;}
 	
 	public void setImage(InputStream img) {
 		this.img = img;

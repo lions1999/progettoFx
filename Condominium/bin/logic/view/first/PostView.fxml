@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #0C39FF;"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="logic.controller.guicontroller.first.general.home.PostGUI">
+            fx:controller="logic.controller.guicontroller.first.general.home.Post1GUI">
    <Button fx:id="btnDelete" layoutX="508.0" layoutY="37.0" mnemonicParsing="false" onAction="#onDeletePress"
            style="-fx-background-color: trasparent; -fx-border-color: trasparent; -fx-text-fill: trasparent;">
       <graphic>

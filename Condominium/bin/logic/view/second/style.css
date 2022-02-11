@@ -5,6 +5,10 @@
     -fx-text-fill: white;
     -fx-font-size: 20px;
 }
+
+.pane{
+    -fx-background-color: #121212;
+}
 /*BUTTON*/
 .btnGeneral {
     -fx-background-color: #1E1E1E;
@@ -31,4 +35,29 @@
 }
 .btnRadio:selected .dot{
     -fx-background-color: white;
+}
+
+.item:hover {
+    -fx-background-color: #2E2E2E;
+}
+
+.Text {
+    -fx-background-color: #121212;
+    -fx-fill: white;
+}
+
+.choice-box{
+    -fx-background-color: #1E1E1E;
+}
+
+.choice-box .context-menu{
+    -fx-background-color: #121212;
+}
+
+.AreaGeneral {
+    -fx-border-color: #121212;
+}
+
+.MenuTop {
+    -fx-background-color: #2E2E2E;
 }

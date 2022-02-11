@@ -5,23 +5,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #0C39FF;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.general.home.PostGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: white;" styleClass="pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.general.home.PostGUI">
    <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-   <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
+   <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <ImageView fx:id="usrImg" fitHeight="70.0" fitWidth="80.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="usrName" text="user_name">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="posTxt" alignment="TOP_CENTER" editable="false" prefHeight="221.0" prefWidth="600.0" promptText="Text" style="-fx-background-color: trasparent;">
+      <TextField fx:id="posTxt" alignment="TOP_CENTER" editable="false" prefHeight="150.0" prefWidth="600.0" promptText="Text" styleClass="Text" stylesheets="@style.css">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-         <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onDeletePress" prefWidth="200.0" stylesheets="@style.css" text="Delete" />
-         <Button mnemonicParsing="false" onAction="#onImageClick" prefWidth="200.0" stylesheets="@style.css" text="Image" />
-      </HBox>
+      <Button mnemonicParsing="false" onAction="#onImageClick" prefWidth="200.0" styleClass="btnGeneral" stylesheets="@style.css" text="Image" />
+      <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onDeletePress" prefWidth="200.0" styleClass="btnGeneral" stylesheets="@style.css" text="Delete" />
    </VBox>
 </AnchorPane>

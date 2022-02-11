@@ -8,13 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.first.admin.condominium.InfoGUI;
 import logic.controller.guicontroller.first.admin.requests.TabOrganizeGUI;
-import logic.controller.guicontroller.first.general.home.PostGUI;
+import logic.controller.guicontroller.first.general.home.Post1GUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
@@ -34,8 +35,7 @@ public class Menu1GUI extends Main1GUI implements Initializable {
     @FXML private Button btnMeeting;
     @FXML private Button btnHome;
     @FXML private Label tfCondominiumCode;
-    @FXML private Label lbTitle; //TODO
-    @FXML private ImageView imgUser; //TODO
+    @FXML private ImageView imgUser;
 
     @FXML public void btnHomeClick() {
         scrollBox.getChildren().clear();
@@ -45,7 +45,6 @@ public class Menu1GUI extends Main1GUI implements Initializable {
         loadPosts(posts);
         firstBorder.setRight(null);
         firstBorder.setCenter(new ScrollPane(scrollBox));
-        //TODO CSS
     }
 
     @FXML public void btnMeetingClick() {
@@ -55,9 +54,9 @@ public class Menu1GUI extends Main1GUI implements Initializable {
                 case ADMINISTRATOR:
                     FXMLLoader loader = view.loader("TabOrganize",1);
                     Parent root = loader.load();
-                    firstBorder.setCenter(root);
                     TabOrganizeGUI tab = loader.getController();
                     tab.selectTab(0);
+                    firstBorder.setCenter(root);
                     break;
                 case OWNER:
 
@@ -114,8 +113,8 @@ public class Menu1GUI extends Main1GUI implements Initializable {
                 PostBean bean = setUpPost(posts.get(i));
                 FXMLLoader loader = view.loader("Post",1);
                 Parent root = loader.load();
-                PostGUI postgui = loader.getController();
-                postgui.setUpPost(bean);
+                Post1GUI post = loader.getController();
+                post.setUpPost(bean);
                 scrollBox.getChildren().add(root);
             }
         } catch (Exception e) {
@@ -127,6 +126,7 @@ public class Menu1GUI extends Main1GUI implements Initializable {
         PostBean post = new PostBean();
         post.setId(curr.getId());
         post.setImage(curr.getImage());
+        post.setRole(curr.getRole());
         post.setText(curr.getText());
         post.setUser(curr.getUser());
         return post;
@@ -135,7 +135,6 @@ public class Menu1GUI extends Main1GUI implements Initializable {
     private void btnColor(Button btn) {
         btn.setOnMouseEntered(event -> btn.setStyle("-fx-background-color : #0A0E3F"));
         btn.setOnMouseExited(event -> btn.setStyle("-fx-background-color : #0C39FF"));
-        //TODO ADD TO CSS
     }
 
     public void setUp() throws IOException {
@@ -144,6 +143,7 @@ public class Menu1GUI extends Main1GUI implements Initializable {
         btnColor(btnMeeting);
         btnColor(btnSign);
         btnColor(btnApartment);
+        imgUser.setImage(new Image(view.addImage(sg.getRole())));
         tfCondominiumCode.setText(sg.getAddress());
         switch (sg.getRole()) {
             case ADMINISTRATOR:

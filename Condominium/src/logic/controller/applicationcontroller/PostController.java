@@ -7,6 +7,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import logic.controller.guicontroller.first.general.Menu1GUI;
+//import logic.controller.guicontroller.second.general.Menu2GUI;
+import logic.controller.guicontroller.second.general.Menu2GUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
@@ -20,9 +22,16 @@ public class PostController {
 	UserSingleton sg = UserSingleton.getInstance();
 	private final PostDAO post = new PostDAO();
 
-	public File selectFile() {
+	public File selectFile(int gui) {
 			Stage stage = new Stage();
-			stage.initOwner(Menu1GUI.firstBorder.getScene().getWindow());
+			switch (gui){
+				case 1:
+					stage.initOwner(Menu1GUI.firstBorder.getScene().getWindow());
+					break;
+				case 2:
+					stage.initOwner(Menu2GUI.secondBorder.getScene().getWindow());
+					break;
+			}
 			stage.initModality(Modality.WINDOW_MODAL);
 			FileChooser fc = new FileChooser();
 			FileChooser.ExtensionFilter fileExtensions = new FileChooser.ExtensionFilter("JPEG/JPG/PNG/GIF file", "*.jpg", "*.jpeg", "*.png", "*.gif");

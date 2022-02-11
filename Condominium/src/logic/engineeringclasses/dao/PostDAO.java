@@ -14,6 +14,8 @@ import java.sql.SQLException;
 
 public class PostDAO extends SqlDAO{
 
+    private UserDAO usrDao = new UserDAO();
+
     public ObservableList<Post> checkListPost(String address)throws SQLException {
         ObservableList<Post> list = FXCollections.observableArrayList();
         Post post;
@@ -26,7 +28,7 @@ public class PostDAO extends SqlDAO{
                 String postUsr = rs.getString("post_usr");
                 String postText = rs.getString("post_txt");
                 InputStream postImg = rs.getBinaryStream("post_img");
-                post = new Post(postId,checkNameByID(postUsr),postText,postImg);
+                post = new Post(postId,checkNameByID(postUsr),usrDao.checkRole(postUsr),postText,postImg);
                 list.add(post);
             }
         } finally {

@@ -4,15 +4,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import logic.controller.applicationcontroller.PostController;
+import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.engineeringclasses.bean.PostBean;
+import logic.model.Role;
 import logic.model.UserSingleton;
 
-public class PostGUI {
+public class Post1GUI {
 
+	private final ViewController view = new ViewController();
 	private static final Menu1GUI menu = new Menu1GUI();
 	private final AlertGUI alert = new AlertGUI();
 	private final PostController controller = new PostController();
@@ -49,6 +53,9 @@ public class PostGUI {
     	usrName.setText(bean.getUser());
     	posTxt.setText(bean.getText());
     	posTxt.setEditable(false);
+		usrImg.setImage(new Image(view.addImage(bean.getRole())));
 		postImg.setImage(controller.setPostImage(bean.getImage()));
     }
+
+
 }

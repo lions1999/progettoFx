@@ -2,12 +2,12 @@
 
 <?import javafx.scene.control.*?>
 
-<TableView fx:id="tableMeeting" onMouseClicked="#getSelected" stylesheets="@style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.first.admin.requests.meeting.MeetingTableGUI">
+<TableView fx:id="tableMeeting" onMouseClicked="#getSelected" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.first.admin.requests.meeting.MeetingTableGUI">
   <columns>
-    <TableColumn fx:id="tcId" editable="false" text="ID"/>
-    <TableColumn fx:id="tcName" editable="false" text="Name"/>
-    <TableColumn fx:id="tcAddr" editable="false" text="Address"/>
-    <TableColumn fx:id="tcObj" editable="false" text="Object"/>
-    <TableColumn fx:id="tcTxt" editable="false" text="Text"/>
+    <TableColumn fx:id="tcId" editable="false" maxWidth="-1.0" minWidth="100.0" prefWidth="-1.0" text="ID" />
+    <TableColumn fx:id="tcName" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Name" />
+    <TableColumn fx:id="tcAddr" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Address" />
+    <TableColumn fx:id="tcObj" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="-1.0" text="Object" />
+    <TableColumn fx:id="tcTxt" editable="false" maxWidth="1.7976931348623157E308" minWidth="300.0" prefWidth="-1.0" text="Text" />
   </columns>
 </TableView>

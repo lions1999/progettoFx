@@ -29,7 +29,7 @@ public class AddPostGUI implements Initializable{
     
     @FXML private void addFileClick() {
 		btnAddPost.setDisable(true);
-		this.file = controller.selectFile();
+		this.file = controller.selectFile(1);
 		if (this.file != null) {
 			btnAddPost.setText(this.file.getName());
 		}
@@ -46,8 +46,6 @@ public class AddPostGUI implements Initializable{
 	    	 btnAddPost.setText("Add File");
 	    } else {
 	    	try {
-				//view.loadPage("Post");
-				//TODO ANTEPRIMA POST
 				controller.addPost(sg.getUserID(), txtMsg.getText(),this.file,sg.getAddress());
 				menu.btnHomeClick();
 	    	} catch(Exception e) {
