@@ -4,15 +4,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import logic.model.Condominium;
 import logic.model.Role;
-
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 

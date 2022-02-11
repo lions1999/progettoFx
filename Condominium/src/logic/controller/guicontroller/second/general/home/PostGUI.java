@@ -64,6 +64,6 @@ public class PostGUI {
         imageView.setImage(controller.setPostImage(bean.getImage()));
         ColorAdjust color = new ColorAdjust();
         color.setBrightness(1);
-        imageView.setEffect(color);
+        usrImg.setEffect(color);
     }
 }

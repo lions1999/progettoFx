@@ -30,13 +30,17 @@ public class FeeController {
         return dao.checkPastId(aptId);
     }
 
-    public void updateFees(FeeBean pastBean,FeeBean newBean) throws SQLException {
-        if(checkPastId(pastBean.getApt())){
-            dao.updateFee(pastBean,"pastfee");
-        }else{
-            addFees(pastBean,"pastfee");
+    public void updateFees(FeeBean pastBean,FeeBean newBean) {
+        try {
+            if (checkPastId(pastBean.getApt())) {
+                dao.updateFee(pastBean, "pastfee");
+            } else {
+                addFees(pastBean, "pastfee");
+            }
+            dao.updateFee(newBean, "fee");
+        }catch (SQLException e){
+            e.printStackTrace();
         }
-        dao.updateFee(newBean,"fee");
     }
 
     public void removeFee(String aptId,String table) {
