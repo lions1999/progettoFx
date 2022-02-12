@@ -183,18 +183,33 @@
 
 .chart-pie {
     -fx-border-color: derive(-fx-pie-color, 1%);
-    -fx-border-width: 0px;
+    -fx-border-width: 0;
 }
 
 /*Text Area*/
 .text-area{
     -fx-border-color: #0C39FF;
-    -fx-border-width: 0.5 px;
+    -fx-border-width: 0.5;
     -fx-prompt-text-fill: #0C39FF;
 }
+
+/*rates*/
+
+ .ratingText{
+     -fx-control-inner-background: #0C39FF;
+     -fx-border-width: 0.0;
+     -fx-text-box-border: #0C39FF;
+     -fx-prompt-text-fill: #0C39FF;
+ }
 
 /*Slider*/
 .slider{
     -fx-progress-color: #0C39FF;
 
 }
+
+/*Rates Scroll*/
+
+ #scrollPrevRates *, #scrollPrevRates{
+     -fx-border-width: 0.00001;
+ }

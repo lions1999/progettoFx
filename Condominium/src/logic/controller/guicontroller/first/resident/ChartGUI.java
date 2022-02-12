@@ -3,6 +3,7 @@ package logic.controller.guicontroller.first.resident;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.*;
+import javafx.stage.Screen;
 
 import java.util.List;
 
@@ -14,13 +15,15 @@ public class ChartGUI {
         bc.setTitle(Title);
         categoryAxis.setLabel(xAxis);
         numberAxis.setLabel(yAxis);
+        bc.setPrefWidth((Screen.getPrimary().getBounds().getWidth()/2));
         return bc;
     }
 
     public PieChart NewPieChart(ObservableList<PieChart.Data> valueList, String Title){
         PieChart pieChart = new PieChart(valueList);
         pieChart.setTitle(Title);
-        pieChart.setStyle("-fx-pref-height: 350");
+        pieChart.setPrefHeight((Screen.getPrimary().getBounds().getHeight()-100)/2);
+        pieChart.setPrefWidth(Screen.getPrimary().getBounds().getWidth()/3);
         return pieChart;
     }
 
@@ -31,6 +34,7 @@ public class ChartGUI {
         categoryAxis.setLabel(xAxis);
         numberAxis.setLabel(yAxis);
         lineChart.setTitle(Title);
+        lineChart.setPrefWidth((Screen.getPrimary().getBounds().getWidth()/2));
         return lineChart;
     }
 
