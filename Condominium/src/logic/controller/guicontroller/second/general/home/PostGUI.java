@@ -63,7 +63,7 @@ public class PostGUI {
         usrImg.setImage(new Image(view.addImage(bean.getRole())));
         imageView.setImage(controller.setPostImage(bean.getImage()));
         ColorAdjust color = new ColorAdjust();
-        color.setBrightness(1);
-        imageView.setEffect(color);
+        color.setBrightness(1.0);
+        usrImg.setEffect(color);
     }
 }

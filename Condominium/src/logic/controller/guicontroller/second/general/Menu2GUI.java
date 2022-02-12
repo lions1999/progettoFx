@@ -15,6 +15,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import logic.controller.applicationcontroller.EmailController;
+import logic.controller.applicationcontroller.MeetController;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.applicationcontroller.UserController;
 import logic.controller.guicontroller.first.general.Menu1GUI;
@@ -23,6 +25,8 @@ import logic.controller.guicontroller.second.admin.condominium.InfoTableGUI;
 import logic.controller.guicontroller.second.admin.requests.RequestBottomNavMenuGUI;
 import logic.controller.guicontroller.second.general.home.AddPostGUI;
 import logic.controller.guicontroller.second.general.home.PostGUI;
+import logic.controller.guicontroller.second.owner.RequestMeetingDialogGUI;
+import logic.controller.guicontroller.second.resident.ContactDialogGUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.engineeringclasses.bean.UserBean;
 import logic.model.Post;
@@ -30,6 +34,8 @@ import logic.model.User;
 import logic.model.UserSingleton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -40,12 +46,15 @@ public class Menu2GUI extends Main2GUI implements Initializable {
     private final VBox vbox = new VBox();
     private final PostController postCtrl = new PostController();
     private final UserController usrCtrl = new UserController();
+    private final MeetController meet = new MeetController();
 
     @FXML private ImageView imgUser;
     @FXML private Label lbName;
     @FXML private Label tfCondominiumCode;
     @FXML private ChoiceBox<String> choice;
     private final ObservableList<String> admin = FXCollections.observableArrayList("Home","Request","Condominium","Sign Out");
+    private final ObservableList<String> owner = FXCollections.observableArrayList("Home","Meeting Request","Rate Resident","Sign Out");
+    private final ObservableList<String> resident = FXCollections.observableArrayList("Home","Contact Owner","Apartment Info","Sign Out");
 
     public void setUp(){
         choice.setOnAction(this::getChoice);
@@ -62,9 +71,11 @@ public class Menu2GUI extends Main2GUI implements Initializable {
                 break;
             case OWNER:
                 lbName.setText(sg.getOwner().getUsrName());
+                choice.setItems(owner);
                 break;
             case RESIDENT:
                 lbName.setText(sg.getResident().getUsrName());
+                choice.setItems(resident);
                 break;
         }
     }
@@ -83,7 +94,101 @@ public class Menu2GUI extends Main2GUI implements Initializable {
             case "Sign Out":
                 btnSignOutClick();
                 break;
+            case "Meeting Request":
+                btnMeetingRequest();
+                break;
+            case "Rate Resident":
+                RateResident();
+                break;
+            case "Contact Owner":
+                ContactOwner();
+                break;
+            case "Apartment Info":
+                ApartmentInfo();
+                break;
         }
+    }
+
+    private void ApartmentInfo() {
+        try {
+            FXMLLoader Resloader = view.loader("AptInfo", 2);
+            Parent root2 = Resloader.load();
+            secondBorder.setCenter(root2);
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void ContactOwner() {
+        try {
+            secondBorder.setCenter(null);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/logic/view/second/ContactDialogView.fxml"));
+            DialogPane controlDialog = loader.load();
+            ContactDialogGUI contact = loader.getController();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setDialogPane(controlDialog);
+            Optional<ButtonType> btn = dialog.showAndWait();
+            if (btn.isPresent() && btn.get() == ButtonType.OK ){
+                List<String> list = contact.getMessage();
+                String mail = list.get(0);
+                System.out.println(mail);
+                String subject = "Message from "+sg.getResident().getUsrName()+" of apartment "+list.get(1)+" in condominium "+sg.getAddress();
+                System.out.println(subject);
+                String body = list.get(2);
+                String[] recipients = new String[]{mail};
+                if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to " + list.get(3) + " with text '" + list.get(2) + "'?")) {
+                    new EmailController().send(recipients, recipients, subject, body);
+                    //alert.alertInfo("Information", "Mail sent to "+comboBox.getValue()+"!","");
+                } else {
+                    //alert.alertInfo("Information", "Mail not sent!","");
+                    System.out.println("not sent!");
+                }
+            }
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+        }
+        btnHomeClick();
+        choice.setValue("Home");
+    }
+
+    private void RateResident() {
+        try {
+            FXMLLoader loader = view.loader("RateResident",2);
+            Parent root = loader.load();
+            secondBorder.setCenter(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void btnMeetingRequest(){
+        try {
+            secondBorder.setCenter(null);
+            FXMLLoader loader1 = new FXMLLoader();
+            loader1.setLocation(getClass().getResource("/logic/view/second/RequestMeetingDialogView.fxml"));
+            DialogPane meetingDialog = loader1.load();
+            RequestMeetingDialogGUI request = loader1.getController();
+            Dialog<ButtonType> dialog1 = new Dialog<>();
+            dialog1.setDialogPane(meetingDialog);
+            Optional<ButtonType> btn1 = dialog1.showAndWait();
+            if (btn1.isPresent() && btn1.get() == ButtonType.OK ) {
+                List<String> list1 = request.getMessage();
+                String subject1 = list1.get(0);
+                System.out.println(subject1);
+                String body1 = list1.get(1);
+                if (alert.alertConfirm("Confirmation","Confirm to send meeting request?","Are you sure to send a meeting request to Administrator with text '" + list1.get(1) + "'?")) {
+                    meet.AddMeeting(sg.getUserID(),sg.getAddress(),subject1,body1);
+                    System.out.println("Request sent!");
+                } else {
+                    System.out.println("Request not sent!");
+                }
+            }
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+        }
+        btnHomeClick();
+        choice.setValue("Home");
     }
 
     public void btnHomeClick() {

@@ -9,7 +9,7 @@ public class RateQuery {
 
 
     public static ResultSet getRates(Statement stmt, String userId) throws SQLException {
-        String sql = "SELECT * FROM rating WHERE rate_userId = '"+userId+"' ";
+        String sql = "SELECT * FROM rating WHERE rate_res = '"+userId+"' ";
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
