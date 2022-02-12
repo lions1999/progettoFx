@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.first.owner.RateGUI">
+<AnchorPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.first.owner.RateGUI">
     <Pane maxHeight="250.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #0C39FF; -fx-background-radius: 30;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0">
         <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Icon/outline_account_circle_white_24dp.png" />

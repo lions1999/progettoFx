@@ -35,4 +35,19 @@ public class MeetDAO extends SqlDAO{
             disconnect();
         }
     }
+
+    public void AddMeeting(String meet_from, String meet_addr, String meet_obj, String meet_txt) throws SQLException{
+        try {
+            String sql = "INSERT INTO meeting (meet_from,meet_addr,meet_obj,meet_txt) values (?,?,?,?)";
+            System.out.println(sql);
+            preset = prepConnect(sql);
+            preset.setString(1,meet_from);
+            preset.setString(2,meet_addr);
+            preset.setString(3,meet_obj);
+            preset.setString(4,meet_txt);
+            preset.execute();
+        } finally {
+            disconnect();
+        }
+    }
 }

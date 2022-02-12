@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.admin.requests.meeting.MeetingItemGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.admin.requests.meeting.MeetingItemGUI">
    <HBox alignment="CENTER" layoutX="110.0" layoutY="43.0" nodeOrientation="LEFT_TO_RIGHT" spacing="30.0" styleClass="item" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Label fx:id="lbID" minWidth="50.0" text="ID" />
       <Label fx:id="lbName" minWidth="100.0" text="Name" />

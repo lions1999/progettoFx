@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="950.0" prefWidth="650.0" styleClass="pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.general.registration.RegisterGUI">
+<AnchorPane minHeight="950.0" prefWidth="650.0" styleClass="pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.general.registration.RegisterGUI">
    <VBox alignment="TOP_CENTER" layoutX="498.0" layoutY="60.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <HBox alignment="CENTER">
          <ImageView fitHeight="113.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">

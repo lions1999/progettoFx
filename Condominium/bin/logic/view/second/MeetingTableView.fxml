@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.admin.requests.meeting.MeetingTableGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="MeetingTableView" stylesheets="@style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.admin.requests.meeting.MeetingTableGUI">
    <Label layoutX="18.0" prefWidth="204.0" text="Meeting Request List" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
    <HBox layoutX="100.0" layoutY="33.0" nodeOrientation="LEFT_TO_RIGHT" spacing="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label minWidth="50.0" text="ID" />

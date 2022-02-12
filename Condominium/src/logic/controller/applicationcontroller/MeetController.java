@@ -26,4 +26,8 @@ public class MeetController {
     public ObservableList<String> loadMailList(String addr) throws SQLException {
         return usrCtrl.loadMailList(addr);
     }
+
+    public void AddMeeting(String meet_from, String meet_addr, String meet_obj, String meet_txt) throws SQLException{
+        meet.AddMeeting(meet_from, meet_addr, meet_obj, meet_txt);
+    }
 }
