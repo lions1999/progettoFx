@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="Parte Luca - qualcosa">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2021_12_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2021_12_47__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/resident/ChartGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/resident/ChartGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/ItemMeetingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/ItemMeetingView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/first/FeeInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/first/FeeInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/first/UpdateInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/first/UpdateInfoView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/view/second/ItemMeetingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/second/ItemMeetingView.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="todo btn update rate" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +24,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="ParteLuca" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -437,7 +428,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644599958946</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="todo btn update rate">
+      <created>1644682715295</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644682715295</updated>
+    </task>
+    <task id="LOCAL-00023" summary="todo btn update rate">
+      <created>1644682736519</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1644682736519</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +474,8 @@
     <MESSAGE value="Parte Luca 2" />
     <MESSAGE value="Parte Luca post2" />
     <MESSAGE value="Parte Luca - qualcosa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parte Luca - qualcosa" />
+    <MESSAGE value="todo btn update rate" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo btn update rate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
