@@ -8,6 +8,14 @@ public class Rate {
     private String rateVal;
     private String rateTxt;
 
+
+    public Rate(String rateId,String resId, String rateVal, String rateTxt) {
+        this.rateId = rateId;
+        this.resId = resId;
+        this.rateVal = rateVal;
+        this.rateTxt = rateTxt;
+    }
+
     public Rate(String rateId,String resId,String ownId, String rateVal, String rateTxt) {
         this.rateId = rateId;
         this.resId = resId;

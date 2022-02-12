@@ -10,6 +10,7 @@ import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.FeeInfoGUI;
 import logic.controller.guicontroller.first.general.Menu1GUI;
+import logic.controller.guicontroller.second.admin.condominium.InfoItemGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.UserBean;
 import logic.model.Role;
@@ -102,9 +103,14 @@ public class InfoDetailGUI {
         btnX();
     }
 
+
     private void removeRating(DialogPane pane) {
-        //todo
-        btnX();
+        InfoItemGUI info = new InfoItemGUI();
+        pane.setContent(info.setUpTableReview(1,tfName.getText(),tfID.getText(),"first"));
+        pane.getStylesheets().clear();
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setDialogPane(pane);
+        dialog.showAndWait();
     }
 
     private void updateFee(DialogPane pane) throws SQLException, IOException {

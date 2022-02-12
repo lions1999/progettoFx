@@ -19,7 +19,6 @@ public class Main2GUI extends Application{
         Pane pane = view.getPage("Login",2);
         secondBorder.setCenter(pane);
         secondBorder.setStyle("-fx-background-color: #121212;");
-        /*secondBorder.getStylesheets().add("/logic/view/second/style.css");*/
         Scene scene = new Scene(secondBorder);
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image("/logic/view/icon/outline_apartment_white_24dp.png"));

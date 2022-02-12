@@ -18,4 +18,11 @@ public class RateController {
         return rateDAO.getRatesRes(userId);
     }
 
+    public ObservableList<Rate> getRatesOwn(String ownId) throws SQLException {
+        return rateDAO.getRatesOwner(ownId);
+    }
+
+    public void deleteRate(String rateId) throws SQLException {
+        rateDAO.deleteRate(rateId);
+    }
 }

@@ -45,7 +45,9 @@
 .btnRadio:selected .dot{
     -fx-background-color: white;
 }
-
+.item{
+    -fx-background-color: #121212;
+}
 .item:hover {
     -fx-background-color: #2E2E2E;
 }

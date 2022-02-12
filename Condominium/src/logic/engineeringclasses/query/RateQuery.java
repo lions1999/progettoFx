@@ -13,4 +13,10 @@ public class RateQuery {
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }
+
+    public static ResultSet getRatesOwner(Statement stmt, String ownerID) throws SQLException {
+        String sql = "SELECT * FROM rating WHERE rate_own = '"+ownerID+"' ";
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+    }
 }

@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
 
-public class RatingUserGUI {
+public class    RatingUserGUI {
 
     private final RateController rateController = new RateController();
     private final UserSingleton sg = UserSingleton.getInstance();

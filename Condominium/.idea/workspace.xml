@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="todo btn update rate" />
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="todo btn update rate">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/admin/condominium/UpdateRatingGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/Main2GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/Main2GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RateDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RateQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RateQuery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/model/Rate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/model/Rate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/UpdateRatingTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/UpdateRatingTableView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/RateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/admin/condominium/InfoDetailGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/admin/condominium/UpdateRatingGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/owner/RatingUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/owner/RatingUserGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingItemGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingTableGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingTableGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/Main2GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/Main2GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/RateDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/RateDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RateQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RateQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/model/Rate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/model/Rate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/second/UpdateRatingItemView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/second/UpdateRatingItemView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/second/UpdateRatingTableView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/second/UpdateRatingTableView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/second/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/second/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -442,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644682736519</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="todo btn update rate">
+      <created>1644682912724</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644682912724</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -47,4 +47,33 @@ public class RateDAO extends SqlDAO{
         return rates;
     }
 
+
+    public ObservableList<Rate> getRatesOwner(String userId) throws SQLException {
+        ObservableList<Rate> rates = FXCollections.observableArrayList();
+        try {
+            connect();
+            ResultSet rs = RateQuery.getRatesOwner(stmt,userId);
+            while(rs.next()) {
+                String rateId = rs.getString("rate_id");
+                String rateRes = rs.getString("rate_res");
+                String rateVal = rs.getString("rate_val");
+                String rateTxt = rs.getString("rate_txt");
+                Rate Rate = new Rate(rateId,userDao.checkNameByID(rateRes),rateVal,rateTxt);
+                rates.add(Rate);
+            }
+        }finally {
+            disconnect();
+        }
+        return rates;
+    }
+
+    public void deleteRate(String rateId) throws SQLException {
+        try{
+            connect();
+            String sql= "DELETE FROM rating WHERE rate_id='"+rateId+"'";
+            stmt.executeUpdate(sql);
+        } finally {
+            disconnect();
+        }
+    }
 }
