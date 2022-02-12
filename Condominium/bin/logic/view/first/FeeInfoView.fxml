@@ -21,21 +21,21 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Water" GridPane.rowIndex="1" />
-   <TextField fx:id="tfWater" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   <TextField fx:id="tfWater" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Gas" GridPane.rowIndex="2" />
-   <TextField fx:id="tfGas" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   <TextField fx:id="tfGas" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Electricity" GridPane.rowIndex="3" />
-   <TextField fx:id="tfElectricity" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   <TextField fx:id="tfElectricity" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Administrative" GridPane.rowIndex="4" />
-   <TextField fx:id="tfAdministrative" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   <TextField fx:id="tfAdministrative" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Parking Area" GridPane.rowIndex="5" />
-   <TextField fx:id="tfPark" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   <TextField fx:id="tfPark" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="5" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Elevator" GridPane.rowIndex="6" />
-   <TextField fx:id="tfElevator" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   <TextField fx:id="tfElevator" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="6" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Pet" GridPane.rowIndex="7" />
-   <TextField fx:id="tfPet" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+   <TextField fx:id="tfPet" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="7" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Wi-fi" GridPane.rowIndex="8" />
-   <TextField fx:id="tfWifi" alignment="CENTER" promptText="Please Insert Value" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   <TextField fx:id="tfWifi" alignment="CENTER" promptText="Please Insert Value" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="8" />
    <Text fx:id="txtApt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Apartment" />
-   <TextField fx:id="tfApartment" alignment="CENTER" editable="false" promptText="Apartment" GridPane.columnIndex="1" />
+   <TextField fx:id="tfApartment" alignment="CENTER" editable="false" promptText="Apartment" styleClass="fieldGeneral" GridPane.columnIndex="1" />
 </GridPane>

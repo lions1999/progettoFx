@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="logic.controller.guicontroller.second.admin.condominium.UpdateRatingItemGUI">
+   <HBox nodeOrientation="LEFT_TO_RIGHT" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label minWidth="50.0" text="ID"/>
+      <Label minWidth="100.0" text="Name"/>
+      <Label minWidth="150.0" text="Value"/>
+      <Label minWidth="300.0" text="Text"/>
+      <Button mnemonicParsing="false" onAction="#onDeletePress"
+              style="-fx-background-color: trasparent; -fx-border-color: trasparent; -fx-text-fill: trasparent;">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../Icon/outline_clear_white_24dp.png"/>
+            </ImageView>
+         </graphic>
+      </Button>
+   </HBox>
+</AnchorPane>

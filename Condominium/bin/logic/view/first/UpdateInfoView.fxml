@@ -16,13 +16,13 @@
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
-      <TextField fx:id="tfEmail" alignment="CENTER" prefWidth="200.0" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="tfEmail" alignment="CENTER" prefWidth="200.0" promptText="Email" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ID        " />
-      <TextField fx:id="tfID" alignment="CENTER" editable="false" prefWidth="200.0" promptText="ID" GridPane.columnIndex="1" />
+      <TextField fx:id="tfID" alignment="CENTER" editable="false" prefWidth="200.0" promptText="ID" styleClass="fieldGeneral" GridPane.columnIndex="1" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Email     " GridPane.rowIndex="2" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Password  " GridPane.rowIndex="3" />
-      <TextField fx:id="tfPwd" alignment="CENTER" prefWidth="200.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <TextField fx:id="tfName" alignment="CENTER" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="tfPwd" alignment="CENTER" prefWidth="200.0" promptText="Password" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="tfName" alignment="CENTER" promptText="Name" styleClass="fieldGeneral" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Name" GridPane.rowIndex="1" />
    </GridPane>
 </AnchorPane>

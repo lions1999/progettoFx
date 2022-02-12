@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="Parte Luca - qualcosa">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2021_12_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_12_2021_12_47__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/FeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/FeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/requests/meeting/MeetingItemGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/admin/requests/meeting/MeetingItemGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/home/PostGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/home/PostGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/FeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/FeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/applicationcontroller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/home/PostGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/home/PostGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Condominium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Condominium.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/resident/ChartGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/first/resident/ChartGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/ItemMeetingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/ItemMeetingView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/first/FeeInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/first/FeeInfoView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/first/UpdateInfoView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/first/UpdateInfoView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/view/second/ItemMeetingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/view/second/ItemMeetingView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +37,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -74,10 +72,10 @@
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="last.edited.regexp" value="dasdsa" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/logic/view/Icon" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-4.13.2.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -106,7 +104,7 @@
       <recent name="logic.controller.guicontroller.second" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main1GUI">
+  <component name="RunManager" selected="Application.Main2GUI">
     <configuration name="Main1GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="logic.controller.guicontroller.first.general.Main1GUI" />
       <module name="Condominium" />
@@ -170,8 +168,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main1GUI" />
         <item itemvalue="Application.Main2GUI" />
+        <item itemvalue="Application.Main1GUI" />
         <item itemvalue="JUnit.AllTests" />
         <item itemvalue="JUnit.test in Condominium" />
       </list>
