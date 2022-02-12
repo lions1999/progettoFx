@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane styleClass="AptInfo" style="-fx-font-size: 20" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.resident.AptInfoGUI">
+<AnchorPane stylesheets="@style.css" styleClass="AptInfo" style="-fx-font-size: 20" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.resident.AptInfoGUI">
     <VBox fx:id="gridVbox" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
         <GridPane fx:id="feeGrid">
             <columnConstraints>

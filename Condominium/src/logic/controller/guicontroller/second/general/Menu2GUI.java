@@ -199,7 +199,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
         ObservableList<Post> posts = postCtrl.loadPost();
         loadPosts(posts);
         ScrollPane scroll = new ScrollPane();
-        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scroll.setOnScroll(event -> {
             if(event.getDeltaX() == 0 && event.getDeltaY() != 0) {
                 scroll.setHvalue(scroll.getHvalue() - event.getDeltaY() / scrollBox.getWidth());
@@ -210,7 +210,8 @@ public class Menu2GUI extends Main2GUI implements Initializable {
         vbox.getChildren().add(scroll);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(30);
-        vbox.getStylesheets().add("/logic/view/second/style.css");
+        vbox.getStylesheets().add("logic/view/second/style.css");
+        scroll.getStyleClass().add("scrollPost");
         secondBorder.setCenter(vbox);
     }
 
@@ -278,6 +279,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
     public void btnInfoClick() {
         secondBorder.setCenter(null);
         secondBorder.setRight(null);
+        secondBorder.setBottom(null);
         try {
             FXMLLoader loader = view.loader("InfoTable", 2);
             Pane table = loader.load();

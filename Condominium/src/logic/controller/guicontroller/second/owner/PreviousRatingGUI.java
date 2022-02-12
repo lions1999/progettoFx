@@ -2,6 +2,7 @@ package logic.controller.guicontroller.second.owner;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ScrollPane;
@@ -24,7 +25,7 @@ public class PreviousRatingGUI {
     private final RateController rateCtrl = new RateController();
     private final UserSingleton sg = UserSingleton.getInstance();
 
-    public VBox vbox;
+    @FXML private VBox vbox;
 
     public void setUp(List<String> list) throws SQLException, IOException {
         String id = aptController.checkUserAptFromNumber(sg.getAddress(),list.get(1),"apt_res");

@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1920.0" style="-fx-border-color: white;" styleClass="MenuTop" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.controller.guicontroller.second.general.Menu2GUI">
-   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1920.0" style="-fx-border-color: white;" styleClass="MenuTop" stylesheets="@style.css" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.general.Menu2GUI">
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <VBox>
          <Label prefHeight="78.0" prefWidth="316.0" text="CONDOMINIUM" textFill="#e7e5e5">
             <font>

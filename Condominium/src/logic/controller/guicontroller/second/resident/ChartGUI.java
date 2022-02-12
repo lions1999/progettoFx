@@ -22,7 +22,7 @@ public class ChartGUI {
     public PieChart NewPieChart(ObservableList<PieChart.Data> valueList, String Title){
         PieChart pieChart = new PieChart(valueList);
         pieChart.setTitle(Title);
-        pieChart.setPrefHeight((Screen.getPrimary().getBounds().getHeight()-70));
+        pieChart.setPrefHeight((Screen.getPrimary().getBounds().getHeight()-300));
         pieChart.setPrefWidth(Screen.getPrimary().getBounds().getWidth()/4);
         return pieChart;
     }
