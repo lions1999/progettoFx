@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ApartmentQuery {
+
+    //private static final String ADDRESS = "apt_addr";
+
     public static ResultSet selectApartmentResident(Statement stmt, String address) throws SQLException {
         String sql = "SELECT * FROM apartment where apt_addr='"+address+"' and apt_res is NULL and apt_own is not NULL";
         System.out.println(sql);

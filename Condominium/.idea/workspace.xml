@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="adjust first gui">
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/admin/requests/registration/RegistrationTableDetailGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/first/admin/requests/registration/RegistrationTableDetailGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/InfoItemGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/condominium/UpdateRatingItemGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/requests/registration/RegistrationItemGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/admin/requests/registration/RegistrationItemGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/home/PostGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/controller/guicontroller/second/general/home/PostGUI.java" afterDir="false" />
+    <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="altro">
       <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/ApartmentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logic/model/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/model/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +292,7 @@
       <workItem from="1644586872797" duration="14506000" />
       <workItem from="1644766235991" duration="3405000" />
       <workItem from="1644774757525" duration="211000" />
-      <workItem from="1644775037243" duration="3349000" />
+      <workItem from="1644775037243" duration="3948000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -503,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644777485061</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="altro">
+      <created>1644778461038</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1644778461038</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +539,8 @@
     <MESSAGE value="todo btn update rate" />
     <MESSAGE value="finish" />
     <MESSAGE value="adjust first gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust first gui" />
+    <MESSAGE value="altro" />
+    <option name="LAST_COMMIT_MESSAGE" value="altro" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
