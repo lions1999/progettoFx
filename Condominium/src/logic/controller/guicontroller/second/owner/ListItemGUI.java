@@ -45,7 +45,7 @@ public class ListItemGUI {
             loader.setLocation(getClass().getResource("/logic/view/second/RateDialogView.fxml"));
             DialogPane rateDialog = loader.load();
             RateDialogGUI rate = loader.getController();
-            rate.TitleTxt.setText("What you would do with resident "+resident+" of apartment "+apt+"?");
+            rate.titleTxt.setText("What you would do with resident "+resident+" of apartment "+apt+"?");
             Dialog<ButtonType> dialog = new Dialog<>();
             dialog.setDialogPane(rateDialog);
             Optional<ButtonType> btn = dialog.showAndWait();
@@ -59,7 +59,6 @@ public class ListItemGUI {
                         PreviousRatingGUI prevController = prevLoader.getController();
                         prevController.setUp(list);
                         secondBorder.setRight(root);
-                        System.out.println(rate.submitValue(resident));
                         break;
                     case ("Add new Rate"):
                         FXMLLoader addLoader = view.loader("AddRating",2);
@@ -67,7 +66,8 @@ public class ListItemGUI {
                         AddRatingGUI addRate = addLoader.getController();
                         addRate.setUp(list);
                         secondBorder.setRight(root1);
-                        System.out.println(rate.submitValue(resident));
+                        break;
+                    default:
                         break;
                 }
             }

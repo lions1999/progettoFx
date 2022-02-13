@@ -33,7 +33,7 @@ public class RateResidentGUI implements Initializable {
     private final UserSingleton sg = UserSingleton.getInstance();
     private final RateController rateCtrl = new RateController();
 
-    @FXML private TableView<Apartment> Table;
+    @FXML private TableView<Apartment> table;
     @FXML private TableColumn<?, ?> aptAddress;
     @FXML private TableColumn<?, ?> resName;
     @FXML private TableColumn<?, ?> aptNum;
@@ -45,7 +45,7 @@ public class RateResidentGUI implements Initializable {
         setUp();
         try {
             ObservableList<Apartment> ownerApt = FXCollections.observableArrayList(aptController.checkApartmentsList(sg.getUserID(),sg.getAddress(),"apt_own"));
-            Table.setItems(ownerApt);
+            table.setItems(ownerApt);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -55,7 +55,7 @@ public class RateResidentGUI implements Initializable {
         resName.setCellValueFactory(new PropertyValueFactory<>("resident"));
         aptAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         aptNum.setCellValueFactory(new PropertyValueFactory<>("number"));
-        Table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     public void submitUser() throws SQLException, IOException {
@@ -63,14 +63,14 @@ public class RateResidentGUI implements Initializable {
         FXMLLoader loader = view.loader("RatingUser",1);
         Parent root = loader.load();
         RatingUserGUI rating = loader.getController();
-        Apartment apt = Table.getSelectionModel().getSelectedItem();
+        Apartment apt = table.getSelectionModel().getSelectedItem();
         String name = apt.getResident();
         String id = aptController.checkUserAptFromNumber(apt.getAddress(),apt.getNumber(),"apt_res");
         ObservableList<Rate> rates = FXCollections.observableArrayList(rateCtrl.getRatesRes(id));
         rating.setUp(name,id);
         firstBorder.setRight(root);
         scrollPrevRates.getChildren().clear();
-        if (rates.size() != 0) {
+        if (rates.isEmpty()) {
             VBox ratesPane = new VBox();
             for (int i = rates.size() - 1; i >= 0; i--) {
                 FXMLLoader loader1 = view.loader("Rate",1);

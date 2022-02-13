@@ -25,12 +25,12 @@
                  prefHeight="38.0" prefWidth="340.0" showTickLabels="true" showTickMarks="true" snapToTicks="true"
                  value="1.0"/>
       </HBox>
-      <TextArea fx:id="rate_comment" onKeyReleased="#enableButton" prefHeight="200.0" prefWidth="200.0"
+      <TextArea fx:id="rateComment" onKeyReleased="#enableButton" prefHeight="200.0" prefWidth="200.0"
                 promptText="Did you have a comment for yout rate?">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
          </VBox.margin>
       </TextArea>
-      <Button fx:id="Rate" mnemonicParsing="false" onAction="#submitRating" text="Rate resident"/>
+      <Button fx:id="rate" mnemonicParsing="false" onAction="#submitRating" text="Rate resident"/>
    </VBox>
 </AnchorPane>

@@ -29,17 +29,15 @@ public class AddRatingGUI {
     private String id;
 
     public void setUp(List<String> list) throws SQLException {
-        String id = aptController.checkUserAptFromNumber(sg.getAddress(),list.get(1),"apt_res");
+        String resId = aptController.checkUserAptFromNumber(sg.getAddress(),list.get(1),"apt_res");
         resName.setText(list.get(0));
         btnRate.setDisable(true);
-        this.id = id;
-        System.out.println(this.id);
+        this.id = resId;
     }
 
     public void submitRate() throws SQLException {
         RadioButton selected = (RadioButton) rate.getSelectedToggle();
         int rateValue = Integer.parseInt(selected.getText());
-        System.out.println(rateValue);
         String rateText = commentRate.getText();
         rateController.rateUser(this.id, sg.getUserID(),rateValue,rateText);
         secondBorder.setRight(null);

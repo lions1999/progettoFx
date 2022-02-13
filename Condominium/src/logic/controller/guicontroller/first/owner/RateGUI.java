@@ -8,13 +8,13 @@ import logic.model.Rate;
 
 public class RateGUI {
 
-    @FXML private Text Rate;
-    @FXML private TextArea RateComment;
-    @FXML private Text RateName;
+    @FXML private Text rate;
+    @FXML private TextArea rateComment;
+    @FXML private Text rateName;
 
     public void setupRate(Rate rate) {
-        RateName.setText(rate.getOwnId());
-        Rate.setText(rate.getRateVal());
-        RateComment.setText(rate.getRateTxt());
+        rateName.setText(rate.getOwnId());
+        this.rate.setText(rate.getRateVal());
+        rateComment.setText(rate.getRateTxt());
     }
 }

@@ -10,18 +10,18 @@ import logic.model.Rate;
 
 public class RateGUI {
 
-    @FXML private Label RateOwnName;
-    @FXML private ImageView RateOwnImg;
-    @FXML private Label RateValue;
-    @FXML private TextArea RateComment;
+    @FXML private Label rateOwnName;
+    @FXML private ImageView rateOwnImg;
+    @FXML private Label rateValue;
+    @FXML private TextArea rateComment;
 
     public void setupRate(Rate rate) {
-        RateOwnImg.setImage(new Image("logic/view/icon/O.png"));
+        rateOwnImg.setImage(new Image("logic/view/icon/O.png"));
         ColorAdjust color = new ColorAdjust();
         color.setBrightness(1.0);
-        RateOwnImg.setEffect(color);
-        RateOwnName.setText(rate.getOwnId());
-        RateValue.setText(rate.getRateVal());
-        RateComment.setText(rate.getRateTxt());
+        rateOwnImg.setEffect(color);
+        rateOwnName.setText(rate.getOwnId());
+        rateValue.setText(rate.getRateVal());
+        rateComment.setText(rate.getRateTxt());
     }
 }

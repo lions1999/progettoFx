@@ -43,8 +43,8 @@ public class ApartmentController {
         return dao.loadApartments(addr);
     }
 
-    public Apartment checkApartments(String userID, String address, String apt_res) throws SQLException {
-        return dao.checkApartments(userID, address, apt_res);
+    public Apartment checkApartments(String userID, String address, String aptRes) throws SQLException {
+        return dao.checkApartments(userID, address, aptRes);
     }
 
     public String checkMailById(String userId) throws SQLException{
@@ -55,8 +55,8 @@ public class ApartmentController {
         return dao.checkUserAptFromNumber(aptNumber,condAddr,userRequired);
     }
 
-    public ObservableList<Apartment> checkApartmentsList(String userID, String address, String apt_res) throws SQLException {
-        return dao.checkApartmentsList(userID, address, apt_res);
+    public ObservableList<Apartment> checkApartmentsList(String userID, String address, String aptRes) throws SQLException {
+        return dao.checkApartmentsList(userID, address, aptRes);
     }
 
     public String loadAptId(String resID) throws SQLException {

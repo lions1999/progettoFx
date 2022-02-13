@@ -10,8 +10,8 @@ public class RateController {
 
     private final RateDAO rateDAO = new RateDAO();
 
-    public void rateUser(String ResId,String OwnId,int Rate, String comment) throws SQLException {
-        rateDAO.rateResident(ResId,OwnId,Rate,comment);
+    public void rateUser(String resId,String ownId,int rate, String comment) throws SQLException {
+        rateDAO.rateResident(resId,ownId,rate,comment);
     }
 
     public ObservableList<Rate> getRatesRes(String userId) throws SQLException {

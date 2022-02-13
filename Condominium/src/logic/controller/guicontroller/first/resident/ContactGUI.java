@@ -22,45 +22,42 @@ public class ContactGUI implements Initializable{
 	private final AlertGUI alert = new AlertGUI();
 
 
-	@FXML private TextArea ReasonText;
+	@FXML private TextArea reasonText;
 	@FXML private Button btnSend;
 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources){
 		btnSend.setDisable(true);
-		ReasonText.setPromptText("What do you want to communicate to your apartment Owner?");
+		reasonText.setPromptText("What do you want to communicate to your apartment Owner?");
 	}
 
 
-	@FXML void ClearReason() {
-		ReasonText.setText("");
+	@FXML void clearReason() {
+		reasonText.setText("");
 		btnSend.setDisable(true);
 	}
 
-	@FXML void SendMail()  throws SQLException {
+	@FXML void sendMail()  throws SQLException {
 		String mail;
 		mail = aptCtrl.checkMailById(aptCtrl.checkUserAptFromNumber(sg.getAddress(),aptCtrl.checkApartments(sg.getUserID(),sg.getAddress(),"apt_res").getNumber(),"apt_own"));
-		System.out.println(mail);
 		String subject = "Message Request from "+sg.getResident();
-		String body = ReasonText.getText();
+		String body = reasonText.getText();
 		if(pattern.isText(body)) {
 			alert.alertError("Error","Incorrect Text!","You cannot insert more that one consecutive space, please control text before send");
 		}
 		else{
 			String[] recipients = new String[]{mail};
 
-			if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to your Owner with text '" + ReasonText.getText() + "'?")) {
+			if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to your Owner with text '" + reasonText.getText() + "'?")) {
 				new EmailController().send(recipients, recipients, subject, body);
-				ClearReason();
-			} else {
-				System.out.println("not sent!");
+				clearReason();
 			}
 		}
 	}
 
 	public void disableSend() {
-		btnSend.setDisable(ReasonText.getText().matches("( *)"));
+		btnSend.setDisable(reasonText.getText().matches("( *)"));
 	}
 
 }

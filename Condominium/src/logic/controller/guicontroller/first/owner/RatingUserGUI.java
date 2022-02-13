@@ -20,29 +20,29 @@ public class    RatingUserGUI {
     private final UserBean bean = new UserBean();
 
 
-    @FXML public TextArea rate_comment;
-    @FXML public Button Rate;
+    @FXML public TextArea rateComment;
+    @FXML public Button rate;
     @FXML private Text residentName;
     @FXML private Slider sliderRating;
 
 
     public void setUp(String name, String id) {
         residentName.setText(name);
-        Rate.setDisable(true);
+        rate.setDisable(true);
         sliderRating.setStyle("-fx-font-size: 20");
         setBean(id);
     }
 
     public void submitRating() throws SQLException {
-        int rate = (int) sliderRating.getValue();
-        String commentRate = rate_comment.getText();
+        int rateVal = (int) sliderRating.getValue();
+        String commentRate = rateComment.getText();
         String id = bean.getUsrID();
-        rateController.rateUser(id,sg.getUserID(),rate,commentRate);
+        rateController.rateUser(id,sg.getUserID(),rateVal,commentRate);
         firstBorder.setRight(null);
     }
 
     public void enableButton() {
-        Rate.setDisable(rate_comment.getText().matches("( *)"));
+        rate.setDisable(rateComment.getText().matches("( *)"));
     }
 
 

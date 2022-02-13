@@ -180,7 +180,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
                 System.out.println(subject1);
                 String body1 = list1.get(1);
                 if (alert.alertConfirm("Confirmation","Confirm to send meeting request?","Are you sure to send a meeting request to Administrator with text '" + list1.get(1) + "'?")) {
-                    meet.AddMeeting(sg.getUserID(),sg.getAddress(),subject1,body1);
+                    meet.addMeeting(sg.getUserID(),sg.getAddress(),subject1,body1);
                     System.out.println("Request sent!");
                 } else {
                     System.out.println("Request not sent!");

@@ -17,7 +17,6 @@ public class LoginController {
 	private final CondominiumDAO cond = new CondominiumDAO();
 	private final UserDAO login = new UserDAO();
 	private static final UserSingleton sg = UserSingleton.getInstance();
-	private int typError;
 	
 	public boolean login(UserBean bean){
 		try {

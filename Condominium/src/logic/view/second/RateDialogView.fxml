@@ -11,7 +11,7 @@
 <DialogPane xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="logic.controller.guicontroller.second.owner.RateDialogGUI">
     <content>
         <VBox>
-            <Text fx:id="TitleTxt">
+            <Text fx:id="titleTxt">
             <VBox.margin>
                <Insets bottom="10.0" />
             </VBox.margin></Text>
@@ -26,6 +26,6 @@
          <RadioButton mnemonicParsing="false" text="Add new Rate" toggleGroup="$group1" />
         </VBox>
     </content>
-    <ButtonType fx:id="btnCheck" fx:constant="OK" />
-    <ButtonType fx:id="btnAdd" fx:constant="CANCEL" />
+    <ButtonType fx:constant="OK" />
+    <ButtonType fx:constant="CANCEL" />
 </DialogPane>

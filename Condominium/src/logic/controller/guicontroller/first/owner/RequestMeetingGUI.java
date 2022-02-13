@@ -15,37 +15,33 @@ public class RequestMeetingGUI extends Main1GUI{
 
     UserSingleton sg = UserSingleton.getInstance();
     private final MeetController meet = new MeetController();
-    private final AlertGUI alert = new AlertGUI();
+    private final AlertGUI alertGUI = new AlertGUI();
 
 
-    @FXML private TextArea ReasonText;
-    @FXML private TextArea ObjectText;
+    @FXML private TextArea reasonText;
+    @FXML private TextArea objectText;
     @FXML private Button btnSend;
 
-    public void SendMeeting() {
-        String subject = ObjectText.getText();
-        String message = ReasonText.getText();
-        if (alert.alertConfirm("Confirmation","Confirm to send meeting request?","Are you sure to send a meeting request to Administrator with text '" + message + "'?")) {
+    public void sendMeeting() {
+        String subject = objectText.getText();
+        String message = reasonText.getText();
+        if (alertGUI.alertConfirm("Confirmation","Confirm to send meeting request?","Are you sure to send a meeting request to Administrator with text '" + message + "'?")) {
             try {
-                meet.AddMeeting(sg.getUserID(),sg.getAddress(),subject,message);
+                meet.addMeeting(sg.getUserID(),sg.getAddress(),subject,message);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            System.out.println("Request sent!");
-            ClearReason();
-        } else {
-            System.out.println("Request not sent!");
+            clearReason();
         }
-
     }
 
     public void disableSend() {
-        btnSend.setDisable(ReasonText.getText().matches("( *)"));
+        btnSend.setDisable(reasonText.getText().matches("( *)"));
     }
 
-    @FXML void ClearReason() {
-        ObjectText.setText("");
-        ReasonText.setText("");
+    @FXML void clearReason() {
+        objectText.setText("");
+        reasonText.setText("");
         btnSend.setDisable(true);
     }
 }

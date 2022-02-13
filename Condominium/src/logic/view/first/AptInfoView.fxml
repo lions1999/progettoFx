@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="aptPane" stylesheets="@style.css" style="-fx-font-size: 15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.first.resident.AptInfoGUI">
+<AnchorPane stylesheets="@style.css" style="-fx-font-size: 15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="logic.controller.guicontroller.first.resident.AptInfoGUI">
    <VBox>
       <GridPane prefHeight="300.0" prefWidth="370.0">
          <columnConstraints>
@@ -69,7 +69,7 @@
                GridPane.rowIndex="5"/>
       </GridPane>
       <HBox>
-         <CheckBox fx:id="LastMonthBtn" onAction="#submitLastMonth" text="Show last month fees">
+         <CheckBox fx:id="lastMonthBtn" onAction="#submitLastMonth" text="Show last month fees">
             <HBox.margin>
                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0"/>
             </HBox.margin>
