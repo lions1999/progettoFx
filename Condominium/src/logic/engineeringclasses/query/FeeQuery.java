@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class FeeQuery {
+
+    private FeeQuery(){}
+
     public static ResultSet loadAvailableFees(Statement stmt, String address) throws SQLException {
         String sql = "SELECT * FROM condominiums where con_addr='" + address +"'";
         

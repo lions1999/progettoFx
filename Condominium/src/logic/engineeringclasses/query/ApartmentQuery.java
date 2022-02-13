@@ -6,7 +6,7 @@ import java.sql.Statement;
 
 public class ApartmentQuery {
 
-    //private static final String ADDRESS = "apt_addr";
+    private ApartmentQuery(){}
 
     public static ResultSet selectApartmentResident(Statement stmt, String address) throws SQLException {
         String sql = "SELECT * FROM apartment where apt_addr='"+address+"' and apt_res is NULL and apt_own is not NULL";
@@ -19,7 +19,7 @@ public class ApartmentQuery {
     }
 
     public static ResultSet selectApartmentId(Statement stmt, String apartment, String address) throws SQLException{
-        String sql = "SELECT apt_id FROM apartment where apt_name='"+apartment+"' and apt_addr='"+address+"'";
+        String sql = "SELECT apt_id FROM apartment where apt_name='"+apartment+"' and  apt_addr='"+address+"'";
         return stmt.executeQuery(sql);
     }
 		
@@ -48,12 +48,6 @@ public class ApartmentQuery {
 
     public static ResultSet selectEmail(Statement stmt, String userID) throws SQLException {
         String sql= "SELECT user_email  from users where user_id ='"+userID+"'";
-        
-        return stmt.executeQuery(sql);
-    }
-
-    public static ResultSet selectIdFromName(Statement stmt, String aptName) throws SQLException{
-        String sql = "SELECT apt_id FROM apartment WHERE apt_name ='"+aptName+"'";
         
         return stmt.executeQuery(sql);
     }

@@ -7,6 +7,8 @@ import java.sql.Statement;
 public class RateQuery {
 
 
+    private RateQuery() {}
+
     public static ResultSet getRates(Statement stmt, String userId) throws SQLException {
         String sql = "SELECT * FROM rating WHERE rate_res = '"+userId+"' ";
         

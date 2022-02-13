@@ -41,7 +41,7 @@ public class FeeDAO extends SqlDAO{
                 Double elevator = rs.getDouble("fee_elevator");
                 Double pet = rs.getDouble("fee_pet");
                 Double wifi = rs.getDouble("fee_wifi");
-                fee = new Fee(aptId, water, gas, elect, admin, park, elevator, pet, wifi);
+                fee = new Fee(water, gas, elect, admin, park, elevator, pet, wifi);
             }
         } finally {disconnect();}
         return fee;

@@ -6,6 +6,8 @@ import java.sql.Statement;
 
 public class PostQuery {
 
+    private PostQuery() {}
+
     public static ResultSet selectListPost(Statement stmt, String address) throws SQLException {
         String sql = "SELECT post_id,post_usr,post_txt,post_img FROM posts where post_id IN (SELECT  post_id FROM `posts` WHERE post_addr='"+ address + "')";
         

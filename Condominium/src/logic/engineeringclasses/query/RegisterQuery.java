@@ -6,6 +6,8 @@ import java.sql.Statement;
 
 public class RegisterQuery {
 
+    private RegisterQuery() {}
+
     public static ResultSet selectRegistration(Statement stmt, String email, String address) throws SQLException {
         String sql = "SELECT reg_id from registration where reg_email='" + email + "'and reg_addr='" + address+ "'";
         

@@ -6,6 +6,8 @@ import java.sql.Statement;
 
 public class UserQuery {
 
+    private UserQuery(){}
+
     public static ResultSet selectUserID(Statement stmt, String email, String address) throws SQLException {
         String sql = "SELECT user_id FROM users where user_email='" + email + "'and user_addr='" + address + "'";
         

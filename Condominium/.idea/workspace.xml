@@ -5,30 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e934ded-b2fb-4671-8a0c-f8e48abf4266" name="Changes" comment="code smells">
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/MeetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/MeetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/applicationcontroller/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/Menu2GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/controller/guicontroller/second/general/Menu2GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/ApartmentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/FeeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/MeetDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/MeetDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/PostDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RateDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RateDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RegisterDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/RegisterDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/SqlDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/SqlDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/ApartmentQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/CondominiumQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/CondominiumQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/FeeQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/MeetQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/MeetQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/PostQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/PostQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RateQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RateQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RegisterQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/RegisterQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/UserQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/engineeringclasses/query/UserQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/Owner.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/model/Owner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/model/UserSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/model/UserSingleton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/ContactDialogView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/ContactDialogView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/logic/view/second/RequestMeetingDialogView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/logic/view/second/RequestMeetingDialogView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19bd7d64182122b8cb68e575a7ff63ffc5a86e06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a69b38f3a1b1b2fda44fda3d1f71d7a9837099d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4df80bb09d69ac12bb1b27491f23d499d6ea5bdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53f43c0ae6d696d011052b0eb4cfd79101c946f1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c59eb27ea83fe17a7fd403c8c71b6e7af7e6cf39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d74751faec165f545735279a101877265c2dd520" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/e/de9f7d45f84941379010e518a44a12eb58aa22bb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f3861b8e59950aecc975de525c2c93ffc3be9f75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/dao/FeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/ApartmentQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/CondominiumQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/CondominiumQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/FeeQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/MeetQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/MeetQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/PostQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/PostQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RateQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RateQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RegisterQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/RegisterQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/engineeringclasses/query/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/engineeringclasses/query/UserQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/model/Fee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logic/model/Fee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +68,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/logic/controller/guicontroller/first/general/home/Post1GUI.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1zzfXtFT8IbQZQnA8Ynacc6WRXa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -101,7 +101,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="sonarlint" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -315,6 +315,8 @@
       <workItem from="1644766235991" duration="3405000" />
       <workItem from="1644774757525" duration="211000" />
       <workItem from="1644775037243" duration="3349000" />
+      <workItem from="1644786808906" duration="44000" />
+      <workItem from="1644786873613" duration="591000" />
     </task>
     <task id="LOCAL-00001" summary="prova pack">
       <created>1638798010140</created>
@@ -526,7 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644783051500</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="code smells">
+      <created>1644783818598</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644783818598</updated>
+    </task>
+    <task id="LOCAL-00032" summary="code smells">
+      <created>1644783859825</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1644783859825</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
