@@ -20,7 +20,7 @@ public class ContactDialogGUI{
 
     public List<String> getMessage() throws SQLException {
         Apartment apt = aptController.checkApartments(sg.getUserID(), sg.getAddress(), "apt_res");
-        String mail = aptController.checkMailById(aptController.checkUserAptFromNumber( sg.getAddress(),apt.getNumber(),"apt_own"));
+        String mail = aptController.checkMailById(aptController.checkUserAptFromNumber(sg.getAddress(),apt.getNumber(),"apt_own"));
         return Arrays.asList(mail, apt.getNumber(),mailText.getText(),apt.getOwner());
     }
 

@@ -59,7 +59,11 @@ public class Menu1GUI extends Main1GUI implements Initializable {
                     firstBorder.setCenter(root);
                     break;
                 case OWNER:
-
+                    scrollBox.getChildren().clear();
+                    Pane RequestMeet = view.getPage("RequestMeeting",1);
+                    scrollBox.getChildren().add(RequestMeet);
+                    firstBorder.setCenter(new ScrollPane(scrollBox));
+                    break;
                 case RESIDENT:
                     scrollBox.getChildren().clear();
                     Pane Contact = view.getPage("Contact",1);

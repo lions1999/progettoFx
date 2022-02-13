@@ -24,7 +24,7 @@ public class ApartmentQuery {
     }
 		
     public static ResultSet selectAptInfo(Statement stmt, String  userId,String condAddr,String type_usr) throws SQLException {
-        String sql = "SELECT * from apartment where "+type_usr+"='"+userId+"' and apt_addr='"+condAddr+"'";
+        String sql = "SELECT * from apartment where "+type_usr+"='"+userId+"' and apt_addr='"+condAddr+"' and apt_res is not NULL ";
         System.out.println(sql);
         return stmt.executeQuery(sql);
     }

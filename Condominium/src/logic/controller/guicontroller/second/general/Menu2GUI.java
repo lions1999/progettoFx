@@ -122,6 +122,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
     private void ContactOwner() {
         try {
             secondBorder.setCenter(null);
+            secondBorder.setRight(null);
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/logic/view/second/ContactDialogView.fxml"));
             DialogPane controlDialog = loader.load();
@@ -165,6 +166,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
     private void btnMeetingRequest(){
         try {
             secondBorder.setCenter(null);
+            secondBorder.setRight(null);
             FXMLLoader loader1 = new FXMLLoader();
             loader1.setLocation(getClass().getResource("/logic/view/second/RequestMeetingDialogView.fxml"));
             DialogPane meetingDialog = loader1.load();

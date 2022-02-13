@@ -138,13 +138,6 @@
 
 /*Apt Info*/
 
-.chart .axis{
-    -fx-background-color: #121212;
-    -fx-text-fill: white;
-}
-
-
-
 .AptInfo *{
     -fx-text-fill: white;
     -fx-font-family: "Times New Roman";
