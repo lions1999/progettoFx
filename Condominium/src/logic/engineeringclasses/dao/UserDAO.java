@@ -93,7 +93,7 @@ public class UserDAO extends SqlDAO{
         return admin;
     }
 
-    public Owner loadOwnerID(String id) throws SQLException, InputException {
+    public Owner loadOwnerID(String id) throws SQLException {
         Owner owner = null;
         try {
             connect();
