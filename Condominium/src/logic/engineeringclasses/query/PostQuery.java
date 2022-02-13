@@ -8,13 +8,13 @@ public class PostQuery {
 
     public static ResultSet selectListPost(Statement stmt, String address) throws SQLException {
         String sql = "SELECT post_id,post_usr,post_txt,post_img FROM posts where post_id IN (SELECT  post_id FROM `posts` WHERE post_addr='"+ address + "')";
-        System.out.println(sql);
+        
         return stmt.executeQuery(sql);
     }
 
     public static ResultSet selectNameByID(Statement stmt, String id) throws SQLException {
         String sql = "SELECT user_name FROM users WHERE user_id='" + id + "'";
-        System.out.println(sql);
+        
         return stmt.executeQuery(sql);
     }
 }

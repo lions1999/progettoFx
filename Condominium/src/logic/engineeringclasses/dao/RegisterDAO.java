@@ -27,7 +27,6 @@ public class RegisterDAO extends SqlDAO{
     public void addRegistrationUser(User user, String role, String apt) throws SQLException{
         try{
             String sql= "INSERT INTO registration (reg_name, reg_email, reg_pwd, reg_role, reg_addr,reg_apt) VALUES (?,?,?,?,?,?)";
-            System.out.println(sql);
             preset = prepConnect(sql);
             preset.setString(1, user.getUsrName());
             preset.setString(2, user.getUsrEmail());
@@ -81,15 +80,10 @@ public class RegisterDAO extends SqlDAO{
             connect();
             String sql = "INSERT INTO users (user_name,user_email,user_pwd,user_role,user_addr) VALUES (?,?,?,?,?)";
             preset = prepConnect(sql);
-            System.out.println(reg.getName());
             preset.setString(1, reg.getName());
-            System.out.println(reg.getEmail());
             preset.setString(2, reg.getEmail());
-            System.out.println(reg.getPassword());
             preset.setString(3, reg.getPassword());
-            System.out.println(reg.getRole());
             preset.setString(4, reg.getRole());
-            System.out.println(reg.getAddress());
             preset.setString(5, reg.getAddress());
             preset.execute();
         } finally {

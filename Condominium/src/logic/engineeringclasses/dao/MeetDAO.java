@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class MeetDAO extends SqlDAO{
 
-    private UserDAO userDao = new UserDAO();
+    private final UserDAO userDao = new UserDAO();
 
     public ObservableList<MeetRequest> loadMeetList(String address) throws SQLException{
         ObservableList<MeetRequest> list = FXCollections.observableArrayList();
@@ -36,15 +36,14 @@ public class MeetDAO extends SqlDAO{
         }
     }
 
-    public void AddMeeting(String meet_from, String meet_addr, String meet_obj, String meet_txt) throws SQLException{
+    public void addMeeting(String meetFrom, String meetAddr, String meetObj, String meetTxt) throws SQLException{
         try {
             String sql = "INSERT INTO meeting (meet_from,meet_addr,meet_obj,meet_txt) values (?,?,?,?)";
-            System.out.println(sql);
             preset = prepConnect(sql);
-            preset.setString(1,meet_from);
-            preset.setString(2,meet_addr);
-            preset.setString(3,meet_obj);
-            preset.setString(4,meet_txt);
+            preset.setString(1,meetFrom);
+            preset.setString(2,meetAddr);
+            preset.setString(3,meetObj);
+            preset.setString(4,meetTxt);
             preset.execute();
         } finally {
             disconnect();

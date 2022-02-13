@@ -12,14 +12,13 @@ public class RateDAO extends SqlDAO{
 
     private final UserDAO userDao = new UserDAO();
 
-    public void rateResident(String ResId, String OwnId, int Rate, String comment) throws SQLException {
+    public void rateResident(String resId, String ownId, int rate, String comment) throws SQLException {
         try {
             String sql = "INSERT INTO rating (rate_res,rate_own,rate_val,rate_txt) values (?,?,?,?)";
-            System.out.println(sql);
             preset = prepConnect(sql);
-            preset.setString(1, ResId);
-            preset.setString(2, OwnId);
-            preset.setInt(3, Rate);
+            preset.setString(1, resId);
+            preset.setString(2, ownId);
+            preset.setInt(3, rate);
             preset.setString(4, comment);
             preset.execute();
         } finally {
@@ -38,8 +37,8 @@ public class RateDAO extends SqlDAO{
                 String rateOwn = rs.getString("rate_own");
                 String rateVal = rs.getString("rate_val");
                 String rateTxt = rs.getString("rate_txt");
-                Rate Rate = new Rate(rateId,rateRes,userDao.checkNameByID(rateOwn),rateVal,rateTxt);
-                rates.add(Rate);
+                Rate rate = new Rate(rateId,rateRes,userDao.checkNameByID(rateOwn),rateVal,rateTxt);
+                rates.add(rate);
             }
         }finally {
             disconnect();
@@ -58,8 +57,8 @@ public class RateDAO extends SqlDAO{
                 String rateRes = rs.getString("rate_res");
                 String rateVal = rs.getString("rate_val");
                 String rateTxt = rs.getString("rate_txt");
-                Rate Rate = new Rate(rateId,userDao.checkNameByID(rateRes),rateVal,rateTxt);
-                rates.add(Rate);
+                Rate rate = new Rate(rateId,userDao.checkNameByID(rateRes),rateVal,rateTxt);
+                rates.add(rate);
             }
         }finally {
             disconnect();

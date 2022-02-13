@@ -52,9 +52,10 @@ public class Menu2GUI extends Main2GUI implements Initializable {
     @FXML private Label lbName;
     @FXML private Label tfCondominiumCode;
     @FXML private ChoiceBox<String> choice;
-    private final ObservableList<String> admin = FXCollections.observableArrayList("Home","Request","Condominium","Sign Out");
-    private final ObservableList<String> owner = FXCollections.observableArrayList("Home","Meeting Request","Rate Resident","Sign Out");
-    private final ObservableList<String> resident = FXCollections.observableArrayList("Home","Contact Owner","Apartment Info","Sign Out");
+    private static final String SIGN_OUT = "Sign Out";
+    private final ObservableList<String> admin = FXCollections.observableArrayList("Home","Request","Condominium",SIGN_OUT);
+    private final ObservableList<String> owner = FXCollections.observableArrayList("Home","Meeting Request","Rate Resident",SIGN_OUT);
+    private final ObservableList<String> resident = FXCollections.observableArrayList("Home","Contact Owner","Apartment Info",SIGN_OUT);
 
     public void setUp(){
         choice.setOnAction(this::getChoice);
@@ -82,6 +83,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
 
     private void getChoice(javafx.event.ActionEvent actionEvent) {
         switch (choice.getValue()){
+            default:
             case "Home":
                 btnHomeClick();
                 break;
@@ -91,35 +93,35 @@ public class Menu2GUI extends Main2GUI implements Initializable {
             case "Condominium":
                 btnInfoClick();
                 break;
-            case "Sign Out":
+            case SIGN_OUT:
                 btnSignOutClick();
                 break;
             case "Meeting Request":
                 btnMeetingRequest();
                 break;
             case "Rate Resident":
-                RateResident();
+                rateResident();
                 break;
             case "Contact Owner":
-                ContactOwner();
+                contactOwner();
                 break;
             case "Apartment Info":
-                ApartmentInfo();
+                apartmentInfo();
                 break;
         }
     }
 
-    private void ApartmentInfo() {
+    private void apartmentInfo() {
         try {
-            FXMLLoader Resloader = view.loader("AptInfo", 2);
-            Parent root2 = Resloader.load();
+            FXMLLoader loader = view.loader("AptInfo", 2);
+            Parent root2 = loader.load();
             secondBorder.setCenter(root2);
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void ContactOwner() {
+    private void contactOwner() {
         try {
             secondBorder.setCenter(null);
             secondBorder.setRight(null);
@@ -133,17 +135,13 @@ public class Menu2GUI extends Main2GUI implements Initializable {
             if (btn.isPresent() && btn.get() == ButtonType.OK ){
                 List<String> list = contact.getMessage();
                 String mail = list.get(0);
-                System.out.println(mail);
                 String subject = "Message from "+sg.getResident().getUsrName()+" of apartment "+list.get(1)+" in condominium "+sg.getAddress();
-                System.out.println(subject);
                 String body = list.get(2);
                 String[] recipients = new String[]{mail};
                 if (alert.alertConfirm("Confirmation","Confirm to send email?","Are you sure to send mail to " + list.get(3) + " with text '" + list.get(2) + "'?")) {
                     new EmailController().send(recipients, recipients, subject, body);
-                    //alert.alertInfo("Information", "Mail sent to "+comboBox.getValue()+"!","");
                 } else {
-                    //alert.alertInfo("Information", "Mail not sent!","");
-                    System.out.println("not sent!");
+                    alert.alertInfo("Information", "Mail not sent!","");
                 }
             }
         } catch (IOException | SQLException e) {
@@ -153,7 +151,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
         choice.setValue("Home");
     }
 
-    private void RateResident() {
+    private void rateResident() {
         try {
             FXMLLoader loader = view.loader("RateResident",2);
             Parent root = loader.load();
@@ -177,13 +175,11 @@ public class Menu2GUI extends Main2GUI implements Initializable {
             if (btn1.isPresent() && btn1.get() == ButtonType.OK ) {
                 List<String> list1 = request.getMessage();
                 String subject1 = list1.get(0);
-                System.out.println(subject1);
                 String body1 = list1.get(1);
                 if (alert.alertConfirm("Confirmation","Confirm to send meeting request?","Are you sure to send a meeting request to Administrator with text '" + list1.get(1) + "'?")) {
                     meet.addMeeting(sg.getUserID(),sg.getAddress(),subject1,body1);
-                    System.out.println("Request sent!");
                 } else {
-                    System.out.println("Request not sent!");
+                    alert.alertError("Request cannot be sent","Impossible to send request","For some unexpected error your request cannot be sent, try again in a few minutes");
                 }
             }
         } catch (SQLException | IOException e) {
@@ -275,7 +271,8 @@ public class Menu2GUI extends Main2GUI implements Initializable {
             bottomMenu.btnRegClick();
             root.setMaxSize(Double.MAX_VALUE, Region.USE_COMPUTED_SIZE);
             secondBorder.setBottom(root);
-        }catch(IOException ignore){
+        }catch(IOException ignore) {
+            //Error
         }
     }
 

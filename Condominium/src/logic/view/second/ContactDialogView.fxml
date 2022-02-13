@@ -9,6 +9,6 @@
             <TextArea fx:id="mailText" promptText="Write your mail to your apartment owner" />
         </VBox>
     </content>
-    <ButtonType fx:id="btnSend" fx:constant="OK" />
-    <ButtonType fx:id="btnCancel" fx:constant="CANCEL" />
+    <ButtonType fx:constant="OK" />
+    <ButtonType fx:constant="CANCEL" />
 </DialogPane>

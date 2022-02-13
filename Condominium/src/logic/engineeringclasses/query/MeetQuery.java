@@ -8,7 +8,7 @@ public class MeetQuery {
 
     public static ResultSet selectMeetRequests(Statement stmt, String address) throws SQLException{
         String sql = "SELECT * from meeting where meet_addr ='" + address + "'";
-        System.out.println(sql);
+        
         return stmt.executeQuery(sql);
     }
 }

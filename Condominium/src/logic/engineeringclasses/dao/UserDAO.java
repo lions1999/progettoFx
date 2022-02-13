@@ -10,18 +10,21 @@ import logic.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
 
 public class UserDAO extends SqlDAO{
 
     private String usrName;
+    private static final String USER_NAME = "user_name";
+    private static final String USER_PASSWORD = "user_pwd";
+    private static final String USER_EMAIL = "user_email";
+    private static final String USER_ADDRESS = "user_addr";
 
     public String checkNameByID(String id)throws SQLException {
         try {
             connect();
             ResultSet rs = ApartmentQuery.selectNameByID(stmt, id);
             if(rs.next()) {
-                this.usrName = rs.getString("user_name");
+                this.usrName = rs.getString(USER_NAME);
             }
         } finally {
             disconnect();
@@ -63,7 +66,7 @@ public class UserDAO extends SqlDAO{
             connect();
             ResultSet rs = UserQuery.selectLogin(stmt, email, condominiumCode);
             if(rs.next()) {
-                pwd = rs.getString("user_pwd");
+                pwd = rs.getString(USER_PASSWORD);
             }
         } finally {
             disconnect();
@@ -72,16 +75,16 @@ public class UserDAO extends SqlDAO{
     }
 
     //USER INITIALIZATION
-    public Administrator loadAdminID(String id) throws SQLException, InputException {
+    public Administrator loadAdminID(String id) throws SQLException {
         Administrator admin = null;
         try {
             connect();
             ResultSet rs = UserQuery.loadUserByID(stmt,id);
             if(rs.next()) {
-                String userName = rs.getString("user_name");
-                String userEmail = rs.getString("user_email");
-                String userPwd = rs.getString("user_pwd");
-                String userAddr = rs.getString("user_addr");
+                String userName = rs.getString(USER_NAME);
+                String userEmail = rs.getString(USER_EMAIL);
+                String userPwd = rs.getString(USER_PASSWORD);
+                String userAddr = rs.getString(USER_ADDRESS);
                 admin = new Administrator(id,userName,userEmail,userPwd,userAddr);
             }
         } finally {
@@ -96,10 +99,10 @@ public class UserDAO extends SqlDAO{
             connect();
             ResultSet rs = UserQuery.loadUserByID(stmt,id);
             if(rs.next()) {
-                String userName = rs.getString("user_name");
-                String userEmail = rs.getString("user_email");
-                String userPwd = rs.getString("user_pwd");
-                String userAddr = rs.getString("user_addr");
+                String userName = rs.getString(USER_NAME);
+                String userEmail = rs.getString(USER_EMAIL);
+                String userPwd = rs.getString(USER_PASSWORD);
+                String userAddr = rs.getString(USER_ADDRESS);
                 owner = new Owner(id,userName,userEmail,userPwd,userAddr);
             }
         } finally {
@@ -114,10 +117,10 @@ public class UserDAO extends SqlDAO{
             connect();
             ResultSet rs = UserQuery.loadUserByID(stmt,id);
             if(rs.next()) {
-                String userName = rs.getString("user_name");
-                String userEmail = rs.getString("user_email");
-                String userPwd = rs.getString("user_pwd");
-                String userAddr = rs.getString("user_addr");
+                String userName = rs.getString(USER_NAME);
+                String userEmail = rs.getString(USER_EMAIL);
+                String userPwd = rs.getString(USER_PASSWORD);
+                String userAddr = rs.getString(USER_ADDRESS);
                 resident = new Resident(id,userName,userEmail,userPwd,userAddr);
             }
         } finally {
@@ -133,7 +136,7 @@ public class UserDAO extends SqlDAO{
             connect();
             rs = UserQuery.selectUserList(stmt,address);
             while(rs.next()) {
-                list.add(new User(rs.getString("user_id"),rs.getString("user_name"),rs.getString("user_email"),rs.getString("user_pwd"),rs.getString("user_role"),rs.getString("user_addr")));
+                list.add(new User(rs.getString("user_id"),rs.getString(USER_NAME),rs.getString(USER_EMAIL),rs.getString(USER_PASSWORD),rs.getString("user_role"),rs.getString(USER_ADDRESS)));
             }
         } finally {
             disconnect();
@@ -148,7 +151,7 @@ public class UserDAO extends SqlDAO{
             connect();
             rs = UserQuery.selectMailList(stmt,address);
             while(rs.next()) {
-                list.add(rs.getString("user_email"));
+                list.add(rs.getString(USER_EMAIL));
             }
         }finally{
             disconnect();
@@ -161,7 +164,6 @@ public class UserDAO extends SqlDAO{
             connect();
             String sql = "UPDATE users SET user_name=?,user_email=?,user_pwd=? WHERE user_id='"+bean.getUsrID()+"'";
             preset = prepConnect(sql);
-            System.out.println(sql);
             preset.setString(1,bean.getUsrName());
             preset.setString(2,bean.getUsrEmail());
             preset.setString(3,bean.getUsrPwd());

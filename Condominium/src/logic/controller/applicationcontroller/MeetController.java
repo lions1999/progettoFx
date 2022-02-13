@@ -28,6 +28,6 @@ public class MeetController {
     }
 
     public void addMeeting(String meetFrom, String meetAddr, String meetObj, String meetTxt) throws SQLException{
-        meet.AddMeeting(meetFrom, meetAddr, meetObj, meetTxt);
+        meet.addMeeting(meetFrom, meetAddr, meetObj, meetTxt);
     }
 }

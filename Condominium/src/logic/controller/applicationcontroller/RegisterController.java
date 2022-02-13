@@ -81,8 +81,10 @@ public class RegisterController{
 					feeCtrl.addFees(fee,"fee");
 					aptCtrl.addResident(reg.getApartment(),reg.getAddress());
 				}catch(SQLException e) {
-					System.out.println("SQLException");
+					e.printStackTrace();
 				}
+				break;
+			default:
 				break;
 		}
 
@@ -92,7 +94,7 @@ public class RegisterController{
 		try{
 			register.deleteRegistered(id);
 		}catch(SQLException e){
-			System.out.println("SQLException");
+			e.printStackTrace();
 		}
 	}
 
@@ -100,7 +102,7 @@ public class RegisterController{
 		try{
 			register.deleteAllRegistered(apartment);
 		}catch(SQLException e){
-			System.out.println("SQLException");
+			e.printStackTrace();
 		}
 	}
 
@@ -114,6 +116,8 @@ public class RegisterController{
 				case RESIDENT:
 					list = aptController.loadApartmentResident(bean.getUsrAddr());
 					break;
+				default:
+					break;
 			}
 			if (list.isEmpty()) {
 				throw new InputException("No Apartment Available");
@@ -121,7 +125,7 @@ public class RegisterController{
 				return list;
 			}
 		}catch (InputException|SQLException e){
-			 return null;
+			 return list;
 		}
 	}
 

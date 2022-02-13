@@ -8,7 +8,6 @@ public class CondominiumQuery {
 	
 	public static ResultSet selectAddressList(Statement stmt)  throws SQLException{
 		String sql = "SELECT con_addr FROM condominiums";
-		System.out.println(sql);
 		return stmt.executeQuery(sql);
 	}
 

@@ -51,7 +51,6 @@ public class FeeDAO extends SqlDAO{
         try{
             String sql = "INSERT INTO "+table+" (fee_apt,fee_water,fee_gas,fee_elect,fee_admin,fee_park,fee_elevator,fee_pet,fee_wifi) VALUES (?,?,?,?,?,?,?,?,?)";
             preset = prepConnect(sql);
-            System.out.println(fee);
             preset.setString(1,fee.getApt());
             preset.setDouble(2,fee.getWater());
             preset.setDouble(3,fee.getGas());
@@ -76,7 +75,6 @@ public class FeeDAO extends SqlDAO{
             connect();
             String sql = "UPDATE "+table+" SET fee_water=?, fee_gas=?, fee_elect=?, fee_admin=?, fee_park=?, fee_elevator=?, fee_pet=?, fee_wifi=? WHERE fee_apt='"+fee.getApt()+"'";
             preset = prepConnect(sql);
-            System.out.println(fee);
             preset.setDouble(1,fee.getWater());
             preset.setDouble(2,fee.getGas());
             preset.setDouble(3,fee.getElect());

@@ -13,7 +13,7 @@
             <TextArea fx:id="mailText" promptText="Write the reason for requesting a meeting" />
         </VBox>
     </content>
-    <ButtonType fx:id="btnSend" fx:constant="OK" />
-    <ButtonType fx:id="btnCancel" fx:constant="CANCEL" />
+    <ButtonType fx:constant="OK" />
+    <ButtonType fx:constant="CANCEL" />
 
 </DialogPane>

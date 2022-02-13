@@ -11,7 +11,6 @@ public class UserSingleton {
 	private Fee fee;
 	private Fee pastfee;
 	private String address;
-	//private Post post;
 	private Request req;
 
 	private static UserSingleton instance = null;
@@ -62,9 +61,6 @@ public class UserSingleton {
 	}
 
 	public String getAddress(){return this.address;}
-/*	public String getCode() {
-		return this.code;
-	}*/
 
 	public Role getRole() {
 		return this.role;
@@ -73,14 +69,6 @@ public class UserSingleton {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-//	public Post getPost() {
-//		return this.post;
-//	}
-//	
-//	public void setPost(Post post) {
-//		 this.post = post;
-//	}
 
 	public Request getReq() {
 		return this.req;
@@ -99,7 +87,6 @@ public class UserSingleton {
 		this.setAdministrator(null);
 		this.setResident(null);
 		this.setOwner(null);
-		//this.setPost(null);
 		this.setReq(null);
 	}
 

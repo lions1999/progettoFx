@@ -39,10 +39,10 @@ public class AptInfoGUI implements Initializable {
     private final ApartmentController aptController = new ApartmentController();
     private final FeeController feeController = new FeeController();
     private final List<String> seriesName = Arrays.asList("Water","Gas","Energy","Admin","Parking","Elevator","Pet","Wifi");
-    private final String choose = "Choose Chart";
-    private final String barChart = "bar Chart";
-    private final String pieChart = "pie Chart";
-    private final String lineChart = "line Chart";
+    private static final String CHOOSE_CHART = "Choose Chart";
+    private static final String BAR_CHART = "Bar Chart";
+    private static final String PIE_CHART = "Pie Chart";
+    private static final String LINE_CHART = "Line Chart";
 
     @FXML VBox gridVbox;
 
@@ -103,43 +103,36 @@ public class AptInfoGUI implements Initializable {
         pastGrid.setVisible(lastMonthFee.isSelected());
         switch (chartPane.getSelectionModel().getSelectedItem().getText()){
             default:
-            case choose:
+            case CHOOSE_CHART:
                 secondBorder.setRight(null);
                 break;
-            case(barChart):
+            case(BAR_CHART):
                 BarChart<String,Number> oldBarChart = (BarChart) chartPane.getSelectionModel().getSelectedItem().getContent();
                 if (lastMonthFee.isSelected()){
                     XYChart.Series<String,Number> series2 = chart.newSeries(chartDataList, seriesName, "Outgoings Last Month");
                     oldBarChart.getData().add(series2);
-                } else {
-                    if (oldBarChart.getData().size() == 2) {
+                } else if (!lastMonthFee.isSelected() && oldBarChart.getData().size() == 2) {
                         oldBarChart.getData().remove(1);
-                    }
-                    break;
                 }
                 break;
-            case(pieChart):
+            case(PIE_CHART):
                 Pane oldPieChart = (Pane) chartPane.getSelectionModel().getSelectedItem().getContent();
                 HBox hBox = (HBox) oldPieChart.getChildren().get(0);
                 if (lastMonthFee.isSelected()){
                     ObservableList<PieChart.Data> valueList = chart.value(chartDataList,seriesName);
                     PieChart pc = chart.newPieChart(valueList,"Outgoing Last Month");
                     hBox.getChildren().add(pc);
-                } else {
-                    if (hBox.getChildren().size() == 2) {
+                } else if (!lastMonthFee.isSelected() && hBox.getChildren().size() == 2) {
                         hBox.getChildren().remove(1);
-                    }
                 }
                 break;
-            case(lineChart):
+            case(LINE_CHART):
                 LineChart<String,Number> oldLineChart = (LineChart) chartPane.getSelectionModel().getSelectedItem().getContent();
                 if (lastMonthFee.isSelected()){
                     XYChart.Series<String,Number> series2 = chart.newSeries(chartDataList, seriesName, "Outgoings Last Month");
                     oldLineChart.getData().add(series2);
-                } else {
-                    if (oldLineChart.getData().size() == 2) {
+                } else if (!lastMonthFee.isSelected() && oldLineChart.getData().size() == 2) {
                         oldLineChart.getData().remove(1);
-                    }
                 }
                 break;
         }
@@ -151,23 +144,23 @@ public class AptInfoGUI implements Initializable {
         String chartTitle = "Outgoing Current Month";
         switch (chartPane.getSelectionModel().getSelectedItem().getText()){
             default:
-            case choose:
+            case CHOOSE_CHART:
                 secondBorder.setRight(null);
                 break;
-            case(barChart):
+            case(BAR_CHART):
                 BarChart<String, Number> bc = chart.barChart("Fees","","Outgoings");
                 XYChart.Series<String, Number> bcSeries = chart.newSeries(chartDataList,seriesName,chartTitle);
                 bc.getData().add(bcSeries);
                 tabChart.setContent(bc);
                 break;
-            case(pieChart):
+            case(PIE_CHART):
                 ObservableList<PieChart.Data> valueList = chart.value(chartDataList,seriesName);
                 PieChart pc = chart.newPieChart(valueList,chartTitle);
                 HBox hBox = new HBox(pc);
                 Pane paneC = new Pane(hBox);
                 tabChart.setContent(paneC);
                 break;
-            case(lineChart):
+            case(LINE_CHART):
                 LineChart<String ,Number> lc = chart.newLineChart("Fees","","Outgoings");
                 XYChart.Series<String, Number> lcSeries = chart.newSeries(chartDataList,seriesName,chartTitle);
                 lc.getData().add(lcSeries);
@@ -224,11 +217,11 @@ public class AptInfoGUI implements Initializable {
 
         chartPane.setPrefHeight(Screen.getPrimary().getBounds().getHeight()-30);
         chartPane.setPrefWidth(Screen.getPrimary().getBounds().getWidth()/2);
-        Tab barChartTab = new Tab(barChart);
+        Tab barChartTab = new Tab(BAR_CHART);
         barChartTab.setClosable(false);
-        Tab pieChartTab = new Tab(pieChart);
+        Tab pieChartTab = new Tab(PIE_CHART);
         pieChartTab.setClosable(false);
-        Tab lineChartTab = new Tab(lineChart);
+        Tab lineChartTab = new Tab(LINE_CHART);
         lineChartTab.setClosable(false);
 
 

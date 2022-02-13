@@ -20,7 +20,7 @@ public class PatternController {
 		    Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 	
 	public static final Pattern VALID_PASSWORD_REGEX = 
-		    Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{4,15}$", Pattern.CASE_INSENSITIVE);
+		    Pattern.compile("^(?=.*[A-z])(?=.*\\d)[A-z\\d]{4,15}$", Pattern.CASE_INSENSITIVE);
 
 	public  boolean isText(String text){
 		Matcher matcher = VALID_TEXT_REGEX.matcher(text);

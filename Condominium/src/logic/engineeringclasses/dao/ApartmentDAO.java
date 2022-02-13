@@ -11,6 +11,9 @@ public class ApartmentDAO extends SqlDAO{
 
     private final UserDAO userDao = new UserDAO();
     private static final String APARTMENT = "apt_name";
+    private static final String APARTMENT_ADDRESS = "apt_addr";
+    private static final String APARTMENT_OWNER = "apt_own";
+    private static final String APARTMENT_RESIDENT = "apt_res";
 
     public String loadApartmentId(String apartment, String address) throws SQLException {
         String id = null;
@@ -65,9 +68,9 @@ public class ApartmentDAO extends SqlDAO{
             rs = ApartmentQuery.loadApt(stmt,address);
             while(rs.next()) {
                 String aptID = rs.getString(APARTMENT);
-                String aptAdd = rs.getString("apt_addr");
-                String aptOwn = rs.getString("apt_own");
-                String aptRes = rs.getString("apt_res");
+                String aptAdd = rs.getString(APARTMENT_ADDRESS);
+                String aptOwn = rs.getString(APARTMENT_OWNER);
+                String aptRes = rs.getString(APARTMENT_RESIDENT);
                 Apartment apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes), "0");
                 apartments.add(apartment);
             }
@@ -77,17 +80,17 @@ public class ApartmentDAO extends SqlDAO{
         return apartments;
     }
 
-    public Apartment checkApartments(String userId,String condAddress, String type_usr) throws SQLException{
+    public Apartment checkApartments(String userId,String condAddress, String typeUsr) throws SQLException{
         Apartment apartment = null;
         ResultSet rs;
         try{
             connect();
-            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
+            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,typeUsr);
             while(rs.next()) {
                 String aptID = rs.getString(APARTMENT);
-                String aptAdd = rs.getString("apt_addr");
-                String aptOwn = rs.getString("apt_own");
-                String aptRes = rs.getString("apt_res");
+                String aptAdd = rs.getString(APARTMENT_ADDRESS);
+                String aptOwn = rs.getString(APARTMENT_OWNER);
+                String aptRes = rs.getString(APARTMENT_RESIDENT);
                 apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes),"0");
             }
         }finally{
@@ -96,17 +99,17 @@ public class ApartmentDAO extends SqlDAO{
         return apartment;
     }
 
-    public ObservableList<Apartment> checkApartmentsList(String userId,String condAddress, String type_usr) throws SQLException{
+    public ObservableList<Apartment> checkApartmentsList(String userId,String condAddress, String typeUsr) throws SQLException{
         ObservableList<Apartment> list = FXCollections.observableArrayList();
         ResultSet rs;
         try{
             connect();
-            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
+            rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,typeUsr);
             while(rs.next()) {
                 String aptID = rs.getString(APARTMENT);
-                String aptAdd = rs.getString("apt_addr");
-                String aptOwn = rs.getString("apt_own");
-                String aptRes = rs.getString("apt_res");
+                String aptAdd = rs.getString(APARTMENT_ADDRESS);
+                String aptOwn = rs.getString(APARTMENT_OWNER);
+                String aptRes = rs.getString(APARTMENT_RESIDENT);
                 Apartment apartment = new Apartment(aptID, aptAdd, userDao.checkNameByID(aptOwn), userDao.checkNameByID(aptRes),"0");
                 list.add(apartment);
             }
@@ -191,7 +194,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             ResultSet rs = ApartmentQuery.selectAptName(stmt, aptId);
             if(rs.next()) {
-                aptId = rs.getString("apt_name");
+                aptId = rs.getString(APARTMENT);
             }
         } finally {
             disconnect();

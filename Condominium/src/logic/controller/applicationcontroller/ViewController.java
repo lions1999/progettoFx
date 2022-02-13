@@ -17,20 +17,17 @@ import static logic.controller.guicontroller.second.general.Main2GUI.secondBorde
 public class ViewController{
 	
 	private Pane view;
-	private final String firstUrl = "/logic/view/first/";
-	private final String secondUrl = "/logic/view/second/";
-	private final String finalUrl = "View.fxml";
+	private static final String FIRST_URL = "/logic/view/first/";
+	private static final String SECOND_URL = "/logic/view/second/";
+	private static final String FINAL_URL = "View.fxml";
 
 	public Pane getPage(String fileName,int gui) {
 		URL fileUrl = null;
 		try {
-			switch (gui){
-				case 1:
-					fileUrl = Condominium.class.getResource(firstUrl +fileName+ finalUrl);
-					break;
-				case 2:
-					fileUrl = Condominium.class.getResource(secondUrl +fileName+ finalUrl);
-					break;
+			if (gui == 1){
+				fileUrl = Condominium.class.getResource(FIRST_URL +fileName+ FINAL_URL);
+			}else if (gui == 2){
+				fileUrl = Condominium.class.getResource(SECOND_URL +fileName+ FINAL_URL);
 			}
 			if(fileUrl == null) {
 				throw new java.io.FileNotFoundException("File Not Found");
@@ -45,13 +42,10 @@ public class ViewController{
 	
 	public FXMLLoader loader(String fileName,int gui){
 		FXMLLoader loader = null;
-		switch (gui){
-			case 1:
-				loader = new FXMLLoader(getClass().getResource(firstUrl +fileName+ finalUrl));
-				break;
-			case 2:
-				loader = new FXMLLoader(getClass().getResource(secondUrl +fileName+ finalUrl));
-				break;
+		if (gui == 1){
+			loader = new FXMLLoader(getClass().getResource(FIRST_URL +fileName+ FINAL_URL));
+		}else if (gui == 2){
+			loader = new FXMLLoader(getClass().getResource(SECOND_URL +fileName+ FINAL_URL));
 		}
 		return loader;
 	}

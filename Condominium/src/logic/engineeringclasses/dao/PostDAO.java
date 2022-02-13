@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class PostDAO extends SqlDAO{
 
-    private UserDAO usrDao = new UserDAO();
+    private final UserDAO usrDao = new UserDAO();
 
     public ObservableList<Post> checkListPost(String address)throws SQLException {
         ObservableList<Post> list = FXCollections.observableArrayList();

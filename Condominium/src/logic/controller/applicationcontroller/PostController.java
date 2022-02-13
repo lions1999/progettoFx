@@ -6,9 +6,6 @@ import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import logic.controller.guicontroller.first.general.Menu1GUI;
-//import logic.controller.guicontroller.second.general.Menu2GUI;
-import logic.controller.guicontroller.second.general.Menu2GUI;
 import logic.engineeringclasses.dao.PostDAO;
 import logic.model.Post;
 import logic.model.UserSingleton;
@@ -16,6 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+
+import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
+import static logic.controller.guicontroller.second.general.Main2GUI.secondBorder;
 
 public class PostController {
 
@@ -26,10 +26,12 @@ public class PostController {
 			Stage stage = new Stage();
 			switch (gui){
 				case 1:
-					stage.initOwner(Menu1GUI.firstBorder.getScene().getWindow());
+					stage.initOwner(firstBorder.getScene().getWindow());
 					break;
 				case 2:
-					stage.initOwner(Menu2GUI.secondBorder.getScene().getWindow());
+					stage.initOwner(secondBorder.getScene().getWindow());
+					break;
+				default:
 					break;
 			}
 			stage.initModality(Modality.WINDOW_MODAL);
@@ -50,20 +52,12 @@ public class PostController {
 		}
 	}
 
-	public void addPost(String userID, String text, File file, String address) {
-		try {
-			post.addPost(userID, text, file, address);
-		}catch(SQLException| IOException e){
-			System.out.println("Ops...");
-		}
+	public void addPost(String userID, String text, File file, String address) throws SQLException, IOException {
+		post.addPost(userID, text, file, address);
 	}
 
-	public void deletePost(String postID) {
-		try {
-			post.deletePost(postID);
-		}catch(SQLException e){
-			System.out.println("Ops...");
-		}
+	public void deletePost(String postID) throws SQLException {
+		post.deletePost(postID);
 	}
 
 	public Image setPostImage(InputStream input){
@@ -73,7 +67,6 @@ public class PostController {
 			}
 			return null;
 		}catch(Exception e){
-			System.out.println("SET UP POST EXCEPTION");
 			return null;
 		}
 	}

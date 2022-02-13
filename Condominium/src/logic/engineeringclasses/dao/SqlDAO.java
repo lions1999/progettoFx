@@ -40,7 +40,7 @@ public class SqlDAO {
 
 	public String loadLatestId(String table,String column) throws SQLException{
 		String lastId = "";
-		ResultSet rs = null;
+		ResultSet rs;
 		try{
 			connect();
 			rs = selectLastId(stmt,table,column);
@@ -55,7 +55,6 @@ public class SqlDAO {
 
 	public static ResultSet selectLastId(Statement stmt, String table, String column) throws SQLException{
 		String sql="SELECT "+column+" FROM "+table+" ORDER BY "+column+" DESC LIMIT 1";
-		System.out.println(sql);
 		return stmt.executeQuery(sql);
 	}
 }
