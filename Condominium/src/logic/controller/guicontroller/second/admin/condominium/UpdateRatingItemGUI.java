@@ -2,6 +2,8 @@ package logic.controller.guicontroller.second.admin.condominium;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.effect.ColorAdjust;
+import javafx.scene.image.ImageView;
 import logic.controller.applicationcontroller.RateController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.engineeringclasses.bean.RateBean;
@@ -17,6 +19,7 @@ public class UpdateRatingItemGUI {
     public Label lbName;
     public Label lbVal;
     public TextArea areaTxt;
+    public ImageView iconDelete;
     private int gui;
 
     public void onDeletePress() throws SQLException {
@@ -35,5 +38,10 @@ public class UpdateRatingItemGUI {
         lbVal.setText(bean.getRateVal());
         areaTxt.setText(bean.getRateTxt());
         this.gui = gui;
+        if(this.gui == 1){
+            ColorAdjust color = new ColorAdjust();
+            color.setBrightness(-1);
+            iconDelete.setEffect(color);
+        }
     }
 }
