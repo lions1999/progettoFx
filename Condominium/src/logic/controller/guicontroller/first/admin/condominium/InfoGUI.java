@@ -20,7 +20,7 @@ public class InfoGUI {
     private final UserController controller = new UserController();
     private final ViewController view = new ViewController();
 
-    @FXML private TableView<User> InfoTableView;
+    @FXML private TableView<User> infoTableView;
     @FXML private TableColumn<User, String> tcID;
     @FXML private TableColumn<User, String> tcName;
     @FXML private TableColumn<User, String> tcEmail;
@@ -30,7 +30,7 @@ public class InfoGUI {
 
     @FXML private void getSelected() throws IOException{
         int index;
-        index = InfoTableView.getSelectionModel().getSelectedIndex();
+        index = infoTableView.getSelectionModel().getSelectedIndex();
         if(index<=-1)return;
         UserBean bean = usrBean(tcID.getCellData(index),tcName.getCellData(index),tcEmail.getCellData(index),tcPwd.getCellData(index),tcRole.getCellData(index),tcAddress.getCellData(index));
         firstBorder.setRight(loadInfo(bean));
@@ -64,9 +64,9 @@ public class InfoGUI {
         tcAddress.setCellValueFactory(new PropertyValueFactory<>("usrAddr"));
         try {
             ObservableList<User> list = controller.loadUserList(address);
-            InfoTableView.setItems(list);
+            infoTableView.setItems(list);
         } catch (Exception e) {
-            System.out.println("No");
+            e.printStackTrace();
         }
     }
 }

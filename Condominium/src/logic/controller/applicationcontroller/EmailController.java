@@ -1,5 +1,8 @@
 package logic.controller.applicationcontroller;
 
+import javafx.collections.ObservableList;
+import logic.engineeringclasses.bean.MeetRequestBean;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -47,6 +50,13 @@ public class EmailController {
         @Override
         protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(FROM_ADDRESS, PASSWORD);
+        }
+    }
+
+    public void meetEmail(ObservableList<String> list, MeetRequestBean bean) {
+        for (String email : list) {
+            String[] recipient = new String[]{email};
+            send(recipient, recipient, bean.getObject(), bean.getTextArea());
         }
     }
 }

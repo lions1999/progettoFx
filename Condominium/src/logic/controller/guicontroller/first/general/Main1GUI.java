@@ -13,7 +13,7 @@ public class Main1GUI extends Application{
 
     public final ViewController view = new ViewController();
     public final AlertGUI alert = new AlertGUI();
-    public static BorderPane firstBorder = new BorderPane();
+    public static final BorderPane firstBorder = new BorderPane();
 
     @Override public void start(Stage primaryStage) {
         Pane pane = view.getPage("Login",1);

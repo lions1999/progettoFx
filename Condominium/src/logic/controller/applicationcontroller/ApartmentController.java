@@ -38,11 +38,6 @@ public class ApartmentController {
         }
     }
 
-
-    public ObservableList<Apartment> loadApartments(String addr) throws SQLException{
-        return dao.loadApartments(addr);
-    }
-
     public Apartment checkApartments(String userID, String address, String aptRes) throws SQLException {
         return dao.checkApartments(userID, address, aptRes);
     }

@@ -20,9 +20,6 @@ public class FeeInfoGUI {
 
     @FXML private Text txtApt;
     @FXML private TextField tfApartment;
-    @FXML private TextField tfWater;
-    @FXML private TextField tfGas;
-    @FXML private TextField tfElectricity;
     @FXML private TextField tfAdministrative;
     @FXML private TextField tfPark;
     @FXML private TextField tfElevator;
@@ -54,9 +51,6 @@ public class FeeInfoGUI {
     }
 
     public boolean check(){
-        if(checkErrorTf(tfWater)) return false;
-        if(checkErrorTf(tfGas)) return false;
-        if(checkErrorTf(tfElectricity)) return false;
         if(checkErrorTf(tfAdministrative)) return false;
         if(checkErrorTf(tfElevator)) return false;
         if(checkErrorTf(tfPet)) return false;
@@ -64,7 +58,7 @@ public class FeeInfoGUI {
     }
 
     public FeeBean getFees(){
-    return feeBean(tfApartment.getAccessibleText(),format(tfWater),format(tfGas),format(tfElectricity),format(tfAdministrative),
+    return feeBean(tfApartment.getAccessibleText(),format(tfAdministrative),
             format(tfPark),format(tfElevator),format(tfPet),format(tfWifi));
     }
 
@@ -75,9 +69,6 @@ public class FeeInfoGUI {
         Fee fee = controller.loadFees(aptId,"fee");
         tfApartment.setAccessibleText(aptId);
         tfApartment.setText(aptCtrl.getAptName(aptId));
-        tfWater.setText(fee.getWater().toString());
-        tfGas.setText(fee.getGas().toString());
-        tfElectricity.setText(fee.getElect().toString());
         tfAdministrative.setText(fee.getAdmin().toString());
         if(!fee.getPark().toString().equals("0.0")) tfPark.setText(fee.getPark().toString());
         if(!fee.getElevator().toString().equals("0.0")) tfElevator.setText(fee.getElevator().toString());
@@ -88,9 +79,6 @@ public class FeeInfoGUI {
     public void setUp(String address) throws SQLException {
         txtApt.setVisible(false);
         tfApartment.setVisible(false);
-        pattern.textFilter(tfWater);
-        pattern.textFilter(tfGas);
-        pattern.textFilter(tfElectricity);
         pattern.textFilter(tfAdministrative);
         Fee fee = controller.setUpFees(address);
         if(!fee.getAvailablePark()) noFee(tfPark);
@@ -103,12 +91,9 @@ public class FeeInfoGUI {
         else pattern.textFilter(tfWifi);
     }
 
-    private FeeBean feeBean(String apt,String water,String gas,String elect,String admin,String park,String elev,String pet,String wifi){
+    private FeeBean feeBean(String apt,String admin,String park,String elev,String pet,String wifi){
         FeeBean bean = new FeeBean();
         bean.setApt(apt);
-        bean.setWater(Double.valueOf(water));
-        bean.setGas(Double.valueOf(gas));
-        bean.setElect(Double.valueOf(elect));
         bean.setAdmin(Double.valueOf(admin));
         bean.setPark(Double.valueOf(park));
         bean.setElevator(Double.valueOf(elev));

@@ -1,6 +1,7 @@
 package logic.controller.guicontroller.first.admin.requests.meeting;
 
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -9,11 +10,12 @@ import logic.controller.applicationcontroller.EmailController;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.first.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.AlertGUI;
-import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.engineeringclasses.bean.MeetRequestBean;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
+
+import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
 
 public class OrganizeMeetDetailGUI {
 
@@ -22,14 +24,14 @@ public class OrganizeMeetDetailGUI {
     protected final ViewController view = new ViewController();
     private final EmailController ctrlEmail = new EmailController();
 
-    public TextField tfID;
-    public TextField tfAddr;
-    public TextField tfName;
-    public TextField tfObject;
-    public TextArea txtArea;
+    @FXML private TextField tfID;
+    @FXML private TextField tfAddr;
+    @FXML private TextField tfName;
+    @FXML private TextField tfObject;
+    @FXML private TextArea txtArea;
 
     public void btnX() {
-        Menu1GUI.firstBorder.setRight(null);
+        firstBorder.setRight(null);
     }
 
     public void btnOrganizeClick() throws IOException, SQLException {
@@ -44,14 +46,10 @@ public class OrganizeMeetDetailGUI {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.setDialogPane(pane);
         Optional<ButtonType> btn = dialog.showAndWait();
-        if(btn.isPresent() && btn.get() == ButtonType.OK){//todo meet check
+        if(btn.isPresent() && btn.get() == ButtonType.OK){
             ObservableList<String> list = controller.loadMailList(tfAddr.getText());
             MeetRequestBean bean = ctrlMeet.getMeetBean();
-            System.out.println(list);
-            for(String email : list){
-                String[] recipient = new String[]{email};
-                ctrlEmail.send(recipient,recipient, bean.getObject(), bean.getTextArea());
-            }
+            ctrlEmail.meetEmail(list,bean);
             alert.alertConfirm("MeetRequest","Mail successfully sent to all OWNERS in your condominium",null);
             remove();
         }
@@ -72,7 +70,7 @@ public class OrganizeMeetDetailGUI {
     private void reloadPage() throws IOException {
         FXMLLoader loader = view.loader("TabOrganize",1);
         Parent root = loader.load();
-        Menu1GUI.firstBorder.setCenter(root);
+        firstBorder.setCenter(root);
         TabOrganizeGUI tab = loader.getController();
         tab.selectTab(1);
     }

@@ -9,11 +9,12 @@ import javafx.scene.control.TabPane;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.first.admin.requests.meeting.MeetingTableGUI;
 import logic.controller.guicontroller.first.admin.requests.registration.RegistrationTableGUI;
-import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.model.UserSingleton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
 
 public class TabOrganizeGUI implements Initializable {
 
@@ -28,11 +29,11 @@ public class TabOrganizeGUI implements Initializable {
     }
 
     @FXML private void onMeetSelect() {
-        Menu1GUI.firstBorder.setRight(null);
+        firstBorder.setRight(null);
     }
 
     @FXML private void onRegSelect() {
-        Menu1GUI.firstBorder.setRight(null);
+        firstBorder.setRight(null);
     }
 
     @Override
@@ -53,7 +54,6 @@ public class TabOrganizeGUI implements Initializable {
             meet.setUpMeeting(sg.getAddress());
             tabMeeting.setContent(root);
         } catch (Exception e) {
-            System.out.println("ERROR");
             e.printStackTrace();
         }
     }

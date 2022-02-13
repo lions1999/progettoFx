@@ -11,7 +11,6 @@ import javafx.scene.layout.Region;
 import logic.controller.applicationcontroller.EmailController;
 import logic.controller.applicationcontroller.MeetController;
 import logic.controller.applicationcontroller.ViewController;
-import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.admin.requests.meeting.OrganizeMeetGUI;
 import logic.controller.guicontroller.second.admin.requests.RequestBottomNavMenuGUI;
 import logic.engineeringclasses.bean.MeetRequestBean;
@@ -25,7 +24,6 @@ public class MeetingItemGUI {
     protected final ViewController view = new ViewController();
     protected final MeetController controller = new MeetController();
     private final EmailController ctrlEmail = new EmailController();
-    private final AlertGUI alert = new AlertGUI();
 
     @FXML private Label lbID;
     @FXML private Label lbName;
@@ -44,11 +42,7 @@ public class MeetingItemGUI {
             try {
                 ObservableList<String> list = controller.loadMailList(lbAddr.getText());
                 MeetRequestBean bean = ctrlMeet.getMeetBean();
-                for (String email : list) {
-                    String[] recipient = new String[]{email};
-                    ctrlEmail.send(recipient, recipient, bean.getObject(), bean.getTextArea());
-                }
-                alert.alertConfirm("MeetRequest","Mail successfully sent to all OWNERS in your condominium",null);
+                ctrlEmail.meetEmail(list,bean);
                 remove();
             }catch (SQLException|IOException w){
                 w.printStackTrace();

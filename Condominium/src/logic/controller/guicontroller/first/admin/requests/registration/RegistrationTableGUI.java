@@ -12,6 +12,7 @@ import logic.engineeringclasses.bean.RegistrationBean;
 import logic.controller.applicationcontroller.RegisterController;
 import logic.model.Registration;
 import java.io.IOException;
+import java.util.Objects;
 
 import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
 
@@ -43,10 +44,9 @@ public class RegistrationTableGUI {
     }
 
     private void style() {
-        //TODO ADD CSS
         registrationTable.getStylesheets().clear();
         registrationTable.setId("detail-table");
-        registrationTable.getStylesheets().add(getClass().getResource("/logic/view/first/style.css").toExternalForm());
+        registrationTable.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/logic/view/first/style.css")).toExternalForm());
     }
 
     public void setUpRegistration(String address) {
@@ -61,7 +61,7 @@ public class RegistrationTableGUI {
 	    	ObservableList<Registration> list = controller.loadRegistration(address);
             registrationTable.setItems(list);
     	}catch(Exception e) {
-    		System.out.println("No");
+    		e.printStackTrace();
     	}
     }
 

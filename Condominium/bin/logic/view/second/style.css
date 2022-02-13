@@ -132,8 +132,13 @@
 .addRate #addVbox, .addRate #addHbox, .addRate #rate, .addRate .radio-button, .addRate .text-area{
     -fx-background-color: #2E2E2E;
 }
+
+.addRate .text-area, .addRate .button{
+    -fx-text-fill: black;
+}
+
 .addRate .radio-button:selected .radio .dot{
-    -fx-background-color: white;
+    -fx-background-color: black;
 }
 
 /*Apt Info*/

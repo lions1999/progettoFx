@@ -19,7 +19,6 @@ import logic.controller.guicontroller.first.general.home.Post1GUI;
 import logic.engineeringclasses.bean.PostBean;
 import logic.model.Post;
 import logic.model.UserSingleton;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -60,19 +59,18 @@ public class Menu1GUI extends Main1GUI implements Initializable {
                     break;
                 case OWNER:
                     scrollBox.getChildren().clear();
-                    Pane RequestMeet = view.getPage("RequestMeeting",1);
-                    scrollBox.getChildren().add(RequestMeet);
+                    Pane requestMeet = view.getPage("RequestMeeting",1);
+                    scrollBox.getChildren().add(requestMeet);
                     firstBorder.setCenter(new ScrollPane(scrollBox));
                     break;
                 case RESIDENT:
                     scrollBox.getChildren().clear();
-                    Pane Contact = view.getPage("Contact",1);
-                    scrollBox.getChildren().add(Contact);
+                    Pane contact = view.getPage("Contact",1);
+                    scrollBox.getChildren().add(contact);
                     firstBorder.setCenter(new ScrollPane(scrollBox));
                     break;
             }
         }catch(Exception e){
-            System.out.println("ERROR");
             e.printStackTrace();
         }
     }
@@ -89,8 +87,8 @@ public class Menu1GUI extends Main1GUI implements Initializable {
                     firstBorder.setCenter(root);
                     break;
                 case OWNER:
-                    Pane Rate = view.getPage("RateResident",1);
-                    firstBorder.setCenter(Rate);
+                    Pane rate = view.getPage("RateResident",1);
+                    firstBorder.setCenter(rate);
                     break;
                 case RESIDENT:
                     Pane aptInfo = view.getPage("AptInfo",1);
@@ -141,7 +139,7 @@ public class Menu1GUI extends Main1GUI implements Initializable {
         btn.setOnMouseExited(event -> btn.setStyle("-fx-background-color : #0C39FF"));
     }
 
-    public void setUp() throws IOException {
+    public void setUp() {
         btnHomeClick();
         btnColor(btnHome);
         btnColor(btnMeeting);
@@ -170,10 +168,6 @@ public class Menu1GUI extends Main1GUI implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
             setUp();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

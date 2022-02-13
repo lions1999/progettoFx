@@ -22,6 +22,8 @@ public class SelectApartmentDialogGUI {
             case OWNER:
                 listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
                 break;
+            default:
+                break;
         }
         txt.setText("Please "+bean.getUsrName()+" select an apartment\nAs "+bean.getUsrRole()+" in "+bean.getUsrAddr());
     }

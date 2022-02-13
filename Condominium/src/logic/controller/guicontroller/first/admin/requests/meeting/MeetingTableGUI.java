@@ -57,7 +57,7 @@ public class MeetingTableGUI  {
             ObservableList<MeetRequest> list = controller.loadMeetRequest(address);
             tableMeeting.setItems(list);
         }catch(Exception e) {
-            System.out.println("No");
+           e.printStackTrace();
         }
     }
 }

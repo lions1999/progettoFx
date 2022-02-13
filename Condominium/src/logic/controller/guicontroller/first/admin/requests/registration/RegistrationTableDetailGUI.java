@@ -12,12 +12,13 @@ import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.first.admin.requests.TabOrganizeGUI;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.FeeInfoGUI;
-import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.engineeringclasses.bean.RegistrationBean;
 import logic.model.Role;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
+
+import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
 
 public class RegistrationTableDetailGUI  {
 
@@ -34,7 +35,7 @@ public class RegistrationTableDetailGUI  {
     @FXML private TextField tfApartment;
 
     @FXML private void btnX() {
-        Menu1GUI.firstBorder.setRight(null);
+        firstBorder.setRight(null);
     }
 
     @FXML private void btnAddClick() throws IOException, SQLException {
@@ -44,6 +45,8 @@ public class RegistrationTableDetailGUI  {
                 break;
             case OWNER:
                 addOwner();
+                break;
+            default:
                 break;
         }
     }
@@ -113,7 +116,7 @@ public class RegistrationTableDetailGUI  {
     private void reloadPage() throws IOException {
         FXMLLoader loader = view.loader("TabOrganize",1);
         Parent root = loader.load();
-        Menu1GUI.firstBorder.setCenter(root);
+        firstBorder.setCenter(root);
         TabOrganizeGUI tab = loader.getController();
         tab.selectTab(0);
     }

@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import logic.controller.applicationcontroller.PostController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.Menu1GUI;
@@ -25,7 +24,6 @@ public class AddPostGUI implements Initializable{
     @FXML private TextField txtMsg;
     @FXML private Button btnAddPost;
     @FXML private Button btnPublish;
-	@FXML private ImageView imgUserPost; //TODO
     
     @FXML private void addFileClick() {
 		btnAddPost.setDisable(true);
@@ -64,7 +62,6 @@ public class AddPostGUI implements Initializable{
     private void btnColor(Button btn) {
     	btn.setOnMouseEntered(event -> btn.setStyle("-fx-background-color : #0A0E3F"));
     	btn.setOnMouseExited(event -> btn.setStyle("-fx-background-color : #0C39FF"));
-		//TODO ADD TO CSS
     }
 
 }

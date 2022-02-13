@@ -94,19 +94,9 @@ public class RegisterGUI implements Initializable{
     	roleBox.getItems().addAll("Resident","Owner");
     }
 
-    private void test() {
-    	tfName.setText("try");
-    	tfSurname.setText("try");
-    	tfEmail.setText("try2try@try.try");
-    	tfPassword.setText("try4");
-    	tfOkPwd.setText("try4");
-		//TODO DELETE FINAL RELEASE
-    }
-
     @Override
    	public void initialize(URL location, ResourceBundle resources){
        	setUp();
-       	test();
        	try {
 			 addressBox.setItems(controller.loadAddresses());
 		 }catch(Exception e) {

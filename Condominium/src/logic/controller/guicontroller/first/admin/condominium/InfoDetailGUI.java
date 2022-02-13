@@ -9,7 +9,6 @@ import logic.controller.applicationcontroller.UserController;
 import logic.controller.applicationcontroller.ViewController;
 import logic.controller.guicontroller.AlertGUI;
 import logic.controller.guicontroller.first.general.FeeInfoGUI;
-import logic.controller.guicontroller.first.general.Menu1GUI;
 import logic.controller.guicontroller.second.admin.condominium.InfoItemGUI;
 import logic.engineeringclasses.bean.FeeBean;
 import logic.engineeringclasses.bean.UserBean;
@@ -18,12 +17,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import static logic.controller.guicontroller.first.general.Main1GUI.firstBorder;
+
 public class InfoDetailGUI {
 
     private final UserController usrController = new UserController();
     private final FeeController feeController = new FeeController();
     private final ViewController view = new ViewController();
     private final AlertGUI alert = new AlertGUI();
+    static final String TITLE = "Condominium/Info";
 
     @FXML private Button btnRemove;
     @FXML private Button btnRole;
@@ -35,7 +37,7 @@ public class InfoDetailGUI {
     @FXML private TextField tfAddr;
 
     @FXML private void btnX() {
-        Menu1GUI.firstBorder.setRight(null);
+        firstBorder.setRight(null);
     }
 
     protected void setUp(UserBean bean){
@@ -52,6 +54,8 @@ public class InfoDetailGUI {
             case OWNER:
                 btnRole.setText("Update Rating");
                 btnRemove.setVisible(false);
+                break;
+            default:
                 break;
         }
     }
@@ -70,7 +74,7 @@ public class InfoDetailGUI {
         Optional<ButtonType> btn = dialog.showAndWait();
         if(btn.isPresent() && btn.get() == ButtonType.OK && ctrlInfo.checkInfo()){
             usrController.updateInfo(ctrlInfo.getBean());
-            alert.alertInfo("Condominium/Info","User Successfully Updated",null);
+            alert.alertInfo(TITLE,"User Successfully Updated",null);
             btnX();
             reloadPage();
         } else {
@@ -79,7 +83,7 @@ public class InfoDetailGUI {
     }
 
     public void btnRemoveClick() throws IOException {
-        if(alert.alertConfirm("Condominium/Info","Are you sure you want to permanently delete user "+tfName.getText()+"?",null)){
+        if(alert.alertConfirm(TITLE,"Are you sure you want to permanently delete user "+tfName.getText()+"?",null)){
             if (Role.valueOf(tfRole.getText()) == Role.RESIDENT) {
                 usrController.removeResident(tfID.getText());
             }
@@ -98,6 +102,8 @@ public class InfoDetailGUI {
                 break;
             case OWNER:
                 removeRating(pane);
+                break;
+            default:
                 break;
         }
         btnX();
@@ -126,7 +132,7 @@ public class InfoDetailGUI {
         Optional<ButtonType> btn = dialog.showAndWait();
         if(btn.isPresent() && btn.get() == ButtonType.OK && ctrlFee.check()){
             feeController.updateFees(past,ctrlFee.getFees());
-            alert.alertInfo("Condominium/Info","Fee Successfully Updated",null);
+            alert.alertInfo(TITLE,"Fee Successfully Updated",null);
         } else{
             alert.alertError("Condominium/Error","Incorrect/Empty Credential","\n-Empty Field\n-More than 4 digits fee\n-Negative Value");
         }
@@ -150,6 +156,6 @@ public class InfoDetailGUI {
         Parent root = loader.load();
         InfoGUI infoCtrl = loader.getController();
         infoCtrl.setUp(tfAddr.getText());
-        Menu1GUI.firstBorder.setCenter(root);
+        firstBorder.setCenter(root);
     }
 }
