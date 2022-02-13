@@ -40,9 +40,6 @@ public class AptInfoGUI extends Main1GUI implements Initializable {
     @FXML private ComboBox<String> chartCombo;
     @FXML private CheckBox lastMonthBtn;
     @FXML private Text tfNumber;
-    @FXML private Text tfWater;
-    @FXML private Text tfGas;
-    @FXML private Text tfEnergy;
     @FXML private Text tfAdmin;
     @FXML private Text tfPark;
     @FXML private Text tfElevator;
@@ -51,11 +48,8 @@ public class AptInfoGUI extends Main1GUI implements Initializable {
     @FXML private Text tfOwner;
     @FXML private Text tfPastAdmin;
     @FXML private Text tfPastElevator;
-    @FXML private Text tfPastEnergy;
-    @FXML private Text tfPastGas;
     @FXML private Text tfPastPark;
     @FXML private Text tfPastPet;
-    @FXML private Text tfPastWater;
     @FXML private Text tfPastWifi;
     @FXML private GridPane pastGrid;
 
@@ -156,12 +150,6 @@ public class AptInfoGUI extends Main1GUI implements Initializable {
             if (boolFee.getAvailableWifi()) { tfWifi.setText(currentFee.getWifi()+" €"); tfPastWifi.setText(pastFee.getWifi()+" €"); }
             else {noFee(tfWifi); noFee(tfPastWifi);}
 
-            tfWater.setText(currentFee.getWater()+" €");
-            tfPastWater.setText(pastFee.getWater()+" €");
-            tfEnergy.setText(currentFee.getElect()+" €");
-            tfPastEnergy.setText(pastFee.getElect()+" €");
-            tfGas.setText(currentFee.getGas()+" €");
-            tfPastGas.setText(pastFee.getGas()+" €");
             tfAdmin.setText(currentFee.getAdmin()+" €");
             tfPastAdmin.setText(pastFee.getAdmin()+" €");
             chartCombo.getItems().addAll(CHOOSE_CHART, BAR_CHART, PIE_CHART, LINE_CHART);
@@ -175,6 +163,6 @@ public class AptInfoGUI extends Main1GUI implements Initializable {
     }
 
     public List<Double> getList(Fee fee){
-        return Arrays.asList(fee.getWater(),fee.getGas(),fee.getElect(),fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
+        return Arrays.asList(fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
     }
 }

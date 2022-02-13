@@ -1,40 +1,26 @@
 package logic.model;
 
-import java.util.List;
-
 public class Fee {
 
-    private Double water;
-    private Double gas;
-    private Double elect;
+    private String apt;
     private Double admin;
     private Double park;
     private Double elevator;
     private Double pet;
     private Double wifi;
-    //private List<double> list;
     private boolean availablePark;
     private boolean availableElevator;
     private boolean availablePet;
     private boolean availableWifi;
 
 
-    public Fee(Double water, Double gas, Double elect, Double admin, Double park, Double elevator, Double pet, Double wifi) {
-        this.water = water;
-        this.gas = gas;
-        this.elect = elect;
+    public Fee(String apt, Double admin, Double park, Double elevator, Double pet, Double wifi) {
+        this.apt = apt;
         this.admin = admin;
         this.park = park;
         this.elevator = elevator;
         this.pet = pet;
         this.wifi = wifi;
-    }
-
-    public Fee(List<Double> fee){
-        /*for (int i = 0; i<fee.size(); i++){
-
-        }*/
-
     }
 
     public Fee(boolean park,boolean elevator,boolean pet,boolean wifi){
@@ -44,28 +30,12 @@ public class Fee {
         this.availableWifi = wifi;
     }
 
-    public Double getWater() {
-        return water;
+    public String getApt() {
+        return apt;
     }
 
-    public void setWater(Double water) {
-        this.water = water;
-    }
-
-    public Double getGas() {
-        return gas;
-    }
-
-    public void setGas(Double gas) {
-        this.gas = gas;
-    }
-
-    public Double getElect() {
-        return elect;
-    }
-
-    public void setElect(Double elect) {
-        this.elect = elect;
+    public void setApt(String apt) {
+        this.apt = apt;
     }
 
     public Double getAdmin() {

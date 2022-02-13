@@ -38,7 +38,7 @@ public class AptInfoGUI implements Initializable {
     private final ChartGUI chart = new ChartGUI();
     private final ApartmentController aptController = new ApartmentController();
     private final FeeController feeController = new FeeController();
-    private final List<String> seriesName = Arrays.asList("Water","Gas","Energy","Admin","Parking","Elevator","Pet","Wifi");
+    private final List<String> seriesName = Arrays.asList("Admin","Parking","Elevator","Pet","Wifi");
     private static final String CHOOSE_CHART = "Choose Chart";
     private static final String BAR_CHART = "Bar Chart";
     private static final String PIE_CHART = "Pie Chart";
@@ -53,26 +53,20 @@ public class AptInfoGUI implements Initializable {
 
     @FXML CheckBox lastMonthFee;
 
-    @FXML Label tfWater = new Label();
-    @FXML Label tfEnergy = new Label();
-    @FXML Label tfGas = new Label();
     @FXML Label tfAdmin = new Label();
     @FXML Label tfPark = new Label();
     @FXML Label tfElevator = new Label();
     @FXML Label tfPet = new Label();
     @FXML Label tfWifi = new Label();
 
-    @FXML Label tfPastWater = new Label();
-    @FXML Label tfPastEnergy = new Label();
-    @FXML Label tfPastGas = new Label();
     @FXML Label tfPastAdmin = new Label();
     @FXML Label tfPastPark = new Label();
     @FXML Label tfPastElevator = new Label();
     @FXML Label tfPastPet = new Label();
     @FXML Label tfPastWifi = new Label();
 
-    private final List<Label> tfName = Arrays.asList(tfWater,tfGas,tfEnergy,tfAdmin,tfPark,tfElevator,tfPet,tfWifi);
-    private final List<Label> tfPastName = Arrays.asList(tfPastWater,tfPastGas,tfPastEnergy,tfPastAdmin,tfPastPark,tfPastElevator,tfPastPet,tfPastWifi);
+    private final List<Label> tfName = Arrays.asList(tfAdmin,tfPark,tfElevator,tfPet,tfWifi);
+    private final List<Label> tfPastName = Arrays.asList(tfPastAdmin,tfPastPark,tfPastElevator,tfPastPet,tfPastWifi);
 
 
     @Override
@@ -85,7 +79,7 @@ public class AptInfoGUI implements Initializable {
     }
 
     public List<Double> getList(Fee fee){
-        return Arrays.asList(fee.getWater(),fee.getGas(),fee.getElect(),fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
+        return Arrays.asList(fee.getAdmin(),fee.getPark(),fee.getElevator(),fee.getPet(),fee.getWifi());
     }
 
     public GridPane setUpGrid(GridPane grid, List<Label> tfList){
@@ -192,13 +186,6 @@ public class AptInfoGUI implements Initializable {
             else {noFee(tfPet); noFee(tfPastPet);}
             if (boolFee.getAvailableWifi()) { tfWifi.setText(currentFee.getWifi()+" €"); tfPastWifi.setText(pastFee.getWifi()+" €"); }
             else {noFee(tfWifi); noFee(tfPastWifi);}
-
-            tfWater.setText(currentFee.getWater()+" €");
-            tfPastWater.setText(pastFee.getWater()+" €");
-            tfEnergy.setText(currentFee.getElect()+" €");
-            tfPastEnergy.setText(pastFee.getElect()+" €");
-            tfGas.setText(currentFee.getGas()+" €");
-            tfPastGas.setText(pastFee.getGas()+" €");
             tfAdmin.setText(currentFee.getAdmin()+" €");
             tfPastAdmin.setText(pastFee.getAdmin()+" €");
 
