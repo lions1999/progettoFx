@@ -4,7 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -16,14 +15,12 @@ import logic.engineeringclasses.bean.UserBean;
 import logic.model.Role;
 import logic.model.User;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
-import java.util.ResourceBundle;
 
 import static logic.controller.guicontroller.second.general.Main2GUI.secondBorder;
 
-public class RegisterGUI implements Initializable {
+public class RegisterGUI {
 
     private final RegisterController controller = new RegisterController();
     private final ViewController view = new ViewController();
@@ -140,10 +137,5 @@ public class RegisterGUI implements Initializable {
             }
         }
         return apartments;
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources){
-        test();
     }
 }
