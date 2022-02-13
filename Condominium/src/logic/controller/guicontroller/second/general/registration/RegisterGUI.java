@@ -74,6 +74,8 @@ public class RegisterGUI implements Initializable {
                 case OWNER:
                     apartments = viewOwner(list,pane);
                     break;
+                default:
+                    break;
             }
             if(!apartments.isEmpty()){
                 for(String aptName : apartments){
@@ -138,15 +140,6 @@ public class RegisterGUI implements Initializable {
             }
         }
         return apartments;
-    }
-
-    private void test() {
-        tfName.setText("try");
-        tfSurname.setText("try");
-        tfEmail.setText("try2try@try.try");
-        tfPassword.setText("try4");
-        tfOkPwd.setText("try4");
-        //TODO DELETE FINAL RELEASE
     }
 
     @Override
