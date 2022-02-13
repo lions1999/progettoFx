@@ -70,7 +70,7 @@ public class RateResidentGUI implements Initializable {
         rating.setUp(name,id);
         firstBorder.setRight(root);
         scrollPrevRates.getChildren().clear();
-        if (rates.isEmpty()) {
+        if (!rates.isEmpty()) {
             VBox ratesPane = new VBox();
             for (int i = rates.size() - 1; i >= 0; i--) {
                 FXMLLoader loader1 = view.loader("Rate",1);

@@ -33,9 +33,9 @@ public class AptInfoGUI extends Main1GUI implements Initializable {
     private final FeeController feeController = new FeeController();
     private final List<String> seriesName = Arrays.asList("Water","Gas","Electricity","Admin","Parking","Elevator","Pet","WiFi");
     private final String choose = "Choose Chart";
-    private final String barChart = "bar Chart";
-    private final String pieChart = "pie Chart";
-    private final String lineChart = "line Chart";
+    private final String barChart = "Bar Chart";
+    private final String pieChart = "Pie Chart";
+    private final String lineChart = "Line Chart";
 
     @FXML private ComboBox<String> chartCombo;
     @FXML private CheckBox lastMonthBtn;
