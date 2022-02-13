@@ -41,10 +41,10 @@ public class RegistrationTableDetailGUI  {
     @FXML private void btnAddClick() throws IOException, SQLException {
         switch(Role.valueOf(tfRole.getText())){
             case RESIDENT:
-                addResident();
+                residentAdd();
                 break;
             case OWNER:
-                addOwner();
+                ownerAdd();
                 break;
             default:
                 break;
@@ -57,7 +57,7 @@ public class RegistrationTableDetailGUI  {
         }
     }
 
-    private void addResident() throws IOException, SQLException {
+    private void residentAdd() throws IOException, SQLException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/logic/view/first/Dialog.fxml"));
         DialogPane pane = loader.load();
@@ -78,7 +78,7 @@ public class RegistrationTableDetailGUI  {
         }
     }
 
-    private void addOwner() throws IOException {
+    private void ownerAdd() throws IOException {
         if(alert.alertConfirm("Registration/Confirm","Are you sure to add "+tfName.getText() +" to apartment "+tfApartment.getText()+"?","WARNING:\nAll other requests to apartment "+tfApartment.getText()+" will be deleted")){
             controller.addRegistered(getRegistered(), null);
             alert.alertInfo("Registration/Info","User Successfully Registered","Removed all requests to apartment "+tfApartment.getText());

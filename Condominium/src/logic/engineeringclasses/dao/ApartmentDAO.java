@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class ApartmentDAO extends SqlDAO{
 
     private final UserDAO userDao = new UserDAO();
+    private static final String APARTMENT = "apt_name";
 
     public String loadApartmentId(String apartment, String address) throws SQLException {
         String id = null;
@@ -33,7 +34,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             rs = ApartmentQuery.selectApartmentResident(stmt,address);
             while(rs.next()) {
-                list.add(rs.getString("apt_name"));
+                list.add(rs.getString(APARTMENT));
             }
         }finally{
             disconnect();
@@ -48,7 +49,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             rs = ApartmentQuery.selectApartmentOwner(stmt,address);
             while(rs.next()) {
-                list.add(rs.getString("apt_name"));
+                list.add(rs.getString(APARTMENT));
             }
         }finally{
             disconnect();
@@ -63,7 +64,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             rs = ApartmentQuery.loadApt(stmt,address);
             while(rs.next()) {
-                String aptID = rs.getString("apt_name");
+                String aptID = rs.getString(APARTMENT);
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
@@ -83,7 +84,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
             while(rs.next()) {
-                String aptID = rs.getString("apt_name");
+                String aptID = rs.getString(APARTMENT);
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");
@@ -102,7 +103,7 @@ public class ApartmentDAO extends SqlDAO{
             connect();
             rs = ApartmentQuery.selectAptInfo(stmt,userId,condAddress,type_usr);
             while(rs.next()) {
-                String aptID = rs.getString("apt_name");
+                String aptID = rs.getString(APARTMENT);
                 String aptAdd = rs.getString("apt_addr");
                 String aptOwn = rs.getString("apt_own");
                 String aptRes = rs.getString("apt_res");

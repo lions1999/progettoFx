@@ -37,11 +37,13 @@ public class RegistrationItemGUI {
 
     @FXML private void onAcceptPress() throws IOException {
         switch(Role.valueOf(lbRole.getText())){
+            case OWNER:
+                addOwner();
+                break;
             case RESIDENT:
                 addResident();
                 break;
-            case OWNER:
-                addOwner();
+            default:
                 break;
         }
     }
@@ -71,7 +73,8 @@ public class RegistrationItemGUI {
                     alert.alertInfo("Registration/Info","User Successfully Registered",null);
                     try {
                         remove();
-                    } catch (IOException ignore) {
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
                 }else{
                     alert.alertError("Registration/Error","Incorrect/Empty Credential","\n-Empty Field\n-More than 4 digits fee\n-Negative Value");

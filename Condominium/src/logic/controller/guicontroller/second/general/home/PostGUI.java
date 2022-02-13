@@ -21,7 +21,7 @@ public class PostGUI {
 
     UserSingleton sg = UserSingleton.getInstance();
 
-    @FXML private ImageView usrImg; //TODO
+    @FXML private ImageView usrImg;
     @FXML private Label usrName;
     @FXML private TextField posTxt;
     @FXML private Button btnDelete;

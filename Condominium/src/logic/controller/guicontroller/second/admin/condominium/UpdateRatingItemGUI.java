@@ -1,5 +1,6 @@
 package logic.controller.guicontroller.second.admin.condominium;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.ColorAdjust;
@@ -15,11 +16,11 @@ public class UpdateRatingItemGUI {
     private final RateController controller = new RateController();
     private final AlertGUI alert = new AlertGUI();
 
-    public Label lbID;
-    public Label lbName;
-    public Label lbVal;
-    public TextArea areaTxt;
-    public ImageView iconDelete;
+    @FXML private Label lbID;
+    @FXML private Label lbName;
+    @FXML private Label lbVal;
+    @FXML private TextArea areaTxt;
+    @FXML private ImageView iconDelete;
     private int gui;
 
     public void onDeletePress() throws SQLException {

@@ -35,6 +35,7 @@ public class InfoItemGUI {
     private final FeeController feeController = new FeeController();
     private final AlertGUI alert = new AlertGUI();
     private final Menu2GUI menu = new Menu2GUI();
+    private static final String TITLE = "Condominium/Info";
 
     @FXML private ImageView btnDelete;
     @FXML private Label lbID;
@@ -54,7 +55,7 @@ public class InfoItemGUI {
         btnOk.setOnAction(e->{
             if(ctrlInfo.checkInfo()){
                     usrController.updateInfo(ctrlInfo.getBean());
-                    alert.alertInfo("Condominium/Info","User Successfully Updated",null);
+                    alert.alertInfo(TITLE,"User Successfully Updated",null);
                     reloadPage();
             } else {
                     alert.alertError("Condominium/Error","Incorrect Data",null);
@@ -63,9 +64,9 @@ public class InfoItemGUI {
         view.secondRight(info,btnOk);
     }
 
-    public void onDeletePress() throws IOException {
+    public void onDeletePress() {
         if (Role.valueOf(lbRole.getText()) == Role.RESIDENT) {
-            if(alert.alertConfirm("Condominium/Info","Are you sure you want to permanently delete user "+lbName.getText()+"?",null)){
+            if(alert.alertConfirm(TITLE,"Are you sure you want to permanently delete user "+lbName.getText()+"?",null)){
                 usrController.removeResident(lbID.getText());
             }
             reloadPage();
@@ -79,6 +80,8 @@ public class InfoItemGUI {
                 break;
             case RESIDENT:
                 updateFee();
+                break;
+            default:
                 break;
         }
     }
@@ -134,7 +137,7 @@ public class InfoItemGUI {
             btnOk.setOnAction(e -> {
                 if (ctrlFee.check()) {
                     feeController.updateFees(past, ctrlFee.getFees());
-                    alert.alertInfo("Condominium/Info", "Fee Successfully Updated", null);
+                    alert.alertInfo(TITLE, "Fee Successfully Updated", null);
                     reloadPage();
                 } else {
                     alert.alertError("Condominium/Error", "Incorrect/Empty Credential", "\n-Empty Field\n-More than 4 digits fee\n-Negative Value");
@@ -149,7 +152,8 @@ public class InfoItemGUI {
     private void reloadPage()  {
         try {
             menu.btnInfoClick();
-        }catch (Exception ignore){
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

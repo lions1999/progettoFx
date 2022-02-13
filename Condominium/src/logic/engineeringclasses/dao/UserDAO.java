@@ -82,7 +82,7 @@ public class UserDAO extends SqlDAO{
                 String userEmail = rs.getString("user_email");
                 String userPwd = rs.getString("user_pwd");
                 String userAddr = rs.getString("user_addr");
-                admin = new Administrator(id,userName,userEmail,userPwd,userAddr,null);
+                admin = new Administrator(id,userName,userEmail,userPwd,userAddr);
             }
         } finally {
             disconnect();
