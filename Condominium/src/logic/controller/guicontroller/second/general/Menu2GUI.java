@@ -195,6 +195,7 @@ public class Menu2GUI extends Main2GUI implements Initializable {
 
     public void btnHomeClick() {
         secondBorder.setBottom(null);
+        secondBorder.setRight(null);
         vbox.getChildren().clear();
         scrollBox.getChildren().clear();
         addPost();

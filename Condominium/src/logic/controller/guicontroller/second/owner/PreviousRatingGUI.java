@@ -31,7 +31,7 @@ public class PreviousRatingGUI {
         String id = aptController.checkUserAptFromNumber(sg.getAddress(),list.get(1),"apt_res");
         ObservableList<Rate> rates = FXCollections.observableArrayList(rateCtrl.getRatesRes(id));
         vbox.getChildren().clear();
-        if (rates.isEmpty()) {
+        if (!rates.isEmpty()) {
             VBox ratesPane = new VBox();
             ratesPane.setSpacing(20);
             for (int i = rates.size() - 1; i >= 0; i--){
